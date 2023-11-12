@@ -7,7 +7,7 @@ Trabajo Práctico número 2 de la materia Algoritmos y Programación III de FIUB
 ## Grupo {N}
 
 * **Integrante 1** - [Luis Condori](https://github.com/lcondoriz)
-* **Integrante 2** - [integrante2](https://github.com/integrante2)
+* **Integrante 2** - [Weng Xu Marcos Tomás](https://github.com/wxmarcos)
 * **Integrante 3** - [integrante3](https://github.com/integrante3)
 * **Integrante 4** - [integrante4](https://github.com/integrante4)
 
