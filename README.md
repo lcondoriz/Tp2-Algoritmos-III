@@ -1,6 +1,6 @@
 ![tp2](https://github.com/lcondoriz/Tp2-Algoritmos-III/actions/workflows/build.yml/badge.svg) [![codecov](https://codecov.io/gh/lcondoriz/Tp2-Algoritmos-III/graph/badge.svg?token=E6JMIZPWBJ)](https://codecov.io/gh/lcondoriz/Tp2-Algoritmos-III)
 
-# TP2 Algoritmos 3: {nombre} 
+# TP2 Algoritmos 3: AlgoRoma Edición: “Gladiadores en fuga”
 
 Trabajo Práctico número 2 de la materia Algoritmos y Programación III de FIUBA
 
