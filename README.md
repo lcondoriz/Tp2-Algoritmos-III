@@ -1,4 +1,4 @@
-![tp2](https://github.com/lcondoriz/Tp2-Algoritmos-III/actions/workflows/build.yml/badge.svg) [![codecov](https://codecov.io/gh/lcondoriz/Tp2-Algoritmos-III/branch/master/graph/badge.svg)](https://codecov.io/gh/lcondoriz/Tp2-Algoritmos-III)
+![tp2](https://github.com/lcondoriz/Tp2-Algoritmos-III/actions/workflows/build.yml/badge.svg) [![codecov](https://codecov.io/gh/lcondoriz/Tp2-Algoritmos-III/graph/badge.svg?token=E6JMIZPWBJ)](https://codecov.io/gh/lcondoriz/Tp2-Algoritmos-III)
 
 # TP2 Algoritmos 3: {nombre} 
 
