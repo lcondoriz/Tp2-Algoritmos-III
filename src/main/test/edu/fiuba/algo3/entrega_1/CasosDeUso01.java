@@ -2,6 +2,7 @@ package edu.fiuba.algo3.entrega_1;
 
 
 import edu.fiuba.algo3.casillero.Equipo;
+import edu.fiuba.algo3.casillero.obtaculos.FieraSalvaje;
 import edu.fiuba.algo3.casillero.premios.Armadura;
 import edu.fiuba.algo3.casillero.premios.Casco;
 import edu.fiuba.algo3.casillero.premios.Comida;
@@ -94,5 +95,67 @@ public class CasosDeUso01 {
         gladiador.avanzar(0);
 
         assertEquals(EscudoEspada.class, gladiador.getEquipamiento().getClass());
+    }
+
+    @Test   // Caso de uso 7
+    public void verificarQueSiHayUnCombateConUnaFieraSalvajeYTieneUnCascoPierde15PuntosDeEnergia() {
+        Energia energia = new Energia(20);
+        Seniority seniority = new Novato();
+        Casillero casillero = new Casillero(0, new FieraSalvaje());
+
+        gladiador = new Gladiador(energia, seniority, casillero);
+
+        // Al principio no tiene equipamiento
+        gladiador.avanzar(0);
+
+        assertEquals(0, gladiador.obtenerEnergia());
+    }
+
+    @Test   // Caso de uso 8
+    public void verificarQueSiPasan8TurnosElSeniorityDelGladiadorPasaDeNovatoASemiSeniorYVeSuEnergiaIncrementadaAlProximoTurno() {
+        Energia energia = new Energia(20);
+        Seniority seniority = new Novato();
+        Casillero casillero = new Casillero(0, null);
+
+        gladiador = new Gladiador(energia, seniority, casillero);
+
+        for (int i = 1; i <= 8; i++) {  // 8 turnos
+            gladiador.avanzar(1);   // Avanza 1 casillero
+        }
+
+        assertEquals(25, gladiador.obtenerEnergia());
+    }
+
+    @Test   // Caso de uso 9
+    public void verificarQueSiLlegaALaMetaSinLaLlaveEnElEquipamientoRetrocedeALaMitadDeLasCasillas() {
+        // Falta implementar
+    }
+
+    @Test   // Caso de uso 10
+    public void verificarQueSiLoAtacaUnaFieraSalvajeYPoseeTodoElEquipamientoElDanioEnEnergiaEs0() {
+        Energia energia = new Energia(20);
+        Seniority seniority = new Novato();
+        Casillero casillero = new Casillero(0, new Equipo());
+
+        gladiador = new Gladiador(energia, seniority, casillero);
+
+        for (int i = 0; i <= 3; i++) {  // 4 turnos, se obtiene el equipamiento completo
+            gladiador.avanzar(1);   // Avanza 1 casillero
+        }
+        gladiador.setCasillero(new Casillero(4, new FieraSalvaje()));
+
+        gladiador.avanzar(0);
+
+        assertEquals(20, gladiador.obtenerEnergia());
+
+    }
+    @Test   // Caso de uso 11
+    public void verificarQueSiElGladiadorTieneLaLlaveYRecibeOtroPremioNoCambiaNada() {
+        // Falta implementar
+    }
+
+    @Test   // Caso de uso 12
+    public void verificarQueSiPasan30TurnosYNadieLlegoALaMetaSeTerminaElJuego() {
+        // Falta implementar
     }
 }

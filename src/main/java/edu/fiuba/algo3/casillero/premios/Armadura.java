@@ -7,4 +7,8 @@ public class Armadura implements Equipamiento {
     public Equipamiento incrementarEquipo() {
         return new EscudoEspada();
     }
+    @Override
+    public int perdidaEnergiaPelea() {
+        return 10;
+    }
 }
