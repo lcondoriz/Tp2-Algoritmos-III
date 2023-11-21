@@ -12,6 +12,6 @@ public class FieraSalvaje implements Afectable {
 
     @Override
     public void aplicarEfecto(Gladiador gladiador) {
-        //gladiador.disminuirEnergia(penalizacion);
+        gladiador.disminuirEnergia(penalizacion);
     }
 }
