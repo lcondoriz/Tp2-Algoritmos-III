@@ -21,7 +21,7 @@ public class Gladiador {
         this.equipamiento = null;
     }
 
-    public int obtenerEnergia() {   //cambiar
+    public int obtenerEnergia() { // cambiar
         return energia.obtenerPuntos();
     }
 
@@ -29,15 +29,14 @@ public class Gladiador {
         return casillero.obtenerPosicion();
     }
 
-    public void avanzar(int cantidad) { // El gladiador avanza la cantidad de casilleros indicada, y se guarda el nuevo casillero en el atributo casillero y se aplica el efecto del elemento del casillero
+    public void avanzar(int cantidad) { // El gladiador avanza la cantidad de casilleros indicada, y se guarda el nuevo
+                                        // casillero en el atributo casillero y se aplica el efecto del elemento del
+                                        // casillero
         if (energia.obtenerPuntos() <= 0) {
             throw new SinEnergiaException("El jugador no tiene suficiente energía para jugar el turno.");
         }
-
         this.turno++;
-
         casillero = casillero.avanzar(cantidad); // No es bien implemtado, dalta el JSON.
-
         this.incrementarEquipamiento();
 
         casillero.aplicarEfecto(this);
@@ -48,6 +47,7 @@ public class Gladiador {
     public void aumentarEnergia(int cantidad) {
         energia.incrementar(cantidad);
     }
+
     public void disminuirEnergia(int cantidad) {
         energia.decrementar(cantidad);
     }
@@ -59,24 +59,11 @@ public class Gladiador {
         this.equipamiento = equipamiento.incrementarEquipo();
     }
 
-
     public Equipamiento getEquipamiento() {
         return equipamiento;
-    }
-<<<<<<< HEAD
-=======
-
-    public Seniority getSeniority() {
-        return seniority;
-    }
-
-    public void incrementarSeniority() {
-        this.seniority = seniority.incrementarSeniority();
     }
 
     public void setCasillero(Casillero casillero) { // Se usa para testear
         this.casillero = casillero;
     }
-
->>>>>>> parent of 0d791b7 (Revert "Arreglo de conflictos")
 }
