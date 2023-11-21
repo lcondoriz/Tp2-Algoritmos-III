@@ -8,6 +8,7 @@ import edu.fiuba.algo3.gladiador.seniority.*;
 import edu.fiuba.algo3.tablero.*;
 
 public class Gladiador {
+    private int turno;
     private Energia energia;
     private Seniority seniority;
     private Casillero casillero;
@@ -32,9 +33,16 @@ public class Gladiador {
         if (energia.obtenerPuntos() <= 0) {
             throw new SinEnergiaException("El jugador no tiene suficiente energía para jugar el turno.");
         }
-        casillero = casillero.avanzar(cantidad);
+
+        this.turno++;
+
+        casillero = casillero.avanzar(cantidad); // No es bien implemtado, dalta el JSON.
+
+        this.incrementarEquipamiento();
 
         casillero.aplicarEfecto(this);
+
+        this.seniority.incrementarSeniority(this.energia, this.turno);
     }
 
     public void aumentarEnergia(int cantidad) {
@@ -55,4 +63,20 @@ public class Gladiador {
     public Equipamiento getEquipamiento() {
         return equipamiento;
     }
+<<<<<<< HEAD
+=======
+
+    public Seniority getSeniority() {
+        return seniority;
+    }
+
+    public void incrementarSeniority() {
+        this.seniority = seniority.incrementarSeniority();
+    }
+
+    public void setCasillero(Casillero casillero) { // Se usa para testear
+        this.casillero = casillero;
+    }
+
+>>>>>>> parent of 0d791b7 (Revert "Arreglo de conflictos")
 }

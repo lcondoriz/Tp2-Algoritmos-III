@@ -7,4 +7,8 @@ public class Llave implements Equipamiento {
     public Equipamiento incrementarEquipo() {
         return this;
     }
+    @Override
+    public int perdidaEnergiaPelea() {
+        return 0;
+    }
 }
