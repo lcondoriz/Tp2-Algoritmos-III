@@ -8,4 +8,9 @@ public class Casco implements Equipamiento {
     public Equipamiento incrementarEquipo() {
         return new Armadura();
     }
+
+    @Override
+    public int perdidaEnergiaPelea() {
+        return 20;
+    }
 }
