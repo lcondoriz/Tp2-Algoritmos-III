@@ -7,9 +7,4 @@ public class EscudoEspada implements Equipamiento {
     public Equipamiento incrementarEquipo() {
         return new Llave();
     }
-
-    @Override
-    public int perdidaEnergiaPelea() {
-        return 2;
-    }
 }

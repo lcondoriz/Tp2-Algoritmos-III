@@ -5,6 +5,4 @@ import edu.fiuba.algo3.casillero.premios.Armadura;
 public interface Equipamiento {
 
     public Equipamiento incrementarEquipo();
-
-    public int perdidaEnergiaPelea();
 }

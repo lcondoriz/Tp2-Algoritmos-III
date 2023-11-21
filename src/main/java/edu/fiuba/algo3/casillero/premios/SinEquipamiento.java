@@ -7,8 +7,4 @@ public class SinEquipamiento implements Equipamiento {
     public Equipamiento incrementarEquipo() {
         return new Casco();
     }
-    @Override
-    public int perdidaEnergiaPelea() {
-        return 20;
-    }
 }
