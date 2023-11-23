@@ -1,0 +1,33 @@
+{
+  "name": "Energia verificar que tiene energia suficiente devuelve el valor correcto",
+  "app": "Tp2-Algoritmos-III",
+  "language": {
+    "name": "java",
+    "version": "17.0.9+8-LTS",
+    "engine": "OpenJDK 64-Bit Server VM"
+  },
+  "client": {
+    "name": "appmap-java",
+    "url": "https://github.com/appland/appmap-java"
+  },
+  "recorder": {
+    "name": "junit",
+    "type": "tests"
+  },
+  "recording": {
+    "defined_class": "edu.fiuba.algo3.modeloTest.gladiador.EnergiaTest",
+    "method_id": "verificarQueTieneEnergiaSuficienteDevuelveElValorCorrecto"
+  },
+  "git": {
+    "repository": "git@github.com:lcondoriz/Tp2-Algoritmos-III.git",
+    "branch": "semana_1"
+  },
+  "source_location": "edu/fiuba/algo3/modeloTest/gladiador/EnergiaTest.java:38",
+  "frameworks": [
+    {
+      "name": "JUnit",
+      "version": "5"
+    }
+  ],
+  "test_status": "succeeded"
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "name": "verificarQueSiLlegaALaMetaSinLaLlaveEnElEquipamientoRetrocedeALaMitadDeLasCasillas",
+                        "type": "function",
+                        "static": false,
+                        "location": "edu/fiuba/algo3/entrega_1/CasoDeUso9.java:21"
+                      }
+                    ],
+                    "name": "CasoDeUso9",
+                    "type": "class"
+                  }
+                ],
+                "name": "entrega_1",
+                "type": "package"
+              }
+            ],
+            "name": "algo3",
+            "type": "package"
+          }
+        ],
+        "name": "fiuba",
+        "type": "package"
+      }
+    ],
+    "name": "edu",
+    "type": "package"
+  }
+]

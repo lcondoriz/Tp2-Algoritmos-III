@@ -1,0 +1,12 @@
+[
+  {
+    "class": "edu.fiuba.algo3.exceptions.NoHayJugadoresException",
+    "message": "No hay jugadores para iniciar el juego.",
+    "stack": [
+      "AlgoRoma.java:28",
+      "src/main/java/edu/fiuba/algo3/juego/AlgoRoma.java:27",
+      "edu/fiuba/algo3/modeloTest/juego/AlgoRomaTest.java:21"
+    ],
+    "location": "AlgoRoma.java:28"
+  }
+]

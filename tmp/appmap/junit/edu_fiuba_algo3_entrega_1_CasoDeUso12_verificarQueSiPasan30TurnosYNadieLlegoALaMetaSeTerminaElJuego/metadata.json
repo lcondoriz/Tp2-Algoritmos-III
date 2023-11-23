@@ -1,0 +1,33 @@
+{
+  "name": "Caso de uso 12 verificar que si pasan 30 turnos y nadie llego a la meta se termina el juego",
+  "app": "Tp2-Algoritmos-III",
+  "language": {
+    "name": "java",
+    "version": "17.0.9+8-LTS",
+    "engine": "OpenJDK 64-Bit Server VM"
+  },
+  "client": {
+    "name": "appmap-java",
+    "url": "https://github.com/appland/appmap-java"
+  },
+  "recorder": {
+    "name": "junit",
+    "type": "tests"
+  },
+  "recording": {
+    "defined_class": "edu.fiuba.algo3.entrega_1.CasoDeUso12",
+    "method_id": "verificarQueSiPasan30TurnosYNadieLlegoALaMetaSeTerminaElJuego"
+  },
+  "git": {
+    "repository": "git@github.com:lcondoriz/Tp2-Algoritmos-III.git",
+    "branch": "semana_1"
+  },
+  "source_location": "edu/fiuba/algo3/entrega_1/CasoDeUso12.java:21",
+  "frameworks": [
+    {
+      "name": "JUnit",
+      "version": "5"
+    }
+  ],
+  "test_status": "succeeded"
+}

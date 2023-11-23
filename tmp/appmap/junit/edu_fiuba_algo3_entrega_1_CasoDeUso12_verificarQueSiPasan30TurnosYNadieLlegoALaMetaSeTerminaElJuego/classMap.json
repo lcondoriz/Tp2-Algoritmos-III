@@ -1,0 +1,38 @@
+[
+  {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "name": "verificarQueSiPasan30TurnosYNadieLlegoALaMetaSeTerminaElJuego",
+                        "type": "function",
+                        "static": false,
+                        "location": "edu/fiuba/algo3/entrega_1/CasoDeUso12.java:21"
+                      }
+                    ],
+                    "name": "CasoDeUso12",
+                    "type": "class"
+                  }
+                ],
+                "name": "entrega_1",
+                "type": "package"
+              }
+            ],
+            "name": "algo3",
+            "type": "package"
+          }
+        ],
+        "name": "fiuba",
+        "type": "package"
+      }
+    ],
+    "name": "edu",
+    "type": "package"
+  }
+]

@@ -1,0 +1,12 @@
+[
+  {
+    "class": "edu.fiuba.algo3.exceptions.SinEnergiaException",
+    "message": "El gladiador no tiene suficiente energía para avanzar",
+    "stack": [
+      "Gladiador.java:44",
+      "src/main/java/edu/fiuba/algo3/gladiador/Gladiador.java:43",
+      "edu/fiuba/algo3/entrega_1/CasoDeUso3.java:16"
+    ],
+    "location": "Gladiador.java:44"
+  }
+]

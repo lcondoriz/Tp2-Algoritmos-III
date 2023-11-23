@@ -1,0 +1,68 @@
+[
+  {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "name": "greet",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/main/java/edu/fiuba/algo3/modelo/Localize.java:13"
+                      }
+                    ],
+                    "name": "Localize",
+                    "type": "class"
+                  },
+                  {
+                    "children": [
+                      {
+                        "name": "greet",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/main/java/edu/fiuba/algo3/modelo/Message.java:10"
+                      }
+                    ],
+                    "name": "Message",
+                    "type": "class"
+                  }
+                ],
+                "name": "modelo",
+                "type": "package"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "name": "messageGreetingDefaultLanguage",
+                        "type": "function",
+                        "static": false,
+                        "location": "edu/fiuba/algo3/entrega_2/MessageTest2.java:17"
+                      }
+                    ],
+                    "name": "MessageTest2",
+                    "type": "class"
+                  }
+                ],
+                "name": "entrega_2",
+                "type": "package"
+              }
+            ],
+            "name": "algo3",
+            "type": "package"
+          }
+        ],
+        "name": "fiuba",
+        "type": "package"
+      }
+    ],
+    "name": "edu",
+    "type": "package"
+  }
+]

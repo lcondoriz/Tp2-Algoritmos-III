@@ -1,0 +1,213 @@
+{
+  "events": [
+    {
+      "defined_class": "edu.fiuba.algo3.modeloTest.gladiador.EnergiaTest",
+      "event": "call",
+      "id": 1,
+      "lineno": 38,
+      "method_id": "verificarQueTieneEnergiaSuficienteDevuelveElValorCorrecto",
+      "path": "edu/fiuba/algo3/modeloTest/gladiador/EnergiaTest.java",
+      "receiver": {
+        "class": "edu.fiuba.algo3.modeloTest.gladiador.EnergiaTest",
+        "object_id": 1788662008,
+        "value": "edu.fiuba.algo3.modeloTest.gladiador.EnergiaTest@6a9cd0f8"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "defined_class": "edu.fiuba.algo3.gladiador.Energia",
+      "event": "call",
+      "id": 2,
+      "lineno": 23,
+      "method_id": "tieneEnergiaSuficiente",
+      "path": "src/main/java/edu/fiuba/algo3/gladiador/Energia.java",
+      "receiver": {
+        "class": "edu.fiuba.algo3.gladiador.Energia",
+        "object_id": 1269749378,
+        "value": "edu.fiuba.algo3.gladiador.Energia@4baed682"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0,
+      "event": "return",
+      "id": 3,
+      "parent_id": 2,
+      "return_value": {
+        "class": "java.lang.Boolean",
+        "object_id": 413293501,
+        "value": "true"
+      },
+      "thread_id": 1
+    },
+    {
+      "defined_class": "edu.fiuba.algo3.gladiador.Energia",
+      "event": "call",
+      "id": 4,
+      "lineno": 19,
+      "method_id": "decrementar",
+      "parameters": [
+        {
+          "class": "java.lang.Integer",
+          "kind": "req",
+          "name": "cantidad",
+          "object_id": 1092109169,
+          "value": "20"
+        }
+      ],
+      "path": "src/main/java/edu/fiuba/algo3/gladiador/Energia.java",
+      "receiver": {
+        "class": "edu.fiuba.algo3.gladiador.Energia",
+        "object_id": 1269749378,
+        "value": "edu.fiuba.algo3.gladiador.Energia@4baed682"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0,
+      "event": "return",
+      "id": 5,
+      "parent_id": 4,
+      "thread_id": 1
+    },
+    {
+      "defined_class": "edu.fiuba.algo3.gladiador.Energia",
+      "event": "call",
+      "id": 6,
+      "lineno": 23,
+      "method_id": "tieneEnergiaSuficiente",
+      "path": "src/main/java/edu/fiuba/algo3/gladiador/Energia.java",
+      "receiver": {
+        "class": "edu.fiuba.algo3.gladiador.Energia",
+        "object_id": 1269749378,
+        "value": "edu.fiuba.algo3.gladiador.Energia@4baed682"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0,
+      "event": "return",
+      "id": 7,
+      "parent_id": 6,
+      "return_value": {
+        "class": "java.lang.Boolean",
+        "object_id": 238612663,
+        "value": "false"
+      },
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0.00009999,
+      "event": "return",
+      "id": 8,
+      "parent_id": 1,
+      "thread_id": 1
+    }
+  ],
+  "version": "1.2",
+  "metadata": {
+    "name": "Energia verificar que tiene energia suficiente devuelve el valor correcto",
+    "app": "Tp2-Algoritmos-III",
+    "language": {
+      "name": "java",
+      "version": "17.0.9+8-LTS",
+      "engine": "OpenJDK 64-Bit Server VM"
+    },
+    "client": {
+      "name": "appmap-java",
+      "url": "https://github.com/appland/appmap-java"
+    },
+    "recorder": {
+      "name": "junit",
+      "type": "tests"
+    },
+    "recording": {
+      "defined_class": "edu.fiuba.algo3.modeloTest.gladiador.EnergiaTest",
+      "method_id": "verificarQueTieneEnergiaSuficienteDevuelveElValorCorrecto"
+    },
+    "git": {
+      "repository": "git@github.com:lcondoriz/Tp2-Algoritmos-III.git",
+      "branch": "semana_1"
+    },
+    "source_location": "edu/fiuba/algo3/modeloTest/gladiador/EnergiaTest.java:38",
+    "frameworks": [
+      {
+        "name": "JUnit",
+        "version": "5"
+      }
+    ],
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "children": [
+                            {
+                              "name": "verificarQueTieneEnergiaSuficienteDevuelveElValorCorrecto",
+                              "type": "function",
+                              "static": false,
+                              "location": "edu/fiuba/algo3/modeloTest/gladiador/EnergiaTest.java:38"
+                            }
+                          ],
+                          "name": "EnergiaTest",
+                          "type": "class"
+                        }
+                      ],
+                      "name": "gladiador",
+                      "type": "package"
+                    }
+                  ],
+                  "name": "modeloTest",
+                  "type": "package"
+                },
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "tieneEnergiaSuficiente",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/main/java/edu/fiuba/algo3/gladiador/Energia.java:23"
+                        },
+                        {
+                          "name": "decrementar",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/main/java/edu/fiuba/algo3/gladiador/Energia.java:19"
+                        }
+                      ],
+                      "name": "Energia",
+                      "type": "class"
+                    }
+                  ],
+                  "name": "gladiador",
+                  "type": "package"
+                }
+              ],
+              "name": "algo3",
+              "type": "package"
+            }
+          ],
+          "name": "fiuba",
+          "type": "package"
+        }
+      ],
+      "name": "edu",
+      "type": "package"
+    }
+  ]
+}

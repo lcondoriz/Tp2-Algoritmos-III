@@ -1,0 +1,74 @@
+[
+  {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "name": "verificarQueElJugadorSalgaDeLaCasillaInicial",
+                        "type": "function",
+                        "static": false,
+                        "location": "edu/fiuba/algo3/entrega_1/CasoDeUso2.java:14"
+                      }
+                    ],
+                    "name": "CasoDeUso2",
+                    "type": "class"
+                  }
+                ],
+                "name": "entrega_1",
+                "type": "package"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "name": "obtenerPosicion",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/main/java/edu/fiuba/algo3/tablero/Casillero.java:20"
+                      }
+                    ],
+                    "name": "Casillero",
+                    "type": "class"
+                  }
+                ],
+                "name": "tablero",
+                "type": "package"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "name": "obtenerPosicionCasillero",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/main/java/edu/fiuba/algo3/gladiador/Gladiador.java:38"
+                      }
+                    ],
+                    "name": "Gladiador",
+                    "type": "class"
+                  }
+                ],
+                "name": "gladiador",
+                "type": "package"
+              }
+            ],
+            "name": "algo3",
+            "type": "package"
+          }
+        ],
+        "name": "fiuba",
+        "type": "package"
+      }
+    ],
+    "name": "edu",
+    "type": "package"
+  }
+]

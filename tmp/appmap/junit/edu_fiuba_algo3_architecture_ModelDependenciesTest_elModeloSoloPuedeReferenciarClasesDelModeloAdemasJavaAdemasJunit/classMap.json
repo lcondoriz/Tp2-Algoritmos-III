@@ -1,0 +1,38 @@
+[
+  {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "name": "elModeloSoloPuedeReferenciarClasesDelModeloAdemasJavaAdemasJunit",
+                        "type": "function",
+                        "static": false,
+                        "location": "edu/fiuba/algo3/architecture/ModelDependenciesTest.java:17"
+                      }
+                    ],
+                    "name": "ModelDependenciesTest",
+                    "type": "class"
+                  }
+                ],
+                "name": "architecture",
+                "type": "package"
+              }
+            ],
+            "name": "algo3",
+            "type": "package"
+          }
+        ],
+        "name": "fiuba",
+        "type": "package"
+      }
+    ],
+    "name": "edu",
+    "type": "package"
+  }
+]

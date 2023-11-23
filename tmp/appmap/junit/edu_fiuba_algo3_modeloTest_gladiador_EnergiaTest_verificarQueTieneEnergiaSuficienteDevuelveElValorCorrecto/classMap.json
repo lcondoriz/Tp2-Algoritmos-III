@@ -1,0 +1,68 @@
+[
+  {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "children": [
+                          {
+                            "name": "verificarQueTieneEnergiaSuficienteDevuelveElValorCorrecto",
+                            "type": "function",
+                            "static": false,
+                            "location": "edu/fiuba/algo3/modeloTest/gladiador/EnergiaTest.java:38"
+                          }
+                        ],
+                        "name": "EnergiaTest",
+                        "type": "class"
+                      }
+                    ],
+                    "name": "gladiador",
+                    "type": "package"
+                  }
+                ],
+                "name": "modeloTest",
+                "type": "package"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "name": "tieneEnergiaSuficiente",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/main/java/edu/fiuba/algo3/gladiador/Energia.java:23"
+                      },
+                      {
+                        "name": "decrementar",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/main/java/edu/fiuba/algo3/gladiador/Energia.java:19"
+                      }
+                    ],
+                    "name": "Energia",
+                    "type": "class"
+                  }
+                ],
+                "name": "gladiador",
+                "type": "package"
+              }
+            ],
+            "name": "algo3",
+            "type": "package"
+          }
+        ],
+        "name": "fiuba",
+        "type": "package"
+      }
+    ],
+    "name": "edu",
+    "type": "package"
+  }
+]

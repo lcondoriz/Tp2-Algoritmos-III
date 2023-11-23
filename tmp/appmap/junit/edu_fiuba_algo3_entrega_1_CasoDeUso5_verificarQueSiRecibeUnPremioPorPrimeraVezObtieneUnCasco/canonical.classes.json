@@ -1,0 +1,9 @@
+[
+  "edu/fiuba/algo3/casillero/equipamiento/Equipamiento",
+  "edu/fiuba/algo3/casillero/equipamiento/SinEquipamiento",
+  "edu/fiuba/algo3/entrega_1/CasoDeUso5",
+  "edu/fiuba/algo3/gladiador/Energia",
+  "edu/fiuba/algo3/gladiador/Gladiador",
+  "edu/fiuba/algo3/gladiador/seniority/EstrategiaNovato",
+  "edu/fiuba/algo3/tablero/Casillero"
+]

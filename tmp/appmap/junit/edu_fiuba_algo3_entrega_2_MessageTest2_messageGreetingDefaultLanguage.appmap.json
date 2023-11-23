@@ -1,0 +1,191 @@
+{
+  "events": [
+    {
+      "defined_class": "edu.fiuba.algo3.entrega_2.MessageTest2",
+      "event": "call",
+      "id": 1,
+      "lineno": 17,
+      "method_id": "messageGreetingDefaultLanguage",
+      "path": "edu/fiuba/algo3/entrega_2/MessageTest2.java",
+      "receiver": {
+        "class": "edu.fiuba.algo3.entrega_2.MessageTest2",
+        "object_id": 864210792,
+        "value": "edu.fiuba.algo3.entrega_2.MessageTest2@3382cf68"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "defined_class": "edu.fiuba.algo3.modelo.Message",
+      "event": "call",
+      "id": 2,
+      "lineno": 10,
+      "method_id": "greet",
+      "path": "src/main/java/edu/fiuba/algo3/modelo/Message.java",
+      "receiver": {
+        "class": "edu.fiuba.algo3.modelo.Message",
+        "object_id": 796168203,
+        "value": "edu.fiuba.algo3.modelo.Message@2f74900b"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "defined_class": "edu.fiuba.algo3.modelo.Localize",
+      "event": "call",
+      "id": 3,
+      "lineno": 13,
+      "method_id": "greet",
+      "parameters": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "lang",
+          "object_id": 779179975,
+          "value": "es"
+        }
+      ],
+      "path": "src/main/java/edu/fiuba/algo3/modelo/Localize.java",
+      "receiver": {
+        "class": "edu.fiuba.algo3.modelo.Message",
+        "object_id": 796168203,
+        "value": "edu.fiuba.algo3.modelo.Message@2f74900b"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0,
+      "event": "return",
+      "id": 4,
+      "parent_id": 3,
+      "return_value": {
+        "class": "java.lang.String",
+        "object_id": 709091500,
+        "value": "Hola Mundo!"
+      },
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0.0001006,
+      "event": "return",
+      "id": 5,
+      "parent_id": 2,
+      "return_value": {
+        "class": "java.lang.String",
+        "object_id": 709091500,
+        "value": "Hola Mundo!"
+      },
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0.0001006,
+      "event": "return",
+      "id": 6,
+      "parent_id": 1,
+      "thread_id": 1
+    }
+  ],
+  "version": "1.2",
+  "metadata": {
+    "name": "Message 2 message greeting default language",
+    "app": "Tp2-Algoritmos-III",
+    "language": {
+      "name": "java",
+      "version": "17.0.9+8-LTS",
+      "engine": "OpenJDK 64-Bit Server VM"
+    },
+    "client": {
+      "name": "appmap-java",
+      "url": "https://github.com/appland/appmap-java"
+    },
+    "recorder": {
+      "name": "junit",
+      "type": "tests"
+    },
+    "recording": {
+      "defined_class": "edu.fiuba.algo3.entrega_2.MessageTest2",
+      "method_id": "messageGreetingDefaultLanguage"
+    },
+    "git": {
+      "repository": "git@github.com:lcondoriz/Tp2-Algoritmos-III.git",
+      "branch": "semana_1"
+    },
+    "source_location": "edu/fiuba/algo3/entrega_2/MessageTest2.java:17",
+    "frameworks": [
+      {
+        "name": "JUnit",
+        "version": "5"
+      }
+    ],
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "greet",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/main/java/edu/fiuba/algo3/modelo/Localize.java:13"
+                        }
+                      ],
+                      "name": "Localize",
+                      "type": "class"
+                    },
+                    {
+                      "children": [
+                        {
+                          "name": "greet",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/main/java/edu/fiuba/algo3/modelo/Message.java:10"
+                        }
+                      ],
+                      "name": "Message",
+                      "type": "class"
+                    }
+                  ],
+                  "name": "modelo",
+                  "type": "package"
+                },
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "messageGreetingDefaultLanguage",
+                          "type": "function",
+                          "static": false,
+                          "location": "edu/fiuba/algo3/entrega_2/MessageTest2.java:17"
+                        }
+                      ],
+                      "name": "MessageTest2",
+                      "type": "class"
+                    }
+                  ],
+                  "name": "entrega_2",
+                  "type": "package"
+                }
+              ],
+              "name": "algo3",
+              "type": "package"
+            }
+          ],
+          "name": "fiuba",
+          "type": "package"
+        }
+      ],
+      "name": "edu",
+      "type": "package"
+    }
+  ]
+}

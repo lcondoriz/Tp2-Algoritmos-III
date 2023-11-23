@@ -1,0 +1,152 @@
+{
+  "events": [
+    {
+      "defined_class": "edu.fiuba.algo3.entrega_1.MessageTest",
+      "event": "call",
+      "id": 1,
+      "lineno": 10,
+      "method_id": "messageGreeting",
+      "path": "edu/fiuba/algo3/entrega_1/MessageTest.java",
+      "receiver": {
+        "class": "edu.fiuba.algo3.entrega_1.MessageTest",
+        "object_id": 879706537,
+        "value": "edu.fiuba.algo3.entrega_1.MessageTest@346f41a9"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "defined_class": "edu.fiuba.algo3.modelo.Localize",
+      "event": "call",
+      "id": 2,
+      "lineno": 13,
+      "method_id": "greet",
+      "parameters": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "lang",
+          "object_id": 277149580,
+          "value": "us"
+        }
+      ],
+      "path": "src/main/java/edu/fiuba/algo3/modelo/Localize.java",
+      "receiver": {
+        "class": "edu.fiuba.algo3.modelo.Message",
+        "object_id": 636953520,
+        "value": "edu.fiuba.algo3.modelo.Message@25f723b0"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0,
+      "event": "return",
+      "id": 3,
+      "parent_id": 2,
+      "return_value": {
+        "class": "java.lang.String",
+        "object_id": 1252069894,
+        "value": "Hello world!"
+      },
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0.00010005,
+      "event": "return",
+      "id": 4,
+      "parent_id": 1,
+      "thread_id": 1
+    }
+  ],
+  "version": "1.2",
+  "metadata": {
+    "name": "Message message greeting",
+    "app": "Tp2-Algoritmos-III",
+    "language": {
+      "name": "java",
+      "version": "17.0.9+8-LTS",
+      "engine": "OpenJDK 64-Bit Server VM"
+    },
+    "client": {
+      "name": "appmap-java",
+      "url": "https://github.com/appland/appmap-java"
+    },
+    "recorder": {
+      "name": "junit",
+      "type": "tests"
+    },
+    "recording": {
+      "defined_class": "edu.fiuba.algo3.entrega_1.MessageTest",
+      "method_id": "messageGreeting"
+    },
+    "git": {
+      "repository": "git@github.com:lcondoriz/Tp2-Algoritmos-III.git",
+      "branch": "semana_1"
+    },
+    "source_location": "edu/fiuba/algo3/entrega_1/MessageTest.java:10",
+    "frameworks": [
+      {
+        "name": "JUnit",
+        "version": "5"
+      }
+    ],
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "greet",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/main/java/edu/fiuba/algo3/modelo/Localize.java:13"
+                        }
+                      ],
+                      "name": "Localize",
+                      "type": "class"
+                    }
+                  ],
+                  "name": "modelo",
+                  "type": "package"
+                },
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "messageGreeting",
+                          "type": "function",
+                          "static": false,
+                          "location": "edu/fiuba/algo3/entrega_1/MessageTest.java:10"
+                        }
+                      ],
+                      "name": "MessageTest",
+                      "type": "class"
+                    }
+                  ],
+                  "name": "entrega_1",
+                  "type": "package"
+                }
+              ],
+              "name": "algo3",
+              "type": "package"
+            }
+          ],
+          "name": "fiuba",
+          "type": "package"
+        }
+      ],
+      "name": "edu",
+      "type": "package"
+    }
+  ]
+}

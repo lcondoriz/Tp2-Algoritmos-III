@@ -1,0 +1,164 @@
+[
+  {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "name": "incrementar",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/main/java/edu/fiuba/algo3/gladiador/Energia.java:15"
+                      },
+                      {
+                        "name": "tieneEnergiaSuficiente",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/main/java/edu/fiuba/algo3/gladiador/Energia.java:23"
+                      }
+                    ],
+                    "name": "Energia",
+                    "type": "class"
+                  },
+                  {
+                    "children": [
+                      {
+                        "name": "mejorarEquipamiento",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/main/java/edu/fiuba/algo3/gladiador/Gladiador.java:23"
+                      },
+                      {
+                        "name": "avanzar",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/main/java/edu/fiuba/algo3/gladiador/Gladiador.java:43"
+                      },
+                      {
+                        "name": "obtenerEquipamiento",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/main/java/edu/fiuba/algo3/gladiador/Gladiador.java:35"
+                      }
+                    ],
+                    "name": "Gladiador",
+                    "type": "class"
+                  },
+                  {
+                    "children": [
+                      {
+                        "children": [
+                          {
+                            "name": "incrementarSeniority",
+                            "type": "function",
+                            "static": false,
+                            "location": "src/main/java/edu/fiuba/algo3/gladiador/seniority/EstrategiaNovato.java:15"
+                          },
+                          {
+                            "name": "obtenerPlusEnergia",
+                            "type": "function",
+                            "static": false,
+                            "location": "src/main/java/edu/fiuba/algo3/gladiador/seniority/EstrategiaNovato.java:10"
+                          }
+                        ],
+                        "name": "EstrategiaNovato",
+                        "type": "class"
+                      }
+                    ],
+                    "name": "seniority",
+                    "type": "package"
+                  }
+                ],
+                "name": "gladiador",
+                "type": "package"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "name": "verificarQueSiRecibeUnPremioPorPrimeraVezObtieneUnCasco",
+                        "type": "function",
+                        "static": false,
+                        "location": "edu/fiuba/algo3/entrega_1/CasoDeUso5.java:16"
+                      }
+                    ],
+                    "name": "CasoDeUso5",
+                    "type": "class"
+                  }
+                ],
+                "name": "entrega_1",
+                "type": "package"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "children": [
+                          {
+                            "name": "mejorarEquipamiento",
+                            "type": "function",
+                            "static": false,
+                            "location": "src/main/java/edu/fiuba/algo3/casillero/equipamiento/SinEquipamiento.java:7"
+                          }
+                        ],
+                        "name": "SinEquipamiento",
+                        "type": "class"
+                      },
+                      {
+                        "children": [
+                          {
+                            "name": "aplicarEfecto",
+                            "type": "function",
+                            "static": false,
+                            "location": "src/main/java/edu/fiuba/algo3/casillero/equipamiento/Equipamiento.java:9"
+                          }
+                        ],
+                        "name": "Equipamiento",
+                        "type": "class"
+                      }
+                    ],
+                    "name": "equipamiento",
+                    "type": "package"
+                  }
+                ],
+                "name": "casillero",
+                "type": "package"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "name": "aplicarEfecto",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/main/java/edu/fiuba/algo3/tablero/Casillero.java:16"
+                      }
+                    ],
+                    "name": "Casillero",
+                    "type": "class"
+                  }
+                ],
+                "name": "tablero",
+                "type": "package"
+              }
+            ],
+            "name": "algo3",
+            "type": "package"
+          }
+        ],
+        "name": "fiuba",
+        "type": "package"
+      }
+    ],
+    "name": "edu",
+    "type": "package"
+  }
+]

@@ -1,0 +1,74 @@
+[
+  {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "name": "obtenerEnergia",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/main/java/edu/fiuba/algo3/gladiador/Gladiador.java:32"
+                      },
+                      {
+                        "name": "obtenerEquipamiento",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/main/java/edu/fiuba/algo3/gladiador/Gladiador.java:35"
+                      }
+                    ],
+                    "name": "Gladiador",
+                    "type": "class"
+                  },
+                  {
+                    "children": [
+                      {
+                        "name": "obtenerEnergia",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/main/java/edu/fiuba/algo3/gladiador/Energia.java:11"
+                      }
+                    ],
+                    "name": "Energia",
+                    "type": "class"
+                  }
+                ],
+                "name": "gladiador",
+                "type": "package"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "name": "verificarQueElJugadorEmpiezaConLaEnergiaYEquipamientoCorrespondiente",
+                        "type": "function",
+                        "static": false,
+                        "location": "edu/fiuba/algo3/entrega_1/CasoDeUso1.java:16"
+                      }
+                    ],
+                    "name": "CasoDeUso1",
+                    "type": "class"
+                  }
+                ],
+                "name": "entrega_1",
+                "type": "package"
+              }
+            ],
+            "name": "algo3",
+            "type": "package"
+          }
+        ],
+        "name": "fiuba",
+        "type": "package"
+      }
+    ],
+    "name": "edu",
+    "type": "package"
+  }
+]

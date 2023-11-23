@@ -1,0 +1,4 @@
+name: "Tp2-Algoritmos-III"
+appmap_dir: "tmp/appmap"
+packages:
+- path: "edu.fiuba.algo3"

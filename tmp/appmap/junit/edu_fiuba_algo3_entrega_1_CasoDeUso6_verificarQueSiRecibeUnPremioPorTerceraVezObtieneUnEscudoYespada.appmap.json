@@ -1,0 +1,1097 @@
+{
+  "events": [
+    {
+      "defined_class": "edu.fiuba.algo3.entrega_1.CasoDeUso6",
+      "event": "call",
+      "id": 1,
+      "lineno": 15,
+      "method_id": "verificarQueSiRecibeUnPremioPorTerceraVezObtieneUnEscudoYespada",
+      "path": "edu/fiuba/algo3/entrega_1/CasoDeUso6.java",
+      "receiver": {
+        "class": "edu.fiuba.algo3.entrega_1.CasoDeUso6",
+        "object_id": 765551203,
+        "value": "edu.fiuba.algo3.entrega_1.CasoDeUso6@2da16263"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "defined_class": "edu.fiuba.algo3.gladiador.Gladiador",
+      "event": "call",
+      "id": 2,
+      "lineno": 43,
+      "method_id": "avanzar",
+      "parameters": [
+        {
+          "class": "java.lang.Integer",
+          "kind": "req",
+          "name": "cantidadCasilleros",
+          "object_id": 1805672691,
+          "value": "1"
+        },
+        {
+          "class": "java.lang.Integer",
+          "kind": "req",
+          "name": "turno",
+          "object_id": 1476915117,
+          "value": "0"
+        }
+      ],
+      "path": "src/main/java/edu/fiuba/algo3/gladiador/Gladiador.java",
+      "receiver": {
+        "class": "edu.fiuba.algo3.gladiador.Gladiador",
+        "object_id": 257745083,
+        "value": "edu.fiuba.algo3.gladiador.Gladiador@f5ce0bb"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "defined_class": "edu.fiuba.algo3.gladiador.Energia",
+      "event": "call",
+      "id": 3,
+      "lineno": 23,
+      "method_id": "tieneEnergiaSuficiente",
+      "path": "src/main/java/edu/fiuba/algo3/gladiador/Energia.java",
+      "receiver": {
+        "class": "edu.fiuba.algo3.gladiador.Energia",
+        "object_id": 1206195529,
+        "value": "edu.fiuba.algo3.gladiador.Energia@47e51549"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0.00010011,
+      "event": "return",
+      "id": 4,
+      "parent_id": 3,
+      "return_value": {
+        "class": "java.lang.Boolean",
+        "object_id": 413293501,
+        "value": "true"
+      },
+      "thread_id": 1
+    },
+    {
+      "defined_class": "edu.fiuba.algo3.tablero.Casillero",
+      "event": "call",
+      "id": 5,
+      "lineno": 16,
+      "method_id": "aplicarEfecto",
+      "parameters": [
+        {
+          "class": "edu.fiuba.algo3.gladiador.Gladiador",
+          "kind": "req",
+          "name": "gladiador",
+          "object_id": 257745083,
+          "value": "edu.fiuba.algo3.gladiador.Gladiador@f5ce0bb"
+        }
+      ],
+      "path": "src/main/java/edu/fiuba/algo3/tablero/Casillero.java",
+      "receiver": {
+        "class": "edu.fiuba.algo3.tablero.Casillero",
+        "object_id": 270157340,
+        "value": "edu.fiuba.algo3.tablero.Casillero@101a461c"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "defined_class": "edu.fiuba.algo3.casillero.equipamiento.Equipamiento",
+      "event": "call",
+      "id": 6,
+      "lineno": 9,
+      "method_id": "aplicarEfecto",
+      "parameters": [
+        {
+          "class": "edu.fiuba.algo3.gladiador.Gladiador",
+          "kind": "req",
+          "name": "gladiador",
+          "object_id": 257745083,
+          "value": "edu.fiuba.algo3.gladiador.Gladiador@f5ce0bb"
+        }
+      ],
+      "path": "src/main/java/edu/fiuba/algo3/casillero/equipamiento/Equipamiento.java",
+      "receiver": {
+        "class": "edu.fiuba.algo3.casillero.equipamiento.Equipamiento",
+        "object_id": 906927110,
+        "value": "edu.fiuba.algo3.casillero.equipamiento.Equipamiento@360e9c06"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "defined_class": "edu.fiuba.algo3.gladiador.Gladiador",
+      "event": "call",
+      "id": 7,
+      "lineno": 23,
+      "method_id": "mejorarEquipamiento",
+      "path": "src/main/java/edu/fiuba/algo3/gladiador/Gladiador.java",
+      "receiver": {
+        "class": "edu.fiuba.algo3.gladiador.Gladiador",
+        "object_id": 257745083,
+        "value": "edu.fiuba.algo3.gladiador.Gladiador@f5ce0bb"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "defined_class": "edu.fiuba.algo3.casillero.equipamiento.SinEquipamiento",
+      "event": "call",
+      "id": 8,
+      "lineno": 7,
+      "method_id": "mejorarEquipamiento",
+      "path": "src/main/java/edu/fiuba/algo3/casillero/equipamiento/SinEquipamiento.java",
+      "receiver": {
+        "class": "edu.fiuba.algo3.casillero.equipamiento.SinEquipamiento",
+        "object_id": 1589640004,
+        "value": "edu.fiuba.algo3.casillero.equipamiento.SinEquipamiento@5ebffb44"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0,
+      "event": "return",
+      "id": 9,
+      "parent_id": 8,
+      "return_value": {
+        "class": "edu.fiuba.algo3.casillero.equipamiento.Casco",
+        "object_id": 824177287,
+        "value": "edu.fiuba.algo3.casillero.equipamiento.Casco@311ff287"
+      },
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0.0000999,
+      "event": "return",
+      "id": 10,
+      "parent_id": 7,
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0.0000999,
+      "event": "return",
+      "id": 11,
+      "parent_id": 6,
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0.0000999,
+      "event": "return",
+      "id": 12,
+      "parent_id": 5,
+      "thread_id": 1
+    },
+    {
+      "defined_class": "edu.fiuba.algo3.gladiador.seniority.EstrategiaNovato",
+      "event": "call",
+      "id": 13,
+      "lineno": 15,
+      "method_id": "incrementarSeniority",
+      "parameters": [
+        {
+          "class": "java.lang.Integer",
+          "kind": "req",
+          "name": "turno",
+          "object_id": 1476915117,
+          "value": "0"
+        }
+      ],
+      "path": "src/main/java/edu/fiuba/algo3/gladiador/seniority/EstrategiaNovato.java",
+      "receiver": {
+        "class": "edu.fiuba.algo3.gladiador.seniority.EstrategiaNovato",
+        "object_id": 1937209374,
+        "value": "edu.fiuba.algo3.gladiador.seniority.EstrategiaNovato@7377781e"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0,
+      "event": "return",
+      "id": 14,
+      "parent_id": 13,
+      "return_value": {
+        "class": "edu.fiuba.algo3.gladiador.seniority.EstrategiaNovato",
+        "object_id": 1937209374,
+        "value": "edu.fiuba.algo3.gladiador.seniority.EstrategiaNovato@7377781e"
+      },
+      "thread_id": 1
+    },
+    {
+      "defined_class": "edu.fiuba.algo3.gladiador.seniority.EstrategiaNovato",
+      "event": "call",
+      "id": 15,
+      "lineno": 10,
+      "method_id": "obtenerPlusEnergia",
+      "parameters": [
+        {
+          "class": "edu.fiuba.algo3.gladiador.Energia",
+          "kind": "req",
+          "name": "energia",
+          "object_id": 1206195529,
+          "value": "edu.fiuba.algo3.gladiador.Energia@47e51549"
+        }
+      ],
+      "path": "src/main/java/edu/fiuba/algo3/gladiador/seniority/EstrategiaNovato.java",
+      "receiver": {
+        "class": "edu.fiuba.algo3.gladiador.seniority.EstrategiaNovato",
+        "object_id": 1937209374,
+        "value": "edu.fiuba.algo3.gladiador.seniority.EstrategiaNovato@7377781e"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "defined_class": "edu.fiuba.algo3.gladiador.Energia",
+      "event": "call",
+      "id": 16,
+      "lineno": 15,
+      "method_id": "incrementar",
+      "parameters": [
+        {
+          "class": "java.lang.Integer",
+          "kind": "req",
+          "name": "cantidad",
+          "object_id": 1476915117,
+          "value": "0"
+        }
+      ],
+      "path": "src/main/java/edu/fiuba/algo3/gladiador/Energia.java",
+      "receiver": {
+        "class": "edu.fiuba.algo3.gladiador.Energia",
+        "object_id": 1206195529,
+        "value": "edu.fiuba.algo3.gladiador.Energia@47e51549"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0,
+      "event": "return",
+      "id": 17,
+      "parent_id": 16,
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0,
+      "event": "return",
+      "id": 18,
+      "parent_id": 15,
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0.00020001,
+      "event": "return",
+      "id": 19,
+      "parent_id": 2,
+      "thread_id": 1
+    },
+    {
+      "defined_class": "edu.fiuba.algo3.gladiador.Gladiador",
+      "event": "call",
+      "id": 20,
+      "lineno": 43,
+      "method_id": "avanzar",
+      "parameters": [
+        {
+          "class": "java.lang.Integer",
+          "kind": "req",
+          "name": "cantidadCasilleros",
+          "object_id": 1805672691,
+          "value": "1"
+        },
+        {
+          "class": "java.lang.Integer",
+          "kind": "req",
+          "name": "turno",
+          "object_id": 1476915117,
+          "value": "0"
+        }
+      ],
+      "path": "src/main/java/edu/fiuba/algo3/gladiador/Gladiador.java",
+      "receiver": {
+        "class": "edu.fiuba.algo3.gladiador.Gladiador",
+        "object_id": 257745083,
+        "value": "edu.fiuba.algo3.gladiador.Gladiador@f5ce0bb"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "defined_class": "edu.fiuba.algo3.gladiador.Energia",
+      "event": "call",
+      "id": 21,
+      "lineno": 23,
+      "method_id": "tieneEnergiaSuficiente",
+      "path": "src/main/java/edu/fiuba/algo3/gladiador/Energia.java",
+      "receiver": {
+        "class": "edu.fiuba.algo3.gladiador.Energia",
+        "object_id": 1206195529,
+        "value": "edu.fiuba.algo3.gladiador.Energia@47e51549"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0,
+      "event": "return",
+      "id": 22,
+      "parent_id": 21,
+      "return_value": {
+        "class": "java.lang.Boolean",
+        "object_id": 413293501,
+        "value": "true"
+      },
+      "thread_id": 1
+    },
+    {
+      "defined_class": "edu.fiuba.algo3.tablero.Casillero",
+      "event": "call",
+      "id": 23,
+      "lineno": 16,
+      "method_id": "aplicarEfecto",
+      "parameters": [
+        {
+          "class": "edu.fiuba.algo3.gladiador.Gladiador",
+          "kind": "req",
+          "name": "gladiador",
+          "object_id": 257745083,
+          "value": "edu.fiuba.algo3.gladiador.Gladiador@f5ce0bb"
+        }
+      ],
+      "path": "src/main/java/edu/fiuba/algo3/tablero/Casillero.java",
+      "receiver": {
+        "class": "edu.fiuba.algo3.tablero.Casillero",
+        "object_id": 270157340,
+        "value": "edu.fiuba.algo3.tablero.Casillero@101a461c"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "defined_class": "edu.fiuba.algo3.casillero.equipamiento.Equipamiento",
+      "event": "call",
+      "id": 24,
+      "lineno": 9,
+      "method_id": "aplicarEfecto",
+      "parameters": [
+        {
+          "class": "edu.fiuba.algo3.gladiador.Gladiador",
+          "kind": "req",
+          "name": "gladiador",
+          "object_id": 257745083,
+          "value": "edu.fiuba.algo3.gladiador.Gladiador@f5ce0bb"
+        }
+      ],
+      "path": "src/main/java/edu/fiuba/algo3/casillero/equipamiento/Equipamiento.java",
+      "receiver": {
+        "class": "edu.fiuba.algo3.casillero.equipamiento.Equipamiento",
+        "object_id": 906927110,
+        "value": "edu.fiuba.algo3.casillero.equipamiento.Equipamiento@360e9c06"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "defined_class": "edu.fiuba.algo3.gladiador.Gladiador",
+      "event": "call",
+      "id": 25,
+      "lineno": 23,
+      "method_id": "mejorarEquipamiento",
+      "path": "src/main/java/edu/fiuba/algo3/gladiador/Gladiador.java",
+      "receiver": {
+        "class": "edu.fiuba.algo3.gladiador.Gladiador",
+        "object_id": 257745083,
+        "value": "edu.fiuba.algo3.gladiador.Gladiador@f5ce0bb"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "defined_class": "edu.fiuba.algo3.casillero.equipamiento.Casco",
+      "event": "call",
+      "id": 26,
+      "lineno": 6,
+      "method_id": "mejorarEquipamiento",
+      "path": "src/main/java/edu/fiuba/algo3/casillero/equipamiento/Casco.java",
+      "receiver": {
+        "class": "edu.fiuba.algo3.casillero.equipamiento.Casco",
+        "object_id": 824177287,
+        "value": "edu.fiuba.algo3.casillero.equipamiento.Casco@311ff287"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0,
+      "event": "return",
+      "id": 27,
+      "parent_id": 26,
+      "return_value": {
+        "class": "edu.fiuba.algo3.casillero.equipamiento.Armadura",
+        "object_id": 836449498,
+        "value": "edu.fiuba.algo3.casillero.equipamiento.Armadura@31db34da"
+      },
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0,
+      "event": "return",
+      "id": 28,
+      "parent_id": 25,
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0.00009991,
+      "event": "return",
+      "id": 29,
+      "parent_id": 24,
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0.00009991,
+      "event": "return",
+      "id": 30,
+      "parent_id": 23,
+      "thread_id": 1
+    },
+    {
+      "defined_class": "edu.fiuba.algo3.gladiador.seniority.EstrategiaNovato",
+      "event": "call",
+      "id": 31,
+      "lineno": 15,
+      "method_id": "incrementarSeniority",
+      "parameters": [
+        {
+          "class": "java.lang.Integer",
+          "kind": "req",
+          "name": "turno",
+          "object_id": 1476915117,
+          "value": "0"
+        }
+      ],
+      "path": "src/main/java/edu/fiuba/algo3/gladiador/seniority/EstrategiaNovato.java",
+      "receiver": {
+        "class": "edu.fiuba.algo3.gladiador.seniority.EstrategiaNovato",
+        "object_id": 1937209374,
+        "value": "edu.fiuba.algo3.gladiador.seniority.EstrategiaNovato@7377781e"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0,
+      "event": "return",
+      "id": 32,
+      "parent_id": 31,
+      "return_value": {
+        "class": "edu.fiuba.algo3.gladiador.seniority.EstrategiaNovato",
+        "object_id": 1937209374,
+        "value": "edu.fiuba.algo3.gladiador.seniority.EstrategiaNovato@7377781e"
+      },
+      "thread_id": 1
+    },
+    {
+      "defined_class": "edu.fiuba.algo3.gladiador.seniority.EstrategiaNovato",
+      "event": "call",
+      "id": 33,
+      "lineno": 10,
+      "method_id": "obtenerPlusEnergia",
+      "parameters": [
+        {
+          "class": "edu.fiuba.algo3.gladiador.Energia",
+          "kind": "req",
+          "name": "energia",
+          "object_id": 1206195529,
+          "value": "edu.fiuba.algo3.gladiador.Energia@47e51549"
+        }
+      ],
+      "path": "src/main/java/edu/fiuba/algo3/gladiador/seniority/EstrategiaNovato.java",
+      "receiver": {
+        "class": "edu.fiuba.algo3.gladiador.seniority.EstrategiaNovato",
+        "object_id": 1937209374,
+        "value": "edu.fiuba.algo3.gladiador.seniority.EstrategiaNovato@7377781e"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "defined_class": "edu.fiuba.algo3.gladiador.Energia",
+      "event": "call",
+      "id": 34,
+      "lineno": 15,
+      "method_id": "incrementar",
+      "parameters": [
+        {
+          "class": "java.lang.Integer",
+          "kind": "req",
+          "name": "cantidad",
+          "object_id": 1476915117,
+          "value": "0"
+        }
+      ],
+      "path": "src/main/java/edu/fiuba/algo3/gladiador/Energia.java",
+      "receiver": {
+        "class": "edu.fiuba.algo3.gladiador.Energia",
+        "object_id": 1206195529,
+        "value": "edu.fiuba.algo3.gladiador.Energia@47e51549"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0,
+      "event": "return",
+      "id": 35,
+      "parent_id": 34,
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0,
+      "event": "return",
+      "id": 36,
+      "parent_id": 33,
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0.00009991,
+      "event": "return",
+      "id": 37,
+      "parent_id": 20,
+      "thread_id": 1
+    },
+    {
+      "defined_class": "edu.fiuba.algo3.gladiador.Gladiador",
+      "event": "call",
+      "id": 38,
+      "lineno": 43,
+      "method_id": "avanzar",
+      "parameters": [
+        {
+          "class": "java.lang.Integer",
+          "kind": "req",
+          "name": "cantidadCasilleros",
+          "object_id": 1805672691,
+          "value": "1"
+        },
+        {
+          "class": "java.lang.Integer",
+          "kind": "req",
+          "name": "turno",
+          "object_id": 1476915117,
+          "value": "0"
+        }
+      ],
+      "path": "src/main/java/edu/fiuba/algo3/gladiador/Gladiador.java",
+      "receiver": {
+        "class": "edu.fiuba.algo3.gladiador.Gladiador",
+        "object_id": 257745083,
+        "value": "edu.fiuba.algo3.gladiador.Gladiador@f5ce0bb"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "defined_class": "edu.fiuba.algo3.gladiador.Energia",
+      "event": "call",
+      "id": 39,
+      "lineno": 23,
+      "method_id": "tieneEnergiaSuficiente",
+      "path": "src/main/java/edu/fiuba/algo3/gladiador/Energia.java",
+      "receiver": {
+        "class": "edu.fiuba.algo3.gladiador.Energia",
+        "object_id": 1206195529,
+        "value": "edu.fiuba.algo3.gladiador.Energia@47e51549"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0,
+      "event": "return",
+      "id": 40,
+      "parent_id": 39,
+      "return_value": {
+        "class": "java.lang.Boolean",
+        "object_id": 413293501,
+        "value": "true"
+      },
+      "thread_id": 1
+    },
+    {
+      "defined_class": "edu.fiuba.algo3.tablero.Casillero",
+      "event": "call",
+      "id": 41,
+      "lineno": 16,
+      "method_id": "aplicarEfecto",
+      "parameters": [
+        {
+          "class": "edu.fiuba.algo3.gladiador.Gladiador",
+          "kind": "req",
+          "name": "gladiador",
+          "object_id": 257745083,
+          "value": "edu.fiuba.algo3.gladiador.Gladiador@f5ce0bb"
+        }
+      ],
+      "path": "src/main/java/edu/fiuba/algo3/tablero/Casillero.java",
+      "receiver": {
+        "class": "edu.fiuba.algo3.tablero.Casillero",
+        "object_id": 270157340,
+        "value": "edu.fiuba.algo3.tablero.Casillero@101a461c"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "defined_class": "edu.fiuba.algo3.casillero.equipamiento.Equipamiento",
+      "event": "call",
+      "id": 42,
+      "lineno": 9,
+      "method_id": "aplicarEfecto",
+      "parameters": [
+        {
+          "class": "edu.fiuba.algo3.gladiador.Gladiador",
+          "kind": "req",
+          "name": "gladiador",
+          "object_id": 257745083,
+          "value": "edu.fiuba.algo3.gladiador.Gladiador@f5ce0bb"
+        }
+      ],
+      "path": "src/main/java/edu/fiuba/algo3/casillero/equipamiento/Equipamiento.java",
+      "receiver": {
+        "class": "edu.fiuba.algo3.casillero.equipamiento.Equipamiento",
+        "object_id": 906927110,
+        "value": "edu.fiuba.algo3.casillero.equipamiento.Equipamiento@360e9c06"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "defined_class": "edu.fiuba.algo3.gladiador.Gladiador",
+      "event": "call",
+      "id": 43,
+      "lineno": 23,
+      "method_id": "mejorarEquipamiento",
+      "path": "src/main/java/edu/fiuba/algo3/gladiador/Gladiador.java",
+      "receiver": {
+        "class": "edu.fiuba.algo3.gladiador.Gladiador",
+        "object_id": 257745083,
+        "value": "edu.fiuba.algo3.gladiador.Gladiador@f5ce0bb"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "defined_class": "edu.fiuba.algo3.casillero.equipamiento.Armadura",
+      "event": "call",
+      "id": 44,
+      "lineno": 7,
+      "method_id": "mejorarEquipamiento",
+      "path": "src/main/java/edu/fiuba/algo3/casillero/equipamiento/Armadura.java",
+      "receiver": {
+        "class": "edu.fiuba.algo3.casillero.equipamiento.Armadura",
+        "object_id": 836449498,
+        "value": "edu.fiuba.algo3.casillero.equipamiento.Armadura@31db34da"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0,
+      "event": "return",
+      "id": 45,
+      "parent_id": 44,
+      "return_value": {
+        "class": "edu.fiuba.algo3.casillero.equipamiento.EscudoEspada",
+        "object_id": 278891646,
+        "value": "edu.fiuba.algo3.casillero.equipamiento.EscudoEspada@109f8c7e"
+      },
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0.0001,
+      "event": "return",
+      "id": 46,
+      "parent_id": 43,
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0.0001,
+      "event": "return",
+      "id": 47,
+      "parent_id": 42,
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0.0001,
+      "event": "return",
+      "id": 48,
+      "parent_id": 41,
+      "thread_id": 1
+    },
+    {
+      "defined_class": "edu.fiuba.algo3.gladiador.seniority.EstrategiaNovato",
+      "event": "call",
+      "id": 49,
+      "lineno": 15,
+      "method_id": "incrementarSeniority",
+      "parameters": [
+        {
+          "class": "java.lang.Integer",
+          "kind": "req",
+          "name": "turno",
+          "object_id": 1476915117,
+          "value": "0"
+        }
+      ],
+      "path": "src/main/java/edu/fiuba/algo3/gladiador/seniority/EstrategiaNovato.java",
+      "receiver": {
+        "class": "edu.fiuba.algo3.gladiador.seniority.EstrategiaNovato",
+        "object_id": 1937209374,
+        "value": "edu.fiuba.algo3.gladiador.seniority.EstrategiaNovato@7377781e"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0,
+      "event": "return",
+      "id": 50,
+      "parent_id": 49,
+      "return_value": {
+        "class": "edu.fiuba.algo3.gladiador.seniority.EstrategiaNovato",
+        "object_id": 1937209374,
+        "value": "edu.fiuba.algo3.gladiador.seniority.EstrategiaNovato@7377781e"
+      },
+      "thread_id": 1
+    },
+    {
+      "defined_class": "edu.fiuba.algo3.gladiador.seniority.EstrategiaNovato",
+      "event": "call",
+      "id": 51,
+      "lineno": 10,
+      "method_id": "obtenerPlusEnergia",
+      "parameters": [
+        {
+          "class": "edu.fiuba.algo3.gladiador.Energia",
+          "kind": "req",
+          "name": "energia",
+          "object_id": 1206195529,
+          "value": "edu.fiuba.algo3.gladiador.Energia@47e51549"
+        }
+      ],
+      "path": "src/main/java/edu/fiuba/algo3/gladiador/seniority/EstrategiaNovato.java",
+      "receiver": {
+        "class": "edu.fiuba.algo3.gladiador.seniority.EstrategiaNovato",
+        "object_id": 1937209374,
+        "value": "edu.fiuba.algo3.gladiador.seniority.EstrategiaNovato@7377781e"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "defined_class": "edu.fiuba.algo3.gladiador.Energia",
+      "event": "call",
+      "id": 52,
+      "lineno": 15,
+      "method_id": "incrementar",
+      "parameters": [
+        {
+          "class": "java.lang.Integer",
+          "kind": "req",
+          "name": "cantidad",
+          "object_id": 1476915117,
+          "value": "0"
+        }
+      ],
+      "path": "src/main/java/edu/fiuba/algo3/gladiador/Energia.java",
+      "receiver": {
+        "class": "edu.fiuba.algo3.gladiador.Energia",
+        "object_id": 1206195529,
+        "value": "edu.fiuba.algo3.gladiador.Energia@47e51549"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0,
+      "event": "return",
+      "id": 53,
+      "parent_id": 52,
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0,
+      "event": "return",
+      "id": 54,
+      "parent_id": 51,
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0.0001,
+      "event": "return",
+      "id": 55,
+      "parent_id": 38,
+      "thread_id": 1
+    },
+    {
+      "defined_class": "edu.fiuba.algo3.gladiador.Gladiador",
+      "event": "call",
+      "id": 56,
+      "lineno": 35,
+      "method_id": "obtenerEquipamiento",
+      "path": "src/main/java/edu/fiuba/algo3/gladiador/Gladiador.java",
+      "receiver": {
+        "class": "edu.fiuba.algo3.gladiador.Gladiador",
+        "object_id": 257745083,
+        "value": "edu.fiuba.algo3.gladiador.Gladiador@f5ce0bb"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0,
+      "event": "return",
+      "id": 57,
+      "parent_id": 56,
+      "return_value": {
+        "class": "edu.fiuba.algo3.casillero.equipamiento.EscudoEspada",
+        "object_id": 278891646,
+        "value": "edu.fiuba.algo3.casillero.equipamiento.EscudoEspada@109f8c7e"
+      },
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0.00039992,
+      "event": "return",
+      "id": 58,
+      "parent_id": 1,
+      "thread_id": 1
+    }
+  ],
+  "version": "1.2",
+  "metadata": {
+    "name": "Caso de uso 6 verificar que si recibe un premio por tercera vez obtiene un escudo yespada",
+    "app": "Tp2-Algoritmos-III",
+    "language": {
+      "name": "java",
+      "version": "17.0.9+8-LTS",
+      "engine": "OpenJDK 64-Bit Server VM"
+    },
+    "client": {
+      "name": "appmap-java",
+      "url": "https://github.com/appland/appmap-java"
+    },
+    "recorder": {
+      "name": "junit",
+      "type": "tests"
+    },
+    "recording": {
+      "defined_class": "edu.fiuba.algo3.entrega_1.CasoDeUso6",
+      "method_id": "verificarQueSiRecibeUnPremioPorTerceraVezObtieneUnEscudoYespada"
+    },
+    "git": {
+      "repository": "git@github.com:lcondoriz/Tp2-Algoritmos-III.git",
+      "branch": "semana_1"
+    },
+    "source_location": "edu/fiuba/algo3/entrega_1/CasoDeUso6.java:15",
+    "frameworks": [
+      {
+        "name": "JUnit",
+        "version": "5"
+      }
+    ],
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "incrementar",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/main/java/edu/fiuba/algo3/gladiador/Energia.java:15"
+                        },
+                        {
+                          "name": "tieneEnergiaSuficiente",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/main/java/edu/fiuba/algo3/gladiador/Energia.java:23"
+                        }
+                      ],
+                      "name": "Energia",
+                      "type": "class"
+                    },
+                    {
+                      "children": [
+                        {
+                          "name": "mejorarEquipamiento",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/main/java/edu/fiuba/algo3/gladiador/Gladiador.java:23"
+                        },
+                        {
+                          "name": "obtenerEquipamiento",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/main/java/edu/fiuba/algo3/gladiador/Gladiador.java:35"
+                        },
+                        {
+                          "name": "avanzar",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/main/java/edu/fiuba/algo3/gladiador/Gladiador.java:43"
+                        }
+                      ],
+                      "name": "Gladiador",
+                      "type": "class"
+                    },
+                    {
+                      "children": [
+                        {
+                          "children": [
+                            {
+                              "name": "incrementarSeniority",
+                              "type": "function",
+                              "static": false,
+                              "location": "src/main/java/edu/fiuba/algo3/gladiador/seniority/EstrategiaNovato.java:15"
+                            },
+                            {
+                              "name": "obtenerPlusEnergia",
+                              "type": "function",
+                              "static": false,
+                              "location": "src/main/java/edu/fiuba/algo3/gladiador/seniority/EstrategiaNovato.java:10"
+                            }
+                          ],
+                          "name": "EstrategiaNovato",
+                          "type": "class"
+                        }
+                      ],
+                      "name": "seniority",
+                      "type": "package"
+                    }
+                  ],
+                  "name": "gladiador",
+                  "type": "package"
+                },
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "children": [
+                            {
+                              "name": "mejorarEquipamiento",
+                              "type": "function",
+                              "static": false,
+                              "location": "src/main/java/edu/fiuba/algo3/casillero/equipamiento/SinEquipamiento.java:7"
+                            }
+                          ],
+                          "name": "SinEquipamiento",
+                          "type": "class"
+                        },
+                        {
+                          "children": [
+                            {
+                              "name": "aplicarEfecto",
+                              "type": "function",
+                              "static": false,
+                              "location": "src/main/java/edu/fiuba/algo3/casillero/equipamiento/Equipamiento.java:9"
+                            }
+                          ],
+                          "name": "Equipamiento",
+                          "type": "class"
+                        },
+                        {
+                          "children": [
+                            {
+                              "name": "mejorarEquipamiento",
+                              "type": "function",
+                              "static": false,
+                              "location": "src/main/java/edu/fiuba/algo3/casillero/equipamiento/Casco.java:6"
+                            }
+                          ],
+                          "name": "Casco",
+                          "type": "class"
+                        },
+                        {
+                          "children": [
+                            {
+                              "name": "mejorarEquipamiento",
+                              "type": "function",
+                              "static": false,
+                              "location": "src/main/java/edu/fiuba/algo3/casillero/equipamiento/Armadura.java:7"
+                            }
+                          ],
+                          "name": "Armadura",
+                          "type": "class"
+                        }
+                      ],
+                      "name": "equipamiento",
+                      "type": "package"
+                    }
+                  ],
+                  "name": "casillero",
+                  "type": "package"
+                },
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "aplicarEfecto",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/main/java/edu/fiuba/algo3/tablero/Casillero.java:16"
+                        }
+                      ],
+                      "name": "Casillero",
+                      "type": "class"
+                    }
+                  ],
+                  "name": "tablero",
+                  "type": "package"
+                },
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "verificarQueSiRecibeUnPremioPorTerceraVezObtieneUnEscudoYespada",
+                          "type": "function",
+                          "static": false,
+                          "location": "edu/fiuba/algo3/entrega_1/CasoDeUso6.java:15"
+                        }
+                      ],
+                      "name": "CasoDeUso6",
+                      "type": "class"
+                    }
+                  ],
+                  "name": "entrega_1",
+                  "type": "package"
+                }
+              ],
+              "name": "algo3",
+              "type": "package"
+            }
+          ],
+          "name": "fiuba",
+          "type": "package"
+        }
+      ],
+      "name": "edu",
+      "type": "package"
+    }
+  ]
+}
