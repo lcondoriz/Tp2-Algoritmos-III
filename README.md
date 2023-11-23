@@ -12,6 +12,8 @@ Trabajo Práctico número 2 de la materia Algoritmos y Programación III de FIUB
 * **Integrante 4** - [IgnacioFranciulli](https://github.com/IgnacioFranciulli)
 * **Integrante 5** - [Lucas Hernan Ygounet](https://github.com/LucasYgou)
 
+**Informe**: https://es.overleaf.com/project/655e7e17f861d51fc991b13d
+
 Corrector: **Alejo Villores**
 
 ## Aplicación
