@@ -3,6 +3,7 @@ package edu.fiuba.algo3.juego;
 import edu.fiuba.algo3.casillero.EstrategiaCasillero;
 import edu.fiuba.algo3.casillero.vacio.Vacio;
 import edu.fiuba.algo3.exceptions.CantidadJugadoresException;
+import edu.fiuba.algo3.exceptions.CantidadTurnosException;
 import edu.fiuba.algo3.exceptions.NoHayJugadoresException;
 import edu.fiuba.algo3.tablero.Casillero;
 
@@ -53,7 +54,7 @@ public class AlgoRoma {
 
     public void jugarTurno() {
         if (this.turno ==TURNO_FINAL ){
-            throw new CantidadJugadoresException("La cantidad de jugadores debe ser entre 2 y 6.");
+            throw new CantidadTurnosException("Se ha finalizado el juego sin ganador, se llego al limite de turnos");
         }
         for (Jugador jugador : jugadores) {
             jugador.jugarTurno(dado);

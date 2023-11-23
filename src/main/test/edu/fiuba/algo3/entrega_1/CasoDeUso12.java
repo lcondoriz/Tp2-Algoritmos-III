@@ -8,6 +8,7 @@ import edu.fiuba.algo3.casillero.obstaculos.FieraSalvaje;
 import edu.fiuba.algo3.casillero.obstaculos.Obstaculo;
 import edu.fiuba.algo3.casillero.vacio.Vacio;
 import edu.fiuba.algo3.exceptions.CantidadJugadoresException;
+import edu.fiuba.algo3.exceptions.CantidadTurnosException;
 import edu.fiuba.algo3.gladiador.Energia;
 import edu.fiuba.algo3.gladiador.Gladiador;
 import edu.fiuba.algo3.juego.AlgoRoma;
@@ -29,8 +30,8 @@ public class CasoDeUso12 {
 
         try {
             algoRoma.jugarTurno();
-        }catch (CantidadJugadoresException ex){
-            assertEquals(ex.getClass(),CantidadJugadoresException.class);
+        }catch (CantidadTurnosException ex){
+            assertEquals(ex.getClass(), CantidadTurnosException.class);
         }
     }
 }
