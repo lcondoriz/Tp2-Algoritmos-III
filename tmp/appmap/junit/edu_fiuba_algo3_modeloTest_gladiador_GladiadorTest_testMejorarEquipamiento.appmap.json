@@ -1,0 +1,255 @@
+{
+  "events": [
+    {
+      "defined_class": "edu.fiuba.algo3.modeloTest.gladiador.GladiadorTest",
+      "event": "call",
+      "id": 1,
+      "lineno": 27,
+      "method_id": "testMejorarEquipamiento",
+      "path": "edu/fiuba/algo3/modeloTest/gladiador/GladiadorTest.java",
+      "receiver": {
+        "class": "edu.fiuba.algo3.modeloTest.gladiador.GladiadorTest",
+        "object_id": 1120671806,
+        "value": "edu.fiuba.algo3.modeloTest.gladiador.GladiadorTest@42cc183e"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "defined_class": "edu.fiuba.algo3.gladiador.Gladiador",
+      "event": "call",
+      "id": 2,
+      "lineno": 35,
+      "method_id": "obtenerEquipamiento",
+      "path": "src/main/java/edu/fiuba/algo3/gladiador/Gladiador.java",
+      "receiver": {
+        "class": "edu.fiuba.algo3.gladiador.Gladiador",
+        "object_id": 1045336031,
+        "value": "edu.fiuba.algo3.gladiador.Gladiador@3e4e8fdf"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0,
+      "event": "return",
+      "id": 3,
+      "parent_id": 2,
+      "return_value": {
+        "class": "edu.fiuba.algo3.casillero.equipamiento.SinEquipamiento",
+        "object_id": 1780313842,
+        "value": "edu.fiuba.algo3.casillero.equipamiento.SinEquipamiento@6a1d6ef2"
+      },
+      "thread_id": 1
+    },
+    {
+      "defined_class": "edu.fiuba.algo3.gladiador.Gladiador",
+      "event": "call",
+      "id": 4,
+      "lineno": 23,
+      "method_id": "mejorarEquipamiento",
+      "path": "src/main/java/edu/fiuba/algo3/gladiador/Gladiador.java",
+      "receiver": {
+        "class": "edu.fiuba.algo3.gladiador.Gladiador",
+        "object_id": 1045336031,
+        "value": "edu.fiuba.algo3.gladiador.Gladiador@3e4e8fdf"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "defined_class": "edu.fiuba.algo3.casillero.equipamiento.SinEquipamiento",
+      "event": "call",
+      "id": 5,
+      "lineno": 7,
+      "method_id": "mejorarEquipamiento",
+      "path": "src/main/java/edu/fiuba/algo3/casillero/equipamiento/SinEquipamiento.java",
+      "receiver": {
+        "class": "edu.fiuba.algo3.casillero.equipamiento.SinEquipamiento",
+        "object_id": 1780313842,
+        "value": "edu.fiuba.algo3.casillero.equipamiento.SinEquipamiento@6a1d6ef2"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0,
+      "event": "return",
+      "id": 6,
+      "parent_id": 5,
+      "return_value": {
+        "class": "edu.fiuba.algo3.casillero.equipamiento.Casco",
+        "object_id": 41029700,
+        "value": "edu.fiuba.algo3.casillero.equipamiento.Casco@2721044"
+      },
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0,
+      "event": "return",
+      "id": 7,
+      "parent_id": 4,
+      "thread_id": 1
+    },
+    {
+      "defined_class": "edu.fiuba.algo3.gladiador.Gladiador",
+      "event": "call",
+      "id": 8,
+      "lineno": 35,
+      "method_id": "obtenerEquipamiento",
+      "path": "src/main/java/edu/fiuba/algo3/gladiador/Gladiador.java",
+      "receiver": {
+        "class": "edu.fiuba.algo3.gladiador.Gladiador",
+        "object_id": 1045336031,
+        "value": "edu.fiuba.algo3.gladiador.Gladiador@3e4e8fdf"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0,
+      "event": "return",
+      "id": 9,
+      "parent_id": 8,
+      "return_value": {
+        "class": "edu.fiuba.algo3.casillero.equipamiento.Casco",
+        "object_id": 41029700,
+        "value": "edu.fiuba.algo3.casillero.equipamiento.Casco@2721044"
+      },
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0.00010091,
+      "event": "return",
+      "id": 10,
+      "parent_id": 1,
+      "thread_id": 1
+    }
+  ],
+  "version": "1.2",
+  "metadata": {
+    "name": "Gladiador test mejorar equipamiento",
+    "app": "Tp2-Algoritmos-III",
+    "language": {
+      "name": "java",
+      "version": "17.0.9+8-LTS",
+      "engine": "OpenJDK 64-Bit Server VM"
+    },
+    "client": {
+      "name": "appmap-java",
+      "url": "https://github.com/appland/appmap-java"
+    },
+    "recorder": {
+      "name": "junit",
+      "type": "tests"
+    },
+    "recording": {
+      "defined_class": "edu.fiuba.algo3.modeloTest.gladiador.GladiadorTest",
+      "method_id": "testMejorarEquipamiento"
+    },
+    "git": {
+      "repository": "git@github.com:lcondoriz/Tp2-Algoritmos-III.git",
+      "branch": "semana_1"
+    },
+    "source_location": "edu/fiuba/algo3/modeloTest/gladiador/GladiadorTest.java:27",
+    "frameworks": [
+      {
+        "name": "JUnit",
+        "version": "5"
+      }
+    ],
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "mejorarEquipamiento",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/main/java/edu/fiuba/algo3/gladiador/Gladiador.java:23"
+                        },
+                        {
+                          "name": "obtenerEquipamiento",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/main/java/edu/fiuba/algo3/gladiador/Gladiador.java:35"
+                        }
+                      ],
+                      "name": "Gladiador",
+                      "type": "class"
+                    }
+                  ],
+                  "name": "gladiador",
+                  "type": "package"
+                },
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "children": [
+                            {
+                              "name": "mejorarEquipamiento",
+                              "type": "function",
+                              "static": false,
+                              "location": "src/main/java/edu/fiuba/algo3/casillero/equipamiento/SinEquipamiento.java:7"
+                            }
+                          ],
+                          "name": "SinEquipamiento",
+                          "type": "class"
+                        }
+                      ],
+                      "name": "equipamiento",
+                      "type": "package"
+                    }
+                  ],
+                  "name": "casillero",
+                  "type": "package"
+                },
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "children": [
+                            {
+                              "name": "testMejorarEquipamiento",
+                              "type": "function",
+                              "static": false,
+                              "location": "edu/fiuba/algo3/modeloTest/gladiador/GladiadorTest.java:27"
+                            }
+                          ],
+                          "name": "GladiadorTest",
+                          "type": "class"
+                        }
+                      ],
+                      "name": "gladiador",
+                      "type": "package"
+                    }
+                  ],
+                  "name": "modeloTest",
+                  "type": "package"
+                }
+              ],
+              "name": "algo3",
+              "type": "package"
+            }
+          ],
+          "name": "fiuba",
+          "type": "package"
+        }
+      ],
+      "name": "edu",
+      "type": "package"
+    }
+  ]
+}

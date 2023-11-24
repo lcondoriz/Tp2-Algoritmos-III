@@ -1,0 +1,62 @@
+[
+  {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "children": [
+                          {
+                            "name": "test01NoHayJugadoresException",
+                            "type": "function",
+                            "static": false,
+                            "location": "edu/fiuba/algo3/modeloTest/juego/AlgoRomaTest.java:21"
+                          }
+                        ],
+                        "name": "AlgoRomaTest",
+                        "type": "class"
+                      }
+                    ],
+                    "name": "juego",
+                    "type": "package"
+                  }
+                ],
+                "name": "modeloTest",
+                "type": "package"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "name": "iniciarJuego",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/main/java/edu/fiuba/algo3/juego/AlgoRoma.java:27"
+                      }
+                    ],
+                    "name": "AlgoRoma",
+                    "type": "class"
+                  }
+                ],
+                "name": "juego",
+                "type": "package"
+              }
+            ],
+            "name": "algo3",
+            "type": "package"
+          }
+        ],
+        "name": "fiuba",
+        "type": "package"
+      }
+    ],
+    "name": "edu",
+    "type": "package"
+  }
+]

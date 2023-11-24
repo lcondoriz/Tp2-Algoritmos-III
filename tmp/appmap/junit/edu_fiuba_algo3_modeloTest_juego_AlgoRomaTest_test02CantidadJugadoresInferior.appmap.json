@@ -1,0 +1,190 @@
+{
+  "events": [
+    {
+      "defined_class": "edu.fiuba.algo3.modeloTest.juego.AlgoRomaTest",
+      "event": "call",
+      "id": 1,
+      "lineno": 33,
+      "method_id": "test02CantidadJugadoresInferior",
+      "path": "edu/fiuba/algo3/modeloTest/juego/AlgoRomaTest.java",
+      "receiver": {
+        "class": "edu.fiuba.algo3.modeloTest.juego.AlgoRomaTest",
+        "object_id": 1494158416,
+        "value": "edu.fiuba.algo3.modeloTest.juego.AlgoRomaTest@590f0c50"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "defined_class": "edu.fiuba.algo3.juego.AlgoRoma",
+      "event": "call",
+      "id": 2,
+      "lineno": 24,
+      "method_id": "agregarJugador",
+      "parameters": [
+        {
+          "class": "edu.fiuba.algo3.juego.Jugador",
+          "kind": "req",
+          "name": "jugador",
+          "object_id": 546242567,
+          "value": "edu.fiuba.algo3.juego.Jugador@208f0007"
+        }
+      ],
+      "path": "src/main/java/edu/fiuba/algo3/juego/AlgoRoma.java",
+      "receiver": {
+        "class": "edu.fiuba.algo3.juego.AlgoRoma",
+        "object_id": 982565180,
+        "value": "edu.fiuba.algo3.juego.AlgoRoma@3a90c13c"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0,
+      "event": "return",
+      "id": 3,
+      "parent_id": 2,
+      "thread_id": 1
+    },
+    {
+      "defined_class": "edu.fiuba.algo3.juego.AlgoRoma",
+      "event": "call",
+      "id": 4,
+      "lineno": 27,
+      "method_id": "iniciarJuego",
+      "path": "src/main/java/edu/fiuba/algo3/juego/AlgoRoma.java",
+      "receiver": {
+        "class": "edu.fiuba.algo3.juego.AlgoRoma",
+        "object_id": 982565180,
+        "value": "edu.fiuba.algo3.juego.AlgoRoma@3a90c13c"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0.00010031,
+      "event": "return",
+      "exceptions": [
+        {
+          "class": "edu.fiuba.algo3.exceptions.CantidadJugadoresException",
+          "lineno": 32,
+          "message": "La cantidad de jugadores debe ser entre 2 y 6.",
+          "object_id": 411408557,
+          "path": "AlgoRoma.java"
+        }
+      ],
+      "id": 5,
+      "parent_id": 4,
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0.00020016,
+      "event": "return",
+      "id": 6,
+      "parent_id": 1,
+      "thread_id": 1
+    }
+  ],
+  "version": "1.2",
+  "metadata": {
+    "name": "Algo roma test 02 cantidad jugadores inferior",
+    "app": "Tp2-Algoritmos-III",
+    "language": {
+      "name": "java",
+      "version": "17.0.9+8-LTS",
+      "engine": "OpenJDK 64-Bit Server VM"
+    },
+    "client": {
+      "name": "appmap-java",
+      "url": "https://github.com/appland/appmap-java"
+    },
+    "recorder": {
+      "name": "junit",
+      "type": "tests"
+    },
+    "recording": {
+      "defined_class": "edu.fiuba.algo3.modeloTest.juego.AlgoRomaTest",
+      "method_id": "test02CantidadJugadoresInferior"
+    },
+    "git": {
+      "repository": "git@github.com:lcondoriz/Tp2-Algoritmos-III.git",
+      "branch": "semana_1"
+    },
+    "source_location": "edu/fiuba/algo3/modeloTest/juego/AlgoRomaTest.java:33",
+    "frameworks": [
+      {
+        "name": "JUnit",
+        "version": "5"
+      }
+    ],
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "agregarJugador",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/main/java/edu/fiuba/algo3/juego/AlgoRoma.java:24"
+                        },
+                        {
+                          "name": "iniciarJuego",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/main/java/edu/fiuba/algo3/juego/AlgoRoma.java:27"
+                        }
+                      ],
+                      "name": "AlgoRoma",
+                      "type": "class"
+                    }
+                  ],
+                  "name": "juego",
+                  "type": "package"
+                },
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "children": [
+                            {
+                              "name": "test02CantidadJugadoresInferior",
+                              "type": "function",
+                              "static": false,
+                              "location": "edu/fiuba/algo3/modeloTest/juego/AlgoRomaTest.java:33"
+                            }
+                          ],
+                          "name": "AlgoRomaTest",
+                          "type": "class"
+                        }
+                      ],
+                      "name": "juego",
+                      "type": "package"
+                    }
+                  ],
+                  "name": "modeloTest",
+                  "type": "package"
+                }
+              ],
+              "name": "algo3",
+              "type": "package"
+            }
+          ],
+          "name": "fiuba",
+          "type": "package"
+        }
+      ],
+      "name": "edu",
+      "type": "package"
+    }
+  ]
+}

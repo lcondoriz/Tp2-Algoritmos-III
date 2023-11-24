@@ -1,0 +1,212 @@
+[
+  {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "name": "incrementar",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/main/java/edu/fiuba/algo3/gladiador/Energia.java:15"
+                      },
+                      {
+                        "name": "tieneEnergiaSuficiente",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/main/java/edu/fiuba/algo3/gladiador/Energia.java:23"
+                      },
+                      {
+                        "name": "obtenerEnergia",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/main/java/edu/fiuba/algo3/gladiador/Energia.java:11"
+                      }
+                    ],
+                    "name": "Energia",
+                    "type": "class"
+                  },
+                  {
+                    "children": [
+                      {
+                        "name": "obtenerEnergia",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/main/java/edu/fiuba/algo3/gladiador/Gladiador.java:32"
+                      },
+                      {
+                        "name": "mejorarEquipamiento",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/main/java/edu/fiuba/algo3/gladiador/Gladiador.java:23"
+                      },
+                      {
+                        "name": "setearCasillero",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/main/java/edu/fiuba/algo3/gladiador/Gladiador.java:63"
+                      },
+                      {
+                        "name": "avanzar",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/main/java/edu/fiuba/algo3/gladiador/Gladiador.java:43"
+                      }
+                    ],
+                    "name": "Gladiador",
+                    "type": "class"
+                  },
+                  {
+                    "children": [
+                      {
+                        "children": [
+                          {
+                            "name": "incrementarSeniority",
+                            "type": "function",
+                            "static": false,
+                            "location": "src/main/java/edu/fiuba/algo3/gladiador/seniority/EstrategiaNovato.java:15"
+                          },
+                          {
+                            "name": "obtenerPlusEnergia",
+                            "type": "function",
+                            "static": false,
+                            "location": "src/main/java/edu/fiuba/algo3/gladiador/seniority/EstrategiaNovato.java:10"
+                          }
+                        ],
+                        "name": "EstrategiaNovato",
+                        "type": "class"
+                      }
+                    ],
+                    "name": "seniority",
+                    "type": "package"
+                  }
+                ],
+                "name": "gladiador",
+                "type": "package"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "children": [
+                          {
+                            "name": "mejorarEquipamiento",
+                            "type": "function",
+                            "static": false,
+                            "location": "src/main/java/edu/fiuba/algo3/casillero/equipamiento/SinEquipamiento.java:7"
+                          }
+                        ],
+                        "name": "SinEquipamiento",
+                        "type": "class"
+                      },
+                      {
+                        "children": [
+                          {
+                            "name": "aplicarEfecto",
+                            "type": "function",
+                            "static": false,
+                            "location": "src/main/java/edu/fiuba/algo3/casillero/equipamiento/Equipamiento.java:9"
+                          }
+                        ],
+                        "name": "Equipamiento",
+                        "type": "class"
+                      },
+                      {
+                        "children": [
+                          {
+                            "name": "mejorarEquipamiento",
+                            "type": "function",
+                            "static": false,
+                            "location": "src/main/java/edu/fiuba/algo3/casillero/equipamiento/Casco.java:6"
+                          }
+                        ],
+                        "name": "Casco",
+                        "type": "class"
+                      },
+                      {
+                        "children": [
+                          {
+                            "name": "mejorarEquipamiento",
+                            "type": "function",
+                            "static": false,
+                            "location": "src/main/java/edu/fiuba/algo3/casillero/equipamiento/Armadura.java:7"
+                          }
+                        ],
+                        "name": "Armadura",
+                        "type": "class"
+                      },
+                      {
+                        "children": [
+                          {
+                            "name": "mejorarEquipamiento",
+                            "type": "function",
+                            "static": false,
+                            "location": "src/main/java/edu/fiuba/algo3/casillero/equipamiento/EscudoEspada.java:7"
+                          }
+                        ],
+                        "name": "EscudoEspada",
+                        "type": "class"
+                      }
+                    ],
+                    "name": "equipamiento",
+                    "type": "package"
+                  }
+                ],
+                "name": "casillero",
+                "type": "package"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "name": "aplicarEfecto",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/main/java/edu/fiuba/algo3/tablero/Casillero.java:16"
+                      }
+                    ],
+                    "name": "Casillero",
+                    "type": "class"
+                  }
+                ],
+                "name": "tablero",
+                "type": "package"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "name": "verificarQueSiLoAtacaUnaFieraSalvajeYPoseeTodoElEquipamientoElDanioEnEnergiaEs0",
+                        "type": "function",
+                        "static": false,
+                        "location": "edu/fiuba/algo3/entrega_1/CasoDeUso10.java:20"
+                      }
+                    ],
+                    "name": "CasoDeUso10",
+                    "type": "class"
+                  }
+                ],
+                "name": "entrega_1",
+                "type": "package"
+              }
+            ],
+            "name": "algo3",
+            "type": "package"
+          }
+        ],
+        "name": "fiuba",
+        "type": "package"
+      }
+    ],
+    "name": "edu",
+    "type": "package"
+  }
+]

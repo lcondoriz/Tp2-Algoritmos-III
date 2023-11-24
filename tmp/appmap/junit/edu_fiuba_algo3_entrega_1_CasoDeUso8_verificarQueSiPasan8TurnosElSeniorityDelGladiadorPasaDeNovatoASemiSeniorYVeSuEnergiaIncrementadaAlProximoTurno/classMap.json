@@ -1,0 +1,164 @@
+[
+  {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "name": "incrementar",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/main/java/edu/fiuba/algo3/gladiador/Energia.java:15"
+                      },
+                      {
+                        "name": "tieneEnergiaSuficiente",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/main/java/edu/fiuba/algo3/gladiador/Energia.java:23"
+                      },
+                      {
+                        "name": "obtenerEnergia",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/main/java/edu/fiuba/algo3/gladiador/Energia.java:11"
+                      }
+                    ],
+                    "name": "Energia",
+                    "type": "class"
+                  },
+                  {
+                    "children": [
+                      {
+                        "children": [
+                          {
+                            "name": "obtenerPlusEnergia",
+                            "type": "function",
+                            "static": false,
+                            "location": "src/main/java/edu/fiuba/algo3/gladiador/seniority/EstrategiaSemiSenior.java:10"
+                          }
+                        ],
+                        "name": "EstrategiaSemiSenior",
+                        "type": "class"
+                      },
+                      {
+                        "children": [
+                          {
+                            "name": "incrementarSeniority",
+                            "type": "function",
+                            "static": false,
+                            "location": "src/main/java/edu/fiuba/algo3/gladiador/seniority/EstrategiaNovato.java:15"
+                          },
+                          {
+                            "name": "obtenerPlusEnergia",
+                            "type": "function",
+                            "static": false,
+                            "location": "src/main/java/edu/fiuba/algo3/gladiador/seniority/EstrategiaNovato.java:10"
+                          }
+                        ],
+                        "name": "EstrategiaNovato",
+                        "type": "class"
+                      }
+                    ],
+                    "name": "seniority",
+                    "type": "package"
+                  },
+                  {
+                    "children": [
+                      {
+                        "name": "obtenerEnergia",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/main/java/edu/fiuba/algo3/gladiador/Gladiador.java:32"
+                      },
+                      {
+                        "name": "avanzar",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/main/java/edu/fiuba/algo3/gladiador/Gladiador.java:43"
+                      }
+                    ],
+                    "name": "Gladiador",
+                    "type": "class"
+                  }
+                ],
+                "name": "gladiador",
+                "type": "package"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "name": "verificarQueSiPasan8TurnosElSeniorityDelGladiadorPasaDeNovatoASemiSeniorYVeSuEnergiaIncrementadaAlProximoTurno",
+                        "type": "function",
+                        "static": false,
+                        "location": "edu/fiuba/algo3/entrega_1/CasoDeUso8.java:20"
+                      }
+                    ],
+                    "name": "CasoDeUso8",
+                    "type": "class"
+                  }
+                ],
+                "name": "entrega_1",
+                "type": "package"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "name": "aplicarEfecto",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/main/java/edu/fiuba/algo3/tablero/Casillero.java:16"
+                      }
+                    ],
+                    "name": "Casillero",
+                    "type": "class"
+                  }
+                ],
+                "name": "tablero",
+                "type": "package"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "children": [
+                          {
+                            "name": "aplicarEfecto",
+                            "type": "function",
+                            "static": false,
+                            "location": "src/main/java/edu/fiuba/algo3/casillero/vacio/Vacio.java:10"
+                          }
+                        ],
+                        "name": "Vacio",
+                        "type": "class"
+                      }
+                    ],
+                    "name": "vacio",
+                    "type": "package"
+                  }
+                ],
+                "name": "casillero",
+                "type": "package"
+              }
+            ],
+            "name": "algo3",
+            "type": "package"
+          }
+        ],
+        "name": "fiuba",
+        "type": "package"
+      }
+    ],
+    "name": "edu",
+    "type": "package"
+  }
+]

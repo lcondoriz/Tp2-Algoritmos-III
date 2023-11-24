@@ -1,0 +1,316 @@
+{
+  "events": [
+    {
+      "defined_class": "edu.fiuba.algo3.modeloTest.gladiador.GladiadorTest",
+      "event": "call",
+      "id": 1,
+      "lineno": 45,
+      "method_id": "testDecrementarEnergia",
+      "path": "edu/fiuba/algo3/modeloTest/gladiador/GladiadorTest.java",
+      "receiver": {
+        "class": "edu.fiuba.algo3.modeloTest.gladiador.GladiadorTest",
+        "object_id": 915540950,
+        "value": "edu.fiuba.algo3.modeloTest.gladiador.GladiadorTest@36920bd6"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "defined_class": "edu.fiuba.algo3.gladiador.Gladiador",
+      "event": "call",
+      "id": 2,
+      "lineno": 32,
+      "method_id": "obtenerEnergia",
+      "path": "src/main/java/edu/fiuba/algo3/gladiador/Gladiador.java",
+      "receiver": {
+        "class": "edu.fiuba.algo3.gladiador.Gladiador",
+        "object_id": 1632716597,
+        "value": "edu.fiuba.algo3.gladiador.Gladiador@61514735"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "defined_class": "edu.fiuba.algo3.gladiador.Energia",
+      "event": "call",
+      "id": 3,
+      "lineno": 11,
+      "method_id": "obtenerEnergia",
+      "path": "src/main/java/edu/fiuba/algo3/gladiador/Energia.java",
+      "receiver": {
+        "class": "edu.fiuba.algo3.gladiador.Energia",
+        "object_id": 1810790719,
+        "value": "edu.fiuba.algo3.gladiador.Energia@6bee793f"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0,
+      "event": "return",
+      "id": 4,
+      "parent_id": 3,
+      "return_value": {
+        "class": "java.lang.Integer",
+        "object_id": 1092109169,
+        "value": "20"
+      },
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0.00009995,
+      "event": "return",
+      "id": 5,
+      "parent_id": 2,
+      "return_value": {
+        "class": "java.lang.Integer",
+        "object_id": 1092109169,
+        "value": "20"
+      },
+      "thread_id": 1
+    },
+    {
+      "defined_class": "edu.fiuba.algo3.gladiador.Gladiador",
+      "event": "call",
+      "id": 6,
+      "lineno": 29,
+      "method_id": "decrementarEnergia",
+      "parameters": [
+        {
+          "class": "java.lang.Integer",
+          "kind": "req",
+          "name": "decremento",
+          "object_id": 2124360754,
+          "value": "5"
+        }
+      ],
+      "path": "src/main/java/edu/fiuba/algo3/gladiador/Gladiador.java",
+      "receiver": {
+        "class": "edu.fiuba.algo3.gladiador.Gladiador",
+        "object_id": 1632716597,
+        "value": "edu.fiuba.algo3.gladiador.Gladiador@61514735"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "defined_class": "edu.fiuba.algo3.gladiador.Energia",
+      "event": "call",
+      "id": 7,
+      "lineno": 19,
+      "method_id": "decrementar",
+      "parameters": [
+        {
+          "class": "java.lang.Integer",
+          "kind": "req",
+          "name": "cantidad",
+          "object_id": 2124360754,
+          "value": "5"
+        }
+      ],
+      "path": "src/main/java/edu/fiuba/algo3/gladiador/Energia.java",
+      "receiver": {
+        "class": "edu.fiuba.algo3.gladiador.Energia",
+        "object_id": 1810790719,
+        "value": "edu.fiuba.algo3.gladiador.Energia@6bee793f"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0,
+      "event": "return",
+      "id": 8,
+      "parent_id": 7,
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0,
+      "event": "return",
+      "id": 9,
+      "parent_id": 6,
+      "thread_id": 1
+    },
+    {
+      "defined_class": "edu.fiuba.algo3.gladiador.Gladiador",
+      "event": "call",
+      "id": 10,
+      "lineno": 32,
+      "method_id": "obtenerEnergia",
+      "path": "src/main/java/edu/fiuba/algo3/gladiador/Gladiador.java",
+      "receiver": {
+        "class": "edu.fiuba.algo3.gladiador.Gladiador",
+        "object_id": 1632716597,
+        "value": "edu.fiuba.algo3.gladiador.Gladiador@61514735"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "defined_class": "edu.fiuba.algo3.gladiador.Energia",
+      "event": "call",
+      "id": 11,
+      "lineno": 11,
+      "method_id": "obtenerEnergia",
+      "path": "src/main/java/edu/fiuba/algo3/gladiador/Energia.java",
+      "receiver": {
+        "class": "edu.fiuba.algo3.gladiador.Energia",
+        "object_id": 1810790719,
+        "value": "edu.fiuba.algo3.gladiador.Energia@6bee793f"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0,
+      "event": "return",
+      "id": 12,
+      "parent_id": 11,
+      "return_value": {
+        "class": "java.lang.Integer",
+        "object_id": 878493504,
+        "value": "15"
+      },
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0,
+      "event": "return",
+      "id": 13,
+      "parent_id": 10,
+      "return_value": {
+        "class": "java.lang.Integer",
+        "object_id": 878493504,
+        "value": "15"
+      },
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0.00009995,
+      "event": "return",
+      "id": 14,
+      "parent_id": 1,
+      "thread_id": 1
+    }
+  ],
+  "version": "1.2",
+  "metadata": {
+    "name": "Gladiador test decrementar energia",
+    "app": "Tp2-Algoritmos-III",
+    "language": {
+      "name": "java",
+      "version": "17.0.9+8-LTS",
+      "engine": "OpenJDK 64-Bit Server VM"
+    },
+    "client": {
+      "name": "appmap-java",
+      "url": "https://github.com/appland/appmap-java"
+    },
+    "recorder": {
+      "name": "junit",
+      "type": "tests"
+    },
+    "recording": {
+      "defined_class": "edu.fiuba.algo3.modeloTest.gladiador.GladiadorTest",
+      "method_id": "testDecrementarEnergia"
+    },
+    "git": {
+      "repository": "git@github.com:lcondoriz/Tp2-Algoritmos-III.git",
+      "branch": "semana_1"
+    },
+    "source_location": "edu/fiuba/algo3/modeloTest/gladiador/GladiadorTest.java:45",
+    "frameworks": [
+      {
+        "name": "JUnit",
+        "version": "5"
+      }
+    ],
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "children": [
+                            {
+                              "name": "testDecrementarEnergia",
+                              "type": "function",
+                              "static": false,
+                              "location": "edu/fiuba/algo3/modeloTest/gladiador/GladiadorTest.java:45"
+                            }
+                          ],
+                          "name": "GladiadorTest",
+                          "type": "class"
+                        }
+                      ],
+                      "name": "gladiador",
+                      "type": "package"
+                    }
+                  ],
+                  "name": "modeloTest",
+                  "type": "package"
+                },
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "obtenerEnergia",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/main/java/edu/fiuba/algo3/gladiador/Gladiador.java:32"
+                        },
+                        {
+                          "name": "decrementarEnergia",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/main/java/edu/fiuba/algo3/gladiador/Gladiador.java:29"
+                        }
+                      ],
+                      "name": "Gladiador",
+                      "type": "class"
+                    },
+                    {
+                      "children": [
+                        {
+                          "name": "obtenerEnergia",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/main/java/edu/fiuba/algo3/gladiador/Energia.java:11"
+                        },
+                        {
+                          "name": "decrementar",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/main/java/edu/fiuba/algo3/gladiador/Energia.java:19"
+                        }
+                      ],
+                      "name": "Energia",
+                      "type": "class"
+                    }
+                  ],
+                  "name": "gladiador",
+                  "type": "package"
+                }
+              ],
+              "name": "algo3",
+              "type": "package"
+            }
+          ],
+          "name": "fiuba",
+          "type": "package"
+        }
+      ],
+      "name": "edu",
+      "type": "package"
+    }
+  ]
+}

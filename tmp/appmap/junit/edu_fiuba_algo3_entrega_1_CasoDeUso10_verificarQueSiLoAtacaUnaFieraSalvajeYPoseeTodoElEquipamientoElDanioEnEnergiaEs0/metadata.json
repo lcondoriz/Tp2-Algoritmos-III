@@ -1,0 +1,33 @@
+{
+  "name": "Caso de uso 10 verificar que si lo ataca una fiera salvaje y posee todo el equipamiento el danio en energia es 0",
+  "app": "Tp2-Algoritmos-III",
+  "language": {
+    "name": "java",
+    "version": "17.0.9+8-LTS",
+    "engine": "OpenJDK 64-Bit Server VM"
+  },
+  "client": {
+    "name": "appmap-java",
+    "url": "https://github.com/appland/appmap-java"
+  },
+  "recorder": {
+    "name": "junit",
+    "type": "tests"
+  },
+  "recording": {
+    "defined_class": "edu.fiuba.algo3.entrega_1.CasoDeUso10",
+    "method_id": "verificarQueSiLoAtacaUnaFieraSalvajeYPoseeTodoElEquipamientoElDanioEnEnergiaEs0"
+  },
+  "git": {
+    "repository": "git@github.com:lcondoriz/Tp2-Algoritmos-III.git",
+    "branch": "semana_1"
+  },
+  "source_location": "edu/fiuba/algo3/entrega_1/CasoDeUso10.java:20",
+  "frameworks": [
+    {
+      "name": "JUnit",
+      "version": "5"
+    }
+  ],
+  "test_status": "succeeded"
+}

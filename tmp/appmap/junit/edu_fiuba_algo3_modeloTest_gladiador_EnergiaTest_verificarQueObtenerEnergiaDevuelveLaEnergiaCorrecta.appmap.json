@@ -1,0 +1,149 @@
+{
+  "events": [
+    {
+      "defined_class": "edu.fiuba.algo3.modeloTest.gladiador.EnergiaTest",
+      "event": "call",
+      "id": 1,
+      "lineno": 18,
+      "method_id": "verificarQueObtenerEnergiaDevuelveLaEnergiaCorrecta",
+      "path": "edu/fiuba/algo3/modeloTest/gladiador/EnergiaTest.java",
+      "receiver": {
+        "class": "edu.fiuba.algo3.modeloTest.gladiador.EnergiaTest",
+        "object_id": 878242981,
+        "value": "edu.fiuba.algo3.modeloTest.gladiador.EnergiaTest@3458eca5"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "defined_class": "edu.fiuba.algo3.gladiador.Energia",
+      "event": "call",
+      "id": 2,
+      "lineno": 11,
+      "method_id": "obtenerEnergia",
+      "path": "src/main/java/edu/fiuba/algo3/gladiador/Energia.java",
+      "receiver": {
+        "class": "edu.fiuba.algo3.gladiador.Energia",
+        "object_id": 504355631,
+        "value": "edu.fiuba.algo3.gladiador.Energia@1e0fdb2f"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0,
+      "event": "return",
+      "id": 3,
+      "parent_id": 2,
+      "return_value": {
+        "class": "java.lang.Integer",
+        "object_id": 1010306008,
+        "value": "30"
+      },
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0.00009992,
+      "event": "return",
+      "id": 4,
+      "parent_id": 1,
+      "thread_id": 1
+    }
+  ],
+  "version": "1.2",
+  "metadata": {
+    "name": "Energia verificar que obtener energia devuelve la energia correcta",
+    "app": "Tp2-Algoritmos-III",
+    "language": {
+      "name": "java",
+      "version": "17.0.9+8-LTS",
+      "engine": "OpenJDK 64-Bit Server VM"
+    },
+    "client": {
+      "name": "appmap-java",
+      "url": "https://github.com/appland/appmap-java"
+    },
+    "recorder": {
+      "name": "junit",
+      "type": "tests"
+    },
+    "recording": {
+      "defined_class": "edu.fiuba.algo3.modeloTest.gladiador.EnergiaTest",
+      "method_id": "verificarQueObtenerEnergiaDevuelveLaEnergiaCorrecta"
+    },
+    "git": {
+      "repository": "git@github.com:lcondoriz/Tp2-Algoritmos-III.git",
+      "branch": "semana_1"
+    },
+    "source_location": "edu/fiuba/algo3/modeloTest/gladiador/EnergiaTest.java:18",
+    "frameworks": [
+      {
+        "name": "JUnit",
+        "version": "5"
+      }
+    ],
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "children": [
+                            {
+                              "name": "verificarQueObtenerEnergiaDevuelveLaEnergiaCorrecta",
+                              "type": "function",
+                              "static": false,
+                              "location": "edu/fiuba/algo3/modeloTest/gladiador/EnergiaTest.java:18"
+                            }
+                          ],
+                          "name": "EnergiaTest",
+                          "type": "class"
+                        }
+                      ],
+                      "name": "gladiador",
+                      "type": "package"
+                    }
+                  ],
+                  "name": "modeloTest",
+                  "type": "package"
+                },
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "obtenerEnergia",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/main/java/edu/fiuba/algo3/gladiador/Energia.java:11"
+                        }
+                      ],
+                      "name": "Energia",
+                      "type": "class"
+                    }
+                  ],
+                  "name": "gladiador",
+                  "type": "package"
+                }
+              ],
+              "name": "algo3",
+              "type": "package"
+            }
+          ],
+          "name": "fiuba",
+          "type": "package"
+        }
+      ],
+      "name": "edu",
+      "type": "package"
+    }
+  ]
+}

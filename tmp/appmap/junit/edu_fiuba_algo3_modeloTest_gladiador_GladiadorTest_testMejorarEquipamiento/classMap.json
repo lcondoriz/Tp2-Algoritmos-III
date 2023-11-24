@@ -1,0 +1,92 @@
+[
+  {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "name": "mejorarEquipamiento",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/main/java/edu/fiuba/algo3/gladiador/Gladiador.java:23"
+                      },
+                      {
+                        "name": "obtenerEquipamiento",
+                        "type": "function",
+                        "static": false,
+                        "location": "src/main/java/edu/fiuba/algo3/gladiador/Gladiador.java:35"
+                      }
+                    ],
+                    "name": "Gladiador",
+                    "type": "class"
+                  }
+                ],
+                "name": "gladiador",
+                "type": "package"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "children": [
+                          {
+                            "name": "mejorarEquipamiento",
+                            "type": "function",
+                            "static": false,
+                            "location": "src/main/java/edu/fiuba/algo3/casillero/equipamiento/SinEquipamiento.java:7"
+                          }
+                        ],
+                        "name": "SinEquipamiento",
+                        "type": "class"
+                      }
+                    ],
+                    "name": "equipamiento",
+                    "type": "package"
+                  }
+                ],
+                "name": "casillero",
+                "type": "package"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "children": [
+                          {
+                            "name": "testMejorarEquipamiento",
+                            "type": "function",
+                            "static": false,
+                            "location": "edu/fiuba/algo3/modeloTest/gladiador/GladiadorTest.java:27"
+                          }
+                        ],
+                        "name": "GladiadorTest",
+                        "type": "class"
+                      }
+                    ],
+                    "name": "gladiador",
+                    "type": "package"
+                  }
+                ],
+                "name": "modeloTest",
+                "type": "package"
+              }
+            ],
+            "name": "algo3",
+            "type": "package"
+          }
+        ],
+        "name": "fiuba",
+        "type": "package"
+      }
+    ],
+    "name": "edu",
+    "type": "package"
+  }
+]

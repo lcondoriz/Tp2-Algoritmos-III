@@ -1,0 +1,33 @@
+{
+  "name": "Caso de uso 8 verificar que si pasan 8 turnos el seniority del gladiador pasa de novato a semi senior y ve su energia incrementada al proximo turno",
+  "app": "Tp2-Algoritmos-III",
+  "language": {
+    "name": "java",
+    "version": "17.0.9+8-LTS",
+    "engine": "OpenJDK 64-Bit Server VM"
+  },
+  "client": {
+    "name": "appmap-java",
+    "url": "https://github.com/appland/appmap-java"
+  },
+  "recorder": {
+    "name": "junit",
+    "type": "tests"
+  },
+  "recording": {
+    "defined_class": "edu.fiuba.algo3.entrega_1.CasoDeUso8",
+    "method_id": "verificarQueSiPasan8TurnosElSeniorityDelGladiadorPasaDeNovatoASemiSeniorYVeSuEnergiaIncrementadaAlProximoTurno"
+  },
+  "git": {
+    "repository": "git@github.com:lcondoriz/Tp2-Algoritmos-III.git",
+    "branch": "semana_1"
+  },
+  "source_location": "edu/fiuba/algo3/entrega_1/CasoDeUso8.java:20",
+  "frameworks": [
+    {
+      "name": "JUnit",
+      "version": "5"
+    }
+  ],
+  "test_status": "succeeded"
+}

@@ -1,0 +1,153 @@
+{
+  "events": [
+    {
+      "defined_class": "edu.fiuba.algo3.modeloTest.juego.AlgoRomaTest",
+      "event": "call",
+      "id": 1,
+      "lineno": 21,
+      "method_id": "test01NoHayJugadoresException",
+      "path": "edu/fiuba/algo3/modeloTest/juego/AlgoRomaTest.java",
+      "receiver": {
+        "class": "edu.fiuba.algo3.modeloTest.juego.AlgoRomaTest",
+        "object_id": 1135936028,
+        "value": "edu.fiuba.algo3.modeloTest.juego.AlgoRomaTest@43b5021c"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "defined_class": "edu.fiuba.algo3.juego.AlgoRoma",
+      "event": "call",
+      "id": 2,
+      "lineno": 27,
+      "method_id": "iniciarJuego",
+      "path": "src/main/java/edu/fiuba/algo3/juego/AlgoRoma.java",
+      "receiver": {
+        "class": "edu.fiuba.algo3.juego.AlgoRoma",
+        "object_id": 814300680,
+        "value": "edu.fiuba.algo3.juego.AlgoRoma@30893e08"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0.00010022,
+      "event": "return",
+      "exceptions": [
+        {
+          "class": "edu.fiuba.algo3.exceptions.NoHayJugadoresException",
+          "lineno": 28,
+          "message": "No hay jugadores para iniciar el juego.",
+          "object_id": 780566650,
+          "path": "AlgoRoma.java"
+        }
+      ],
+      "id": 3,
+      "parent_id": 2,
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0.00010022,
+      "event": "return",
+      "id": 4,
+      "parent_id": 1,
+      "thread_id": 1
+    }
+  ],
+  "version": "1.2",
+  "metadata": {
+    "name": "Algo roma test 01 no hay jugadores exception",
+    "app": "Tp2-Algoritmos-III",
+    "language": {
+      "name": "java",
+      "version": "17.0.9+8-LTS",
+      "engine": "OpenJDK 64-Bit Server VM"
+    },
+    "client": {
+      "name": "appmap-java",
+      "url": "https://github.com/appland/appmap-java"
+    },
+    "recorder": {
+      "name": "junit",
+      "type": "tests"
+    },
+    "recording": {
+      "defined_class": "edu.fiuba.algo3.modeloTest.juego.AlgoRomaTest",
+      "method_id": "test01NoHayJugadoresException"
+    },
+    "git": {
+      "repository": "git@github.com:lcondoriz/Tp2-Algoritmos-III.git",
+      "branch": "semana_1"
+    },
+    "source_location": "edu/fiuba/algo3/modeloTest/juego/AlgoRomaTest.java:21",
+    "frameworks": [
+      {
+        "name": "JUnit",
+        "version": "5"
+      }
+    ],
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "children": [
+                            {
+                              "name": "test01NoHayJugadoresException",
+                              "type": "function",
+                              "static": false,
+                              "location": "edu/fiuba/algo3/modeloTest/juego/AlgoRomaTest.java:21"
+                            }
+                          ],
+                          "name": "AlgoRomaTest",
+                          "type": "class"
+                        }
+                      ],
+                      "name": "juego",
+                      "type": "package"
+                    }
+                  ],
+                  "name": "modeloTest",
+                  "type": "package"
+                },
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "iniciarJuego",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/main/java/edu/fiuba/algo3/juego/AlgoRoma.java:27"
+                        }
+                      ],
+                      "name": "AlgoRoma",
+                      "type": "class"
+                    }
+                  ],
+                  "name": "juego",
+                  "type": "package"
+                }
+              ],
+              "name": "algo3",
+              "type": "package"
+            }
+          ],
+          "name": "fiuba",
+          "type": "package"
+        }
+      ],
+      "name": "edu",
+      "type": "package"
+    }
+  ]
+}

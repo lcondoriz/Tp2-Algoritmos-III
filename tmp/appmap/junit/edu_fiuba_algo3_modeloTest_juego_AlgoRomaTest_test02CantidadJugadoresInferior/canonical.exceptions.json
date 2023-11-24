@@ -1,0 +1,12 @@
+[
+  {
+    "class": "edu.fiuba.algo3.exceptions.CantidadJugadoresException",
+    "message": "La cantidad de jugadores debe ser entre 2 y 6.",
+    "stack": [
+      "AlgoRoma.java:32",
+      "src/main/java/edu/fiuba/algo3/juego/AlgoRoma.java:27",
+      "edu/fiuba/algo3/modeloTest/juego/AlgoRomaTest.java:33"
+    ],
+    "location": "AlgoRoma.java:32"
+  }
+]

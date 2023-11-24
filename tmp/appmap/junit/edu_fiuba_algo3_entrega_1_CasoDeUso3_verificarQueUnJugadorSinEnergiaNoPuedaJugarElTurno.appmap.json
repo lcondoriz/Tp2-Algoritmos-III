@@ -1,0 +1,276 @@
+{
+  "events": [
+    {
+      "defined_class": "edu.fiuba.algo3.entrega_1.CasoDeUso3",
+      "event": "call",
+      "id": 1,
+      "lineno": 16,
+      "method_id": "verificarQueUnJugadorSinEnergiaNoPuedaJugarElTurno",
+      "path": "edu/fiuba/algo3/entrega_1/CasoDeUso3.java",
+      "receiver": {
+        "class": "edu.fiuba.algo3.entrega_1.CasoDeUso3",
+        "object_id": 2034046523,
+        "value": "edu.fiuba.algo3.entrega_1.CasoDeUso3@793d163b"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "defined_class": "edu.fiuba.algo3.gladiador.Gladiador",
+      "event": "call",
+      "id": 2,
+      "lineno": 29,
+      "method_id": "decrementarEnergia",
+      "parameters": [
+        {
+          "class": "java.lang.Integer",
+          "kind": "req",
+          "name": "decremento",
+          "object_id": 1092109169,
+          "value": "20"
+        }
+      ],
+      "path": "src/main/java/edu/fiuba/algo3/gladiador/Gladiador.java",
+      "receiver": {
+        "class": "edu.fiuba.algo3.gladiador.Gladiador",
+        "object_id": 1625097607,
+        "value": "edu.fiuba.algo3.gladiador.Gladiador@60dd0587"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "defined_class": "edu.fiuba.algo3.gladiador.Energia",
+      "event": "call",
+      "id": 3,
+      "lineno": 19,
+      "method_id": "decrementar",
+      "parameters": [
+        {
+          "class": "java.lang.Integer",
+          "kind": "req",
+          "name": "cantidad",
+          "object_id": 1092109169,
+          "value": "20"
+        }
+      ],
+      "path": "src/main/java/edu/fiuba/algo3/gladiador/Energia.java",
+      "receiver": {
+        "class": "edu.fiuba.algo3.gladiador.Energia",
+        "object_id": 2012808675,
+        "value": "edu.fiuba.algo3.gladiador.Energia@77f905e3"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0.00009997,
+      "event": "return",
+      "id": 4,
+      "parent_id": 3,
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0.00009997,
+      "event": "return",
+      "id": 5,
+      "parent_id": 2,
+      "thread_id": 1
+    },
+    {
+      "defined_class": "edu.fiuba.algo3.gladiador.Gladiador",
+      "event": "call",
+      "id": 6,
+      "lineno": 43,
+      "method_id": "avanzar",
+      "parameters": [
+        {
+          "class": "java.lang.Integer",
+          "kind": "req",
+          "name": "cantidadCasilleros",
+          "object_id": 1805672691,
+          "value": "1"
+        },
+        {
+          "class": "java.lang.Integer",
+          "kind": "req",
+          "name": "turno",
+          "object_id": 1476915117,
+          "value": "0"
+        }
+      ],
+      "path": "src/main/java/edu/fiuba/algo3/gladiador/Gladiador.java",
+      "receiver": {
+        "class": "edu.fiuba.algo3.gladiador.Gladiador",
+        "object_id": 1625097607,
+        "value": "edu.fiuba.algo3.gladiador.Gladiador@60dd0587"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "defined_class": "edu.fiuba.algo3.gladiador.Energia",
+      "event": "call",
+      "id": 7,
+      "lineno": 23,
+      "method_id": "tieneEnergiaSuficiente",
+      "path": "src/main/java/edu/fiuba/algo3/gladiador/Energia.java",
+      "receiver": {
+        "class": "edu.fiuba.algo3.gladiador.Energia",
+        "object_id": 2012808675,
+        "value": "edu.fiuba.algo3.gladiador.Energia@77f905e3"
+      },
+      "static": false,
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0,
+      "event": "return",
+      "id": 8,
+      "parent_id": 7,
+      "return_value": {
+        "class": "java.lang.Boolean",
+        "object_id": 238612663,
+        "value": "false"
+      },
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0.00009991,
+      "event": "return",
+      "exceptions": [
+        {
+          "class": "edu.fiuba.algo3.exceptions.SinEnergiaException",
+          "lineno": 44,
+          "message": "El gladiador no tiene suficiente energía para avanzar",
+          "object_id": 1334675172,
+          "path": "Gladiador.java"
+        }
+      ],
+      "id": 9,
+      "parent_id": 6,
+      "thread_id": 1
+    },
+    {
+      "elapsed": 0.00029986,
+      "event": "return",
+      "id": 10,
+      "parent_id": 1,
+      "thread_id": 1
+    }
+  ],
+  "version": "1.2",
+  "metadata": {
+    "name": "Caso de uso 3 verificar que un jugador sin energia no pueda jugar el turno",
+    "app": "Tp2-Algoritmos-III",
+    "language": {
+      "name": "java",
+      "version": "17.0.9+8-LTS",
+      "engine": "OpenJDK 64-Bit Server VM"
+    },
+    "client": {
+      "name": "appmap-java",
+      "url": "https://github.com/appland/appmap-java"
+    },
+    "recorder": {
+      "name": "junit",
+      "type": "tests"
+    },
+    "recording": {
+      "defined_class": "edu.fiuba.algo3.entrega_1.CasoDeUso3",
+      "method_id": "verificarQueUnJugadorSinEnergiaNoPuedaJugarElTurno"
+    },
+    "git": {
+      "repository": "git@github.com:lcondoriz/Tp2-Algoritmos-III.git",
+      "branch": "semana_1"
+    },
+    "source_location": "edu/fiuba/algo3/entrega_1/CasoDeUso3.java:16",
+    "frameworks": [
+      {
+        "name": "JUnit",
+        "version": "5"
+      }
+    ],
+    "test_status": "succeeded"
+  },
+  "classMap": [
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "avanzar",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/main/java/edu/fiuba/algo3/gladiador/Gladiador.java:43"
+                        },
+                        {
+                          "name": "decrementarEnergia",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/main/java/edu/fiuba/algo3/gladiador/Gladiador.java:29"
+                        }
+                      ],
+                      "name": "Gladiador",
+                      "type": "class"
+                    },
+                    {
+                      "children": [
+                        {
+                          "name": "tieneEnergiaSuficiente",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/main/java/edu/fiuba/algo3/gladiador/Energia.java:23"
+                        },
+                        {
+                          "name": "decrementar",
+                          "type": "function",
+                          "static": false,
+                          "location": "src/main/java/edu/fiuba/algo3/gladiador/Energia.java:19"
+                        }
+                      ],
+                      "name": "Energia",
+                      "type": "class"
+                    }
+                  ],
+                  "name": "gladiador",
+                  "type": "package"
+                },
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "verificarQueUnJugadorSinEnergiaNoPuedaJugarElTurno",
+                          "type": "function",
+                          "static": false,
+                          "location": "edu/fiuba/algo3/entrega_1/CasoDeUso3.java:16"
+                        }
+                      ],
+                      "name": "CasoDeUso3",
+                      "type": "class"
+                    }
+                  ],
+                  "name": "entrega_1",
+                  "type": "package"
+                }
+              ],
+              "name": "algo3",
+              "type": "package"
+            }
+          ],
+          "name": "fiuba",
+          "type": "package"
+        }
+      ],
+      "name": "edu",
+      "type": "package"
+    }
+  ]
+}
