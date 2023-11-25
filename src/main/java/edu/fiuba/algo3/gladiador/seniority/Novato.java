@@ -1,9 +1,9 @@
 package edu.fiuba.algo3.gladiador.seniority;
 
 import edu.fiuba.algo3.gladiador.Energia;
-import edu.fiuba.algo3.gladiador.EstrategiaSeniority;
+import edu.fiuba.algo3.gladiador.Seniority;
 
-public class EstrategiaNovato implements EstrategiaSeniority {
+public class Novato implements Seniority {
     public static final int TURNO_PROMOCION_NOVATO = 8;
     @Override
     public void obtenerPlusEnergia(Energia energia) {
@@ -11,9 +11,9 @@ public class EstrategiaNovato implements EstrategiaSeniority {
     }
 
     @Override
-    public EstrategiaSeniority incrementarSeniority(int turno) {
+    public Seniority incrementarSeniority(int turno) {
         if (turno == TURNO_PROMOCION_NOVATO)
-            return new EstrategiaSemiSenior();
+            return new SemiSenior();
 
         return this;
     }

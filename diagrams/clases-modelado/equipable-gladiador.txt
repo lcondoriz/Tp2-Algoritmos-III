@@ -1,0 +1,41 @@
+@startuml
+
+class Gladiador {
+  -energia: energia
+  -equipamiento: Equipable
+  -estrategiaSeniority: EstrategiaSeniority
+  -casillero: Casillero
+  
+  +avanzar(cantidadCasilleros: int, turno: int): void
+}
+
+
+interface Equipable {
+  + mejorarEquipamiento(mejorador: Mejorador): Equipable
+  + danoRecibidoPorFieraSalvaje(): int
+}
+
+class SinEquipamiento implements Equipable {
+}
+
+class Casco implements Equipable {
+}
+
+class Armadura implements Equipable {
+}
+
+class EscudoEspada implements Equipable {
+}
+
+class Llave implements Equipable {
+}
+
+class Mejorador {
+  + obtenerSiguienteMejora(): Equipable
+}
+
+Gladiador o--> Equipable
+
+Equipable ..> Mejorador
+
+@enduml

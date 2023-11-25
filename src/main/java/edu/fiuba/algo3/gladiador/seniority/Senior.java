@@ -1,9 +1,9 @@
 package edu.fiuba.algo3.gladiador.seniority;
 
 import edu.fiuba.algo3.gladiador.Energia;
-import edu.fiuba.algo3.gladiador.EstrategiaSeniority;
+import edu.fiuba.algo3.gladiador.Seniority;
 
-public class EstrategiaSenior implements EstrategiaSeniority {
+public class Senior implements Seniority {
 
     @Override
     public void obtenerPlusEnergia(Energia energia) {
@@ -11,7 +11,7 @@ public class EstrategiaSenior implements EstrategiaSeniority {
     }
 
     @Override
-    public EstrategiaSeniority incrementarSeniority(int turno) {
+    public Seniority incrementarSeniority(int turno) {
         return this;
     }
 

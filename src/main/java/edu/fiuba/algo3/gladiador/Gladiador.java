@@ -3,12 +3,12 @@ package edu.fiuba.algo3.gladiador;
 import edu.fiuba.algo3.casillero.equipamiento.Equipable;
 import edu.fiuba.algo3.casillero.equipamiento.SinEquipamiento;
 import edu.fiuba.algo3.exceptions.SinEnergiaException;
-import edu.fiuba.algo3.gladiador.seniority.EstrategiaNovato;
+import edu.fiuba.algo3.gladiador.seniority.Novato;
 import edu.fiuba.algo3.tablero.Casillero;
 
 public class Gladiador {
     private Energia energia;
-    private EstrategiaSeniority estrategiaSeniority;
+    private Seniority estrategiaSeniority;
     private Casillero casillero;
     private Equipable equipamiento;
 
@@ -16,7 +16,7 @@ public class Gladiador {
         this.energia = energia;
         this.casillero = casillero;
         this.equipamiento = new SinEquipamiento();
-        this.estrategiaSeniority = new EstrategiaNovato();
+        this.estrategiaSeniority = new Novato();
     }
 
     public void mejorarEquipamiento() {

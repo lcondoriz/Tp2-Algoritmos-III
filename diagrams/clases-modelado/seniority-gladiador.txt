@@ -1,0 +1,32 @@
+@startuml
+
+class Gladiador {
+  -energia: energia
+  -equipamiento: Equipable
+  -estrategiaSeniority: EstrategiaSeniority
+  -casillero: Casillero
+  
+  +avanzar(cantidadCasilleros: int, turno: int): void
+}
+
+
+interface Senioryty {
+  + obtenerPlusEnergia(energia: Energia): void
+  + incrementarSeniority(turno: int) Senioryty
+}
+
+class Novato implements Senioryty {
+}
+
+class SemiSenior implements Senioryty {
+}
+
+class Senior implements Senioryty {
+}
+
+
+Gladiador o--> Senioryty: state >
+
+
+
+@enduml
