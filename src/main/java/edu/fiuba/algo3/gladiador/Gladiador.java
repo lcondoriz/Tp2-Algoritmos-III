@@ -1,6 +1,7 @@
 package edu.fiuba.algo3.gladiador;
 
 import edu.fiuba.algo3.casillero.equipamiento.Equipable;
+import edu.fiuba.algo3.casillero.equipamiento.Mejorador;
 import edu.fiuba.algo3.casillero.equipamiento.SinEquipamiento;
 import edu.fiuba.algo3.exceptions.SinEnergiaException;
 import edu.fiuba.algo3.gladiador.seniority.Novato;
@@ -20,7 +21,7 @@ public class Gladiador {
     }
 
     public void mejorarEquipamiento() {
-        this.equipamiento = equipamiento.mejorarEquipamiento();
+        this.equipamiento = equipamiento.mejorarEquipamiento(new Mejorador());
     }
     public void incrementarEnergia(int incremento) {
         this.energia.incrementar(incremento);
