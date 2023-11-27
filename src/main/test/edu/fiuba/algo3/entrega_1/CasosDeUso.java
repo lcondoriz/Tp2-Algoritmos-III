@@ -1,6 +1,5 @@
 package edu.fiuba.algo3.entrega_1;
 
-import edu.fiuba.algo3.casillero.EstrategiaCasillero;
 import edu.fiuba.algo3.casillero.comestibles.Comida;
 import edu.fiuba.algo3.casillero.equipamiento.Casco;
 import edu.fiuba.algo3.casillero.equipamiento.Equipamiento;
@@ -22,16 +21,12 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class CasosDeUso {
     @Test // Caso de uso 1
     public void verificarQueElJugadorEmpiezaConLaEnergiaYEquipamientoCorrespondiente() {
         // Arrange
         Energia energia = new Energia(20);
-        Casillero casillero = new Casillero(0, new ArrayList<>() {{
-            add(new Comida());}});
+        Casillero casillero = new Casillero(0, new Comida());
 
         Gladiador gladiador = new Gladiador(energia, casillero);
 
@@ -46,8 +41,7 @@ public class CasosDeUso {
     public void verificarQueElJugadorSalgaDeLaCasillaInicial() {
         // Arrange
         Energia energia = new Energia(20);
-        Casillero casillero = new Casillero(0, new ArrayList<>() {{
-            add(new Comida());}});
+        Casillero casillero = new Casillero(0, new Comida());
 
         // Act
         Gladiador gladiador = new Gladiador(energia, casillero);
@@ -61,8 +55,7 @@ public class CasosDeUso {
     public void verificarQueUnJugadorSinEnergiaNoPuedaJugarElTurno() {
         // Arrange
         Energia energia = new Energia(20);
-        Casillero casillero = new Casillero(0, new ArrayList<>() {{
-            add(new Comida());}});
+        Casillero casillero = new Casillero(0, new Comida());
 
         Gladiador gladiador = new Gladiador(energia, casillero);
 
@@ -77,8 +70,7 @@ public class CasosDeUso {
     @Test // Caso de uso 4
     public void verificarQueSiRecibeComidaIncrementaEnergíaEn10() {
         Energia energia = new Energia(20);
-        Casillero casillero = new Casillero(0, new ArrayList<>() {{
-            add(new Comida());}});
+        Casillero casillero = new Casillero(0, new Comida());
 
         Gladiador gladiador = new Gladiador(energia, casillero);
 
@@ -90,8 +82,7 @@ public class CasosDeUso {
     @Test // Caso de uso 5
     public void verificarQueSiRecibeUnPremioPorPrimeraVezObtieneUnCasco() {
         Energia energia = new Energia(20);
-        Casillero casillero = new Casillero(0, new ArrayList<>() {{
-            add(new Equipamiento());}});
+        Casillero casillero = new Casillero(0, new Equipamiento());
 
         Gladiador gladiador = new Gladiador(energia, casillero);
 
@@ -103,8 +94,7 @@ public class CasosDeUso {
     @Test // Caso de uso 6
     public void verificarQueSiRecibeUnPremioPorTerceraVezObtieneUnEscudoYespada() {
         Energia energia = new Energia(20);
-        Casillero casillero = new Casillero(0, new ArrayList<>() {{
-            add(new Equipamiento());}});
+        Casillero casillero = new Casillero(0, new Equipamiento());
 
         Gladiador gladiador = new Gladiador(energia, casillero);
 
@@ -118,18 +108,18 @@ public class CasosDeUso {
     @Test // Caso de uso 7
     public void verificarQueSiHayUnCombateConUnaFieraSalvajeYTieneUnCascoPierde15PuntosDeEnergia() {
         Energia energia = new Energia(20);
-        Casillero casillero = new Casillero(0, new ArrayList<>() {{
-            add(new Equipamiento());}});
+        Casillero casillero = new Casillero(0, new Equipamiento());
 
         Gladiador gladiador = new Gladiador(energia, casillero);
 
-        gladiador.avanzar(1, 0); // Obtiene un casco 
+        gladiador.avanzar(1,0);   // Se obtiene un casco
 
         // Creo un obstaculo con una fiera salvaje
-        gladiador.setearCasillero(new Casillero(0, new ArrayList<>() {{
-            add(new Obstaculo(new FieraSalvaje()));}}));
+        Obstaculo obstaculo = new Obstaculo(new FieraSalvaje());
 
-        gladiador.avanzar(1, 0);   // Se produce el combate contra la Fiera Salvaje
+        gladiador.setearCasillero(new Casillero(0, obstaculo));
+
+        gladiador.avanzar(1, 0);   // Se produce el combate
 
         // al tener un casco, el gladiador pierde 15 puntos de energia
         assertEquals(5, gladiador.obtenerEnergia());
@@ -139,8 +129,7 @@ public class CasosDeUso {
     public void verificarQueSiPasan8TurnosElSeniorityDelGladiadorPasaDeNovatoASemiSeniorYVeSuEnergiaIncrementadaAlProximoTurno() {
         // Arrange
         Energia energia = new Energia(20);
-        Casillero casillero = new Casillero(0, new ArrayList<>() {{
-            add(new Vacio());}});
+        Casillero casillero = new Casillero(0, new Vacio());
         Gladiador gladiador = new Gladiador(energia, casillero);
 
         // Act
@@ -160,12 +149,9 @@ public class CasosDeUso {
         //Dado dado = new Dado(6);
         //AlgoRoma algoRoma = new AlgoRoma(dado);//quiza iria el JSON
 
-        Casillero casilleroInicial = new Casillero(0,new ArrayList<>() {{
-            add(new Vacio());}});
-        Casillero casilleroMitad = new Casillero(1, new ArrayList<>() {{
-            add(new Vacio());}});
-        Casillero casilleroFinal = new Casillero(2, new ArrayList<>() {{
-            add(new Final(3));}});
+        Casillero casilleroInicial = new Casillero(0, new Vacio());
+        Casillero casilleroMitad = new Casillero(1, new Vacio());
+        Casillero casilleroFinal = new Casillero(2, new Final(3));
 
         Gladiador gladiador = new Gladiador(new Energia(20), casilleroInicial);
 
@@ -186,21 +172,19 @@ public class CasosDeUso {
     public void verificarQueSiLoAtacaUnaFieraSalvajeYPoseeTodoElEquipamientoElDanioEnEnergiaEs0() {
         // Arrange
         Energia energia = new Energia(20);
-        Casillero casillero = new Casillero(0, new ArrayList<>() {{
-            add(new Equipamiento());}});
+        Casillero casillero = new Casillero(0, new Equipamiento());
         Gladiador gladiador = new Gladiador(energia, casillero);
 
         // Act
-        // Avanza 4 veces al casillero con Equipamiento y obtiene todo el Equipamiento
+        // Avanza 4 casilleros, y tiene todo el equipamiento
         for (int i = 1; i < 5; i++) {
             gladiador.avanzar(1, i);
         }
 
         // Creo un obstaculo con una fiera salvaje
-        gladiador.setearCasillero(new Casillero(5, new ArrayList<>() {{
-            add(new Obstaculo(new FieraSalvaje()));}}));
+        Obstaculo obstaculo = new Obstaculo(new FieraSalvaje());
+        gladiador.setearCasillero(new Casillero(5, obstaculo));
 
-        gladiador.avanzar(5, 6); //Se produce el combate
         // Assert
         // Al tener todo el equipamiento, el gladiador no pierde energia
         assertEquals(20, gladiador.obtenerEnergia());
@@ -211,8 +195,7 @@ public class CasosDeUso {
     public void verificarQueSiElGladiadorTieneLaLlaveYRecibeOtroEquipamientoNoCambiaNada() {
         // Arrange
         Energia energia = new Energia(20);
-        Casillero casillero = new Casillero(0, new ArrayList<>() {{
-            add(new Equipamiento());}});
+        Casillero casillero = new Casillero(0, new Equipamiento());
         Gladiador gladiador = new Gladiador(energia, casillero);
 
         // Act
