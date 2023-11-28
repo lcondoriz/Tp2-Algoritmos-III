@@ -7,7 +7,7 @@ import edu.fiuba.algo3.casillero.equipamiento.EscudoEspada;
 import edu.fiuba.algo3.casillero.equipamiento.Llave;
 import edu.fiuba.algo3.casillero.obstaculos.FieraSalvaje;
 import edu.fiuba.algo3.casillero.obstaculos.Obstaculo;
-import edu.fiuba.algo3.casillero.vacio.Final;
+import edu.fiuba.algo3.casillero.vacio.Salida;
 import edu.fiuba.algo3.casillero.vacio.Camino;
 import edu.fiuba.algo3.exceptions.CantidadTurnosException;
 import edu.fiuba.algo3.exceptions.SinEnergiaException;
@@ -163,7 +163,7 @@ public class CasosDeUso {
         Casillero casilleroMitad = new Casillero(1, new ArrayList<>() {{
             add(new Camino());}});
         Casillero casilleroFinal = new Casillero(2, new ArrayList<>() {{
-            add(new Final(3));}});
+            add(new Salida(3));}});
 
         Gladiador gladiador = new Gladiador(new Energia(20), casilleroInicial);
 
@@ -202,7 +202,7 @@ public class CasosDeUso {
         // Assert
         // Al tener todo el equipamiento, el gladiador no pierde energia
         assertEquals(20, gladiador.obtenerEnergia());
-
+            
     }
 
     @Test // Caso de uso 11

@@ -10,12 +10,13 @@ import edu.fiuba.algo3.casillero.obstaculos.Lesion;
 import edu.fiuba.algo3.juego.Dado;
 import edu.fiuba.algo3.casillero.vacio.Camino;
 import edu.fiuba.algo3.casillero.vacio.Salida;
+import edu.fiuba.algo3.casillero.vacio.Vacio;
 
 
 public class ParserEstrategiaCasillero implements Parser {
     @Override
     public EstrategiaCasillero parsear(String nombreEstrategia, int posicion){
-        EstrategiaCasillero estrategia = new Camino();
+        EstrategiaCasillero estrategia = new Vacio();
         Dado dado = new Dado(6);
         
         switch (nombreEstrategia) {
