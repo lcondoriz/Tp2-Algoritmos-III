@@ -1,7 +1,6 @@
 package edu.fiuba.algo3.gladiador.seniority;
 
 import edu.fiuba.algo3.gladiador.Energia;
-import edu.fiuba.algo3.gladiador.Seniority;
 
 public class Novato implements Seniority {
     public static final int TURNO_PROMOCION_NOVATO = 8;

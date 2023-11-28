@@ -1,23 +1,26 @@
 package edu.fiuba.algo3.gladiador;
 
-import edu.fiuba.algo3.casillero.equipamiento.Equipable;
-import edu.fiuba.algo3.casillero.equipamiento.Mejorador;
-import edu.fiuba.algo3.casillero.equipamiento.SinEquipamiento;
+import edu.fiuba.algo3.gladiador.equipamiento.Equipable;
+import edu.fiuba.algo3.gladiador.mejorador.Mejorador;
+import edu.fiuba.algo3.gladiador.equipamiento.SinEquipamiento;
 import edu.fiuba.algo3.exceptions.SinEnergiaException;
 import edu.fiuba.algo3.gladiador.seniority.Novato;
-import edu.fiuba.algo3.tablero.Casillero;
+import edu.fiuba.algo3.gladiador.seniority.Seniority;
+import edu.fiuba.algo3.tablero.celda.Celda;
 
 public class Gladiador {
     private Energia energia;
-    private Seniority estrategiaSeniority;
-    private Casillero casillero;
     private Equipable equipamiento;
+    private Seniority estrategiaSeniority;
+    private Celda celda;
+    private int turnosEsperaLesion;
 
-    public Gladiador(Energia energia, Casillero casillero) {
+    public Gladiador(Energia energia, Celda celda) {
         this.energia = energia;
-        this.casillero = casillero;
         this.equipamiento = new SinEquipamiento();
         this.estrategiaSeniority = new Novato();
+        this.celda = celda;
+        this.turnosEsperaLesion = 0;
     }
 
     public void mejorarEquipamiento() {
@@ -35,23 +38,26 @@ public class Gladiador {
     public Equipable obtenerEquipamiento() {
         return this.equipamiento;
     }
-    public int obtenerPosicionCasillero() {
-        return this.casillero.obtenerPosicion();
-    }
+//    public int obtenerPosicioncelda() {
+//        return this.celda.obtenerPosicion();
+//    }
 
     // VER: No se si es conveniente tener que recibir el turno como parámetro.
-    public void avanzar(int cantidadCasilleros, int turno) {
+    public void avanzar(int cantidadceldas, int turno) {
         if (!this.energia.tieneEnergiaSuficiente()) {
-            throw new SinEnergiaException("El gladiador no tiene suficiente energía para avanzar");
+            this.energia.incrementar(5);
+            return;
         }
-        // Falta toda la lógica de avanzar entre casilleros, cantidadCasilleros es el desplazamiento Ejemplo: si cantidadCasilleros = 5, se desplaza 5 casilleros desde el casillero actual.
-        // Se supone cada casillero que recibe Gladiador tiene un atributo quatributo clase que Vacio, Obstaculom, Comida y Equipamiento. Luego se aplica el efecto de cada uno.
 
-        // Cada casillero sabe como desplazarse entre sus vecinos
-        // this.casillero = this.casillero.avanzar(cantidadCasilleros);
+        if (turnosEsperaLesion > 0) {
+            turnosEsperaLesion--;
+            return;
+        }
 
-        // Cada casillero sabe como aplicar su efecto
-        this.casillero.aplicarEfecto(this);
+        this.celda = this.celda.avanzar(cantidadceldas);
+
+        // Cada celda sabe como aplicar su efecto
+        this.celda.aplicarEfecto(this);
 
         // De acuerdo al turno, se incrementa el seniority
         this.estrategiaSeniority = this.estrategiaSeniority.incrementarSeniority(turno);
@@ -60,10 +66,18 @@ public class Gladiador {
         this.estrategiaSeniority.obtenerPlusEnergia(this.energia);
     }
 
-    public void setCasillero(int posicion){
-        casillero.setPosicion(posicion);
+    public void serLesionado(int turnosEspera) {
+        this.turnosEsperaLesion = turnosEspera;
     }
-    public void setearCasillero(Casillero casillero) {
-        this.casillero = casillero;
+    public Celda obtenerCasillero() {
+        return this.celda;
     }
+
+//    public void setCelda(int posicion){
+//        celda.setPosicion(posicion);
+//    }
+//    public void setearcelda(celda celda) {
+//        this.celda = celda;
+//    }
+
 }
