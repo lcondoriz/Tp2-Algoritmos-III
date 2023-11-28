@@ -22,4 +22,8 @@ public class Jugador {
         int cantidadDeMovimientos = dado.lanzar();
         gladiador.avanzar(cantidadDeMovimientos, this.turno);
     }
+
+    public String obtenerNombre(){
+        return nombre;
+    }
 }

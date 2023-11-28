@@ -16,6 +16,7 @@ import edu.fiuba.algo3.gladiador.Gladiador;
 import edu.fiuba.algo3.juego.AlgoRoma;
 import edu.fiuba.algo3.juego.Dado;
 import edu.fiuba.algo3.tablero.Casillero;
+import edu.fiuba.algo3.tablero.Coordenadas;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -29,7 +30,7 @@ public class CasosDeUso {
         // Arrange
         Energia energia = new Energia(20);
         Casillero casillero = new Casillero(0, new ArrayList<>() {{
-            add(new Comida());}});
+            add(new Comida());}}, new Coordenadas(0, 0));
 
         Gladiador gladiador = new Gladiador(energia, casillero);
 
@@ -45,7 +46,7 @@ public class CasosDeUso {
         // Arrange
         Energia energia = new Energia(20);
         Casillero casillero = new Casillero(0, new ArrayList<>() {{
-            add(new Comida());}});
+            add(new Comida());}}, new Coordenadas(0, 0));
 
         // Act
         Gladiador gladiador = new Gladiador(energia, casillero);
@@ -60,7 +61,7 @@ public class CasosDeUso {
         // Arrange
         Energia energia = new Energia(20);
         Casillero casillero = new Casillero(0, new ArrayList<>() {{
-            add(new Comida());}});
+            add(new Comida());}}, new Coordenadas(0, 0));
 
         Gladiador gladiador = new Gladiador(energia, casillero);
 
@@ -76,7 +77,7 @@ public class CasosDeUso {
     public void verificarQueSiRecibeComidaIncrementaEnergíaEn10() {
         Energia energia = new Energia(20);
         Casillero casillero = new Casillero(0, new ArrayList<>() {{
-            add(new Comida());}});
+            add(new Comida());}}, new Coordenadas(0,0));
 
         Gladiador gladiador = new Gladiador(energia, casillero);
 
@@ -89,7 +90,7 @@ public class CasosDeUso {
     public void verificarQueSiRecibeUnPremioPorPrimeraVezObtieneUnCasco() {
         Energia energia = new Energia(20);
         Casillero casillero = new Casillero(0, new ArrayList<>() {{
-            add(new Equipamiento());}});
+            add(new Equipamiento());}}, new Coordenadas(0,0));
 
         Gladiador gladiador = new Gladiador(energia, casillero);
 
@@ -102,7 +103,7 @@ public class CasosDeUso {
     public void verificarQueSiRecibeUnPremioPorTerceraVezObtieneUnEscudoYespada() {
         Energia energia = new Energia(20);
         Casillero casillero = new Casillero(0, new ArrayList<>() {{
-            add(new Equipamiento());}});
+            add(new Equipamiento());}}, new Coordenadas(0, 0));
 
         Gladiador gladiador = new Gladiador(energia, casillero);
 
@@ -117,7 +118,7 @@ public class CasosDeUso {
     public void verificarQueSiHayUnCombateConUnaFieraSalvajeYTieneUnCascoPierde15PuntosDeEnergia() {
         Energia energia = new Energia(20);
         Casillero casillero = new Casillero(0, new ArrayList<>() {{
-            add(new Equipamiento());}});
+            add(new Equipamiento());}}, new Coordenadas(0, 0));
 
         Gladiador gladiador = new Gladiador(energia, casillero);
 
@@ -125,7 +126,7 @@ public class CasosDeUso {
 
         // Creo un obstaculo con una fiera salvaje
         gladiador.setearCasillero(new Casillero(0, new ArrayList<>() {{
-            add(new Obstaculo(new FieraSalvaje()));}}));
+            add(new Obstaculo(new FieraSalvaje()));}}, new Coordenadas(0, 0)));
 
         gladiador.avanzar(1, 0);   // Se produce el combate contra la Fiera Salvaje
 
@@ -138,7 +139,7 @@ public class CasosDeUso {
         // Arrange
         Energia energia = new Energia(20);
         Casillero casillero = new Casillero(0, new ArrayList<>() {{
-            add(new Camino());}});
+            add(new Camino());}}, new Coordenadas(0, 0));
         Gladiador gladiador = new Gladiador(energia, casillero);
 
         // Act
@@ -159,11 +160,11 @@ public class CasosDeUso {
         //AlgoRoma algoRoma = new AlgoRoma(dado);//quiza iria el JSON
 
         Casillero casilleroInicial = new Casillero(0,new ArrayList<>() {{
-            add(new Camino());}});
+            add(new Camino());}}, new Coordenadas(0, 0));
         Casillero casilleroMitad = new Casillero(1, new ArrayList<>() {{
-            add(new Camino());}});
+            add(new Camino());}}, new Coordenadas(0, 0));
         Casillero casilleroFinal = new Casillero(2, new ArrayList<>() {{
-            add(new Llegada(3));}});
+            add(new Llegada(3));}}, new Coordenadas(0, 0));
 
         Gladiador gladiador = new Gladiador(new Energia(20), casilleroInicial);
 
@@ -185,7 +186,7 @@ public class CasosDeUso {
         // Arrange
         Energia energia = new Energia(20);
         Casillero casillero = new Casillero(0, new ArrayList<>() {{
-            add(new Equipamiento());}});
+            add(new Equipamiento());}}, new Coordenadas(0, 0));
         Gladiador gladiador = new Gladiador(energia, casillero);
 
         // Act
@@ -196,7 +197,7 @@ public class CasosDeUso {
 
         // Creo un obstaculo con una fiera salvaje
         gladiador.setearCasillero(new Casillero(5, new ArrayList<>() {{
-            add(new Obstaculo(new FieraSalvaje()));}}));
+            add(new Obstaculo(new FieraSalvaje()));}}, new Coordenadas(0, 0)));
 
         gladiador.avanzar(5, 6); //Se produce el combate
         // Assert
@@ -210,7 +211,7 @@ public class CasosDeUso {
         // Arrange
         Energia energia = new Energia(20);
         Casillero casillero = new Casillero(0, new ArrayList<>() {{
-            add(new Equipamiento());}});
+            add(new Equipamiento());}}, new Coordenadas(0, 0));
         Gladiador gladiador = new Gladiador(energia, casillero);
 
         // Act

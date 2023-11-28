@@ -1,5 +1,6 @@
 package edu.fiuba.algo3.lector;
 import edu.fiuba.algo3.tablero.Casillero;
+import edu.fiuba.algo3.tablero.Coordenadas;
 import edu.fiuba.algo3.tablero.Tablero;
 import edu.fiuba.algo3.casillero.EstrategiaCasillero;
 import edu.fiuba.algo3.casillero.comestibles.Comida;
@@ -65,7 +66,7 @@ public class LectorJSON implements Lector {
             // se inicializa la lista de estrategias con todas las estrategias del casillero
             List<EstrategiaCasillero> estrategiasCasillero = new ArrayList<>(Arrays.asList(tipo, obstaculo, premio)); 
             // creo el casillero con la posicion y sus estrategias
-            Casillero casillero = new Casillero(posicion , estrategiasCasillero);
+            Casillero casillero = new Casillero(posicion , estrategiasCasillero, new Coordenadas(x, y));
             // agrego el casillero al tablero
             tablero.agregarCasillero(casillero);
             posicion ++;

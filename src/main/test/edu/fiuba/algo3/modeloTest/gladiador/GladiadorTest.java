@@ -5,6 +5,8 @@ import edu.fiuba.algo3.casillero.equipamiento.Equipamiento;
 import edu.fiuba.algo3.gladiador.Energia;
 import edu.fiuba.algo3.gladiador.Gladiador;
 import edu.fiuba.algo3.tablero.Casillero;
+import edu.fiuba.algo3.tablero.Coordenadas;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -21,7 +23,7 @@ public class GladiadorTest {
     public void setUp() {
         Energia energia = new Energia(20);
         casillero = new Casillero(0, new ArrayList<>() {{
-            add(new Equipamiento());}});
+            add(new Equipamiento());}}, new Coordenadas(0, 0));
         gladiador = new Gladiador(energia, casillero);
     }
 

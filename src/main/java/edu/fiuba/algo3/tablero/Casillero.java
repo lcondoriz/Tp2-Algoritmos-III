@@ -8,10 +8,12 @@ import edu.fiuba.algo3.gladiador.Gladiador;
 public class Casillero {
     private int posicion;
     private List<EstrategiaCasillero> estrategiasCasillero;
+    private Coordenadas coordenadas;
 
-    public Casillero(int posicion, List<EstrategiaCasillero> estrategiasCasillero) {
+    public Casillero(int posicion, List<EstrategiaCasillero> estrategiasCasillero, Coordenadas coordenadas) {
         this.posicion = posicion;
         this.estrategiasCasillero = estrategiasCasillero;
+        this.coordenadas = coordenadas;
     }
 
     public void setPosicion(int posicion){
@@ -30,5 +32,9 @@ public class Casillero {
     
     public List<EstrategiaCasillero> obtenerEstrategiasCasillero() {
         return estrategiasCasillero;
+    }
+
+    public Coordenadas obtenerCoordenadas(){
+        return coordenadas;
     }
 }
