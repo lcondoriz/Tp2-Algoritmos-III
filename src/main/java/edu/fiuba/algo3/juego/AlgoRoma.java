@@ -2,7 +2,7 @@ package edu.fiuba.algo3.juego;
 
 import edu.fiuba.algo3.casillero.EstrategiaCasillero;
 import edu.fiuba.algo3.casillero.equipamiento.Equipamiento;
-import edu.fiuba.algo3.casillero.vacio.Vacio;
+import edu.fiuba.algo3.casillero.vacio.Camino;
 import edu.fiuba.algo3.exceptions.CantidadJugadoresException;
 import edu.fiuba.algo3.exceptions.CantidadTurnosException;
 import edu.fiuba.algo3.exceptions.NoHayJugadoresException;
@@ -32,7 +32,7 @@ public class AlgoRoma {
     }
     public void agregarJugador(String nombre) {
         Jugador jugador = new Jugador(nombre, new Casillero(0, new ArrayList<>() {{
-        add(new Vacio());}}));
+        add(new Camino());}}));
         
         this.jugadores.add(jugador);
     }

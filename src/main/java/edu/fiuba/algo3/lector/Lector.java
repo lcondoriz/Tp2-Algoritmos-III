@@ -1,5 +1,6 @@
 package edu.fiuba.algo3.lector;
+import edu.fiuba.algo3.tablero.Tablero;
 
 public interface Lector {
-    void leerArchivo(String nombreArchivo);
+    public void leerArchivo(String nombreArchivo, Tablero tablero);
 }

@@ -1,6 +1,5 @@
 package edu.fiuba.algo3.entrega_1;
 
-import edu.fiuba.algo3.casillero.EstrategiaCasillero;
 import edu.fiuba.algo3.casillero.comestibles.Comida;
 import edu.fiuba.algo3.casillero.equipamiento.Casco;
 import edu.fiuba.algo3.casillero.equipamiento.Equipamiento;
@@ -9,7 +8,7 @@ import edu.fiuba.algo3.casillero.equipamiento.Llave;
 import edu.fiuba.algo3.casillero.obstaculos.FieraSalvaje;
 import edu.fiuba.algo3.casillero.obstaculos.Obstaculo;
 import edu.fiuba.algo3.casillero.vacio.Final;
-import edu.fiuba.algo3.casillero.vacio.Vacio;
+import edu.fiuba.algo3.casillero.vacio.Camino;
 import edu.fiuba.algo3.exceptions.CantidadTurnosException;
 import edu.fiuba.algo3.exceptions.SinEnergiaException;
 import edu.fiuba.algo3.gladiador.Energia;
@@ -23,7 +22,6 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class CasosDeUso {
     @Test // Caso de uso 1
@@ -140,7 +138,7 @@ public class CasosDeUso {
         // Arrange
         Energia energia = new Energia(20);
         Casillero casillero = new Casillero(0, new ArrayList<>() {{
-            add(new Vacio());}});
+            add(new Camino());}});
         Gladiador gladiador = new Gladiador(energia, casillero);
 
         // Act
@@ -161,15 +159,15 @@ public class CasosDeUso {
         //AlgoRoma algoRoma = new AlgoRoma(dado);//quiza iria el JSON
 
         Casillero casilleroInicial = new Casillero(0,new ArrayList<>() {{
-            add(new Vacio());}});
+            add(new Camino());}});
         Casillero casilleroMitad = new Casillero(1, new ArrayList<>() {{
-            add(new Vacio());}});
+            add(new Camino());}});
         Casillero casilleroFinal = new Casillero(2, new ArrayList<>() {{
             add(new Final(3));}});
 
         Gladiador gladiador = new Gladiador(new Energia(20), casilleroInicial);
 
-       /* Tablero tablero = new Tablero({"Bacabal","Vacio","Equipamiento"
+       /* Tablero tablero = new Tablero({"Bacabal","Camino","Equipamiento"
                 casilleroInicial,casilleroMitad,casilleroFinal
         });
         */

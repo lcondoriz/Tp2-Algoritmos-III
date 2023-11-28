@@ -1,13 +1,9 @@
 package edu.fiuba.algo3.modeloTest.juego;
 
-import edu.fiuba.algo3.casillero.vacio.Vacio;
 import edu.fiuba.algo3.exceptions.CantidadJugadoresException;
 import edu.fiuba.algo3.exceptions.NoHayJugadoresException;
-import edu.fiuba.algo3.exceptions.SinEnergiaException;
 import edu.fiuba.algo3.juego.AlgoRoma;
 import edu.fiuba.algo3.juego.Dado;
-import edu.fiuba.algo3.juego.Jugador;
-import edu.fiuba.algo3.tablero.Casillero;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

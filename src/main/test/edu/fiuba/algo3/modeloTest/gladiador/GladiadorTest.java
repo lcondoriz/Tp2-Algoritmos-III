@@ -1,10 +1,7 @@
 package edu.fiuba.algo3.modeloTest.gladiador;
 
-import edu.fiuba.algo3.casillero.EstrategiaCasillero;
 import edu.fiuba.algo3.casillero.equipamiento.Equipable;
 import edu.fiuba.algo3.casillero.equipamiento.Equipamiento;
-import edu.fiuba.algo3.casillero.obstaculos.FieraSalvaje;
-import edu.fiuba.algo3.casillero.obstaculos.Obstaculo;
 import edu.fiuba.algo3.gladiador.Energia;
 import edu.fiuba.algo3.gladiador.Gladiador;
 import edu.fiuba.algo3.tablero.Casillero;
@@ -15,7 +12,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class GladiadorTest {
     private Gladiador gladiador;
