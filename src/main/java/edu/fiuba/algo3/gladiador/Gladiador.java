@@ -23,18 +23,23 @@ public class Gladiador {
     public void mejorarEquipamiento() {
         this.equipamiento = equipamiento.mejorarEquipamiento(new Mejorador());
     }
+
     public void incrementarEnergia(int incremento) {
         this.energia.incrementar(incremento);
     }
+
     public void decrementarEnergia(int decremento) {
         this.energia.decrementar(decremento);
     }
+
     public int obtenerEnergia() {
         return this.energia.obtenerEnergia();
     }
+
     public Equipable obtenerEquipamiento() {
         return this.equipamiento;
     }
+
     public int obtenerPosicionCasillero() {
         return this.casillero.obtenerPosicion();
     }
@@ -60,10 +65,16 @@ public class Gladiador {
         this.estrategiaSeniority.obtenerPlusEnergia(this.energia);
     }
 
-    public void setCasillero(int posicion){
+    public void setCasillero(int posicion) {
         casillero.setPosicion(posicion);
     }
+
     public void setearCasillero(Casillero casillero) {
         this.casillero = casillero;
+    }
+
+
+    public void recibirDanioPorFieraSalvaje() {
+        this.equipamiento.modificarEnergiaConFiera(this.energia);
     }
 }

@@ -6,6 +6,7 @@ public class FieraSalvaje implements Obstaculizable {
 
     @Override
     public void aplicarEfecto(Gladiador gladiador) {
-        gladiador.decrementarEnergia(gladiador.obtenerEquipamiento().danoRecibidoPorFieraSalvaje());
+       /* gladiador.decrementarEnergia(gladiador.obtenerEquipamiento().danoRecibidoPorFieraSalvaje());*/
+        gladiador.recibirDanioPorFieraSalvaje();
     }
 }

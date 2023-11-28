@@ -12,13 +12,16 @@ public class Energia {
     }
 
     public void incrementar(int cantidad) {
-        puntos += cantidad;
+        this.puntos += cantidad;
     }
 
     public void decrementar(int cantidad) {
-        puntos -= cantidad;
+        this.puntos -= cantidad;
     }
 
+    public void actualizar(int cantidad){
+        this.puntos = cantidad;
+    }
     public boolean tieneEnergiaSuficiente() {
         return puntos > 0;
     }
