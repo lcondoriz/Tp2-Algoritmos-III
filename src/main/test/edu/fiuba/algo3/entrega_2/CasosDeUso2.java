@@ -1,14 +1,19 @@
 package edu.fiuba.algo3.entrega_2;
 
+import edu.fiuba.algo3.casillero.EstrategiaCasillero;
 import edu.fiuba.algo3.casillero.comestibles.Comida;
 import edu.fiuba.algo3.casillero.equipamiento.Casco;
 import edu.fiuba.algo3.casillero.equipamiento.Equipamiento;
 import edu.fiuba.algo3.casillero.equipamiento.EscudoEspada;
 import edu.fiuba.algo3.casillero.equipamiento.Llave;
 import edu.fiuba.algo3.casillero.obstaculos.FieraSalvaje;
+import edu.fiuba.algo3.casillero.obstaculos.Lesion;
+import edu.fiuba.algo3.casillero.obstaculos.Bacanal;
 import edu.fiuba.algo3.casillero.obstaculos.Obstaculo;
 import edu.fiuba.algo3.casillero.vacio.Llegada;
 import edu.fiuba.algo3.casillero.vacio.Camino;
+import edu.fiuba.algo3.casillero.vacio.Vacio;
+import edu.fiuba.algo3.casillero.vacio.Salida;
 import edu.fiuba.algo3.exceptions.CantidadTurnosException;
 import edu.fiuba.algo3.exceptions.SinEnergiaException;
 import edu.fiuba.algo3.gladiador.Energia;
@@ -16,17 +21,25 @@ import edu.fiuba.algo3.gladiador.Gladiador;
 import edu.fiuba.algo3.juego.AlgoRoma;
 import edu.fiuba.algo3.juego.Dado;
 import edu.fiuba.algo3.tablero.Casillero;
+import edu.fiuba.algo3.tablero.Tablero;
+import edu.fiuba.algo3.lector.Lector;
+import edu.fiuba.algo3.lector.LectorJSON;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.mockito.internal.matchers.Null;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class CasosDeUso2 {
 
@@ -60,18 +73,44 @@ public class CasosDeUso2 {
         assertTrue(isValid);
     }
     @Test // Caso de uso 14
-    public void verificarLaLecturaYLaPosteriorConversionAUnidadesDelModeloDeDominioDelJSONDelMapa() {
+    public void verificarLaLecturaYLaPosteriorConversionAUnidadesDelModeloDeDominioDelJSON() {
         //Arrange
+        LectorJSON lector = new LectorJSON();
+        Tablero tablero = new Tablero(1, 1);
+        Tablero tableroEsperado = new Tablero (7 , 2);
+        Casillero casillero1 = new Casillero(0, new ArrayList<>() {{add(new Salida());add(new Vacio());add(new Vacio());}});
+        Casillero casillero2 = new Casillero(1, new ArrayList<>() {{add(new Camino());add(new Obstaculo(new FieraSalvaje()));add(new Comida());}}); 
+        Casillero casillero3 = new Casillero(2, new ArrayList<>() {{add(new Camino());add(new Obstaculo(new Bacanal(new Dado(6))));add(new Equipamiento());}});
+        Casillero casillero4 = new Casillero(3, new ArrayList<>() {{add(new Llegada(3));add(new Obstaculo(new Lesion()));add(new Vacio());}});   
+        tableroEsperado.agregarCasillero(casillero1);
+        tableroEsperado.agregarCasillero(casillero2);
+        tableroEsperado.agregarCasillero(casillero3);
+        tableroEsperado.agregarCasillero(casillero4);
         //Act
+        lector.leerArchivo("src\\main\\test\\edu\\fiuba\\algo3\\entrega_2\\mapatest.json", tablero);
+
         //Assert
+        //Verificar que tengan las mismas dimensiones
+        assertEquals(tablero.obtenerAncho(), tableroEsperado.obtenerAncho());
+        assertEquals(tablero.obtenerLargo(), tableroEsperado.obtenerLargo());
+        for (int i = 0; i < tablero.cantidadCasilleros(); i++) {
+            Casillero casilleroEnTablero = tablero.obtenerCasillero(i);
+            Casillero casilleroEnTableroEsperado = tableroEsperado.obtenerCasillero(i);
+
+            List<EstrategiaCasillero> estrategiasEnTablero = casilleroEnTablero.obtenerEstrategiasCasillero();
+            List<EstrategiaCasillero> estrategiasEsperadas = casilleroEnTableroEsperado.obtenerEstrategiasCasillero();
+
+            // Verificar que las listas de estrategiasCasillero tengan la misma longitud
+            assertEquals(estrategiasEsperadas.size(), estrategiasEnTablero.size());
+
+            // Iterar sobre las estrategias y verificar que tengan las mismas estrategias en el mismo orden
+            for (int j = 0; j < estrategiasEsperadas.size(); j++) {
+                assertEquals(estrategiasEsperadas.get(j).getClass(), estrategiasEnTablero.get(j).getClass());
+            }
+        }
+        
     }
     @Test // Caso de uso 15
-    public void verificarQueElJuegoSeCreaAcordeAlJSON() {
-        //Arrange
-        //Act
-        //Assert
-    }
-    @Test // Caso de uso 16
     public void verificarElSistemaDeLogAUtilizar() {
         //Arrange
         //Act

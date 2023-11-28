@@ -13,6 +13,11 @@ public class Tablero {
         this.ancho = ancho;
         this.largo = largo;
     }
+    
+    public void setDimensiones(int ancho, int largo) {
+        this.ancho = ancho;
+        this.largo = largo;
+    }
 
     public void agregarCasillero(Casillero casillero) {
         casillas.add(casillero);

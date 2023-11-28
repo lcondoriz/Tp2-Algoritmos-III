@@ -23,8 +23,12 @@ public class Casillero {
             estrategia.aplicarEfecto(gladiador);
         }
     }
-    
+
     public int obtenerPosicion() {
         return posicion;
+    }
+    
+    public List<EstrategiaCasillero> obtenerEstrategiasCasillero() {
+        return estrategiasCasillero;
     }
 }

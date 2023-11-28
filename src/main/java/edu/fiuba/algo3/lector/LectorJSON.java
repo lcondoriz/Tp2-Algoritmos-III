@@ -17,11 +17,11 @@ import java.util.List;
 
 public class LectorJSON implements Lector {
     @Override
-    public void leerArchivo(String nombreArchivo, Tablero tablero) {
+    public void leerArchivo(String pathArchivo, Tablero tablero) {
         try {
             
             ObjectMapper objectMapper = new ObjectMapper();
-            JsonNode jsonNode = objectMapper.readTree(new File(nombreArchivo));
+            JsonNode jsonNode = objectMapper.readTree(new File(pathArchivo));
 
             procesarJsonNode(jsonNode, tablero);
 
@@ -36,7 +36,7 @@ public class LectorJSON implements Lector {
             int ancho = mapaNode.get("ancho").asInt();
             int largo = mapaNode.get("largo").asInt();
 
-            tablero = new Tablero (ancho , largo); // creo el tablero con las dimensiones dadas
+            tablero.setDimensiones(ancho, largo); // creo el tablero con las dimensiones dadas
         }
 
         JsonNode caminoNode = jsonNode.get("camino");
@@ -51,7 +51,7 @@ public class LectorJSON implements Lector {
     private void procesarCeldas(JsonNode celdasNode, Tablero tablero) {
 
         ParserEstrategiaCasillero parserEstrategias = new  ParserEstrategiaCasillero();
-        int posicion = 0 ;
+        int posicion = 0 ; // la primera casilla (Salida) es la posicion 0
         
         for (JsonNode celdaNode : celdasNode) {
             
