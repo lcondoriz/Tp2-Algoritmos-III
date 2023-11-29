@@ -3,7 +3,6 @@ package edu.fiuba.algo3.gladiador;
 import edu.fiuba.algo3.gladiador.equipamiento.Equipable;
 import edu.fiuba.algo3.gladiador.mejorador.Mejorador;
 import edu.fiuba.algo3.gladiador.equipamiento.SinEquipamiento;
-import edu.fiuba.algo3.exceptions.SinEnergiaException;
 import edu.fiuba.algo3.gladiador.seniority.Novato;
 import edu.fiuba.algo3.gladiador.seniority.Seniority;
 import edu.fiuba.algo3.tablero.celda.Celda;
@@ -43,7 +42,7 @@ public class Gladiador {
 //    }
 
     // VER: No se si es conveniente tener que recibir el turno como parámetro.
-    public void avanzar(int cantidadceldas, int turno) {
+    public void avanzar(int cantidadCeldas, int turno) {
         if (!this.energia.tieneEnergiaSuficiente()) {
             this.energia.incrementar(5);
             return;
@@ -54,7 +53,7 @@ public class Gladiador {
             return;
         }
 
-        this.celda = this.celda.avanzar(cantidadceldas);
+        this.celda = this.celda.avanzar(cantidadCeldas);
 
         // Cada celda sabe como aplicar su efecto
         this.celda.aplicarEfecto(this);
@@ -65,12 +64,14 @@ public class Gladiador {
         // Cada vez que se avanza, es un turno nuevo. Y por cada turno nuevo y por el tipo de seniority se da un plus de energía.
         this.estrategiaSeniority.obtenerPlusEnergia(this.energia);
     }
-
     public void serLesionado(int turnosEspera) {
         this.turnosEsperaLesion = turnosEspera;
     }
-    public Celda obtenerCasillero() {
+    public Celda obtenerCelda() {
         return this.celda;
+    }
+    public void retrocederMitadCamino() {
+        this.celda = this.celda.retrocenderMitadCamino();
     }
 
 //    public void setCelda(int posicion){

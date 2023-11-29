@@ -1,29 +1,21 @@
 package edu.fiuba.algo3.entrega_1;
 
 
-import edu.fiuba.algo3.gladiador.equipamiento.Casco;
-import edu.fiuba.algo3.gladiador.equipamiento.EscudoEspada;
 import edu.fiuba.algo3.gladiador.equipamiento.Llave;
 
 import edu.fiuba.algo3.exceptions.CantidadTurnosException;
-import edu.fiuba.algo3.exceptions.SinEnergiaException;
 import edu.fiuba.algo3.gladiador.Energia;
 import edu.fiuba.algo3.gladiador.Gladiador;
 import edu.fiuba.algo3.gladiador.equipamiento.SinEquipamiento;
-import edu.fiuba.algo3.gladiador.seniority.SemiSenior;
 import edu.fiuba.algo3.juego.AlgoRoma;
 import edu.fiuba.algo3.juego.Dado;
-import edu.fiuba.algo3.tablero.Tablero;
 import edu.fiuba.algo3.tablero.celda.Camino;
 import edu.fiuba.algo3.tablero.celda.Celda;
 import edu.fiuba.algo3.tablero.celda.Salida;
 import edu.fiuba.algo3.tablero.celda.afectable.Comida;
 import edu.fiuba.algo3.tablero.celda.afectable.Equipo;
 import edu.fiuba.algo3.tablero.celda.afectable.FieraSalvaje;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
-import java.util.LinkedList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.anyInt;
@@ -57,7 +49,7 @@ public class CasosDeUso {
 
         // Assert
         // verifica mos que el casillero inicial sea posicion 0
-        assertEquals(Salida.class, gladiador.obtenerCasillero().getClass());
+        assertEquals(Salida.class, gladiador.obtenerCelda().getClass());
     }
 
     @Test // Caso de uso 3
@@ -79,7 +71,7 @@ public class CasosDeUso {
         gladiador.avanzar(1, 0);
 
         // Assert
-        assertEquals(salida, gladiador.obtenerCasillero());
+        assertEquals(salida, gladiador.obtenerCelda());
     }
     @Test // Caso de uso 4
     public void verificarQueSiRecibeComidaIncrementaEnergíaEn15() {

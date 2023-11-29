@@ -25,6 +25,12 @@ public abstract class Celda {
         this.celdaAnterior = null;
         this.siguienteCelda = null;
     }
+    public abstract void aplicarEfecto(Gladiador gladiador);
+    public void aplicarAfectables(Gladiador gladiador) {
+        for (Afectable afectable : this.afectable) {
+            afectable.aplicarEfecto(gladiador);
+        }
+    }
     public void agregarCeldaAnterior(Celda celda) {
         this.celdaAnterior = celda;
     }
@@ -35,15 +41,18 @@ public abstract class Celda {
         this.afectable.add(afectable);
     }
     public Celda avanzar(int pasos) {
-        if (pasos == 0) {
+        if (pasos == 0 || this.siguienteCelda == null) {
             return this;
         }
         return this.siguienteCelda.avanzar(pasos - 1);
     }
-    public void aplicarAfectables(Gladiador gladiador) {
-        for (Afectable afectable : this.afectable) {
-            afectable.aplicarEfecto(gladiador);
+    public Celda retroceder(int pasos) {
+        if (pasos == 0 || this.celdaAnterior == null) {
+            return this;
         }
+        return this.celdaAnterior.retroceder(pasos - 1);
     }
-    public abstract void aplicarEfecto(Gladiador gladiador);
+    public Celda retrocenderMitadCamino() {
+        return this.retroceder(this.numeracion / 2);
+    }
 }
