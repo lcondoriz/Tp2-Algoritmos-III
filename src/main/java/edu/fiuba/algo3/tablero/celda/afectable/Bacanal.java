@@ -4,7 +4,7 @@ import edu.fiuba.algo3.gladiador.Gladiador;
 import edu.fiuba.algo3.juego.Dado;
 
 public class Bacanal implements Afectable {
-    private static final int ENERGIA_PERDIDA_POR_VINO = 4;
+    private static final int ENERGIA_PERDIDA_POR_TRAGO = 4;
     private Dado dado;
 
     public Bacanal(Dado dado) {
@@ -16,6 +16,6 @@ public class Bacanal implements Afectable {
         gladiador.decrementarEnergia(calcularEnegiaPerdidaPorVino());
     }
     private int calcularEnegiaPerdidaPorVino() {
-        return dado.lanzar() * ENERGIA_PERDIDA_POR_VINO;
+        return dado.lanzar() * ENERGIA_PERDIDA_POR_TRAGO;
     }
 }
