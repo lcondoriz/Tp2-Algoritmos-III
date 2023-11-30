@@ -15,5 +15,10 @@ public class Llave implements Equipable {
     public void luchaFieraSalvaje(FieraSalvaje fiera, Gladiador gladiador) {
         fiera.afectarConEquipamiento(this, gladiador);
     }
+    @Override
+    public String toString() {
+        return "Llave";
+    }
+
 
 }
