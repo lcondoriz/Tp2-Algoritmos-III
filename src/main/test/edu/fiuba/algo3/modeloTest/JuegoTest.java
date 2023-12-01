@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.json;
+package edu.fiuba.algo3.modeloTest;
 
 import edu.fiuba.algo3.juego.AlgoRoma;
 import edu.fiuba.algo3.juego.Dado;

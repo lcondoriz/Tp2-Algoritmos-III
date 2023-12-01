@@ -61,7 +61,7 @@ public class AlgoRoma {
         }
 
         this.validarCantidadJugadores();
-        
+
         try {
             log.addLine("Se inicio el Juego.");
         } catch (IOException e) {
