@@ -5,9 +5,14 @@ import edu.fiuba.algo3.gladiador.mejorador.Mejorador;
 import edu.fiuba.algo3.gladiador.equipamiento.SinEquipamiento;
 import edu.fiuba.algo3.gladiador.seniority.Novato;
 import edu.fiuba.algo3.gladiador.seniority.Seniority;
+import edu.fiuba.algo3.log.Log;
 import edu.fiuba.algo3.tablero.celda.Celda;
 
+import java.io.IOException;
+
 public class Gladiador {
+
+    private Log log;
     private Energia energia;
     private Equipable equipamiento;
     private Seniority estrategiaSeniority;
@@ -21,14 +26,43 @@ public class Gladiador {
         this.celda = celda;
         this.turnosEsperaLesion = 0;
     }
+    public Gladiador(Energia energia, Celda celda, Log log){
+        this.energia = energia;
+        this.equipamiento = new SinEquipamiento();
+        this.estrategiaSeniority = new Novato();
+        this.celda = celda;
+        this.turnosEsperaLesion = 0;
+        this.log = log;
+    }
 
     public void mejorarEquipamiento() {
         this.equipamiento = equipamiento.mejorarEquipamiento(new Mejorador());
+        if (log != null) {
+            try {
+                log.addLine("El gladiador se equipa un/a "+this.equipamiento.toString()+".");
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
     }
     public void incrementarEnergia(int incremento) {
+        if (log!=null) {
+            try {
+                log.addLine("Gana " + Integer.valueOf(incremento).toString() + " puntos de Energía.");
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
         this.energia.incrementar(incremento);
     }
     public void decrementarEnergia(int decremento) {
+        if (log != null) {
+            try {
+                log.addLine("Pierde " + Integer.valueOf(decremento).toString() + " puntos de Energía.");
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
         this.energia.decrementar(decremento);
     }
     public int obtenerEnergia() {
@@ -80,5 +114,7 @@ public class Gladiador {
 //    public void setearcelda(celda celda) {
 //        this.celda = celda;
 //    }
-
+    public Log getLog(){
+     return log;
+    }
 }
