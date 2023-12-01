@@ -59,10 +59,9 @@ public class AlgoRoma {
         if (jugadores.isEmpty()) {
             throw new NoHayJugadoresException("No hay jugadores para iniciar el juego.");
         }
-        // La cantidad de jugadores debe ser entre 2 y 6.
-        if (jugadores.size() < MIN_JUGADORES || jugadores.size() > MAX_JUGADORES) {
-            throw new CantidadJugadoresException("La cantidad de jugadores debe ser entre 2 y 6.");
-        }
+
+        this.validarCantidadJugadores();
+        
         try {
             log.addLine("Se inicio el Juego.");
         } catch (IOException e) {
@@ -100,5 +99,10 @@ public class AlgoRoma {
 
     public Log getLog() {
         return log;
+    }
+    private void validarCantidadJugadores() {
+        if (jugadores.size() < MIN_JUGADORES || jugadores.size() > MAX_JUGADORES) {
+            throw new CantidadJugadoresException("La cantidad de jugadores debe ser entre 2 y 6.");
+        }
     }
 }
