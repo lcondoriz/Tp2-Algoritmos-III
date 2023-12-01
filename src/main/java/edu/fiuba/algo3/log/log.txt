@@ -1,3 +1,3 @@
-[30/11/2023 21:26:56] Se agregó al jugador: 'Pepe'.
-[30/11/2023 21:26:56] Se agregó al jugador: 'Pablo'.
-[30/11/2023 21:26:56] Se inicio el Juego.
+[01/12/2023 18:13:13] Se agregÃ³ al jugador: 'Pepe'.
+[01/12/2023 18:13:13] Se agregÃ³ al jugador: 'Pablo'.
+[01/12/2023 18:13:13] Se inicio el Juego.

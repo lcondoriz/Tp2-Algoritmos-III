@@ -14,7 +14,6 @@ public abstract class Celda {
     private List<Afectable> afectable;
     private Celda celdaAnterior;
     private Celda siguienteCelda;
-
     public Celda(int x, int y, String tipo, int numeracion) {
         this.x = x;
         this.y = y;
