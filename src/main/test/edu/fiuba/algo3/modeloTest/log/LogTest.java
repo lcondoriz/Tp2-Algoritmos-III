@@ -264,9 +264,9 @@ public class LogTest {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        for (String linea : lineas){
+        /*for (String linea : lineas){
             System.out.println(linea);
-        }
+        }*/
 
         assert (lineas[1].contains("El gladiador encuentra comida."));
         assert (lineas[2].contains("Gana 15 puntos de Energía."));
@@ -308,9 +308,9 @@ public class LogTest {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        for (String linea : lineas){
+        /*for (String linea : lineas){
             System.out.println(linea);
-        }
+        }*/
 
         assert (lineas[1].contains("El gladiador se encuentra una mejora de Equipamiento."));
         assert (lineas[2].contains("El gladiador se equipa un/a Casco."));
