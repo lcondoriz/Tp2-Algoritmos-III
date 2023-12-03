@@ -103,4 +103,7 @@ public class Gladiador {
     public void cambiarEstado(Estado estadoGladiador) {
         this.estadoGladiador = estadoGladiador;
     }
+    public void danioPorFieraSalvaje() {
+        this.equipamiento.danioPorFieraSalvaje(this);
+    }
 }
