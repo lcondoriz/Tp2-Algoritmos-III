@@ -1,45 +1,22 @@
 package edu.fiuba.algo3.tablero;
 
+import edu.fiuba.algo3.tablero.celda.Celda;
+
 import java.util.LinkedList;
 
 public class Tablero {
 
-    private LinkedList<Casillero> casillas;
     private int ancho;
     private int largo;
+    private LinkedList<Celda> celdas;
 
-    public Tablero(int ancho , int largo) {
-        this.casillas = new LinkedList<>();
+    public Tablero(int ancho, int largo, LinkedList<Celda> celdas) {
         this.ancho = ancho;
         this.largo = largo;
+        this.celdas = celdas;
     }
-    
-    public void setDimensiones(int ancho, int largo) {
-        this.ancho = ancho;
-        this.largo = largo;
-    }
-
-    public void agregarCasillero(Casillero casillero) {
-        casillas.add(casillero);
-    }
-
-    public Casillero obtenerCasillero(int indice) {
-        if (indice >= 0 && indice < casillas.size()) {
-            return casillas.get(indice);
-        } else {
-            throw new IndexOutOfBoundsException("Índice fuera de límites");
-        }
-    }
-
-    public int cantidadCasilleros() {
-        return casillas.size();
-    }
-
-    public int obtenerAncho() {
-        return ancho;
-    }
-
-    public int obtenerLargo() {
-        return largo;
+    // Obtener celda de Salida.
+    public Celda obtenerCeldaDeSalida() {
+        return celdas.getFirst();
     }
 }

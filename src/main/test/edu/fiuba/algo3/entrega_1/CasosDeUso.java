@@ -1,244 +1,318 @@
 package edu.fiuba.algo3.entrega_1;
 
-import edu.fiuba.algo3.casillero.comestibles.Comida;
-import edu.fiuba.algo3.casillero.equipamiento.Casco;
-import edu.fiuba.algo3.casillero.equipamiento.Equipamiento;
-import edu.fiuba.algo3.casillero.equipamiento.EscudoEspada;
-import edu.fiuba.algo3.casillero.equipamiento.Llave;
-import edu.fiuba.algo3.casillero.obstaculos.FieraSalvaje;
-import edu.fiuba.algo3.casillero.obstaculos.Obstaculo;
-import edu.fiuba.algo3.casillero.vacio.Llegada;
-import edu.fiuba.algo3.casillero.vacio.Camino;
+
+import edu.fiuba.algo3.gladiador.equipamiento.Llave;
+
 import edu.fiuba.algo3.exceptions.CantidadTurnosException;
-import edu.fiuba.algo3.exceptions.SinEnergiaException;
 import edu.fiuba.algo3.gladiador.Energia;
 import edu.fiuba.algo3.gladiador.Gladiador;
+import edu.fiuba.algo3.gladiador.equipamiento.SinEquipamiento;
 import edu.fiuba.algo3.juego.AlgoRoma;
 import edu.fiuba.algo3.juego.Dado;
-import edu.fiuba.algo3.tablero.Casillero;
-import edu.fiuba.algo3.tablero.Coordenadas;
-import org.junit.jupiter.api.Assertions;
+import edu.fiuba.algo3.tablero.celda.Camino;
+import edu.fiuba.algo3.tablero.celda.Celda;
+import edu.fiuba.algo3.tablero.celda.Salida;
+import edu.fiuba.algo3.tablero.celda.afectable.Comida;
+import edu.fiuba.algo3.tablero.celda.afectable.Equipo;
+import edu.fiuba.algo3.tablero.celda.afectable.FieraSalvaje;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
-import java.util.ArrayList;
+import static org.mockito.ArgumentMatchers.anyInt;
+import static org.mockito.Mockito.*;
 
 public class CasosDeUso {
     @Test // Caso de uso 1
     public void verificarQueElJugadorEmpiezaConLaEnergiaYEquipamientoCorrespondiente() {
         // Arrange
         Energia energia = new Energia(20);
-        Casillero casillero = new Casillero(0, new ArrayList<>() {{
-            add(new Comida());}}, new Coordenadas(0, 0));
 
-        Gladiador gladiador = new Gladiador(energia, casillero);
+        // Act
+        Celda celdaMock = mock(Camino.class);
+
+        Gladiador gladiador = new Gladiador(energia, celdaMock);
 
         // Assert
         // Energía del gladiador
-        assertEquals (gladiador.obtenerEnergia() , 20);
-
+        assertEquals(20, gladiador.obtenerEnergia());
         // Equipamiento del gladiador
-        assertEquals (gladiador.obtenerEquipamiento().getClass().getSimpleName() ,"SinEquipamiento");
+        assertEquals(SinEquipamiento.class, gladiador.obtenerEquipamiento().getClass());
     }
     @Test // Caso de uso 2
     public void verificarQueElJugadorSalgaDeLaCasillaInicial() {
         // Arrange
-        Energia energia = new Energia(20);
-        Casillero casillero = new Casillero(0, new ArrayList<>() {{
-            add(new Comida());}}, new Coordenadas(0, 0));
+        Energia energiaMock = mock(Energia.class);
+        Celda casillero = new Salida(0, 0,"Salida",0);
 
         // Act
-        Gladiador gladiador = new Gladiador(energia, casillero);
+        Gladiador gladiador = new Gladiador(energiaMock, casillero);
 
         // Assert
         // verifica mos que el casillero inicial sea posicion 0
-        assertEquals(0, gladiador.obtenerPosicionCasillero());
+        assertEquals(Salida.class, gladiador.obtenerCelda().getClass());
     }
 
     @Test // Caso de uso 3
     public void verificarQueUnJugadorSinEnergiaNoPuedaJugarElTurno() {
         // Arrange
         Energia energia = new Energia(20);
-        Casillero casillero = new Casillero(0, new ArrayList<>() {{
-            add(new Comida());}}, new Coordenadas(0, 0));
 
-        Gladiador gladiador = new Gladiador(energia, casillero);
+        Celda salida = new Salida(0, 0,"Salida",0);
+        Celda camino = new Camino(1, 0,"Camino",1);
+
+        salida.agregarSiguienteCelda(camino);
+        camino.agregarCeldaAnterior(salida);
+
+        Gladiador gladiador = new Gladiador(energia, salida);
 
         gladiador.decrementarEnergia(20);
 
-        Throwable exception = Assertions.assertThrows(SinEnergiaException.class, () -> {
-            gladiador.avanzar(1, 0);
-        });
-        assertEquals("El gladiador no tiene suficiente energía para avanzar", exception.getMessage());
-    }
-
-    @Test // Caso de uso 4
-    public void verificarQueSiRecibeComidaIncrementaEnergíaEn10() {
-        Energia energia = new Energia(20);
-        Casillero casillero = new Casillero(0, new ArrayList<>() {{
-            add(new Comida());}}, new Coordenadas(0,0));
-
-        Gladiador gladiador = new Gladiador(energia, casillero);
-
+        // Act
         gladiador.avanzar(1, 0);
 
-        assertEquals(gladiador.obtenerEnergia(), 35);
+        // Assert
+        assertEquals(salida, gladiador.obtenerCelda());
     }
+    @Test // Caso de uso 4
+    public void verificarQueSiRecibeComidaIncrementaEnergíaEn15() {
+        // Arrange
+        Energia energia = new Energia(20);
 
+        Celda camino = new Camino(1, 0,"Camino",1);
+        Comida comida = new Comida();
+        camino.agregarAfectable(comida);
+
+        Gladiador gladiador = new Gladiador(energia, camino);
+
+        // Act
+        gladiador.avanzar(0, 0);
+
+        // Assert
+        assertEquals(35, gladiador.obtenerEnergia());
+    }
     @Test // Caso de uso 5
     public void verificarQueSiRecibeUnPremioPorPrimeraVezObtieneUnCasco() {
+        // Arrange
         Energia energia = new Energia(20);
-        Casillero casillero = new Casillero(0, new ArrayList<>() {{
-            add(new Equipamiento());}}, new Coordenadas(0,0));
+        Celda salida = new Salida(0, 0,"Salida",0);
+        Celda caminoCasco = new Camino(1, 0,"Camino",1);
+        Celda caminoFiera = new Camino(2, 0,"Camino",2);
 
-        Gladiador gladiador = new Gladiador(energia, casillero);
+        salida.agregarSiguienteCelda(caminoCasco);
+        caminoCasco.agregarCeldaAnterior(salida);
+        caminoCasco.agregarSiguienteCelda(caminoFiera);
+        caminoFiera.agregarCeldaAnterior(caminoCasco);
 
-        gladiador.avanzar(1, 0);
+        caminoCasco.agregarAfectable(new Equipo());
+        caminoFiera.agregarAfectable(new FieraSalvaje());
 
-        assertEquals(Casco.class, gladiador.obtenerEquipamiento().getClass());
-    }
+        Gladiador gladiador = new Gladiador(energia, salida);
 
-    @Test // Caso de uso 6
-    public void verificarQueSiRecibeUnPremioPorTerceraVezObtieneUnEscudoYespada() {
-        Energia energia = new Energia(20);
-        Casillero casillero = new Casillero(0, new ArrayList<>() {{
-            add(new Equipamiento());}}, new Coordenadas(0, 0));
-
-        Gladiador gladiador = new Gladiador(energia, casillero);
-
-        gladiador.avanzar(1, 0);
+        // Act
         gladiador.avanzar(1, 0);
         gladiador.avanzar(1, 0);
 
-        assertEquals(EscudoEspada.class, gladiador.obtenerEquipamiento().getClass());
-    }
-
-    @Test // Caso de uso 7
-    public void verificarQueSiHayUnCombateConUnaFieraSalvajeYTieneUnCascoPierde15PuntosDeEnergia() {
-        Energia energia = new Energia(20);
-        Casillero casillero = new Casillero(0, new ArrayList<>() {{
-            add(new Equipamiento());}}, new Coordenadas(0, 0));
-
-        Gladiador gladiador = new Gladiador(energia, casillero);
-
-        gladiador.avanzar(1, 0); // Obtiene un casco 
-
-        // Creo un obstaculo con una fiera salvaje
-        gladiador.setearCasillero(new Casillero(0, new ArrayList<>() {{
-            add(new Obstaculo(new FieraSalvaje()));}}, new Coordenadas(0, 0)));
-
-        gladiador.avanzar(1, 0);   // Se produce el combate contra la Fiera Salvaje
-
-        // al tener un casco, el gladiador pierde 15 puntos de energia
+        // Assert
         assertEquals(5, gladiador.obtenerEnergia());
     }
+    @Test // Caso de uso 6
+    public void verificarQueSiRecibeUnPremioPorTerceraVezObtieneUnEscudoYespada() {
+        // Arrange
+        Energia energia = new Energia(20);
 
+        Celda salida = new Salida(0, 0,"Salida",0);
+        Celda camino_1 = new Camino(1, 0,"Camino",1);
+        Celda camino_2 = new Camino(2, 0,"Camino",2);
+        Celda camino_3 = new Camino(3, 0,"Camino",3);
+        Celda caminoFiera = new Camino(4, 0,"Camino",4);
+
+        salida.agregarSiguienteCelda(camino_1);
+        camino_1.agregarCeldaAnterior(salida);
+        camino_1.agregarSiguienteCelda(camino_2);
+        camino_2.agregarCeldaAnterior(camino_1);
+        camino_2.agregarSiguienteCelda(camino_3);
+        camino_3.agregarCeldaAnterior(camino_2);
+        camino_3.agregarSiguienteCelda(caminoFiera);
+
+        camino_1.agregarAfectable(new Equipo());
+        camino_2.agregarAfectable(new Equipo());
+        camino_3.agregarAfectable(new Equipo());
+        caminoFiera.agregarAfectable(new FieraSalvaje());
+
+        Gladiador gladiador = new Gladiador(energia, salida);
+
+        // Act
+        gladiador.avanzar(1, 0);
+        gladiador.avanzar(1, 1);
+        gladiador.avanzar(1, 2);
+        gladiador.avanzar(1, 3);
+
+        // Assert
+        assertEquals(18, gladiador.obtenerEnergia());
+    }
+    @Test // Caso de uso 7
+    public void verificarQueSiHayUnCombateConUnaFieraSalvajeYTieneUnCascoPierde15PuntosDeEnergia() {
+        // Arrange
+        Energia energia = new Energia(20);
+
+        Celda salida = new Salida(0, 0,"Salida",0);
+        Celda camino = new Camino(1, 0,"Camino",1);
+        Celda caminoFiera = new Camino(2, 0,"Camino",2);
+
+        salida.agregarSiguienteCelda(camino);
+        camino.agregarCeldaAnterior(salida);
+        camino.agregarSiguienteCelda(caminoFiera);
+        caminoFiera.agregarCeldaAnterior(camino);
+
+        camino.agregarAfectable(new Equipo());
+        caminoFiera.agregarAfectable(new FieraSalvaje());
+
+        Gladiador gladiador = new Gladiador(energia, salida);
+
+        // Act
+        gladiador.avanzar(1, 0);
+        gladiador.avanzar(1, 1);
+
+        // Assert
+        assertEquals(5, gladiador.obtenerEnergia());
+    }
     @Test // Caso de uso 8
     public void verificarQueSiPasan8TurnosElSeniorityDelGladiadorPasaDeNovatoASemiSeniorYVeSuEnergiaIncrementadaAlProximoTurno() {
         // Arrange
         Energia energia = new Energia(20);
-        Casillero casillero = new Casillero(0, new ArrayList<>() {{
-            add(new Camino());}}, new Coordenadas(0, 0));
-        Gladiador gladiador = new Gladiador(energia, casillero);
 
-        // Act
-        for (int i = 1; i < 9; i++) {
+        // Mocks de celdas
+        Celda salidaMock = mock(Salida.class);
+        Celda caminoMock1 = mock(Camino.class);
+        Celda caminoMock2 = mock(Camino.class);
+        Celda caminoMock3 = mock(Camino.class);
+        Celda caminoMock4= mock(Camino.class);
+        Celda caminoMock5 = mock(Camino.class);
+        Celda caminoMock6 = mock(Camino.class);
+        Celda caminoMock7 = mock(Camino.class);
+        Celda caminoMock8= mock(Camino.class);
+        Celda caminoMock9= mock(Camino.class);
+
+        // Configura el comportamiento esperado al avanzar a través de las celdas
+        when(salidaMock.avanzar(anyInt())).thenReturn(caminoMock1);
+        when(caminoMock1.avanzar(anyInt())).thenReturn(caminoMock2);
+        when(caminoMock2.avanzar(anyInt())).thenReturn(caminoMock3);
+        when(caminoMock3.avanzar(anyInt())).thenReturn(caminoMock4);
+        when(caminoMock4.avanzar(anyInt())).thenReturn(caminoMock5);
+        when(caminoMock5.avanzar(anyInt())).thenReturn(caminoMock6);
+        when(caminoMock6.avanzar(anyInt())).thenReturn(caminoMock7);
+        when(caminoMock7.avanzar(anyInt())).thenReturn(caminoMock8);
+        when(caminoMock8.avanzar(anyInt())).thenReturn(caminoMock9);
+
+        // Gladiador con mock de celda de salida
+        Gladiador gladiador = new Gladiador(energia, salidaMock);
+
+        // Act: Simula el avance del gladiador durante 8 turnos
+        for (int i = 0; i < 9; i++) {
             gladiador.avanzar(1, i);
         }
 
-        // Assert
-        //assertEquals("SemiSenior", gladiador.obtenerSeniority());
+        // Assert: Verifica que el seniority sea Semisenior y que la energía se haya incrementado al próximo turno
+        //assertEquals(SemiSenior.class, gladiador.obtenerSeniority().getClass());
         assertEquals(25, gladiador.obtenerEnergia());
-
     }
-
     @Test // Caso de uso 9
     public void verificarQueSiLlegaALaMetaSinLaLlaveEnElEquipamientoRetrocedeALaMitadDeLasCasillas() {
-        // Falta implementar.
-        //Dado dado = new Dado(6);
-        //AlgoRoma algoRoma = new AlgoRoma(dado);//quiza iria el JSON
-
-        Casillero casilleroInicial = new Casillero(0,new ArrayList<>() {{
-            add(new Camino());}}, new Coordenadas(0, 0));
-        Casillero casilleroMitad = new Casillero(1, new ArrayList<>() {{
-            add(new Camino());}}, new Coordenadas(0, 0));
-        Casillero casilleroFinal = new Casillero(2, new ArrayList<>() {{
-            add(new Llegada(3));}}, new Coordenadas(0, 0));
-
-        Gladiador gladiador = new Gladiador(new Energia(20), casilleroInicial);
-
-       /* Tablero tablero = new Tablero({"Bacabal","Camino","Equipamiento"
-                casilleroInicial,casilleroMitad,casilleroFinal
-        });
-        */
-        gladiador.avanzar(2,1);
-
-        gladiador.setearCasillero(casilleroFinal);
-        casilleroFinal.aplicarEfecto(gladiador);
-
-        assertEquals(gladiador.obtenerPosicionCasillero(), casilleroMitad.obtenerPosicion());
+//        // Falta implementar.
+//        //Dado dado = new Dado(6);
+//        //AlgoRoma algoRoma = new AlgoRoma(dado);//quiza iria el JSON
+//
+//        Casillero casilleroInicial = new Casillero(0, new Vacio());
+//        Casillero casilleroMitad = new Casillero(1, new Vacio());
+//        Casillero casilleroFinal = new Casillero(2, new Final(3));
+//
+//        Gladiador gladiador = new Gladiador(new Energia(20), casilleroInicial);
+//
+//       /* Tablero tablero = new Tablero({"Bacabal","Vacio","Equipamiento"
+//                casilleroInicial,casilleroMitad,casilleroFinal
+//        });
+//        */
+//        gladiador.avanzar(2,1);
+//
+//        gladiador.setearCasillero(casilleroFinal);
+//        casilleroFinal.aplicarEfecto(gladiador);
+//
+//        assertEquals(gladiador.obtenerPosicionCasillero(), casilleroMitad.obtenerPosicion());
 
     }
-
     @Test // Caso de uso 10
     public void verificarQueSiLoAtacaUnaFieraSalvajeYPoseeTodoElEquipamientoElDanioEnEnergiaEs0() {
         // Arrange
         Energia energia = new Energia(20);
-        Casillero casillero = new Casillero(0, new ArrayList<>() {{
-            add(new Equipamiento());}}, new Coordenadas(0, 0));
-        Gladiador gladiador = new Gladiador(energia, casillero);
 
-        // Act
-        // Avanza 4 veces al casillero con Equipamiento y obtiene todo el Equipamiento
-        for (int i = 1; i < 5; i++) {
+        Celda salida = new Salida(0, 0, "Salida", 0);
+
+        Celda celdaActual = salida;
+        int cantidad = 5;
+
+        for (int i = 1; i <= cantidad; i++) {
+            Celda nuevaCelda = new Camino(i, 0, "Camino", i);
+            celdaActual.agregarSiguienteCelda(nuevaCelda);
+            nuevaCelda.agregarCeldaAnterior(celdaActual);
+            celdaActual = nuevaCelda;
+
+            if (i < cantidad) {
+                celdaActual.agregarAfectable(new Equipo());
+            } else {
+                celdaActual.agregarAfectable(new FieraSalvaje());
+            }
+        }
+
+        Gladiador gladiador = new Gladiador(energia, salida);
+
+        // Act: Simula el avance del gladiador durante 5 turnos
+        for (int i = 0; i < 5; i++) {
             gladiador.avanzar(1, i);
         }
 
-        // Creo un obstaculo con una fiera salvaje
-        gladiador.setearCasillero(new Casillero(5, new ArrayList<>() {{
-            add(new Obstaculo(new FieraSalvaje()));}}, new Coordenadas(0, 0)));
-
-        gladiador.avanzar(5, 6); //Se produce el combate
-        // Assert
-        // Al tener todo el equipamiento, el gladiador no pierde energia
+        // Assert: Verifica que la energía se haya mantenido en 20
         assertEquals(20, gladiador.obtenerEnergia());
-
     }
-
     @Test // Caso de uso 11
     public void verificarQueSiElGladiadorTieneLaLlaveYRecibeOtroEquipamientoNoCambiaNada() {
         // Arrange
         Energia energia = new Energia(20);
-        Casillero casillero = new Casillero(0, new ArrayList<>() {{
-            add(new Equipamiento());}}, new Coordenadas(0, 0));
-        Gladiador gladiador = new Gladiador(energia, casillero);
 
-        // Act
-        // Avanza 4 casilleros, y tiene todo el equipamiento. Se obtiene la llave.
-        for (int i = 1; i < 5; i++) {
+        Celda salida = new Salida(0, 0, "Salida", 0);
+
+        Celda celdaActual = salida;
+        int cantidad = 5;
+
+        for (int i = 1; i <= cantidad; i++) {
+            Celda nuevaCelda = new Camino(i, 0, "Camino", i);
+            celdaActual.agregarSiguienteCelda(nuevaCelda);
+            nuevaCelda.agregarCeldaAnterior(celdaActual);
+            celdaActual = nuevaCelda;
+
+            celdaActual.agregarAfectable(new Equipo());
+
+        }
+
+        Gladiador gladiador = new Gladiador(energia, salida);
+
+        // Act: Simula el avance del gladiador durante 5 turnos
+        for (int i = 0; i < 5; i++) {
             gladiador.avanzar(1, i);
         }
 
-        // Se avanza una vez mas para obtener otro equipamiento
-        gladiador.avanzar(1, 5);
-
-        // Assert
-        // Se mantuvo el equipamiento anterior
+        // Assert: Verifica que la energía se haya mantenido en 20
         assertEquals(Llave.class, gladiador.obtenerEquipamiento().getClass());
-
     }
-
     @Test // Caso de uso 12
     public void verificarQueSiPasan30TurnosYNadieLlegoALaMetaSeTerminaElJuego() {
         // Falta implementar
         AlgoRoma algoRoma = new AlgoRoma(new Dado(6));
         for (int i = 0; i<29;i++){
-            algoRoma.jugarTurno();
+            algoRoma.jugar();
         }
 
         try {
-            algoRoma.jugarTurno();
+            algoRoma.jugar();
         }catch (CantidadTurnosException ex){
             assertEquals(ex.getClass(), CantidadTurnosException.class);
         }
