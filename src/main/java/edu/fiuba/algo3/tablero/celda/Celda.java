@@ -2,21 +2,20 @@ package edu.fiuba.algo3.tablero.celda;
 
 import edu.fiuba.algo3.gladiador.Gladiador;
 import edu.fiuba.algo3.tablero.celda.afectable.Afectable;
+import edu.fiuba.algo3.tablero.Coordenadas;
 
 import java.util.LinkedList;
 import java.util.List;
 
 public abstract class Celda {
     private int numeracion;
-    private int x;
-    private int y;
+    private Coordenadas coordenadas;
     private String tipo;
     private List<Afectable> afectable;
     private Celda celdaAnterior;
     private Celda siguienteCelda;
-    public Celda(int x, int y, String tipo, int numeracion) {
-        this.x = x;
-        this.y = y;
+    public Celda(Coordenadas coordenadas, String tipo, int numeracion) {
+        this.coordenadas = coordenadas;
         this.tipo = tipo;
         this.numeracion = numeracion;
         this.afectable = new LinkedList<>();
@@ -51,7 +50,7 @@ public abstract class Celda {
         }
         return this.celdaAnterior.retroceder(pasos - 1);
     }
-    public Celda retrocenderMitadCamino() {
+    public Celda retrocederMitadCamino() {
         return this.retroceder(this.numeracion / 2);
     }
 }

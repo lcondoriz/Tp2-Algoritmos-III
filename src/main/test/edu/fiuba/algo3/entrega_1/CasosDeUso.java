@@ -12,6 +12,7 @@ import edu.fiuba.algo3.juego.Dado;
 import edu.fiuba.algo3.tablero.celda.Camino;
 import edu.fiuba.algo3.tablero.celda.Celda;
 import edu.fiuba.algo3.tablero.celda.Salida;
+import edu.fiuba.algo3.tablero.Coordenadas;
 import edu.fiuba.algo3.tablero.celda.afectable.Comida;
 import edu.fiuba.algo3.tablero.celda.afectable.Equipo;
 import edu.fiuba.algo3.tablero.celda.afectable.FieraSalvaje;
@@ -42,7 +43,7 @@ public class CasosDeUso {
     public void verificarQueElJugadorSalgaDeLaCasillaInicial() {
         // Arrange
         Energia energiaMock = mock(Energia.class);
-        Celda casillero = new Salida(0, 0,"Salida",0);
+        Celda casillero = new Salida(new Coordenadas(0, 0),"Salida",0);
 
         // Act
         Gladiador gladiador = new Gladiador(energiaMock, casillero);
@@ -57,8 +58,8 @@ public class CasosDeUso {
         // Arrange
         Energia energia = new Energia(20);
 
-        Celda salida = new Salida(0, 0,"Salida",0);
-        Celda camino = new Camino(1, 0,"Camino",1);
+        Celda salida = new Salida(new Coordenadas(0, 0),"Salida",0);
+        Celda camino = new Camino(new Coordenadas(1, 0),"Camino",1);
 
         salida.agregarSiguienteCelda(camino);
         camino.agregarCeldaAnterior(salida);
@@ -78,7 +79,7 @@ public class CasosDeUso {
         // Arrange
         Energia energia = new Energia(20);
 
-        Celda camino = new Camino(1, 0,"Camino",1);
+        Celda camino = new Camino(new Coordenadas(1, 0),"Camino",1);
         Comida comida = new Comida();
         camino.agregarAfectable(comida);
 
@@ -94,9 +95,9 @@ public class CasosDeUso {
     public void verificarQueSiRecibeUnPremioPorPrimeraVezObtieneUnCasco() {
         // Arrange
         Energia energia = new Energia(20);
-        Celda salida = new Salida(0, 0,"Salida",0);
-        Celda caminoCasco = new Camino(1, 0,"Camino",1);
-        Celda caminoFiera = new Camino(2, 0,"Camino",2);
+        Celda salida = new Salida(new Coordenadas(0, 0),"Salida",0);
+        Celda caminoCasco = new Camino(new Coordenadas(1, 0),"Camino",1);
+        Celda caminoFiera = new Camino(new Coordenadas(2, 0),"Camino",2);
 
         salida.agregarSiguienteCelda(caminoCasco);
         caminoCasco.agregarCeldaAnterior(salida);
@@ -120,11 +121,11 @@ public class CasosDeUso {
         // Arrange
         Energia energia = new Energia(20);
 
-        Celda salida = new Salida(0, 0,"Salida",0);
-        Celda camino_1 = new Camino(1, 0,"Camino",1);
-        Celda camino_2 = new Camino(2, 0,"Camino",2);
-        Celda camino_3 = new Camino(3, 0,"Camino",3);
-        Celda caminoFiera = new Camino(4, 0,"Camino",4);
+        Celda salida = new Salida(new Coordenadas(0, 0),"Salida",0);
+        Celda camino_1 = new Camino(new Coordenadas(1, 0),"Camino",1);
+        Celda camino_2 = new Camino(new Coordenadas(2, 0),"Camino",2);
+        Celda camino_3 = new Camino(new Coordenadas(3, 0),"Camino",3);
+        Celda caminoFiera = new Camino(new Coordenadas(4, 0),"Camino",4);
 
         salida.agregarSiguienteCelda(camino_1);
         camino_1.agregarCeldaAnterior(salida);
@@ -155,9 +156,9 @@ public class CasosDeUso {
         // Arrange
         Energia energia = new Energia(20);
 
-        Celda salida = new Salida(0, 0,"Salida",0);
-        Celda camino = new Camino(1, 0,"Camino",1);
-        Celda caminoFiera = new Camino(2, 0,"Camino",2);
+        Celda salida = new Salida(new Coordenadas(0, 0),"Salida",0);
+        Celda camino = new Camino(new Coordenadas(1, 0),"Camino",1);
+        Celda caminoFiera = new Camino(new Coordenadas(2, 0),"Camino",2);
 
         salida.agregarSiguienteCelda(camino);
         camino.agregarCeldaAnterior(salida);
@@ -245,13 +246,13 @@ public class CasosDeUso {
         // Arrange
         Energia energia = new Energia(20);
 
-        Celda salida = new Salida(0, 0, "Salida", 0);
+        Celda salida = new Salida(new Coordenadas(0, 0), "Salida", 0);
 
         Celda celdaActual = salida;
         int cantidad = 5;
 
         for (int i = 1; i <= cantidad; i++) {
-            Celda nuevaCelda = new Camino(i, 0, "Camino", i);
+            Celda nuevaCelda = new Camino(new Coordenadas(i, 0), "Camino", i);
             celdaActual.agregarSiguienteCelda(nuevaCelda);
             nuevaCelda.agregarCeldaAnterior(celdaActual);
             celdaActual = nuevaCelda;
@@ -278,13 +279,13 @@ public class CasosDeUso {
         // Arrange
         Energia energia = new Energia(20);
 
-        Celda salida = new Salida(0, 0, "Salida", 0);
+        Celda salida = new Salida(new Coordenadas(0, 0), "Salida", 0);
 
         Celda celdaActual = salida;
         int cantidad = 5;
 
         for (int i = 1; i <= cantidad; i++) {
-            Celda nuevaCelda = new Camino(i, 0, "Camino", i);
+            Celda nuevaCelda = new Camino(new Coordenadas(i, 0), "Camino", i);
             celdaActual.agregarSiguienteCelda(nuevaCelda);
             nuevaCelda.agregarCeldaAnterior(celdaActual);
             celdaActual = nuevaCelda;

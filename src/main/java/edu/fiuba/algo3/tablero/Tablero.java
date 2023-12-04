@@ -15,6 +15,15 @@ public class Tablero {
         this.largo = largo;
         this.celdas = celdas;
     }
+
+    public int obtenerAncho() {
+        return ancho;
+    }
+
+    public int obtenerLargo() {
+        return largo;
+    }
+
     // Obtener celda de Salida.
     public Celda obtenerCeldaDeSalida() {
         return celdas.getFirst();

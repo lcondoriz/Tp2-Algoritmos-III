@@ -95,7 +95,7 @@ public class Gladiador {
         return this.celda;
     }
     public void retrocederMitadCamino() {
-        this.celda = this.celda.retrocenderMitadCamino();
+        this.celda = this.celda.retrocederMitadCamino();
     }
     public Log getLog(){
      return log;
