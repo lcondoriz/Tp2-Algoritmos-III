@@ -4,6 +4,7 @@ import edu.fiuba.algo3.exceptions.CantidadJugadoresException;
 import edu.fiuba.algo3.exceptions.NoHayJugadoresException;
 import edu.fiuba.algo3.json.TableroConstructor;
 import edu.fiuba.algo3.log.Log;
+import edu.fiuba.algo3.log.Logeador;
 import edu.fiuba.algo3.tablero.Tablero;
 
 import java.io.IOException;
@@ -48,25 +49,17 @@ public class AlgoRoma {
     public void agregarJugador(String nombre) {
         Jugador jugador = new Jugador(nombre, this.tablero.obtenerCeldaDeSalida(), log);
         this.jugadores.add(jugador);
-        try {
-            log.addLine("Se agregó al jugador: '" + nombre + "'.");
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        Logeador.agregarALog(this.log,"Se agregó al jugador: '" + nombre + "'.");
+
     }
 
     public void inicializarJuego() {
         if (jugadores.isEmpty()) {
             throw new NoHayJugadoresException("No hay jugadores para iniciar el juego.");
         }
-
         this.validarCantidadJugadores();
 
-        try {
-            log.addLine("Se inicio el Juego.");
-        } catch (IOException e) {
-            throw new RuntimeException(e);  //hace falta especializar exception?
-        }
+        Logeador.agregarALog(this.log,"Se inicio el Juego." );
 
         // Si hay 4 jugadores y empieza 3, sigue 4,1,2,
         if (jugadores.size() == JUGADORES_ESPECIALES) {
@@ -78,12 +71,9 @@ public class AlgoRoma {
 
     public void jugar() {
         for (int i = 0; i < MAX_CANTIDAD_RONDAS; i++) {
+            Logeador.agregarALog(this.log,"COMIENZA EL TURNO: "+Integer.valueOf(i+1).toString()+".");
             for (Jugador jugador : jugadores) {
-                try {
-                    log.addLine("Es el turno de: '" + jugador.getNombre() + "'.");
-                } catch (IOException e) {
-                    throw new RuntimeException(e); //especializar exception(?
-                }
+                Logeador.agregarALog(this.log, "Es el turno de: '" + jugador.getNombre() + "'.");
                 jugador.jugarTurno(dado);
             }
         }
@@ -98,7 +88,7 @@ public class AlgoRoma {
     }
 
     public Log getLog() {
-        return log;
+        return this.log;
     }
     private void validarCantidadJugadores() {
         if (jugadores.size() < MIN_JUGADORES || jugadores.size() > MAX_JUGADORES) {

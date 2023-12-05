@@ -45,10 +45,9 @@ public class LogTest {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
-        for (String linea : lineas){        //esto es para verlo por consola y no tener que abrir el txt, no testea nada en si
+       /* for (String linea : lineas){        //esto es para verlo por consola y no tener que abrir el txt, no testea nada en si
             System.out.println(linea);
-        }
+        }*/
 
 
         assert(lineas[0].contains("Se agregó al jugador: '"+pepe+"'."));
@@ -219,9 +218,9 @@ public class LogTest {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        for (String linea : lineas){
+       /* for (String linea : lineas){
             System.out.println(linea);
-        }
+        }*/
 
         assert (lineas[1].contains("El gladiador se lesiona."));
         assert (lineas[2].contains("Pierde 1 turno/s."));

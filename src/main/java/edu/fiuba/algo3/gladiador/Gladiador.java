@@ -9,6 +9,7 @@ import edu.fiuba.algo3.gladiador.equipamiento.SinEquipamiento;
 import edu.fiuba.algo3.gladiador.seniority.Novato;
 import edu.fiuba.algo3.gladiador.seniority.Seniority;
 import edu.fiuba.algo3.log.Log;
+import edu.fiuba.algo3.log.Logeador;
 import edu.fiuba.algo3.tablero.celda.Celda;
 
 import java.io.IOException;
@@ -37,32 +38,14 @@ public class Gladiador {
     }
     public void mejorarEquipamiento() {
         this.equipamiento = equipamiento.mejorarEquipamiento(new Mejorador());
-        if (log != null) {
-            try {
-                log.addLine("El gladiador se equipa un/a "+this.equipamiento.toString()+".");
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-        }
+        Logeador.agregarALog(this.log, "El gladiador se equipa un/a "+this.equipamiento.toString()+".");
     }
     public void incrementarEnergia(int incremento) {
-        if (log!=null) {
-            try {
-                log.addLine("Gana " + Integer.valueOf(incremento).toString() + " puntos de Energía.");
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-        }
+        Logeador.agregarALog(this.log,"Gana " + Integer.valueOf(incremento).toString() + " puntos de Energía.");
         this.energia.incrementar(incremento);
     }
     public void decrementarEnergia(int decremento) {
-        if (log != null) {
-            try {
-                log.addLine("Pierde " + Integer.valueOf(decremento).toString() + " puntos de Energía.");
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-        }
+        Logeador.agregarALog(this.log, "Pierde " + Integer.valueOf(decremento).toString() + " puntos de Energía.");
         this.energia.decrementar(decremento);
     }
     public int obtenerEnergia() {
@@ -95,6 +78,7 @@ public class Gladiador {
         return this.celda;
     }
     public void retrocederMitadCamino() {
+        Logeador.agregarALog(this.log,"Llegaste al final, pero no tenias la llave. El gladiador retrocede a la mitad del tablero.");
         this.celda = this.celda.retrocenderMitadCamino();
     }
     public Log getLog(){
