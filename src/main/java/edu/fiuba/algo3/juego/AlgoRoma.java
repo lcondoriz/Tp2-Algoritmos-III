@@ -1,29 +1,31 @@
 package edu.fiuba.algo3.juego;
 
 import edu.fiuba.algo3.exceptions.CantidadJugadoresException;
-import edu.fiuba.algo3.exceptions.CantidadTurnosException;
 import edu.fiuba.algo3.exceptions.NoHayJugadoresException;
-import edu.fiuba.algo3.exceptions.PartidaFinalizada;
 import edu.fiuba.algo3.json.TableroConstructor;
 import edu.fiuba.algo3.log.Log;
-import edu.fiuba.algo3.log.Logeador;
 import edu.fiuba.algo3.tablero.Tablero;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Random;
 
 public class AlgoRoma {
     private static final int MIN_JUGADORES = 2;
     private static final int MAX_JUGADORES = 6;
+    private static final int JUGADORES_ESPECIALES = 4;
+    private static final int[] ORDEN_TURNOS = {3, 4, 1, 2};
+    private static final int TURNO_INICIAL = 0;
+    private static final int MAX_TURNOS = 30;
     private static final int MAX_CANTIDAD_RONDAS = 30;
     private List<Jugador> jugadores;
     private Dado dado;
     private Tablero tablero;
+    private int turno;
 
     private Log log;
+    private Interfaz interfaz;
 
     {
         try {
@@ -35,8 +37,10 @@ public class AlgoRoma {
     }
 
     public AlgoRoma(Dado dado) {
+        this.turno = TURNO_INICIAL;
         this.jugadores = new ArrayList<>();
         this.dado = dado;
+        this.interfaz = new Interfaz();
     }
 
     public void cargarTablero(String path) {
@@ -91,5 +95,21 @@ public class AlgoRoma {
         if (jugadores.size() < MIN_JUGADORES || jugadores.size() > MAX_JUGADORES) {
             throw new CantidadJugadoresException("La cantidad de jugadores debe ser entre 2 y 6.");
         }
+    }
+    public void jugar1Ronda() { //testear interfaz
+        for (Jugador jugador : jugadores) {
+            try {
+                log.addLine("Es el turno de: '" + jugador.obtenerNombre() + "'.");
+            } catch (IOException e) {
+                throw new RuntimeException(e); //especializar exception(?
+            }
+            jugador.jugarTurno(dado);
+        }
+    }
+    public List<Jugador> obtenerJugadores(){
+        return jugadores;
+    }
+    public int obtenerTurno(){
+        return turno;
     }
 }

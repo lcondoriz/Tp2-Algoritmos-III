@@ -28,13 +28,16 @@ public class Jugador {
 
         Integer cantidadAAvanzar = Integer.valueOf(dado.lanzar());
         try {
-            log.addLine("'"+this.getNombre()+"'"+" tira dados y avanza "+ cantidadAAvanzar.toString() +" casilleros.");
+            log.addLine("'"+this.obtenerNombre()+"'"+" tira dados y avanza "+ cantidadAAvanzar.toString() +" casilleros.");
         } catch (IOException e) {
             throw new RuntimeException(e); //especializar exception(?
         }
         gladiador.avanzar(cantidadAAvanzar, this.turno);
     }
-    public String getNombre(){
+    public String obtenerNombre(){
         return nombre;
+    }
+    public Gladiador obtenerGladiador(){
+        return gladiador;
     }
 }

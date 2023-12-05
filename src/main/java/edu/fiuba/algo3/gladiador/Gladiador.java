@@ -56,12 +56,6 @@ public class Gladiador {
     public Equipable obtenerEquipamiento() {
         return this.equipamiento;
     }
-
-
-
-    public boolean tieneEquipamientoCompleto() {
-        return this.equipamiento instanceof Llave;
-    }
     public void avanzar(int cantidadCeldas, int turno) {
         this.estadoGladiador.accionar(this, cantidadCeldas, turno);
     }
