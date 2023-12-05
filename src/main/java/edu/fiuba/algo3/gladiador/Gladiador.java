@@ -74,6 +74,8 @@ public class Gladiador {
         return this.equipamiento;
     }
 
+
+
     public boolean tieneEquipamientoCompleto() {
         return this.equipamiento instanceof Llave;
     }
@@ -101,12 +103,13 @@ public class Gladiador {
         return this.celda;
     }
     public void retrocederMitadCamino() {
-
         this.celda = this.celda.retrocenderMitadCamino();
-        try {
-            log.addLine("LLego a la LLegada pero debe retrocer ala mitad del tablero por equipamiento incompleto");
-        } catch (IOException e) {
-            throw new RuntimeException(e);
+        if (log != null) {
+            try {
+                log.addLine("LLego a la LLegada pero debe retrocer ala mitad del tablero por equipamiento incompleto");
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
     public Log getLog(){
@@ -130,5 +133,9 @@ public class Gladiador {
             throw new RuntimeException(e);
         }
         throw new PartidaFinalizada("Partida Finalizada");
+    }
+
+    public boolean EstasEnLaCelda(Celda otraCelda) {
+        return this.celda.getPosicion() == otraCelda.getPosicion();
     }
 }

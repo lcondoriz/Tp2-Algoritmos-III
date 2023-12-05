@@ -116,7 +116,7 @@ public class AlgoRoma {
     //}
 
     public Log getLog() {
-        return log;
+        return this.log;
     }
     private void validarCantidadJugadores() {
         if (jugadores.size() < MIN_JUGADORES || jugadores.size() > MAX_JUGADORES) {
