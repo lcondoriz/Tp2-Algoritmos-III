@@ -51,10 +51,11 @@ public class CasosDeUso3 {
     @Test   // Caso de uso 20
     public void text20simularYVerificarQueNadieGane() {
         // Arrange
-        Dado dado = new Dado(6);
-        AlgoRoma algoRoma = new AlgoRoma(dado);
+        Dado dadoMock = mock(Dado.class);
+        when(dadoMock.lanzar()).thenReturn(0);
+        AlgoRoma algoRoma = new AlgoRoma(dadoMock);
 
-        algoRoma.cargarTablero("files/mapaDePartidaSinGanar.json");
+        algoRoma.cargarTablero("files/mapa.json");
 
         algoRoma.agregarJugador("pepe");
         algoRoma.agregarJugador("juan");
