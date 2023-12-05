@@ -1,6 +1,8 @@
 package edu.fiuba.algo3.gladiador;
 
+import edu.fiuba.algo3.exceptions.PartidaFinalizada;
 import edu.fiuba.algo3.gladiador.equipamiento.Equipable;
+import edu.fiuba.algo3.gladiador.equipamiento.Llave;
 import edu.fiuba.algo3.gladiador.estado.Estado;
 import edu.fiuba.algo3.gladiador.estado.Normal;
 import edu.fiuba.algo3.gladiador.estado.SinEnergia;
@@ -54,6 +56,12 @@ public class Gladiador {
     public Equipable obtenerEquipamiento() {
         return this.equipamiento;
     }
+
+
+
+    public boolean tieneEquipamientoCompleto() {
+        return this.equipamiento instanceof Llave;
+    }
     public void avanzar(int cantidadCeldas, int turno) {
         this.estadoGladiador.accionar(this, cantidadCeldas, turno);
     }
@@ -80,6 +88,13 @@ public class Gladiador {
     public void retrocederMitadCamino() {
         Logeador.agregarALog(this.log,"Llegaste al final, pero no tenias la llave. El gladiador retrocede a la mitad del tablero.");
         this.celda = this.celda.retrocenderMitadCamino();
+        if (log != null) {
+            try {
+                log.addLine("LLego a la LLegada pero debe retrocer ala mitad del tablero por equipamiento incompleto");
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
     }
     public Log getLog(){
      return log;
@@ -89,5 +104,22 @@ public class Gladiador {
     }
     public void danioPorFieraSalvaje() {
         this.equipamiento.danioPorFieraSalvaje(this);
+    }
+
+    public void verificarSiEsGanador() {
+        if (!this.tieneEquipamientoCompleto()) {
+            this.retrocederMitadCamino();
+            return ;
+        }
+        try {
+            log.addLine("GANADOR DE LA PARTIDA");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        throw new PartidaFinalizada("Partida Finalizada");
+    }
+
+    public boolean EstasEnLaCelda(Celda otraCelda) {
+        return this.celda.getPosicion() == otraCelda.getPosicion();
     }
 }

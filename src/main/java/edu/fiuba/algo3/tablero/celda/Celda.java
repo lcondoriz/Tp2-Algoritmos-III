@@ -24,11 +24,15 @@ public abstract class Celda {
         this.celdaAnterior = null;
         this.siguienteCelda = null;
     }
+
     public abstract void aplicarEfecto(Gladiador gladiador);
     public void aplicarAfectables(Gladiador gladiador) {
         for (Afectable afectable : this.afectable) {
             afectable.aplicarEfecto(gladiador);
         }
+    }
+    public int getPosicion() {
+        return this.numeracion;
     }
     public void agregarCeldaAnterior(Celda celda) {
         this.celdaAnterior = celda;

@@ -1,3 +1,258 @@
-[03/12/2023 12:48:27] Se agregó al jugador: 'Pepe'.
-[03/12/2023 12:48:27] Se agregó al jugador: 'Pablo'.
-[03/12/2023 12:48:27] Se inicio el Juego.
+[05/12/2023 14:40:32] Se agregó al jugador: 'pepe'.
+[05/12/2023 14:40:32] Se agregó al jugador: 'juan'.
+[05/12/2023 14:40:32] Se agregó al jugador: 'luis'.
+[05/12/2023 14:40:32] Se agregó al jugador: 'lucas'.
+[05/12/2023 14:40:32] Se agregó al jugador: 'alan'.
+[05/12/2023 14:40:32] Se agregó al jugador: 'nacho'.
+[05/12/2023 14:40:32] Se inicio el Juego.
+[05/12/2023 14:40:32] Es el turno de: 'pepe'.
+[05/12/2023 14:40:32] 'pepe' tira dados y avanza 1 casilleros.
+[05/12/2023 14:40:32] El gladiador se encuentra una mejora de Equipamiento.
+[05/12/2023 14:40:32] El gladiador se equipa un/a Casco.
+[05/12/2023 14:40:32] Es el turno de: 'juan'.
+[05/12/2023 14:40:32] 'juan' tira dados y avanza 3 casilleros.
+[05/12/2023 14:40:32] El gladiador se lesiona.
+[05/12/2023 14:40:32] Pierde 1 turno/s.
+[05/12/2023 14:40:32] Es el turno de: 'luis'.
+[05/12/2023 14:40:32] 'luis' tira dados y avanza 6 casilleros.
+[05/12/2023 14:40:32] Es el turno de: 'lucas'.
+[05/12/2023 14:40:32] 'lucas' tira dados y avanza 5 casilleros.
+[05/12/2023 14:40:32] El gladiador se encuentra con un Bacanal y decide tomar vino.
+[05/12/2023 14:40:32] Pierde 16 puntos de Energía.
+[05/12/2023 14:40:32] El gladiador se encuentra una mejora de Equipamiento.
+[05/12/2023 14:40:32] El gladiador se equipa un/a Casco.
+[05/12/2023 14:40:32] Es el turno de: 'alan'.
+[05/12/2023 14:40:32] 'alan' tira dados y avanza 5 casilleros.
+[05/12/2023 14:40:32] El gladiador se encuentra con un Bacanal y decide tomar vino.
+[05/12/2023 14:40:32] Pierde 4 puntos de Energía.
+[05/12/2023 14:40:32] El gladiador se encuentra una mejora de Equipamiento.
+[05/12/2023 14:40:32] El gladiador se equipa un/a Casco.
+[05/12/2023 14:40:32] Es el turno de: 'nacho'.
+[05/12/2023 14:40:32] 'nacho' tira dados y avanza 4 casilleros.
+[05/12/2023 14:40:32] El gladiador se encuentra con una Fiera Salvaje y entran en combate.
+[05/12/2023 14:40:32] Pierde 20 puntos de Energía.
+[05/12/2023 14:40:32] Es el turno de: 'pepe'.
+[05/12/2023 14:40:32] 'pepe' tira dados y avanza 5 casilleros.
+[05/12/2023 14:40:32] Es el turno de: 'juan'.
+[05/12/2023 14:40:32] 'juan' tira dados y avanza 4 casilleros.
+[05/12/2023 14:40:32] Es el turno de: 'luis'.
+[05/12/2023 14:40:32] 'luis' tira dados y avanza 3 casilleros.
+[05/12/2023 14:40:32] El gladiador se encuentra con una Fiera Salvaje y entran en combate.
+[05/12/2023 14:40:32] Pierde 20 puntos de Energía.
+[05/12/2023 14:40:32] El gladiador se encuentra una mejora de Equipamiento.
+[05/12/2023 14:40:32] El gladiador se equipa un/a Casco.
+[05/12/2023 14:40:32] Es el turno de: 'lucas'.
+[05/12/2023 14:40:32] 'lucas' tira dados y avanza 2 casilleros.
+[05/12/2023 14:40:32] El gladiador se lesiona.
+[05/12/2023 14:40:32] Pierde 1 turno/s.
+[05/12/2023 14:40:32] Es el turno de: 'alan'.
+[05/12/2023 14:40:32] 'alan' tira dados y avanza 3 casilleros.
+[05/12/2023 14:40:32] Es el turno de: 'nacho'.
+[05/12/2023 14:40:32] 'nacho' tira dados y avanza 2 casilleros.
+[05/12/2023 14:40:32] Es el turno de: 'pepe'.
+[05/12/2023 14:40:32] 'pepe' tira dados y avanza 6 casilleros.
+[05/12/2023 14:40:32] El gladiador se lesiona.
+[05/12/2023 14:40:32] Pierde 1 turno/s.
+[05/12/2023 14:40:32] Es el turno de: 'juan'.
+[05/12/2023 14:40:32] 'juan' tira dados y avanza 5 casilleros.
+[05/12/2023 14:40:32] Es el turno de: 'luis'.
+[05/12/2023 14:40:32] 'luis' tira dados y avanza 3 casilleros.
+[05/12/2023 14:40:32] Es el turno de: 'lucas'.
+[05/12/2023 14:40:32] 'lucas' tira dados y avanza 6 casilleros.
+[05/12/2023 14:40:32] Es el turno de: 'alan'.
+[05/12/2023 14:40:32] 'alan' tira dados y avanza 5 casilleros.
+[05/12/2023 14:40:32] El gladiador encuentra comida.
+[05/12/2023 14:40:32] Gana 15 puntos de Energía.
+[05/12/2023 14:40:32] Es el turno de: 'nacho'.
+[05/12/2023 14:40:32] 'nacho' tira dados y avanza 6 casilleros.
+[05/12/2023 14:40:32] Gana 5 puntos de Energía.
+[05/12/2023 14:40:32] Es el turno de: 'pepe'.
+[05/12/2023 14:40:32] 'pepe' tira dados y avanza 5 casilleros.
+[05/12/2023 14:40:32] Es el turno de: 'juan'.
+[05/12/2023 14:40:32] 'juan' tira dados y avanza 1 casilleros.
+[05/12/2023 14:40:32] El gladiador se encuentra con una Fiera Salvaje y entran en combate.
+[05/12/2023 14:40:32] Pierde 20 puntos de Energía.
+[05/12/2023 14:40:32] El gladiador se encuentra una mejora de Equipamiento.
+[05/12/2023 14:40:32] El gladiador se equipa un/a Casco.
+[05/12/2023 14:40:32] Es el turno de: 'luis'.
+[05/12/2023 14:40:32] 'luis' tira dados y avanza 5 casilleros.
+[05/12/2023 14:40:32] Gana 5 puntos de Energía.
+[05/12/2023 14:40:32] Es el turno de: 'lucas'.
+[05/12/2023 14:40:32] 'lucas' tira dados y avanza 4 casilleros.
+[05/12/2023 14:40:32] El gladiador encuentra comida.
+[05/12/2023 14:40:32] Gana 15 puntos de Energía.
+[05/12/2023 14:40:32] Es el turno de: 'alan'.
+[05/12/2023 14:40:32] 'alan' tira dados y avanza 5 casilleros.
+[05/12/2023 14:40:32] El gladiador encuentra comida.
+[05/12/2023 14:40:32] Gana 15 puntos de Energía.
+[05/12/2023 14:40:32] Es el turno de: 'nacho'.
+[05/12/2023 14:40:32] 'nacho' tira dados y avanza 1 casilleros.
+[05/12/2023 14:40:32] El gladiador se encuentra con un Bacanal y decide tomar vino.
+[05/12/2023 14:40:32] Pierde 16 puntos de Energía.
+[05/12/2023 14:40:32] El gladiador se encuentra una mejora de Equipamiento.
+[05/12/2023 14:40:32] El gladiador se equipa un/a Casco.
+[05/12/2023 14:40:32] Es el turno de: 'pepe'.
+[05/12/2023 14:40:32] 'pepe' tira dados y avanza 3 casilleros.
+[05/12/2023 14:40:32] El gladiador se encuentra una mejora de Equipamiento.
+[05/12/2023 14:40:32] El gladiador se equipa un/a Armadura.
+[05/12/2023 14:40:32] Es el turno de: 'juan'.
+[05/12/2023 14:40:32] 'juan' tira dados y avanza 3 casilleros.
+[05/12/2023 14:40:32] Es el turno de: 'luis'.
+[05/12/2023 14:40:32] 'luis' tira dados y avanza 3 casilleros.
+[05/12/2023 14:40:32] El gladiador se lesiona.
+[05/12/2023 14:40:32] Pierde 1 turno/s.
+[05/12/2023 14:40:32] Es el turno de: 'lucas'.
+[05/12/2023 14:40:32] 'lucas' tira dados y avanza 6 casilleros.
+[05/12/2023 14:40:32] El gladiador se lesiona.
+[05/12/2023 14:40:32] Pierde 1 turno/s.
+[05/12/2023 14:40:32] Es el turno de: 'alan'.
+[05/12/2023 14:40:32] 'alan' tira dados y avanza 6 casilleros.
+[05/12/2023 14:40:32] El gladiador se encuentra con un Bacanal y decide tomar vino.
+[05/12/2023 14:40:32] Pierde 16 puntos de Energía.
+[05/12/2023 14:40:32] Es el turno de: 'nacho'.
+[05/12/2023 14:40:32] 'nacho' tira dados y avanza 4 casilleros.
+[05/12/2023 14:40:32] Es el turno de: 'pepe'.
+[05/12/2023 14:40:32] 'pepe' tira dados y avanza 5 casilleros.
+[05/12/2023 14:40:32] El gladiador se encuentra con una Fiera Salvaje y entran en combate.
+[05/12/2023 14:40:32] Pierde 10 puntos de Energía.
+[05/12/2023 14:40:32] El gladiador encuentra comida.
+[05/12/2023 14:40:32] Gana 15 puntos de Energía.
+[05/12/2023 14:40:32] Es el turno de: 'juan'.
+[05/12/2023 14:40:32] 'juan' tira dados y avanza 1 casilleros.
+[05/12/2023 14:40:32] Gana 5 puntos de Energía.
+[05/12/2023 14:40:32] Es el turno de: 'luis'.
+[05/12/2023 14:40:32] 'luis' tira dados y avanza 1 casilleros.
+[05/12/2023 14:40:32] Es el turno de: 'lucas'.
+[05/12/2023 14:40:32] 'lucas' tira dados y avanza 6 casilleros.
+[05/12/2023 14:40:32] Es el turno de: 'alan'.
+[05/12/2023 14:40:32] 'alan' tira dados y avanza 4 casilleros.
+[05/12/2023 14:40:32] El gladiador se encuentra una mejora de Equipamiento.
+[05/12/2023 14:40:32] El gladiador se equipa un/a Armadura.
+[05/12/2023 14:40:32] Es el turno de: 'nacho'.
+[05/12/2023 14:40:32] 'nacho' tira dados y avanza 1 casilleros.
+[05/12/2023 14:40:32] Gana 5 puntos de Energía.
+[05/12/2023 14:40:32] Es el turno de: 'pepe'.
+[05/12/2023 14:40:32] 'pepe' tira dados y avanza 3 casilleros.
+[05/12/2023 14:40:32] El gladiador se encuentra con una Fiera Salvaje y entran en combate.
+[05/12/2023 14:40:32] Pierde 10 puntos de Energía.
+[05/12/2023 14:40:32] El gladiador se encuentra una mejora de Equipamiento.
+[05/12/2023 14:40:32] El gladiador se equipa un/a Escudo Y Espada.
+[05/12/2023 14:40:32] Es el turno de: 'juan'.
+[05/12/2023 14:40:32] 'juan' tira dados y avanza 1 casilleros.
+[05/12/2023 14:40:32] El gladiador se encuentra con un Bacanal y decide tomar vino.
+[05/12/2023 14:40:32] Pierde 20 puntos de Energía.
+[05/12/2023 14:40:32] El gladiador se encuentra una mejora de Equipamiento.
+[05/12/2023 14:40:32] El gladiador se equipa un/a Armadura.
+[05/12/2023 14:40:32] Es el turno de: 'luis'.
+[05/12/2023 14:40:32] 'luis' tira dados y avanza 3 casilleros.
+[05/12/2023 14:40:32] El gladiador se encuentra una mejora de Equipamiento.
+[05/12/2023 14:40:32] El gladiador se equipa un/a Armadura.
+[05/12/2023 14:40:32] Es el turno de: 'lucas'.
+[05/12/2023 14:40:32] 'lucas' tira dados y avanza 5 casilleros.
+[05/12/2023 14:40:32] El gladiador se encuentra con una Fiera Salvaje y entran en combate.
+[05/12/2023 14:40:32] Pierde 15 puntos de Energía.
+[05/12/2023 14:40:32] El gladiador se encuentra una mejora de Equipamiento.
+[05/12/2023 14:40:32] El gladiador se equipa un/a Armadura.
+[05/12/2023 14:40:32] Es el turno de: 'alan'.
+[05/12/2023 14:40:32] 'alan' tira dados y avanza 3 casilleros.
+[05/12/2023 14:40:32] El gladiador se lesiona.
+[05/12/2023 14:40:32] Pierde 1 turno/s.
+[05/12/2023 14:40:32] Es el turno de: 'nacho'.
+[05/12/2023 14:40:32] 'nacho' tira dados y avanza 5 casilleros.
+[05/12/2023 14:40:32] Es el turno de: 'pepe'.
+[05/12/2023 14:40:32] 'pepe' tira dados y avanza 1 casilleros.
+[05/12/2023 14:40:32] El gladiador se encuentra con un Bacanal y decide tomar vino.
+[05/12/2023 14:40:32] Pierde 4 puntos de Energía.
+[05/12/2023 14:40:32] Es el turno de: 'juan'.
+[05/12/2023 14:40:32] 'juan' tira dados y avanza 3 casilleros.
+[05/12/2023 14:40:32] Es el turno de: 'luis'.
+[05/12/2023 14:40:32] 'luis' tira dados y avanza 3 casilleros.
+[05/12/2023 14:40:32] El gladiador encuentra comida.
+[05/12/2023 14:40:32] Gana 15 puntos de Energía.
+[05/12/2023 14:40:32] Es el turno de: 'lucas'.
+[05/12/2023 14:40:32] 'lucas' tira dados y avanza 6 casilleros.
+[05/12/2023 14:40:32] El gladiador se encuentra una mejora de Equipamiento.
+[05/12/2023 14:40:32] El gladiador se equipa un/a Escudo Y Espada.
+[05/12/2023 14:40:32] Es el turno de: 'alan'.
+[05/12/2023 14:40:32] 'alan' tira dados y avanza 2 casilleros.
+[05/12/2023 14:40:32] Es el turno de: 'nacho'.
+[05/12/2023 14:40:32] 'nacho' tira dados y avanza 1 casilleros.
+[05/12/2023 14:40:32] Gana 5 puntos de Energía.
+[05/12/2023 14:40:32] Es el turno de: 'pepe'.
+[05/12/2023 14:40:32] 'pepe' tira dados y avanza 5 casilleros.
+[05/12/2023 14:40:32] El gladiador se encuentra con un Bacanal y decide tomar vino.
+[05/12/2023 14:40:32] Pierde 20 puntos de Energía.
+[05/12/2023 14:40:32] Es el turno de: 'juan'.
+[05/12/2023 14:40:32] 'juan' tira dados y avanza 4 casilleros.
+[05/12/2023 14:40:32] Gana 5 puntos de Energía.
+[05/12/2023 14:40:32] Es el turno de: 'luis'.
+[05/12/2023 14:40:32] 'luis' tira dados y avanza 2 casilleros.
+[05/12/2023 14:40:32] El gladiador se encuentra con una Fiera Salvaje y entran en combate.
+[05/12/2023 14:40:32] Pierde 10 puntos de Energía.
+[05/12/2023 14:40:32] El gladiador encuentra comida.
+[05/12/2023 14:40:32] Gana 15 puntos de Energía.
+[05/12/2023 14:40:32] Es el turno de: 'lucas'.
+[05/12/2023 14:40:32] 'lucas' tira dados y avanza 3 casilleros.
+[05/12/2023 14:40:32] El gladiador se lesiona.
+[05/12/2023 14:40:32] Pierde 1 turno/s.
+[05/12/2023 14:40:32] Es el turno de: 'alan'.
+[05/12/2023 14:40:32] 'alan' tira dados y avanza 6 casilleros.
+[05/12/2023 14:40:32] El gladiador se encuentra una mejora de Equipamiento.
+[05/12/2023 14:40:32] El gladiador se equipa un/a Escudo Y Espada.
+[05/12/2023 14:40:32] Es el turno de: 'nacho'.
+[05/12/2023 14:40:32] 'nacho' tira dados y avanza 3 casilleros.
+[05/12/2023 14:40:32] Es el turno de: 'pepe'.
+[05/12/2023 14:40:32] 'pepe' tira dados y avanza 6 casilleros.
+[05/12/2023 14:40:32] El gladiador encuentra comida.
+[05/12/2023 14:40:32] Gana 15 puntos de Energía.
+[05/12/2023 14:40:32] Es el turno de: 'juan'.
+[05/12/2023 14:40:32] 'juan' tira dados y avanza 5 casilleros.
+[05/12/2023 14:40:32] Es el turno de: 'luis'.
+[05/12/2023 14:40:32] 'luis' tira dados y avanza 3 casilleros.
+[05/12/2023 14:40:32] El gladiador se encuentra con una Fiera Salvaje y entran en combate.
+[05/12/2023 14:40:32] Pierde 10 puntos de Energía.
+[05/12/2023 14:40:32] El gladiador se encuentra una mejora de Equipamiento.
+[05/12/2023 14:40:32] El gladiador se equipa un/a Escudo Y Espada.
+[05/12/2023 14:40:32] Es el turno de: 'lucas'.
+[05/12/2023 14:40:32] 'lucas' tira dados y avanza 3 casilleros.
+[05/12/2023 14:40:32] Es el turno de: 'alan'.
+[05/12/2023 14:40:32] 'alan' tira dados y avanza 2 casilleros.
+[05/12/2023 14:40:32] LLego a la LLegada pero debe retrocer ala mitad del tablero por equipamiento incompleto
+[05/12/2023 14:40:32] Es el turno de: 'nacho'.
+[05/12/2023 14:40:32] 'nacho' tira dados y avanza 3 casilleros.
+[05/12/2023 14:40:32] Gana 5 puntos de Energía.
+[05/12/2023 14:40:32] Es el turno de: 'pepe'.
+[05/12/2023 14:40:32] 'pepe' tira dados y avanza 3 casilleros.
+[05/12/2023 14:40:32] LLego a la LLegada pero debe retrocer ala mitad del tablero por equipamiento incompleto
+[05/12/2023 14:40:32] Es el turno de: 'juan'.
+[05/12/2023 14:40:32] 'juan' tira dados y avanza 2 casilleros.
+[05/12/2023 14:40:32] Gana 5 puntos de Energía.
+[05/12/2023 14:40:32] Es el turno de: 'luis'.
+[05/12/2023 14:40:32] 'luis' tira dados y avanza 4 casilleros.
+[05/12/2023 14:40:32] El gladiador se encuentra con una Fiera Salvaje y entran en combate.
+[05/12/2023 14:40:32] Pierde 2 puntos de Energía.
+[05/12/2023 14:40:32] Es el turno de: 'lucas'.
+[05/12/2023 14:40:32] 'lucas' tira dados y avanza 6 casilleros.
+[05/12/2023 14:40:32] El gladiador se encuentra una mejora de Equipamiento.
+[05/12/2023 14:40:32] El gladiador se equipa un/a Llave.
+[05/12/2023 14:40:32] Es el turno de: 'alan'.
+[05/12/2023 14:40:32] 'alan' tira dados y avanza 1 casilleros.
+[05/12/2023 14:40:32] El gladiador se encuentra con una Fiera Salvaje y entran en combate.
+[05/12/2023 14:40:32] Pierde 2 puntos de Energía.
+[05/12/2023 14:40:32] El gladiador encuentra comida.
+[05/12/2023 14:40:32] Gana 15 puntos de Energía.
+[05/12/2023 14:40:32] Es el turno de: 'nacho'.
+[05/12/2023 14:40:32] 'nacho' tira dados y avanza 1 casilleros.
+[05/12/2023 14:40:32] Es el turno de: 'pepe'.
+[05/12/2023 14:40:32] 'pepe' tira dados y avanza 6 casilleros.
+[05/12/2023 14:40:32] El gladiador se encuentra una mejora de Equipamiento.
+[05/12/2023 14:40:32] El gladiador se equipa un/a Llave.
+[05/12/2023 14:40:32] Es el turno de: 'juan'.
+[05/12/2023 14:40:32] 'juan' tira dados y avanza 5 casilleros.
+[05/12/2023 14:40:32] Es el turno de: 'luis'.
+[05/12/2023 14:40:32] 'luis' tira dados y avanza 4 casilleros.
+[05/12/2023 14:40:32] El gladiador se lesiona.
+[05/12/2023 14:40:32] Pierde 1 turno/s.
+[05/12/2023 14:40:32] Es el turno de: 'lucas'.
+[05/12/2023 14:40:32] 'lucas' tira dados y avanza 2 casilleros.
+[05/12/2023 14:40:32] GANADOR DE LA PARTIDA
