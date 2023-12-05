@@ -37,8 +37,4 @@ public class Jugador {
     public String getNombre(){
         return nombre;
     }
-
-    public String obtenerNombre(){
-        return nombre;
-    }
 }

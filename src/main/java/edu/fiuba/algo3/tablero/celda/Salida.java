@@ -13,6 +13,5 @@ public class Salida extends Celda {
 
     @Override
     public void aplicarEfecto(Gladiador gladiador) {
-        //gladiador.ganar();
     }
 }

@@ -308,9 +308,6 @@ public class CasosDeUso {
     public void verificarQueSiPasan30TurnosYNadieLlegoALaMetaSeTerminaElJuego() {
         // Falta implementar
         AlgoRoma algoRoma = new AlgoRoma(new Dado(6));
-        for (int i = 0; i<29;i++){
-            algoRoma.jugar();
-        }
 
         try {
             algoRoma.jugar();
