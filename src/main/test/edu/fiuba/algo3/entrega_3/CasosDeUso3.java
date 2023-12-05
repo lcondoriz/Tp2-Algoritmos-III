@@ -41,7 +41,7 @@ public class CasosDeUso3 {
         } catch (PartidaFinalizada e) {
             String[] logLines = new String[0];
             try {
-                logLines = algoRoma.getLog().getLines();;
+                logLines = algoRoma.getLog().getLines();
             } catch (IOException er) {
                 throw new RuntimeException(er);
             }
@@ -71,7 +71,7 @@ public class CasosDeUso3 {
         } catch (CantidadTurnosException e) {
             String[] logLines = new String[0];
             try {
-                logLines = algoRoma.getLog().getLines();;
+                logLines = algoRoma.getLog().getLines();
             } catch (IOException er) {
                 throw new RuntimeException(er);
             }
