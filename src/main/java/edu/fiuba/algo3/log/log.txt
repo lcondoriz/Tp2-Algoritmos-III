@@ -1,3 +1,1 @@
-[03/12/2023 12:48:27] Se agregó al jugador: 'Pepe'.
-[03/12/2023 12:48:27] Se agregó al jugador: 'Pablo'.
-[03/12/2023 12:48:27] Se inicio el Juego.
+[05/12/2023 11:07:10] No hay ganador ya que superaron la maxima cantidad de rondas.
