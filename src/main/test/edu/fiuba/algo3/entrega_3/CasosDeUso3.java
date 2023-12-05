@@ -10,6 +10,8 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -19,8 +21,9 @@ public class CasosDeUso3 {
     @Test   // Caso de uso 19
     public void test19simularYVerificarQueHayUnGanador() {
         // Arrange
-        Dado dado = new Dado(6);
-        AlgoRoma algoRoma = new AlgoRoma(dado);
+        Dado dadoMock = mock(Dado.class);
+        when(dadoMock.lanzar()).thenReturn(2);
+        AlgoRoma algoRoma = new AlgoRoma(dadoMock);
 
         algoRoma.cargarTablero("files/mapa.json");
 
@@ -32,11 +35,6 @@ public class CasosDeUso3 {
         algoRoma.agregarJugador("nacho");
 
         algoRoma.inicializarJuego();
-        //try{
-        //    algoRoma.jugar();
-        //} catch (PartidaFinalizada e) {
-        //    assertEquals(e.getClass(), PartidaFinalizada.class);
-        //}
 
         try {
             algoRoma.jugar();
@@ -66,11 +64,6 @@ public class CasosDeUso3 {
         algoRoma.agregarJugador("nacho");
 
         algoRoma.inicializarJuego();
-        //try{
-        //    algoRoma.jugar();
-        //} catch (PartidaFinalizada e) {
-        //    assertEquals(e.getClass(), PartidaFinalizada.class);
-        //}
 
         try {
             algoRoma.jugar();
