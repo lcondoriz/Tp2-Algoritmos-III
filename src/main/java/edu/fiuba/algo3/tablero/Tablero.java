@@ -28,4 +28,7 @@ public class Tablero {
     public Celda obtenerCeldaDeSalida() {
         return celdas.getFirst();
     }
+    public LinkedList<Celda> obtenerCeldas() {
+        return celdas;
+    }
 }

@@ -53,4 +53,13 @@ public abstract class Celda {
     public Celda retrocederMitadCamino() {
         return this.retroceder(this.numeracion / 2);
     }
+    public Celda obtenerSiguienteCelda() {
+        return siguienteCelda;
+    }
+    public Coordenadas obtenerCoordenadas() {
+        return coordenadas;
+    }
+    public String obtenerTipo() {
+        return tipo;
+    }
 }
