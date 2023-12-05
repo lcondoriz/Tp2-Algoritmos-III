@@ -86,15 +86,8 @@ public class Gladiador {
         return this.celda;
     }
     public void retrocederMitadCamino() {
-        Logeador.agregarALog(this.log,"Llegaste al final, pero no tenias la llave. El gladiador retrocede a la mitad del tablero.");
+        Logeador.agregarALog(this.log,"LLego a la LLegada pero debe retrocer a la mitad del tablero por equipamiento incompleto");
         this.celda = this.celda.retrocenderMitadCamino();
-        if (log != null) {
-            try {
-                log.addLine("LLego a la LLegada pero debe retrocer ala mitad del tablero por equipamiento incompleto");
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-        }
     }
     public Log getLog(){
      return log;
@@ -111,11 +104,7 @@ public class Gladiador {
             this.retrocederMitadCamino();
             return ;
         }
-        try {
-            log.addLine("GANADOR DE LA PARTIDA");
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        Logeador.agregarALog(this.log, "GANADOR DE LA PARTIDA");
         throw new PartidaFinalizada("Partida Finalizada");
     }
 
