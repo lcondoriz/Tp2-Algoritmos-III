@@ -70,6 +70,7 @@ public class AlgoRoma {
 
     public void jugar() {
         for (int i = 0; i < MAX_CANTIDAD_RONDAS; i++) {
+            Logeador.agregarALog(this.log,"TURNO:"+Integer.valueOf(i+1).toString());
             for (Jugador jugador : jugadores) {
                 Logeador.agregarALog(this.log,"Es el turno de: '" + jugador.getNombre() + "'.");
                 try {
