@@ -41,7 +41,7 @@ public class CasosDeUso3 {
         } catch (PartidaFinalizada e) {
             String[] logLines = new String[0];
             try {
-                logLines = algoRoma.getLog().getLines();;
+                logLines = algoRoma.getLog().getLines();
             } catch (IOException er) {
                 throw new RuntimeException(er);
             }
@@ -51,10 +51,11 @@ public class CasosDeUso3 {
     @Test   // Caso de uso 20
     public void text20simularYVerificarQueNadieGane() {
         // Arrange
-        Dado dado = new Dado(6);
-        AlgoRoma algoRoma = new AlgoRoma(dado);
+        Dado dadoMock = mock(Dado.class);
+        when(dadoMock.lanzar()).thenReturn(0);
+        AlgoRoma algoRoma = new AlgoRoma(dadoMock);
 
-        algoRoma.cargarTablero("files/mapaDePartidaSinGanar.json");
+        algoRoma.cargarTablero("files/mapa.json");
 
         algoRoma.agregarJugador("pepe");
         algoRoma.agregarJugador("juan");
@@ -70,7 +71,7 @@ public class CasosDeUso3 {
         } catch (CantidadTurnosException e) {
             String[] logLines = new String[0];
             try {
-                logLines = algoRoma.getLog().getLines();;
+                logLines = algoRoma.getLog().getLines();
             } catch (IOException er) {
                 throw new RuntimeException(er);
             }
