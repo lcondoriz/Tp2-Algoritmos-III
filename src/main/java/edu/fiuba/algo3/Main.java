@@ -13,20 +13,19 @@ import javafx.stage.Stage;
 public class Main extends Application {
 
     public static void main(String[] args) {
-        launch(args); 
+        launch(args);
     }
 
     @Override
     public void start(Stage primaryStage) {
         String path = "files/mapa.json";
-        
-        TableroConstructor constructor= new TableroConstructor();
-        Tablero miTablero=  constructor.construirTableroDesdeJSON(path);
+
+        TableroConstructor constructor = new TableroConstructor();
+        Tablero miTablero = constructor.construirTableroDesdeJSON(path);
         AlgoRoma algoRoma = new AlgoRoma(new Dado());
         algoRoma.cargarTablero(path);
         Interfaz interfaz = new Interfaz(miTablero, algoRoma);
         interfaz.start(primaryStage);
-        algoRoma.jugar1Ronda();
-        
+
     }
 }
