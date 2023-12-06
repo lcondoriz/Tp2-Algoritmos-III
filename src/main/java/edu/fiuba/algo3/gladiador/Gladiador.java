@@ -14,11 +14,10 @@ import edu.fiuba.algo3.log.Log;
 import edu.fiuba.algo3.log.Logeador;
 import edu.fiuba.algo3.tablero.celda.Celda;
 
-import java.io.IOException;
-
 public class Gladiador {
     private Log log;
     private Energia energia;
+    private static final int  ENERGIA_MINIMA = 0;
     private Equipable equipamiento;
     private Seniority estrategiaSeniority;
     private Celda celda;
@@ -45,10 +44,16 @@ public class Gladiador {
     public void incrementarEnergia(int incremento) {
         Logeador.agregarALog(this.log,"Gana " + Integer.valueOf(incremento).toString() + " puntos de Energía.");
         this.energia.incrementar(incremento);
+        if (this.energia.obtenerEnergia() > ENERGIA_MINIMA) {
+            this.estadoGladiador = new Normal();
+        }
     }
     public void decrementarEnergia(int decremento) {
         Logeador.agregarALog(this.log, "Pierde " + Integer.valueOf(decremento).toString() + " puntos de Energía.");
         this.energia.decrementar(decremento);
+        if (this.energia.obtenerEnergia() <= ENERGIA_MINIMA){
+            this.estadoGladiador = new SinEnergia();
+        }
     }
     public int obtenerEnergia() {
         return this.energia.obtenerEnergia();
@@ -59,18 +64,18 @@ public class Gladiador {
     public void avanzar(int cantidadCeldas, int turno) {
         this.estadoGladiador.accionar(this, cantidadCeldas, turno);
     }
+    public boolean tieneEquipamientoCompleto() {
+        return this.equipamiento instanceof Llave;
+    }
     public void mover(int cantidadCeldas, int turno) {
-        if (!this.energia.tieneEnergiaSuficiente()) {
-            this.cambiarEstado(new SinEnergia());
-            return;
-        }
+
         this.celda = this.celda.avanzar(cantidadCeldas);
 
         // Cada celda sabe como aplicar su efecto
         this.celda.aplicarEfecto(this);
 
         // De acuerdo al turno, se incrementa el seniority
-        this.estrategiaSeniority = this.estrategiaSeniority.incrementarSeniority(turno);
+        this.estrategiaSeniority = this.estrategiaSeniority.incrementarSeniority(turno,this.log );
 
         // Cada vez que se avanza, es un turno nuevo. Y por cada turno nuevo y por el tipo de seniority se da un plus de energía.
         this.estrategiaSeniority.obtenerPlusEnergia(this.energia);
@@ -81,7 +86,7 @@ public class Gladiador {
     }
     public void retrocederMitadCamino() {
         Logeador.agregarALog(this.log,"LLego a la LLegada pero debe retrocer a la mitad del tablero por equipamiento incompleto");
-        this.celda = this.celda.retrocenderMitadCamino();
+        this.celda = this.celda.retrocederMitadCamino();
     }
     public Log getLog(){
      return log;

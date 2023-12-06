@@ -14,6 +14,7 @@ import edu.fiuba.algo3.tablero.celda.Celda;
 import edu.fiuba.algo3.tablero.celda.Llegada;
 import edu.fiuba.algo3.tablero.celda.Salida;
 import edu.fiuba.algo3.tablero.Coordenadas;
+import edu.fiuba.algo3.tablero.celda.afectable.Bacanal;
 import edu.fiuba.algo3.tablero.celda.afectable.Comida;
 import edu.fiuba.algo3.tablero.celda.afectable.Equipo;
 import edu.fiuba.algo3.tablero.celda.afectable.FieraSalvaje;
@@ -59,7 +60,7 @@ public class CasosDeUso {
     public void verificarQueUnJugadorSinEnergiaNoPuedaJugarElTurno() {
         // Arrange
         Energia energia = new Energia(20);
-
+        FieraSalvaje fiera = new FieraSalvaje();
         Celda salida = new Salida(new Coordenadas(0, 0),"Salida",0);
         Celda camino = new Camino(new Coordenadas(1, 0),"Camino",1);
 
@@ -224,9 +225,9 @@ public class CasosDeUso {
         //Arrange
         Energia energia = new Energia(20);
 
-        Celda salida = new Salida(1, 7, "Salida", 0);
-        Celda llegada = new Llegada(2, 6, "Llegada", 2);
-        Celda nuevaCelda = new Camino(2, 7, "Camino", 1);
+        Celda salida = new Salida(new Coordenadas(1,7),"Salida", 0);
+        Celda llegada = new Llegada(new Coordenadas(2,6),"Llegada", 2);
+        Celda nuevaCelda = new Camino(new Coordenadas(2,7),"Camino", 1);
         salida.agregarSiguienteCelda(nuevaCelda);
         nuevaCelda.agregarCeldaAnterior(salida);
         nuevaCelda.agregarSiguienteCelda(llegada);

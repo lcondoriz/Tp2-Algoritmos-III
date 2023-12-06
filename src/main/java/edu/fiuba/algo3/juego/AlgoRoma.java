@@ -1,15 +1,20 @@
 package edu.fiuba.algo3.juego;
 
 import edu.fiuba.algo3.exceptions.CantidadJugadoresException;
+import edu.fiuba.algo3.exceptions.CantidadTurnosException;
 import edu.fiuba.algo3.exceptions.NoHayJugadoresException;
+import edu.fiuba.algo3.exceptions.PartidaFinalizada;
+import edu.fiuba.algo3.javafx.Interfaz;
 import edu.fiuba.algo3.json.TableroConstructor;
 import edu.fiuba.algo3.log.Log;
+import edu.fiuba.algo3.log.Logeador;
 import edu.fiuba.algo3.tablero.Tablero;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 
 public class AlgoRoma {
     private static final int MIN_JUGADORES = 2;
@@ -74,13 +79,14 @@ public class AlgoRoma {
 
     public void jugar() {
         for (int i = 0; i < MAX_CANTIDAD_RONDAS; i++) {
-            Logeador.agregarALog(this.log,"TURNO:"+Integer.valueOf(i+1).toString());
+            this.turno++;
+            Logeador.agregarALog(this.log,"TURNO:"+Integer.valueOf(this.turno).toString());
             for (Jugador jugador : jugadores) {
-                Logeador.agregarALog(this.log,"Es el turno de: '" + jugador.getNombre() + "'.");
+                Logeador.agregarALog(this.log,"Es el turno de: '" + jugador.obtenerNombre() + "'.");
                 try {
                     jugador.jugarTurno(dado);
                 } catch (PartidaFinalizada e) {
-                    throw new PartidaFinalizada("GANADOR DE LA PARTIDA: "  + jugador.getNombre()); //especializar exception(?
+                    throw new PartidaFinalizada("GANADOR DE LA PARTIDA: "  + jugador.obtenerNombre()); //especializar exception(?
                 }
             }
         }
@@ -97,13 +103,17 @@ public class AlgoRoma {
         }
     }
     public void jugar1Ronda() { //testear interfaz
+        this.turno++;
+        Logeador.agregarALog(this.log,"TURNO:"+Integer.valueOf(this.turno).toString());
         for (Jugador jugador : jugadores) {
+            Logeador.agregarALog(this.log,"Es el turno de: '" + jugador.obtenerNombre() + "'.");
             try {
-                log.addLine("Es el turno de: '" + jugador.obtenerNombre() + "'.");
-            } catch (IOException e) {
-                throw new RuntimeException(e); //especializar exception(?
+                jugador.jugarTurno(dado);
+            } catch (PartidaFinalizada e) {
+                //mostrar en interfaz cartel con "GANADOR DE LA PARTIDA: "+ jugador.obtenerNombre() con boton de volver a jugar y otro de cerrar(?
+                //volver a jugar: reiniciar tablero, mover a todos
+                throw new PartidaFinalizada("GANADOR DE LA PARTIDA: "  + jugador.obtenerNombre()); //especializar exception(?
             }
-            jugador.jugarTurno(dado);
         }
     }
     public List<Jugador> obtenerJugadores(){

@@ -97,7 +97,7 @@ public class LogTest {
         /*for (String linea : lineas){
             System.out.println(linea);
         }*/
-        assert(lineas[0].contains("'"+pepe+"' tira dados y avanza 2 casilleros."));
+        assert(lineas[0].contains("El gladiador tira dados y avanza 2 casilleros."));
 
     }
 

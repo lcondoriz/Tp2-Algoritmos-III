@@ -19,7 +19,6 @@ public abstract class Celda {
         this.tipo = tipo;
         this.numeracion = numeracion;
         this.afectable = new LinkedList<>();
-
         this.celdaAnterior = null;
         this.siguienteCelda = null;
     }

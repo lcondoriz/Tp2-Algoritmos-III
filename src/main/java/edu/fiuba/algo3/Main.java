@@ -26,7 +26,7 @@ public class Main extends Application {
         algoRoma.cargarTablero(path);
         Interfaz interfaz = new Interfaz(miTablero, algoRoma);
         interfaz.start(primaryStage);
-        algoRoma.jugar1Ronda();
+        //algoRoma.jugar1Ronda();
         
     }
 }
