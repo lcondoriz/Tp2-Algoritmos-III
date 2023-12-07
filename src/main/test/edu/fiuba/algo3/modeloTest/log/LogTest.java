@@ -4,6 +4,7 @@ import edu.fiuba.algo3.juego.AlgoRoma;
 import edu.fiuba.algo3.juego.Dado;
 import edu.fiuba.algo3.juego.Jugador;
 import edu.fiuba.algo3.log.Log;
+import edu.fiuba.algo3.tablero.Coordenadas;
 import edu.fiuba.algo3.tablero.celda.Camino;
 import edu.fiuba.algo3.tablero.celda.Celda;
 import edu.fiuba.algo3.tablero.celda.Salida;
@@ -45,10 +46,9 @@ public class LogTest {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
-        for (String linea : lineas){        //esto es para verlo por consola y no tener que abrir el txt, no testea nada en si
+       /* for (String linea : lineas){        //esto es para verlo por consola y no tener que abrir el txt, no testea nada en si
             System.out.println(linea);
-        }
+        }*/
 
 
         assert(lineas[0].contains("Se agregó al jugador: '"+pepe+"'."));
@@ -62,9 +62,9 @@ public class LogTest {
         Dado dadoMock = mock(Dado.class);
         when(dadoMock.lanzar()).thenReturn(2);
 
-        Celda salida = new Salida(0, 0,"Salida",0);
-        Celda camino_1 = new Camino(1, 0,"Camino",1);
-        Celda camino_2 = new Camino(2, 0,"Camino",2);
+        Celda salida = new Salida(new Coordenadas(0, 0),"Salida",0);
+        Celda camino_1 = new Camino(new Coordenadas(1, 0),"Camino",1);
+        Celda camino_2 = new Camino(new Coordenadas(2, 0),"Camino",2);
 
 
         salida.agregarSiguienteCelda(camino_1);
@@ -97,7 +97,7 @@ public class LogTest {
         /*for (String linea : lineas){
             System.out.println(linea);
         }*/
-        assert(lineas[0].contains("'"+pepe+"' tira dados y avanza 2 casilleros."));
+        assert(lineas[0].contains("El gladiador tira dados y avanza 2 casilleros."));
 
     }
 
@@ -107,9 +107,9 @@ public class LogTest {
         Dado dadoMock = mock(Dado.class);
         when(dadoMock.lanzar()).thenReturn(2);
 
-        Celda salida = new Salida(0, 0, "Salida", 0);
-        Celda camino_1 = new Camino(1, 0, "Camino", 1);
-        Celda camino_2 = new Camino(2, 0, "Camino", 2);
+        Celda salida = new Salida(new Coordenadas(0, 0), "Salida", 0);
+        Celda camino_1 = new Camino(new Coordenadas(1, 0), "Camino", 1);
+        Celda camino_2 = new Camino(new Coordenadas(2, 0), "Camino", 2);
 
 
         salida.agregarSiguienteCelda(camino_1);
@@ -148,9 +148,9 @@ public class LogTest {
         Dado dadoMock = mock(Dado.class);
         when(dadoMock.lanzar()).thenReturn(2);
 
-        Celda salida = new Salida(0, 0, "Salida", 0);
-        Celda camino_1 = new Camino(1, 0, "Camino", 1);
-        Celda camino_2 = new Camino(2, 0, "Camino", 2);
+        Celda salida = new Salida(new Coordenadas(0, 0), "Salida", 0);
+        Celda camino_1 = new Camino(new Coordenadas(1, 0), "Camino", 1);
+        Celda camino_2 = new Camino(new Coordenadas(2, 0), "Camino", 2);
 
 
         salida.agregarSiguienteCelda(camino_1);
@@ -188,9 +188,9 @@ public class LogTest {
         Dado dadoMock = mock(Dado.class);
         when(dadoMock.lanzar()).thenReturn(2);
 
-        Celda salida = new Salida(0, 0, "Salida", 0);
-        Celda camino_1 = new Camino(1, 0, "Camino", 1);
-        Celda camino_2 = new Camino(2, 0, "Camino", 2);
+        Celda salida = new Salida(new Coordenadas(0, 0), "Salida", 0);
+        Celda camino_1 = new Camino(new Coordenadas(1, 0), "Camino", 1);
+        Celda camino_2 = new Camino(new Coordenadas(2, 0), "Camino", 2);
 
 
         salida.agregarSiguienteCelda(camino_1);
@@ -219,9 +219,9 @@ public class LogTest {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        for (String linea : lineas){
+       /* for (String linea : lineas){
             System.out.println(linea);
-        }
+        }*/
 
         assert (lineas[1].contains("El gladiador se lesiona."));
         assert (lineas[2].contains("Pierde 1 turno/s."));
@@ -233,9 +233,9 @@ public class LogTest {
         Dado dadoMock = mock(Dado.class);
         when(dadoMock.lanzar()).thenReturn(2);
 
-        Celda salida = new Salida(0, 0, "Salida", 0);
-        Celda camino_1 = new Camino(1, 0, "Camino", 1);
-        Celda camino_2 = new Camino(2, 0, "Camino", 2);
+        Celda salida = new Salida(new Coordenadas(0, 0), "Salida", 0);
+        Celda camino_1 = new Camino(new Coordenadas(1, 0), "Camino", 1);
+        Celda camino_2 = new Camino(new Coordenadas(2, 0), "Camino", 2);
 
 
         salida.agregarSiguienteCelda(camino_1);
@@ -277,9 +277,9 @@ public class LogTest {
         Dado dadoMock = mock(Dado.class);
         when(dadoMock.lanzar()).thenReturn(2);
 
-        Celda salida = new Salida(0, 0, "Salida", 0);
-        Celda camino_1 = new Camino(1, 0, "Camino", 1);
-        Celda camino_2 = new Camino(2, 0, "Camino", 2);
+        Celda salida = new Salida(new Coordenadas(0, 0), "Salida", 0);
+        Celda camino_1 = new Camino(new Coordenadas(1, 0), "Camino", 1);
+        Celda camino_2 = new Camino(new Coordenadas(2, 0), "Camino", 2);
 
 
         salida.agregarSiguienteCelda(camino_1);

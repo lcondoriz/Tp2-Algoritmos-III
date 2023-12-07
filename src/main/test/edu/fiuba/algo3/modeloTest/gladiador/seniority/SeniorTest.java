@@ -17,7 +17,7 @@ public class SeniorTest {
     @Test
     public void verificarQueElSeniorityNoIncremente() {
         Senior senior = new Senior();
-        assertEquals(Senior.class, senior.incrementarSeniority(8).getClass());
-        assertEquals(Senior.class, senior.incrementarSeniority(12).getClass());
+        assertEquals(Senior.class, senior.incrementarSeniority(8, null).getClass());
+        assertEquals(Senior.class, senior.incrementarSeniority(12,null ).getClass());
     }
 }
