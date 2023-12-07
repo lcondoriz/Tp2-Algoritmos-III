@@ -1,3 +1,130 @@
-[05/12/2023 22:44:01] Se agregÃ³ al jugador: 'Pepe'.
-[05/12/2023 22:44:01] Se agregÃ³ al jugador: 'Pablo'.
-[05/12/2023 22:44:01] Se inicio el Juego.
+[07/12/2023 18:31:17] Se agregó al jugador: 'adsdsa'.
+[07/12/2023 18:31:17] Se agregó al jugador: 'adsdsa'.
+[07/12/2023 18:31:18] Se inicio el Juego.
+[07/12/2023 18:31:19] TURNO:1
+[07/12/2023 18:31:19] Es el turno de: 'adsdsa'.
+[07/12/2023 18:31:19] El gladiador tira dados y avanza 6 casilleros.
+[07/12/2023 18:31:19] Es el turno de: 'adsdsa'.
+[07/12/2023 18:31:19] El gladiador tira dados y avanza 5 casilleros.
+[07/12/2023 18:31:19] El gladiador se encuentra con un Bacanal y decide tomar vino.
+[07/12/2023 18:31:19] Pierde 20 puntos de Energía.
+[07/12/2023 18:31:19] El gladiador se encuentra una mejora de Equipamiento.
+[07/12/2023 18:31:19] El gladiador se equipa un/a Casco.
+[07/12/2023 18:31:19] TURNO:2
+[07/12/2023 18:31:19] Es el turno de: 'adsdsa'.
+[07/12/2023 18:31:19] El gladiador tira dados y avanza 2 casilleros.
+[07/12/2023 18:31:19] Es el turno de: 'adsdsa'.
+[07/12/2023 18:31:19] Gana 5 puntos de Energía.
+[07/12/2023 18:31:20] TURNO:3
+[07/12/2023 18:31:20] Es el turno de: 'adsdsa'.
+[07/12/2023 18:31:20] El gladiador tira dados y avanza 6 casilleros.
+[07/12/2023 18:31:20] El gladiador se encuentra con una Fiera Salvaje y entran en combate.
+[07/12/2023 18:31:20] Pierde 20 puntos de Energía.
+[07/12/2023 18:31:20] El gladiador se encuentra una mejora de Equipamiento.
+[07/12/2023 18:31:20] El gladiador se equipa un/a Casco.
+[07/12/2023 18:31:20] Es el turno de: 'adsdsa'.
+[07/12/2023 18:31:20] El gladiador tira dados y avanza 3 casilleros.
+[07/12/2023 18:31:20] TURNO:4
+[07/12/2023 18:31:20] Es el turno de: 'adsdsa'.
+[07/12/2023 18:31:20] Gana 5 puntos de Energía.
+[07/12/2023 18:31:20] Es el turno de: 'adsdsa'.
+[07/12/2023 18:31:20] El gladiador tira dados y avanza 4 casilleros.
+[07/12/2023 18:31:20] El gladiador se lesiona.
+[07/12/2023 18:31:20] Pierde 1 turno/s.
+[07/12/2023 18:31:20] TURNO:5
+[07/12/2023 18:31:20] Es el turno de: 'adsdsa'.
+[07/12/2023 18:31:20] El gladiador tira dados y avanza 3 casilleros.
+[07/12/2023 18:31:20] El gladiador se lesiona.
+[07/12/2023 18:31:20] Pierde 1 turno/s.
+[07/12/2023 18:31:20] Es el turno de: 'adsdsa'.
+[07/12/2023 18:31:20] El gladiador perdió el turno. Se recupera el próximo.
+[07/12/2023 18:31:20] TURNO:6
+[07/12/2023 18:31:20] Es el turno de: 'adsdsa'.
+[07/12/2023 18:31:20] El gladiador perdió el turno. Se recupera el próximo.
+[07/12/2023 18:31:20] Es el turno de: 'adsdsa'.
+[07/12/2023 18:31:20] El gladiador tira dados y avanza 5 casilleros.
+[07/12/2023 18:31:20] El gladiador se lesiona.
+[07/12/2023 18:31:20] Pierde 1 turno/s.
+[07/12/2023 18:31:21] TURNO:7
+[07/12/2023 18:31:21] Es el turno de: 'adsdsa'.
+[07/12/2023 18:31:21] El gladiador tira dados y avanza 2 casilleros.
+[07/12/2023 18:31:21] El gladiador se encuentra una mejora de Equipamiento.
+[07/12/2023 18:31:21] El gladiador se equipa un/a Armadura.
+[07/12/2023 18:31:21] Es el turno de: 'adsdsa'.
+[07/12/2023 18:31:21] El gladiador perdió el turno. Se recupera el próximo.
+[07/12/2023 18:31:21] TURNO:8
+[07/12/2023 18:31:21] Es el turno de: 'adsdsa'.
+[07/12/2023 18:31:21] El gladiador tira dados y avanza 5 casilleros.
+[07/12/2023 18:31:21] El gladiador se encuentra con un Bacanal y decide tomar vino.
+[07/12/2023 18:31:21] Pierde 8 puntos de Energía.
+[07/12/2023 18:31:21] El gladiador ascendió a SemiSenior.
+[07/12/2023 18:31:21] Es el turno de: 'adsdsa'.
+[07/12/2023 18:31:21] El gladiador tira dados y avanza 2 casilleros.
+[07/12/2023 18:31:21] El gladiador se encuentra una mejora de Equipamiento.
+[07/12/2023 18:31:21] El gladiador se equipa un/a Armadura.
+[07/12/2023 18:31:21] El gladiador ascendió a SemiSenior.
+[07/12/2023 18:31:21] TURNO:9
+[07/12/2023 18:31:21] Es el turno de: 'adsdsa'.
+[07/12/2023 18:31:21] Gana 5 puntos de Energía.
+[07/12/2023 18:31:21] Es el turno de: 'adsdsa'.
+[07/12/2023 18:31:21] El gladiador tira dados y avanza 1 casilleros.
+[07/12/2023 18:31:21] El gladiador se encuentra con una Fiera Salvaje y entran en combate.
+[07/12/2023 18:31:21] Pierde 10 puntos de Energía.
+[07/12/2023 18:31:21] El gladiador encuentra comida.
+[07/12/2023 18:31:21] Gana 15 puntos de Energía.
+[07/12/2023 18:31:21] TURNO:10
+[07/12/2023 18:31:21] Es el turno de: 'adsdsa'.
+[07/12/2023 18:31:21] El gladiador tira dados y avanza 2 casilleros.
+[07/12/2023 18:31:21] El gladiador se lesiona.
+[07/12/2023 18:31:21] Pierde 1 turno/s.
+[07/12/2023 18:31:21] El gladiador encuentra comida.
+[07/12/2023 18:31:21] Gana 15 puntos de Energía.
+[07/12/2023 18:31:21] Es el turno de: 'adsdsa'.
+[07/12/2023 18:31:21] El gladiador tira dados y avanza 2 casilleros.
+[07/12/2023 18:31:21] El gladiador se encuentra con una Fiera Salvaje y entran en combate.
+[07/12/2023 18:31:21] Pierde 10 puntos de Energía.
+[07/12/2023 18:31:21] El gladiador se encuentra una mejora de Equipamiento.
+[07/12/2023 18:31:21] El gladiador se equipa un/a Escudo Y Espada.
+[07/12/2023 18:31:21] TURNO:11
+[07/12/2023 18:31:21] Es el turno de: 'adsdsa'.
+[07/12/2023 18:31:21] El gladiador tira dados y avanza 6 casilleros.
+[07/12/2023 18:31:21] El gladiador se encuentra con un Bacanal y decide tomar vino.
+[07/12/2023 18:31:21] Pierde 12 puntos de Energía.
+[07/12/2023 18:31:21] Es el turno de: 'adsdsa'.
+[07/12/2023 18:31:21] El gladiador tira dados y avanza 4 casilleros.
+[07/12/2023 18:31:21] El gladiador se lesiona.
+[07/12/2023 18:31:21] Pierde 1 turno/s.
+[07/12/2023 18:31:21] El gladiador encuentra comida.
+[07/12/2023 18:31:21] Gana 15 puntos de Energía.
+[07/12/2023 18:31:21] TURNO:12
+[07/12/2023 18:31:21] Es el turno de: 'adsdsa'.
+[07/12/2023 18:31:21] El gladiador tira dados y avanza 1 casilleros.
+[07/12/2023 18:31:21] El gladiador se encuentra una mejora de Equipamiento.
+[07/12/2023 18:31:21] El gladiador se equipa un/a Escudo Y Espada.
+[07/12/2023 18:31:21] El gladiador ascendió a Senior.
+[07/12/2023 18:31:21] Es el turno de: 'adsdsa'.
+[07/12/2023 18:31:21] El gladiador tira dados y avanza 4 casilleros.
+[07/12/2023 18:31:21] El gladiador encuentra comida.
+[07/12/2023 18:31:21] Gana 15 puntos de Energía.
+[07/12/2023 18:31:21] El gladiador ascendió a Senior.
+[07/12/2023 18:31:21] TURNO:13
+[07/12/2023 18:31:21] Es el turno de: 'adsdsa'.
+[07/12/2023 18:31:21] El gladiador tira dados y avanza 4 casilleros.
+[07/12/2023 18:31:21] El gladiador se encuentra una mejora de Equipamiento.
+[07/12/2023 18:31:21] El gladiador se equipa un/a Llave.
+[07/12/2023 18:31:21] Es el turno de: 'adsdsa'.
+[07/12/2023 18:31:21] El gladiador tira dados y avanza 3 casilleros.
+[07/12/2023 18:31:21] El gladiador se encuentra una mejora de Equipamiento.
+[07/12/2023 18:31:21] El gladiador se equipa un/a Llave.
+[07/12/2023 18:31:22] TURNO:14
+[07/12/2023 18:31:22] Es el turno de: 'adsdsa'.
+[07/12/2023 18:31:22] El gladiador tira dados y avanza 3 casilleros.
+[07/12/2023 18:31:22] GANADOR DE LA PARTIDA
+[07/12/2023 18:31:22] TURNO:15
+[07/12/2023 18:31:22] Es el turno de: 'adsdsa'.
+[07/12/2023 18:31:22] El gladiador tira dados y avanza 1 casilleros.
+[07/12/2023 18:31:22] GANADOR DE LA PARTIDA
+[07/12/2023 18:31:22] TURNO:16
+[07/12/2023 18:31:22] Es el turno de: 'adsdsa'.
+[07/12/2023 18:31:22] El gladiador tira dados y avanza 2 casilleros.
+[07/12/2023 18:31:22] GANADOR DE LA PARTIDA

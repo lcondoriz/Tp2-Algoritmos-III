@@ -22,6 +22,7 @@ public class Interfaz extends Application {
     private Stage primaryStage;
     private Tablero miTablero;
     private AlgoRoma algoRoma;
+    private Scene escenaTablero;
 
     public static void main(String[] args) {
         launch(args);
@@ -76,6 +77,7 @@ public class Interfaz extends Application {
             if (algoRoma.obtenerJugadores().size() > 0) {
                 // Llamar a un método para cambiar a la escena del tablero del juego
                 algoRoma.inicializarJuego();
+                cargarTablero();
                 mostrarTablero();
             } else {
                 System.err.println("No se ha inicializado ningún jugador");
@@ -85,12 +87,12 @@ public class Interfaz extends Application {
         primaryStage.show();
     }
 
-    public void mostrarTablero() {
+    public void cargarTablero() {
         // Verificar que miTablero no sea null
         if (miTablero != null) {
             // Crear una instancia de TableroVisual
             TableroVisual tableroVisual = new TableroVisual(miTablero, algoRoma);
-
+            
             Button jugar1Button = new Button("Jugar 1 Ronda");
             jugar1Button.setOnAction(event -> {
                 algoRoma.jugar1Ronda();
@@ -99,16 +101,17 @@ public class Interfaz extends Application {
 
             tableroVisual.add(jugar1Button, 11, 9);
             // Crear una nueva escena con el tablero del juego
-            Scene tableroScene = new Scene(tableroVisual, 800, 600);
+            escenaTablero = new Scene(tableroVisual, 800, 600);
             // Obtener el GridPane de la escena y configurar la alineación
-            GridPane tableroGrid = (GridPane) tableroScene.getRoot();
+            GridPane tableroGrid = (GridPane) escenaTablero.getRoot();
             tableroGrid.setAlignment(javafx.geometry.Pos.CENTER);
 
-            // Cambiar a la nueva escena
-            primaryStage.setScene(tableroScene);
         } else {
             System.err.println("El tablero no se ha inicializado correctamente.");
         }
+    }
+    public void mostrarTablero() {
+        primaryStage.setScene(escenaTablero);
     }
 
     public void actualizarTablero(TableroVisual tableroVisual) {

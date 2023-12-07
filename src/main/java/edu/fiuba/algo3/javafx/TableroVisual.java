@@ -1,9 +1,13 @@
 package edu.fiuba.algo3.javafx;
 
 import edu.fiuba.algo3.tablero.Tablero;
+
+import java.util.List;
+
 import edu.fiuba.algo3.juego.AlgoRoma;
 import javafx.beans.binding.Bindings;
 import javafx.beans.property.DoubleProperty;
+import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
@@ -13,6 +17,8 @@ import javafx.scene.text.Text;
 import javafx.scene.text.FontWeight;
 import javafx.geometry.Insets;
 import edu.fiuba.algo3.tablero.celda.Celda;
+import javafx.scene.Node;
+
 
 
 public class TableroVisual extends GridPane {
@@ -102,7 +108,16 @@ public class TableroVisual extends GridPane {
         return tablero;
     }
 
+    private void limpiarContenido() {
+         // Filtrar los nodos que no se deben eliminar (por ejemplo, botones)
+        List<Node> nodosNoEliminados = getChildren().filtered(node -> node instanceof Button);
+
+        // Limpiar solo los nodos que no son botones
+        getChildren().retainAll(nodosNoEliminados);
+    }
+
     public void actualizarContenido(AlgoRoma algoRoma){
+        limpiarContenido();
         cargarTableroVisual();
         cargarGladiadores(algoRoma);
     }
