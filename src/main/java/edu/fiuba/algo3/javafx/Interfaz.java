@@ -12,6 +12,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import edu.fiuba.algo3.juego.AlgoRoma;
@@ -93,7 +94,7 @@ public class Interfaz extends Application {
             Button jugar1Button = new Button("Jugar 1 Ronda");
             jugar1Button.setOnAction(event -> {
                 algoRoma.jugar1Ronda();
-                actualizarTablero();
+                actualizarTablero(tableroVisual);
             });
 
             tableroVisual.add(jugar1Button, 11, 9);
@@ -110,7 +111,7 @@ public class Interfaz extends Application {
         }
     }
 
-    public void actualizarTablero() {
-        mostrarTablero();
+    public void actualizarTablero(TableroVisual tableroVisual) {
+        tableroVisual.actualizarContenido(algoRoma);
     }
 }
