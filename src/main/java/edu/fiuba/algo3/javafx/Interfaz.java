@@ -2,6 +2,7 @@ package edu.fiuba.algo3.javafx;
 
 import java.util.List;
 
+import edu.fiuba.algo3.exceptions.CantidadJugadoresException;
 import edu.fiuba.algo3.javafx.TableroVisual;
 import edu.fiuba.algo3.json.TableroConstructor;
 import edu.fiuba.algo3.juego.Jugador;
@@ -74,13 +75,20 @@ public class Interfaz extends Application {
         grid.add(submitButton, 1, 3);
 
         submitButton.setOnAction(event -> {
-            if (algoRoma.obtenerJugadores().size() > 0) {
+            /*if (algoRoma.obtenerJugadores().size() >= 2) {
                 // Llamar a un método para cambiar a la escena del tablero del juego
                 algoRoma.inicializarJuego();
                 cargarTablero();
                 mostrarTablero();
             } else {
-                System.err.println("No se ha inicializado ningún jugador");
+                System.err.println("Faltan jugadores antes de iniciar el juego");
+            }*/
+            try {
+                algoRoma.inicializarJuego();
+                cargarTablero();
+                mostrarTablero();
+            }catch (CantidadJugadoresException ex){
+                System.err.println(ex.getMessage());
             }
         });
 

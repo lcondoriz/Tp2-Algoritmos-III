@@ -7,6 +7,7 @@ public class Logeador {
         if (log != null) {
             try {
                 log.addLine(cadena);
+                System.out.println(cadena);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }

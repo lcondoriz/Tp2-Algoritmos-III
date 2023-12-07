@@ -79,12 +79,12 @@ public class AlgoRoma {
 
     public void jugar() {
         for (int i = 0; i < MAX_CANTIDAD_RONDAS; i++) {
-            this.turno++;
-            Logeador.agregarALog(this.log,"TURNO:"+Integer.valueOf(this.turno).toString());
+            Logeador.agregarALog(this.log,"TURNO:"+Integer.valueOf(this.turno +1).toString());
             for (Jugador jugador : jugadores) {
                 Logeador.agregarALog(this.log,"Es el turno de: '" + jugador.obtenerNombre() + "'.");
                 try {
                     jugador.jugarTurno(dado);
+                    this.turno++;
                 } catch (PartidaFinalizada e) {
                     throw new PartidaFinalizada("GANADOR DE LA PARTIDA: "  + jugador.obtenerNombre()); //especializar exception(?
                 }
