@@ -1,6 +1,8 @@
 package edu.fiuba.algo3.gladiador;
 
+import edu.fiuba.algo3.exceptions.PartidaFinalizada;
 import edu.fiuba.algo3.gladiador.equipamiento.Equipable;
+import edu.fiuba.algo3.gladiador.equipamiento.Llave;
 import edu.fiuba.algo3.gladiador.estado.Estado;
 import edu.fiuba.algo3.gladiador.estado.Normal;
 import edu.fiuba.algo3.gladiador.estado.SinEnergia;
@@ -9,13 +11,13 @@ import edu.fiuba.algo3.gladiador.equipamiento.SinEquipamiento;
 import edu.fiuba.algo3.gladiador.seniority.Novato;
 import edu.fiuba.algo3.gladiador.seniority.Seniority;
 import edu.fiuba.algo3.log.Log;
+import edu.fiuba.algo3.log.Logeador;
 import edu.fiuba.algo3.tablero.celda.Celda;
-
-import java.io.IOException;
 
 public class Gladiador {
     private Log log;
     private Energia energia;
+    private static final int  ENERGIA_MINIMA = 0;
     private Equipable equipamiento;
     private Seniority estrategiaSeniority;
     private Celda celda;
@@ -37,33 +39,21 @@ public class Gladiador {
     }
     public void mejorarEquipamiento() {
         this.equipamiento = equipamiento.mejorarEquipamiento(new Mejorador());
-        if (log != null) {
-            try {
-                log.addLine("El gladiador se equipa un/a "+this.equipamiento.toString()+".");
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-        }
+        Logeador.agregarALog(this.log, "El gladiador se equipa un/a "+this.equipamiento.toString()+".");
     }
     public void incrementarEnergia(int incremento) {
-        if (log!=null) {
-            try {
-                log.addLine("Gana " + Integer.valueOf(incremento).toString() + " puntos de Energía.");
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-        }
+        Logeador.agregarALog(this.log,"Gana " + Integer.valueOf(incremento).toString() + " puntos de Energía.");
         this.energia.incrementar(incremento);
+        if (this.energia.obtenerEnergia() > ENERGIA_MINIMA) {
+            this.estadoGladiador = new Normal();
+        }
     }
     public void decrementarEnergia(int decremento) {
-        if (log != null) {
-            try {
-                log.addLine("Pierde " + Integer.valueOf(decremento).toString() + " puntos de Energía.");
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-        }
+        Logeador.agregarALog(this.log, "Pierde " + Integer.valueOf(decremento).toString() + " puntos de Energía.");
         this.energia.decrementar(decremento);
+        if (this.energia.obtenerEnergia() <= ENERGIA_MINIMA){
+            this.estadoGladiador = new SinEnergia();
+        }
     }
     public int obtenerEnergia() {
         return this.energia.obtenerEnergia();
@@ -74,18 +64,18 @@ public class Gladiador {
     public void avanzar(int cantidadCeldas, int turno) {
         this.estadoGladiador.accionar(this, cantidadCeldas, turno);
     }
+    public boolean tieneEquipamientoCompleto() {
+        return this.equipamiento instanceof Llave;
+    }
     public void mover(int cantidadCeldas, int turno) {
-        if (!this.energia.tieneEnergiaSuficiente()) {
-            this.cambiarEstado(new SinEnergia());
-            return;
-        }
+
         this.celda = this.celda.avanzar(cantidadCeldas);
 
         // Cada celda sabe como aplicar su efecto
         this.celda.aplicarEfecto(this);
 
         // De acuerdo al turno, se incrementa el seniority
-        this.estrategiaSeniority = this.estrategiaSeniority.incrementarSeniority(turno);
+        this.estrategiaSeniority = this.estrategiaSeniority.incrementarSeniority(turno,this.log );
 
         // Cada vez que se avanza, es un turno nuevo. Y por cada turno nuevo y por el tipo de seniority se da un plus de energía.
         this.estrategiaSeniority.obtenerPlusEnergia(this.energia);
@@ -95,6 +85,7 @@ public class Gladiador {
         return this.celda;
     }
     public void retrocederMitadCamino() {
+        Logeador.agregarALog(this.log,"LLego a la LLegada pero debe retrocer a la mitad del tablero por equipamiento incompleto");
         this.celda = this.celda.retrocederMitadCamino();
     }
     public Log getLog(){
@@ -105,5 +96,18 @@ public class Gladiador {
     }
     public void danioPorFieraSalvaje() {
         this.equipamiento.danioPorFieraSalvaje(this);
+    }
+
+    public void verificarSiEsGanador() {
+        if (!this.tieneEquipamientoCompleto()) {
+            this.retrocederMitadCamino();
+            return ;
+        }
+        Logeador.agregarALog(this.log, "GANADOR DE LA PARTIDA");
+        throw new PartidaFinalizada("Partida Finalizada");
+    }
+
+    public boolean EstasEnLaCelda(Celda otraCelda) {
+        return this.celda.getPosicion() == otraCelda.getPosicion();
     }
 }

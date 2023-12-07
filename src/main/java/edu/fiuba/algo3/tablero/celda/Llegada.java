@@ -14,14 +14,7 @@ public class Llegada extends Celda  {
 
     @Override
     public void aplicarEfecto(Gladiador gladiador) {
-        // a. Si el jugador que llegó a Pompeya (clase Llegada) tiene la Llave es ganador.
-        if (gladiador.obtenerEquipamiento() instanceof Llave) {
-            // Gano, lanzar una excepción o algo.
-            return;
-        }
-
-        // b. Sino, debe retroceder a la mitad del tablero.
-        gladiador.retrocederMitadCamino();
+        gladiador.verificarSiEsGanador();
 
     }
 }

@@ -1,3 +1,3 @@
-[03/12/2023 12:48:27] 'Pepe' tira dados y avanza 2 casilleros.
-[03/12/2023 12:48:27] El gladiador se lesiona.
-[03/12/2023 12:48:27] Pierde 1 turno/s.
+[05/12/2023 22:44:01] El gladiador tira dados y avanza 2 casilleros.
+[05/12/2023 22:44:01] El gladiador se lesiona.
+[05/12/2023 22:44:01] Pierde 1 turno/s.

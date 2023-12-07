@@ -1,5 +1,5 @@
 package edu.fiuba.algo3.juego;
-
+import edu.fiuba.algo3.log.Logeador;
 import edu.fiuba.algo3.gladiador.Energia;
 import edu.fiuba.algo3.gladiador.Gladiador;
 import edu.fiuba.algo3.log.Log;
@@ -27,11 +27,8 @@ public class Jugador {
         this.turno++;
 
         Integer cantidadAAvanzar = Integer.valueOf(dado.lanzar());
-        try {
-            log.addLine("'"+this.obtenerNombre()+"'"+" tira dados y avanza "+ cantidadAAvanzar.toString() +" casilleros.");
-        } catch (IOException e) {
-            throw new RuntimeException(e); //especializar exception(?
-        }
+        //Logeador.agregarALog(this.log, "'"+this.obtenerNombre()+"'"+" tira dados y avanza "+ cantidadAAvanzar.toString() +" casilleros.");
+
         gladiador.avanzar(cantidadAAvanzar, this.turno);
     }
     public String obtenerNombre(){

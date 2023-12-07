@@ -18,12 +18,12 @@ public class SemiSeniorTest {
     @Test
     public void verificarQueElSeniorityNoIncrementeSiNoLlegoALaRondaDoce() {
         SemiSenior semiSenior = new SemiSenior();
-        assertEquals(SemiSenior.class, semiSenior.incrementarSeniority(11).getClass());
+        assertEquals(SemiSenior.class, semiSenior.incrementarSeniority(11,null ).getClass());
     }
 
     @Test
     public void verificarQueElSeniorityIncrementeSiLlegoALaRondaDoce() {
         SemiSenior semiSenior = new SemiSenior();
-        assertEquals(Senior.class, semiSenior.incrementarSeniority(12).getClass());
+        assertEquals(Senior.class, semiSenior.incrementarSeniority(12,null ).getClass());
     }
 }

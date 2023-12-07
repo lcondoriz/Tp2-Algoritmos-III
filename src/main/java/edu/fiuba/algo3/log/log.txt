@@ -1,3 +1,3 @@
-[05/12/2023 22:48:06] Se agregó al jugador: 'dsadas'.
-[05/12/2023 22:48:07] Se agregó al jugador: 'dsadas'.
-[05/12/2023 22:48:07] Se inicio el Juego.
+[05/12/2023 22:44:01] Se agregó al jugador: 'Pepe'.
+[05/12/2023 22:44:01] Se agregó al jugador: 'Pablo'.
+[05/12/2023 22:44:01] Se inicio el Juego.

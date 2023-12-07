@@ -11,14 +11,17 @@ import edu.fiuba.algo3.juego.AlgoRoma;
 import edu.fiuba.algo3.juego.Dado;
 import edu.fiuba.algo3.tablero.celda.Camino;
 import edu.fiuba.algo3.tablero.celda.Celda;
+import edu.fiuba.algo3.tablero.celda.Llegada;
 import edu.fiuba.algo3.tablero.celda.Salida;
 import edu.fiuba.algo3.tablero.Coordenadas;
+import edu.fiuba.algo3.tablero.celda.afectable.Bacanal;
 import edu.fiuba.algo3.tablero.celda.afectable.Comida;
 import edu.fiuba.algo3.tablero.celda.afectable.Equipo;
 import edu.fiuba.algo3.tablero.celda.afectable.FieraSalvaje;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.Mockito.*;
 
@@ -57,7 +60,7 @@ public class CasosDeUso {
     public void verificarQueUnJugadorSinEnergiaNoPuedaJugarElTurno() {
         // Arrange
         Energia energia = new Energia(20);
-
+        FieraSalvaje fiera = new FieraSalvaje();
         Celda salida = new Salida(new Coordenadas(0, 0),"Salida",0);
         Celda camino = new Camino(new Coordenadas(1, 0),"Camino",1);
 
@@ -219,10 +222,21 @@ public class CasosDeUso {
     }
     @Test // Caso de uso 9
     public void verificarQueSiLlegaALaMetaSinLaLlaveEnElEquipamientoRetrocedeALaMitadDeLasCasillas() {
-//        // Falta implementar.
-//        //Dado dado = new Dado(6);
-//        //AlgoRoma algoRoma = new AlgoRoma(dado);//quiza iria el JSON
-//
+        //Arrange
+        Energia energia = new Energia(20);
+
+        Celda salida = new Salida(new Coordenadas(1,7),"Salida", 0);
+        Celda llegada = new Llegada(new Coordenadas(2,6),"Llegada", 2);
+        Celda nuevaCelda = new Camino(new Coordenadas(2,7),"Camino", 1);
+        salida.agregarSiguienteCelda(nuevaCelda);
+        nuevaCelda.agregarCeldaAnterior(salida);
+        nuevaCelda.agregarSiguienteCelda(llegada);
+        llegada.agregarCeldaAnterior(nuevaCelda);
+        nuevaCelda.agregarAfectable(new Equipo());
+        Gladiador gladiador = new Gladiador(energia, salida);
+        //Act
+       gladiador.avanzar(2, 1);
+        assertTrue(gladiador.EstasEnLaCelda(nuevaCelda));
 //        Casillero casilleroInicial = new Casillero(0, new Vacio());
 //        Casillero casilleroMitad = new Casillero(1, new Vacio());
 //        Casillero casilleroFinal = new Casillero(2, new Final(3));
