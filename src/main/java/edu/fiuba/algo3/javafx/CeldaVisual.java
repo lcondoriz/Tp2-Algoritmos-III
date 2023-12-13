@@ -2,27 +2,27 @@ package edu.fiuba.algo3.javafx;
 
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
-
+import javafx.scene.shape.Rectangle;
 public class CeldaVisual {
 
-    private Circle circle;
+    private Rectangle rectangle;
 
     public CeldaVisual() {
-        this.circle = crearCelda();
+        this.rectangle = crearCelda();
     }
 
-    public Circle crearCelda() {
-        Circle celda = new Circle();
+    public Rectangle crearCelda() {
+        Rectangle celda = new Rectangle();
         celda.setFill(Color.BEIGE);
         celda.setStroke(Color.BLACK);
         celda.setStrokeWidth(2);
         celda.setEffect(new javafx.scene.effect.DropShadow());
-        this.circle = celda;
+        this.rectangle = celda;
         return celda;
     }
 
-    public Circle crearCelda(String tipoCelda) {
-        Circle celda = new Circle();
+    public Rectangle crearCelda(String tipoCelda) {
+        Rectangle celda = new Rectangle();
         switch (tipoCelda) {
             case "Camino":
                 celda.setFill(Color.GRAY);
@@ -41,15 +41,15 @@ public class CeldaVisual {
         celda.setStrokeWidth(2);
         celda.setEffect(new javafx.scene.effect.DropShadow());
 
-        this.circle = celda;
+        this.rectangle = celda;
         return celda;
     }
 
-    public Circle obtenerCelda() {
-        return circle;
+    public Rectangle obtenerCelda() {
+        return rectangle;
     }
 
     public void cambiarColorFondo(Color color) {
-        circle.setFill(color);
+        rectangle.setFill(color);
     }
 }

@@ -37,4 +37,7 @@ public class Jugador {
     public Gladiador obtenerGladiador(){
         return gladiador;
     }
+    public int obtenerEnergia() {
+        return gladiador.obtenerEnergia();
+    }
 }

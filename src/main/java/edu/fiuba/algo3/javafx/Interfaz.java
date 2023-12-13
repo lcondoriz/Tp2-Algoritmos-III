@@ -1,7 +1,7 @@
 package edu.fiuba.algo3.javafx;
 
 import java.util.List;
-
+import javafx.collections.FXCollections;
 import edu.fiuba.algo3.exceptions.CantidadJugadoresException;
 import edu.fiuba.algo3.javafx.TableroVisual;
 import edu.fiuba.algo3.json.TableroConstructor;
@@ -9,11 +9,16 @@ import edu.fiuba.algo3.juego.Jugador;
 import edu.fiuba.algo3.tablero.Tablero;
 import javafx.application.Application;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Border;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+import javafx.scene.layout.Border;
+import javafx.scene.text.Font;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import edu.fiuba.algo3.juego.AlgoRoma;
@@ -29,8 +34,6 @@ public class Interfaz extends Application {
         launch(args);
     }
 
-    public Interfaz() {
-    }
 
     public Interfaz(Tablero tablero, AlgoRoma algoRoma) {
         this.miTablero = tablero;
@@ -98,21 +101,84 @@ public class Interfaz extends Application {
     public void cargarTablero() {
         // Verificar que miTablero no sea null
         if (miTablero != null) {
+            VBox vbRoot = new VBox(),
+                    vbGrid = new VBox(),
+                    vbFooter = new VBox(),
+                    vbPlayers = new VBox(),
+                    vbGridInfo = new VBox(),
+                    vbHeader = new VBox();
+            HBox hbOptions = new HBox(),
+                    hbDone = new HBox(),
+                    hbGameDetails = new HBox(),
+                    hbGameTitle = new HBox();
+            //================ HEADER ======================
+            Label title = new Label("ALGOROMA: COMBAT GAME");
+            title.setFont(new Font(19));
+            hbGameTitle.getChildren().add(title);
+            hbGameTitle.setAlignment(Pos.CENTER);
+
+            List<Jugador> jugadores = algoRoma.obtenerJugadores();
+            for (Jugador jugador : jugadores) {
+                String energiaJugador = jugador.obtenerNombre() + jugador.obtenerEnergia();
+                Label player = new Label(energiaJugador);
+                vbPlayers.getChildren().add(player);
+            }
+            vbPlayers.setAlignment(Pos.CENTER);
+
+            Label players = new Label("Players: ");
+            vbGridInfo.getChildren().add(players);
+            vbGridInfo.setAlignment(Pos.CENTER);
+
+            hbGameDetails.getChildren().addAll(vbGridInfo, vbPlayers);
+
+            vbHeader.getChildren().addAll(hbGameTitle, hbGameDetails);
+            vbHeader.setAlignment(Pos.CENTER);
+
+            //===============GRID===============================
             // Crear una instancia de TableroVisual
             TableroVisual tableroVisual = new TableroVisual(miTablero, algoRoma);
-            
-            Button jugar1Button = new Button("Jugar 1 Ronda");
-            jugar1Button.setOnAction(event -> {
+            vbGrid.getChildren().addAll(tableroVisual);
+            vbGrid.setPadding(new Insets(20));
+            vbGrid.setAlignment(Pos.CENTER);
+            //==============FOOTER===============================
+            Button btnGame = new Button("Tirar Dado");
+            btnGame.setMinHeight(50);
+            btnGame.setMinWidth(130);
+            btnGame.setOnAction(event -> {
                 algoRoma.jugar1Ronda();
-                actualizarTablero(tableroVisual);
+                actualizarTablero(tableroVisual, vbPlayers);
             });
+            btnGame.setPadding(new Insets(5));
 
-            tableroVisual.add(jugar1Button, 11, 9);
+            hbDone.getChildren().add(btnGame);
+            hbDone.setPadding(new Insets(5));
+            hbDone.setAlignment(Pos.CENTER);
+
+            Button btnExit = new Button("Exit");
+            Button btnReset = new Button("Reset");
+
+            btnExit.setMinHeight(25);
+            btnExit.setMinWidth(60);
+            btnExit.setPadding(new Insets(10));
+            btnExit.setOnAction(event -> exist());
+
+            btnReset.setMinHeight(25);
+            btnReset.setMinWidth(60);
+            btnReset.setPadding(new Insets(10));
+            btnReset.setOnAction(event -> reset());
+
+            hbOptions.getChildren().addAll(btnExit, btnReset);
+            hbOptions.setPadding(new Insets(5));
+            hbOptions.setAlignment(Pos.CENTER);
+
+            vbFooter.getChildren().addAll(hbDone, hbOptions);
+
+            vbRoot.getChildren().addAll(vbHeader, vbGrid, vbFooter);
+
+            //tableroVisual.add(jugar1Button, miTablero.obtenerAncho() , miTablero.obtenerLargo());
             // Crear una nueva escena con el tablero del juego
-            escenaTablero = new Scene(tableroVisual, 800, 600);
+            escenaTablero = new Scene(vbRoot);
             // Obtener el GridPane de la escena y configurar la alineación
-            GridPane tableroGrid = (GridPane) escenaTablero.getRoot();
-            tableroGrid.setAlignment(javafx.geometry.Pos.CENTER);
 
         } else {
             System.err.println("El tablero no se ha inicializado correctamente.");
@@ -121,8 +187,16 @@ public class Interfaz extends Application {
     public void mostrarTablero() {
         primaryStage.setScene(escenaTablero);
     }
-
-    public void actualizarTablero(TableroVisual tableroVisual) {
+    public void reset() {};
+    public void exist() {};
+    public void actualizarTablero(TableroVisual tableroVisual, VBox players) {
         tableroVisual.actualizarContenido(algoRoma);
+        players.getChildren().clear();
+        List<Jugador> jugadores = algoRoma.obtenerJugadores();
+        for (Jugador jugador : jugadores) {
+            String energiaJugador = jugador.obtenerNombre() + jugador.obtenerEnergia();
+            Label player = new Label(energiaJugador);
+            players.getChildren().add(player);
+        }
     }
 }

@@ -11,7 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Circle;
+import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.text.FontWeight;
@@ -42,13 +42,12 @@ public class TableroVisual extends GridPane {
         for (int i = 0; i < tableroAncho; i++) {
             for (int j = 0; j < tableroLargo; j++) {
                 celdas[i][j] = new CeldaVisual();  
-                Circle circle = celdas[i][j].crearCelda(); 
+                Rectangle rectangle = celdas[i][j].crearCelda();
 
-                DoubleProperty radio = circle.radiusProperty();
+                rectangle.widthProperty().bind(this.widthProperty().divide(tableroAncho*1.5));
+                rectangle.heightProperty().bind(this.heightProperty().divide(tableroLargo*1.5 ));
 
-                radio.bind(Bindings.min(this.widthProperty().divide(tableroAncho * 2), this.heightProperty().divide(tableroLargo * 2)));
-
-                this.add(circle, i, j);
+                this.add(rectangle, i, j);
             }
         }
 
@@ -57,13 +56,12 @@ public class TableroVisual extends GridPane {
             int posicionXCelda = celdaActual.obtenerCoordenadas().obtenerCoordenadaX() - 1;
             int posicionYCelda = celdaActual.obtenerCoordenadas().obtenerCoordenadaY() - 1;
             celdas[posicionYCelda][posicionXCelda] = new CeldaVisual();  
-            Circle circle = celdas[posicionYCelda][posicionXCelda].crearCelda(celdaActual.obtenerTipo()); 
+            Rectangle rectangle = celdas[posicionYCelda][posicionXCelda].crearCelda(celdaActual.obtenerTipo());
 
-            DoubleProperty radio = circle.radiusProperty();
+            rectangle.widthProperty().bind(this.widthProperty().divide(tableroAncho*1.5));
+            rectangle.heightProperty().bind(this.heightProperty().divide(tableroLargo*1.5));
 
-            radio.bind(Bindings.min(this.widthProperty().divide(tableroAncho * 2), this.heightProperty().divide(tableroLargo * 2)));
-
-            this.add(circle, posicionYCelda, posicionXCelda);
+            this.add(rectangle, posicionYCelda, posicionXCelda);
             celdaActual = celdaActual.obtenerSiguienteCelda();        
         }
     }
@@ -79,15 +77,15 @@ public class TableroVisual extends GridPane {
             int posicionGladiadorX = celdaJugador.obtenerCoordenadas().obtenerCoordenadaX() - 1;
             int posicionGladiadorY = celdaJugador.obtenerCoordenadas().obtenerCoordenadaY() - 1;
             
-            Circle circle = new Circle();
+            Rectangle rectangle = new Rectangle();
             // Asignar un color diferente a cada jugador
-            circle.setFill(colores[i % colores.length]);
-            circle.setStroke(Color.BLACK);
-            circle.setStrokeWidth(2);
-        
-            DoubleProperty radio = circle.radiusProperty();
-            radio.bind(Bindings.min(this.widthProperty().divide(tableroAncho * 2), this.heightProperty().divide(tableroLargo * 2)));
-        
+            rectangle.setFill(colores[i % colores.length]);
+            rectangle.setStroke(Color.BLACK);
+            rectangle.setStrokeWidth(2);
+
+            rectangle.widthProperty().bind(this.widthProperty().divide(tableroAncho*1.5));
+            rectangle.heightProperty().bind(this.heightProperty().divide(tableroLargo*1.5));
+
             // Obtener la inicial del jugador
             char inicial = algoRoma.obtenerJugadores().get(i).obtenerNombre().charAt(0);
         
@@ -98,7 +96,7 @@ public class TableroVisual extends GridPane {
         
             // Crear un StackPane para posicionar el Text sobre el círculo
             StackPane stackPane = new StackPane();
-            stackPane.getChildren().addAll(circle, inicialText);
+            stackPane.getChildren().addAll(rectangle, inicialText);
         
             this.add(stackPane, posicionGladiadorY, posicionGladiadorX);
         }

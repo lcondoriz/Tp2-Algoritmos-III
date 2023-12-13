@@ -30,7 +30,7 @@ public class AlgoRoma {
     private int turno;
 
     private Log log;
-    private Interfaz interfaz;
+
 
     {
         try {
@@ -45,7 +45,6 @@ public class AlgoRoma {
         this.turno = TURNO_INICIAL;
         this.jugadores = new ArrayList<>();
         this.dado = dado;
-        this.interfaz = new Interfaz();
     }
 
     public void cargarTablero(String path) {
