@@ -7,9 +7,10 @@ import edu.fiuba.algo3.log.Logeador;
 public class SemiSenior implements Seniority {
 
     public static final int TURNO_PROMOCION_SEMI_SENIOR = 12;
+    public static final int PLUS_ENERGIA_SEMI_SENIOR = 5;
     @Override
     public void obtenerPlusEnergia(Energia energia) {
-        energia.incrementar(5);
+        energia.incrementar(PLUS_ENERGIA_SEMI_SENIOR);
     }
 
     @Override

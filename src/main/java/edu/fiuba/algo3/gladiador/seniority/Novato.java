@@ -6,9 +6,10 @@ import edu.fiuba.algo3.log.Logeador;
 
 public class Novato implements Seniority {
     public static final int TURNO_PROMOCION_NOVATO = 8;
+    public static final int PLUS_ENERGIA_NOVATO = 0;
     @Override
     public void obtenerPlusEnergia(Energia energia) {
-        energia.incrementar(0);
+        energia.incrementar(PLUS_ENERGIA_NOVATO);
     }
 
     @Override
