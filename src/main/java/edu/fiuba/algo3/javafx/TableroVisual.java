@@ -2,6 +2,8 @@ package edu.fiuba.algo3.javafx;
 
 import edu.fiuba.algo3.tablero.Tablero;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.util.List;
 
 import edu.fiuba.algo3.juego.AlgoRoma;
@@ -9,8 +11,8 @@ import javafx.beans.binding.Bindings;
 import javafx.beans.property.DoubleProperty;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.StackPane;
+import javafx.scene.image.Image;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
@@ -40,6 +42,29 @@ public class TableroVisual extends GridPane {
         GridPane grid = new GridPane();
         setPadding(new Insets(0)); // Eliminar cualquier relleno
         setAlignment(Pos.CENTER);
+        double tamanio_X = 400;
+        double tamanio_Y = 175;
+        try {
+            Image image = new Image(new FileInputStream("src/main/java/edu/fiuba/algo3/javafx/fondoDelJuego.jpg"));
+
+            HBox hbBackground = new HBox();
+            BackgroundImage imageBG = new BackgroundImage(
+                    image,
+                    BackgroundRepeat.NO_REPEAT,
+                    BackgroundRepeat.NO_REPEAT,
+                    BackgroundPosition.DEFAULT,
+                    BackgroundSize.DEFAULT
+            );
+
+            Background background = new Background(imageBG);
+            hbBackground.setBackground(background);
+            grid.setBackground(background);
+            tamanio_X = image.getHeight();
+            tamanio_Y = image.getWidth();
+
+        }catch(FileNotFoundException ex){
+            System.out.println("No se encontro la imagen");
+        }
         // Inicializar cada celda en la matriz
         for (int i = 0; i < tableroAncho; i++) {
             for (int j = 0; j < tableroLargo; j++) {

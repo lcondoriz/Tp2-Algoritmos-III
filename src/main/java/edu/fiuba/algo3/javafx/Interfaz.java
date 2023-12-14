@@ -1,8 +1,10 @@
 package edu.fiuba.algo3.javafx;
 
+import java.io.IOException;
 import java.util.List;
 
 import edu.fiuba.algo3.exceptions.PartidaFinalizada;
+import edu.fiuba.algo3.log.Log;
 import javafx.collections.FXCollections;
 import edu.fiuba.algo3.exceptions.CantidadJugadoresException;
 import edu.fiuba.algo3.javafx.TableroVisual;
@@ -15,11 +17,13 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.*;
 import javafx.scene.layout.Border;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import edu.fiuba.algo3.juego.AlgoRoma;
 import javafx.scene.image.Image;
@@ -58,6 +62,7 @@ public class Interfaz extends Application {
         double tamanio_Y = 175;
         try {
             Image image = new Image(new FileInputStream("src/main/java/edu/fiuba/algo3/javafx/pantallaPrincipal.jpg"));
+
             HBox hbBackground = new HBox();
             BackgroundImage imageBG = new BackgroundImage(
                     image,
@@ -66,6 +71,7 @@ public class Interfaz extends Application {
                     BackgroundPosition.DEFAULT,
                     BackgroundSize.DEFAULT
             );
+
             Background background = new Background(imageBG);
             hbBackground.setBackground(background);
             grid.setBackground(background);
@@ -80,15 +86,19 @@ public class Interfaz extends Application {
         primaryStage.setScene(scene);
 
 
-        Label usernameLabel = new Label("Usuario:");
-        usernameLabel.setTextFill(Color.GREEN);
-        usernameLabel.setFont(new Font(20));
+        /*Label usernameLabel = new Label("Usuario:");
+        usernameLabel.setTextFill(Color.LIGHTCYAN);
+        usernameLabel.setFont(new Font(25));
+        usernameLabel.setBackground(new Background(new BackgroundFill(Color.RED,CornerRadii.EMPTY,new Insets(0,0,0,0))));
         grid.add(usernameLabel, 0, 1);
+        */
 
         TextField usernameTextField = new TextField();
+        usernameTextField.setPromptText("Introduce el nombre de un usuario");
         grid.add(usernameTextField, 1, 1);
 
         Button agregarButtom = new Button("Agregar Usuario");
+
         grid.add(agregarButtom, 2, 1);
 
         agregarButtom.setOnAction(event -> {
@@ -97,6 +107,7 @@ public class Interfaz extends Application {
             if (!username.trim().isEmpty()) {
                 algoRoma.agregarJugador(username);
                 System.out.println("El usuario " + username + " se agregó correctamente");
+                usernameTextField.clear();
             } else {
                 System.out.println("El nombre de usuario debe tener al menos un carácter");
             }
@@ -171,13 +182,36 @@ public class Interfaz extends Application {
             vbGrid.setPadding(new Insets(20));
             vbGrid.setAlignment(Pos.CENTER);
             //==============FOOTER===============================
+            ScrollPane historial = new ScrollPane();
+            historial.maxHeight(primaryStage.getMaxHeight()/4);
+            historial.maxWidth(primaryStage.getMaxWidth());
+            vbGrid.getChildren().add(historial);
+
             Button btnGame = new Button("Jugar un turno");
             btnGame.setMinHeight(50);
             btnGame.setMinWidth(130);
             hbDone.getChildren().add(btnGame);
+
+
             btnGame.setOnAction(event -> {
                 try {
                     algoRoma.jugar1Ronda();
+                    Log log = algoRoma.getLog();
+                    String[] lineas = new String[0];
+                    try {
+                        lineas = log.getLines();
+                    }catch(IOException ex){
+                        //hacer alog}
+                        System.out.println("algo");
+                    }
+                    String contenido ="";
+                    for (String linea : lineas) {
+                        //Text textLinea = new Text(linea);
+                        contenido = contenido+"\n"+linea;
+                    }
+                    historial.setContent(new Text(contenido));
+
+
                 }catch (PartidaFinalizada ex){
                     //Mostrar pantalla con ganador del juego,nueva escena o un label
                     hbDone.getChildren().remove(btnGame);
