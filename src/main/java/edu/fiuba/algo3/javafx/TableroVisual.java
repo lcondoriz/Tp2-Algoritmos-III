@@ -79,7 +79,7 @@ public class TableroVisual extends GridPane {
             int posicionGladiadorX = celdaJugador.obtenerCoordenadas().obtenerCoordenadaX() - 1;
             int posicionGladiadorY = celdaJugador.obtenerCoordenadas().obtenerCoordenadaY() - 1;
             
-            Rectangle rectangle = new Rectangle();
+            Rectangle rectangle = new Rectangle(20, 20);
             // Asignar un color diferente a cada jugador
             rectangle.setFill(colores[i % colores.length]);
             rectangle.setStroke(Color.BLACK);
