@@ -12,7 +12,7 @@ public class CeldaVisual {
     }
 
     public Rectangle crearCelda() {
-        Rectangle celda = new Rectangle();
+        Rectangle celda = new Rectangle(20,20);
         celda.setFill(Color.BEIGE);
         celda.setStroke(Color.BLACK);
         celda.setStrokeWidth(2);
@@ -22,7 +22,7 @@ public class CeldaVisual {
     }
 
     public Rectangle crearCelda(String tipoCelda) {
-        Rectangle celda = new Rectangle();
+        Rectangle celda = new Rectangle(20,20);
         switch (tipoCelda) {
             case "Camino":
                 celda.setFill(Color.GRAY);

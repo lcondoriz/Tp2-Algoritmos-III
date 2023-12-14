@@ -7,6 +7,7 @@ import java.util.List;
 import edu.fiuba.algo3.juego.AlgoRoma;
 import javafx.beans.binding.Bindings;
 import javafx.beans.property.DoubleProperty;
+import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
@@ -38,14 +39,15 @@ public class TableroVisual extends GridPane {
         int tableroLargo = tablero.obtenerLargo();
         GridPane grid = new GridPane();
         setPadding(new Insets(0)); // Eliminar cualquier relleno
+        setAlignment(Pos.CENTER);
         // Inicializar cada celda en la matriz
         for (int i = 0; i < tableroAncho; i++) {
             for (int j = 0; j < tableroLargo; j++) {
                 celdas[i][j] = new CeldaVisual();  
                 Rectangle rectangle = celdas[i][j].crearCelda();
 
-                rectangle.widthProperty().bind(this.widthProperty().divide(tableroAncho*1.5));
-                rectangle.heightProperty().bind(this.heightProperty().divide(tableroLargo*1.5 ));
+                //rectangle.widthProperty().bind(this.widthProperty().divide(tableroAncho*1.5));
+                //rectangle.heightProperty().bind(this.heightProperty().divide(tableroLargo*1.5 ));
 
                 this.add(rectangle, i, j);
             }
@@ -58,8 +60,8 @@ public class TableroVisual extends GridPane {
             celdas[posicionYCelda][posicionXCelda] = new CeldaVisual();  
             Rectangle rectangle = celdas[posicionYCelda][posicionXCelda].crearCelda(celdaActual.obtenerTipo());
 
-            rectangle.widthProperty().bind(this.widthProperty().divide(tableroAncho*1.5));
-            rectangle.heightProperty().bind(this.heightProperty().divide(tableroLargo*1.5));
+            //rectangle.widthProperty().bind(this.widthProperty().divide(tableroAncho*1.5));
+            //rectangle.heightProperty().bind(this.heightProperty().divide(tableroLargo*1.5));
 
             this.add(rectangle, posicionYCelda, posicionXCelda);
             celdaActual = celdaActual.obtenerSiguienteCelda();        
@@ -83,8 +85,8 @@ public class TableroVisual extends GridPane {
             rectangle.setStroke(Color.BLACK);
             rectangle.setStrokeWidth(2);
 
-            rectangle.widthProperty().bind(this.widthProperty().divide(tableroAncho*1.5));
-            rectangle.heightProperty().bind(this.heightProperty().divide(tableroLargo*1.5));
+            //rectangle.widthProperty().bind(this.widthProperty().divide(tableroAncho*1.5));
+            //rectangle.heightProperty().bind(this.heightProperty().divide(tableroLargo*1.5));
 
             // Obtener la inicial del jugador
             char inicial = algoRoma.obtenerJugadores().get(i).obtenerNombre().charAt(0);
