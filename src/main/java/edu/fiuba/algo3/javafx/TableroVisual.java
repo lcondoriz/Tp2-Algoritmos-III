@@ -44,8 +44,8 @@ public class TableroVisual extends GridPane {
                 celdas[i][j] = new CeldaVisual();  
                 Rectangle rectangle = celdas[i][j].crearCelda();
 
-                rectangle.widthProperty().bind(this.widthProperty().divide(tableroAncho*1.5));
-                rectangle.heightProperty().bind(this.heightProperty().divide(tableroLargo*1.5 ));
+                //rectangle.widthProperty().bind(this.widthProperty().divide(tableroAncho*1.5));
+                //rectangle.heightProperty().bind(this.heightProperty().divide(tableroLargo*1.5 ));
 
                 this.add(rectangle, i, j);
             }
@@ -58,8 +58,8 @@ public class TableroVisual extends GridPane {
             celdas[posicionYCelda][posicionXCelda] = new CeldaVisual();  
             Rectangle rectangle = celdas[posicionYCelda][posicionXCelda].crearCelda(celdaActual.obtenerTipo());
 
-            rectangle.widthProperty().bind(this.widthProperty().divide(tableroAncho*1.5));
-            rectangle.heightProperty().bind(this.heightProperty().divide(tableroLargo*1.5));
+            //rectangle.widthProperty().bind(this.widthProperty().divide(tableroAncho*1.5));
+            //rectangle.heightProperty().bind(this.heightProperty().divide(tableroLargo*1.5));
 
             this.add(rectangle, posicionYCelda, posicionXCelda);
             celdaActual = celdaActual.obtenerSiguienteCelda();        
@@ -77,14 +77,14 @@ public class TableroVisual extends GridPane {
             int posicionGladiadorX = celdaJugador.obtenerCoordenadas().obtenerCoordenadaX() - 1;
             int posicionGladiadorY = celdaJugador.obtenerCoordenadas().obtenerCoordenadaY() - 1;
             
-            Rectangle rectangle = new Rectangle();
+            Rectangle rectangle = new Rectangle(20, 20);
             // Asignar un color diferente a cada jugador
             rectangle.setFill(colores[i % colores.length]);
             rectangle.setStroke(Color.BLACK);
             rectangle.setStrokeWidth(2);
 
-            rectangle.widthProperty().bind(this.widthProperty().divide(tableroAncho*1.5));
-            rectangle.heightProperty().bind(this.heightProperty().divide(tableroLargo*1.5));
+            //rectangle.widthProperty().bind(this.widthProperty().divide(tableroAncho*1.5));
+            //rectangle.heightProperty().bind(this.heightProperty().divide(tableroLargo*1.5));
 
             // Obtener la inicial del jugador
             char inicial = algoRoma.obtenerJugadores().get(i).obtenerNombre().charAt(0);
