@@ -15,6 +15,6 @@ public class EscudoEspada implements Equipable {
     }
     @Override
     public String toString() {
-        return "Escudo Y Espada";
+        return "Escudo y Espada";
     }
 }

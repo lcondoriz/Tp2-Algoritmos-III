@@ -1,6 +1,7 @@
 package edu.fiuba.algo3.gladiador;
 
 public class Energia {
+    public static final int ENERGIA_SUFICIENTE = 0;
     private int puntos;
     public Energia(int puntos) {
         this.puntos = puntos;
@@ -15,6 +16,6 @@ public class Energia {
         puntos -= cantidad;
     }
     public boolean tieneEnergiaSuficiente() {
-        return puntos > 0;
+        return puntos > ENERGIA_SUFICIENTE;
     }
 }
