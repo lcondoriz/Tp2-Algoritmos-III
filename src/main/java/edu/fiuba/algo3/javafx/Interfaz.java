@@ -20,7 +20,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.*;
-import javafx.scene.layout.Border;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
@@ -28,6 +27,8 @@ import javafx.stage.Stage;
 import edu.fiuba.algo3.juego.AlgoRoma;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 public class Interfaz extends Application {
@@ -36,6 +37,7 @@ public class Interfaz extends Application {
     private Tablero miTablero;
     private AlgoRoma algoRoma;
     private Scene escenaTablero;
+    private ReproductorSonido reproductorSonido;
 
     public static void main(String[] args) {
         launch(args);
@@ -51,6 +53,8 @@ public class Interfaz extends Application {
     public void start(Stage primaryStage) {
         this.primaryStage = primaryStage;
         primaryStage.setTitle("AlgoRoma");
+
+        reproductorSonido = new ReproductorSonido();
 
         GridPane grid = new GridPane();
         grid.setAlignment(javafx.geometry.Pos.CENTER);
@@ -105,11 +109,13 @@ public class Interfaz extends Application {
             String username;
             username = usernameTextField.getText();
             if (!username.trim().isEmpty()) {
+                reproductorSonido.reproducirSonido(3); //Sonido de agregar usuario exitoso
                 algoRoma.agregarJugador(username);
                 System.out.println("El usuario " + username + " se agregó correctamente");
                 usernameTextField.clear();
             } else {
                 System.out.println("El nombre de usuario debe tener al menos un carácter");
+                reproductorSonido.reproducirSonido(4); //Sonido de agregar usuario fallido
             }
         });
 
@@ -127,6 +133,7 @@ public class Interfaz extends Application {
             }*/
             try {
                 algoRoma.inicializarJuego();
+                reproductorSonido.reproducirSonido(2); //Sonido de inicio del tablero
                 cargarTablero();
                 mostrarTablero();
             }catch (CantidadJugadoresException ex){
@@ -196,6 +203,7 @@ public class Interfaz extends Application {
             btnGame.setOnAction(event -> {
                 try {
                     algoRoma.jugar1Ronda();
+                    reproductorSonido.reproducirSonido(0); //Sonido de dados
                     Log log = algoRoma.getLog();
                     String[] lineas = new String[0];
                     try {
@@ -213,6 +221,7 @@ public class Interfaz extends Application {
 
 
                 }catch (PartidaFinalizada ex){
+                    reproductorSonido.reproducirSonido(1); //Sonido de victoria
                     //Mostrar pantalla con ganador del juego,nueva escena o un label
                     hbDone.getChildren().remove(btnGame);
                     Label ganador = new Label(ex.getMessage());
