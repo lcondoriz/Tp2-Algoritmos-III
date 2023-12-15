@@ -70,4 +70,6 @@ public class Log {
         this.buffered.close();
     }
 
+
+
 }

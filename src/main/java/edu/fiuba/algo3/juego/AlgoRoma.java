@@ -1,15 +1,20 @@
 package edu.fiuba.algo3.juego;
 
 import edu.fiuba.algo3.exceptions.CantidadJugadoresException;
+import edu.fiuba.algo3.exceptions.CantidadTurnosException;
 import edu.fiuba.algo3.exceptions.NoHayJugadoresException;
+import edu.fiuba.algo3.exceptions.PartidaFinalizada;
+import edu.fiuba.algo3.javafx.Interfaz;
 import edu.fiuba.algo3.json.TableroConstructor;
 import edu.fiuba.algo3.log.Log;
+import edu.fiuba.algo3.log.Logeador;
 import edu.fiuba.algo3.tablero.Tablero;
 
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 
 public class AlgoRoma {
     private static final int MIN_JUGADORES = 2;
@@ -25,6 +30,7 @@ public class AlgoRoma {
     private int turno;
 
     private Log log;
+    private Interfaz interfaz;
 
     {
         try {
@@ -39,6 +45,7 @@ public class AlgoRoma {
         this.turno = TURNO_INICIAL;
         this.jugadores = new ArrayList<>();
         this.dado = dado;
+        this.interfaz = new Interfaz();
     }
 
     public void cargarTablero(String path) {
@@ -48,11 +55,7 @@ public class AlgoRoma {
     public void agregarJugador(String nombre) {
         Jugador jugador = new Jugador(nombre, this.tablero.obtenerCeldaDeSalida(), log);
         this.jugadores.add(jugador);
-        try {
-            log.addLine("Se agregó al jugador: '" + nombre + "'.");
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        Logeador.agregarALog(this.log, "Se agregó al jugador: '" + nombre + "'.");
     }
 
     public void inicializarJuego() {
@@ -62,47 +65,61 @@ public class AlgoRoma {
 
         this.validarCantidadJugadores();
 
-        try {
-            log.addLine("Se inicio el Juego.");
-        } catch (IOException e) {
-            throw new RuntimeException(e);  //hace falta especializar exception?
-        }
+        Logeador.agregarALog(this.log, "Se inicio el Juego.");
+        this.moverOrdenDeJugadoresAJugar();
+    }
 
-        // Si hay 4 jugadores y empieza 3, sigue 4,1,2,
-        if (jugadores.size() == JUGADORES_ESPECIALES) {
-            moverJugadores(jugadores, ORDEN_TURNOS);
-        } else { // Mezclar los jugadores de forma aleatoria.
-            Collections.shuffle(jugadores);
+    private void moverOrdenDeJugadoresAJugar() {
+        Random random = new Random();
+        int indiceJugadorAleatorio = random.nextInt(this.jugadores.size());
+        for (int i = 0; i < indiceJugadorAleatorio; i++) {
+            this.jugadores.add(this.jugadores.remove(0));
         }
     }
 
     public void jugar() {
         for (int i = 0; i < MAX_CANTIDAD_RONDAS; i++) {
+            Logeador.agregarALog(this.log,"TURNO:"+Integer.valueOf(this.turno +1).toString());
             for (Jugador jugador : jugadores) {
+                Logeador.agregarALog(this.log,"Es el turno de: '" + jugador.obtenerNombre() + "'.");
                 try {
-                    log.addLine("Es el turno de: '" + jugador.getNombre() + "'.");
-                } catch (IOException e) {
-                    throw new RuntimeException(e); //especializar exception(?
+                    jugador.jugarTurno(dado);
+                    this.turno++;
+                } catch (PartidaFinalizada e) {
+                    throw new PartidaFinalizada("GANADOR DE LA PARTIDA: "  + jugador.obtenerNombre()); //especializar exception(?
                 }
-                jugador.jugarTurno(dado);
             }
         }
-    }
-
-    private void moverJugadores(List<Jugador> listaJugadores, int[] ordenTurnos) {
-        Jugador jugadorActual = listaJugadores.remove(ordenTurnos[0] - 1);
-        listaJugadores.add(0, jugadorActual);
-
-        jugadorActual = listaJugadores.remove(ordenTurnos[1] - 1);
-        listaJugadores.add(1, jugadorActual);
+        Logeador.agregarALog(this.log,"No hay ganador ya que superaron la maxima cantidad de rondas.");
+        throw new CantidadTurnosException("No hay ganador ya que superaron la maxima cantidad de rondas.");
     }
 
     public Log getLog() {
-        return log;
+        return this.log;
     }
     private void validarCantidadJugadores() {
         if (jugadores.size() < MIN_JUGADORES || jugadores.size() > MAX_JUGADORES) {
             throw new CantidadJugadoresException("La cantidad de jugadores debe ser entre 2 y 6.");
         }
+    }
+    public void jugar1Ronda() { //testear interfaz
+        this.turno++;
+        Logeador.agregarALog(this.log,"TURNO:"+Integer.valueOf(this.turno).toString());
+        for (Jugador jugador : jugadores) {
+            Logeador.agregarALog(this.log,"Es el turno de: '" + jugador.obtenerNombre() + "'.");
+            try {
+                jugador.jugarTurno(dado);
+            } catch (PartidaFinalizada e) {
+                //mostrar en interfaz cartel con "GANADOR DE LA PARTIDA: "+ jugador.obtenerNombre() con boton de volver a jugar y otro de cerrar(?
+                //volver a jugar: reiniciar tablero, mover a todos
+                throw new PartidaFinalizada("GANADOR DE LA PARTIDA: "  + jugador.obtenerNombre()); //especializar exception(?
+            }
+        }
+    }
+    public List<Jugador> obtenerJugadores(){
+        return jugadores;
+    }
+    public int obtenerTurno(){
+        return turno;
     }
 }

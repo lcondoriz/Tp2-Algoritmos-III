@@ -3,6 +3,8 @@ package edu.fiuba.algo3.json;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+
+import edu.fiuba.algo3.tablero.Coordenadas;
 import edu.fiuba.algo3.tablero.Tablero;
 import edu.fiuba.algo3.tablero.celda.Camino;
 import edu.fiuba.algo3.tablero.celda.Celda;
@@ -125,11 +127,11 @@ public class TableroConstructor {
     private Celda construirCeldaBase(int x, int y, String tipo, int numeracion) {
         switch (tipo) {
             case "Salida":
-                return new Salida(x, y, tipo, numeracion);
+                return new Salida(new Coordenadas(x, y), tipo, numeracion);
             case "Camino":
-                return new Camino(x, y, tipo, numeracion);
+                return new Camino(new Coordenadas(x, y), tipo, numeracion);
             case "Llegada":
-                return new Llegada(x, y, tipo, numeracion);
+                return new Llegada(new Coordenadas(x, y), tipo, numeracion);
             default:
                 throw new IllegalArgumentException("Tipo de celda desconocido: " + tipo);
         }

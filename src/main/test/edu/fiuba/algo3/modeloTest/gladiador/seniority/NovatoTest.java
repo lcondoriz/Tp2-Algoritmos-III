@@ -18,12 +18,12 @@ public class NovatoTest {
     @Test
     public void verificarQueElSeniorityNoIncrementeSiNoLlegoALaRondaOcho() {
         Novato novato = new Novato();
-        assertEquals(Novato.class, novato.incrementarSeniority(7).getClass());
+        assertEquals(Novato.class, novato.incrementarSeniority(7,null ).getClass());
     }
 
     @Test
     public void verificarQueElSeniorityIncrementeSiLlegoALaRondaOcho() {
         Novato novato = new Novato();
-        assertEquals(SemiSenior.class, novato.incrementarSeniority(8).getClass());
+        assertEquals(SemiSenior.class, novato.incrementarSeniority(8,null ).getClass());
     }
 }
