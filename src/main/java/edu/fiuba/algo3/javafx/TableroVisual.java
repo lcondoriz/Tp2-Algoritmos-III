@@ -42,29 +42,7 @@ public class TableroVisual extends GridPane {
         GridPane grid = new GridPane();
         setPadding(new Insets(0)); // Eliminar cualquier relleno
         setAlignment(Pos.CENTER);
-        double tamanio_X = 400;
-        double tamanio_Y = 175;
-        try {
-            Image image = new Image(new FileInputStream("src/main/java/edu/fiuba/algo3/javafx/fondoDelJuego.jpg"));
 
-            HBox hbBackground = new HBox();
-            BackgroundImage imageBG = new BackgroundImage(
-                    image,
-                    BackgroundRepeat.NO_REPEAT,
-                    BackgroundRepeat.NO_REPEAT,
-                    BackgroundPosition.DEFAULT,
-                    BackgroundSize.DEFAULT
-            );
-
-            Background background = new Background(imageBG);
-            hbBackground.setBackground(background);
-            grid.setBackground(background);
-            tamanio_X = image.getHeight();
-            tamanio_Y = image.getWidth();
-
-        }catch(FileNotFoundException ex){
-            System.out.println("No se encontro la imagen");
-        }
         // Inicializar cada celda en la matriz
         for (int i = 0; i < tableroAncho; i++) {
             for (int j = 0; j < tableroLargo; j++) {
@@ -104,7 +82,7 @@ public class TableroVisual extends GridPane {
             int posicionGladiadorX = celdaJugador.obtenerCoordenadas().obtenerCoordenadaX() - 1;
             int posicionGladiadorY = celdaJugador.obtenerCoordenadas().obtenerCoordenadaY() - 1;
             
-            Rectangle rectangle = new Rectangle(20, 20);
+            Rectangle rectangle = new Rectangle(35, 35);
             // Asignar un color diferente a cada jugador
             rectangle.setFill(colores[i % colores.length]);
             rectangle.setStroke(Color.BLACK);

@@ -183,11 +183,36 @@ public class Interfaz extends Application {
             vbGrid.setAlignment(Pos.CENTER);
             //==============FOOTER===============================
             ScrollPane historial = new ScrollPane();
-            historial.maxHeight(primaryStage.getMaxHeight()/4);
-            historial.maxWidth(primaryStage.getMaxWidth());
-            vbGrid.getChildren().add(historial);
+            historial.prefHeight(10);
+            historial.prefWidth(10);
+            //vbGrid.getChildren().add(historial);
 
-            Button btnGame = new Button("Jugar un turno");
+
+            Button btnJugar1Turno = new Button("Jugar un turno");
+            btnJugar1Turno.setMinHeight(50);
+            btnJugar1Turno.setMinWidth(130);
+            hbDone.getChildren().add(btnJugar1Turno);
+            btnJugar1Turno.setOnAction(event -> {
+                try{
+                    algoRoma.jugar1Turno();
+                }catch(PartidaFinalizada ex){
+                    //Mostrar pantalla con ganador del juego,nueva escena o un label
+                    //refactorizar esto a un eventhandlerFinalizarPartida
+                    hbDone.getChildren().remove(btnJugar1Turno);
+                    Label ganador = new Label(ex.getMessage());
+                    ganador.autosize();
+                    ganador.setBorder(new Border(new BorderStroke(Color.RED,BorderStrokeStyle.DASHED,CornerRadii.EMPTY,BorderWidths.DEFAULT)));
+                    vbRoot.getChildren().add(ganador);
+                    vbRoot.setAlignment(Pos.CENTER);
+                }
+                actualizarTablero(tableroVisual, vbPlayers);
+
+
+
+            });
+
+
+            Button btnGame = new Button("Jugar una ronda");
             btnGame.setMinHeight(50);
             btnGame.setMinWidth(130);
             hbDone.getChildren().add(btnGame);
@@ -230,7 +255,7 @@ public class Interfaz extends Application {
             hbDone.setAlignment(Pos.CENTER);
 
             Button btnExit = new Button("Exit");
-            Button btnReset = new Button("Reset");
+            Button btnReset = new Button("Reset"); //el boton de reset esta demás. no hacer si qeudan otras cosas por mejorar
 
             btnExit.setMinHeight(25);
             btnExit.setMinWidth(60);
@@ -245,7 +270,7 @@ public class Interfaz extends Application {
             btnReset.setPadding(new Insets(10));
             btnReset.setOnAction(event -> reset());
 
-            hbOptions.getChildren().addAll(btnExit, btnReset);
+            hbOptions.getChildren().addAll(btnExit);//, btnReset);//el boton de reset esta demás. no hacer si qeudan otras cosas por mejorar
             hbOptions.setPadding(new Insets(5));
             hbOptions.setAlignment(Pos.CENTER);
 
@@ -253,9 +278,34 @@ public class Interfaz extends Application {
 
             vbRoot.getChildren().addAll(vbHeader, vbGrid, vbFooter);
 
+            double tamanio_X = 400;
+            double tamanio_Y = 175;
+            try {
+                Image image = new Image(new FileInputStream("src/main/java/edu/fiuba/algo3/javafx/fondoDelJuego.jpg"));
+
+                HBox hbBackground = new HBox();
+                BackgroundImage imageBG = new BackgroundImage(
+                        image,
+                        BackgroundRepeat.NO_REPEAT,
+                        BackgroundRepeat.NO_REPEAT,
+                        BackgroundPosition.DEFAULT,
+                        BackgroundSize.DEFAULT
+                );
+
+                Background background = new Background(imageBG);
+                hbBackground.setBackground(background);
+                vbRoot.setBackground(background);
+                tamanio_X = image.getHeight();
+                tamanio_Y = image.getWidth();
+
+            }catch(FileNotFoundException ex){
+                System.out.println("No se encontro la imagen");
+            }
+
+
             //tableroVisual.add(jugar1Button, miTablero.obtenerAncho() , miTablero.obtenerLargo());
             // Crear una nueva escena con el tablero del juego
-            escenaTablero = new Scene(vbRoot);
+            escenaTablero = new Scene(vbRoot,tamanio_X,tamanio_Y);
             // Obtener el GridPane de la escena y configurar la alineación
 
         } else {
