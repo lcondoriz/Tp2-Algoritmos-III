@@ -29,6 +29,7 @@ public class AlgoRoma {
     private Tablero tablero;
     private int turno;
     private boolean hayGanador;
+    private Jugador primerJugador;
     private Log log;
 
 
@@ -74,6 +75,7 @@ public class AlgoRoma {
         for (int i = 0; i < indiceJugadorAleatorio; i++) {
             this.jugadores.add(this.jugadores.remove(0));
         }
+        this.primerJugador = this.jugadores.get(0);
     }
 
     public void jugar() {
@@ -105,10 +107,11 @@ public class AlgoRoma {
     }
     public void jugar1Turno(){
         if (hayGanador){return;}
-        this.turno++;
-        Logeador.agregarALog(this.log,"TURNO:"+Integer.valueOf(this.turno).toString());
         Jugador jugador = this.jugadores.remove(0);
+        if (primerJugador==jugador){this.turno++;}
+        Logeador.agregarALog(this.log,"TURNO:"+Integer.valueOf(this.turno).toString());
         try {
+            Logeador.agregarALog(this.log,"Es el turno de: '" + jugador.obtenerNombre() + "'.");
             jugador.jugarTurno(dado);
         } catch (PartidaFinalizada e) {
             //mostrar en interfaz cartel con "GANADOR DE LA PARTIDA: "+ jugador.obtenerNombre() con boton de volver a jugar y otro de cerrar(?

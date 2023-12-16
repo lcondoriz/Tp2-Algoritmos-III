@@ -25,7 +25,7 @@ public class CeldaVisual {
         Rectangle celda = new Rectangle(35, 35);
         switch (tipoCelda) {
             case "Camino":
-                celda.setFill(Color.ORANGE);
+                celda.setFill(Color.YELLOW);
                 break;
             case "Salida":
                 celda.setFill(Color.RED);
