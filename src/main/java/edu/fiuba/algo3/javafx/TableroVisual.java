@@ -1,9 +1,12 @@
 package edu.fiuba.algo3.javafx;
 
+import edu.fiuba.algo3.juego.Jugador;
 import edu.fiuba.algo3.tablero.Tablero;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import edu.fiuba.algo3.juego.AlgoRoma;
@@ -29,9 +32,17 @@ public class TableroVisual extends GridPane {
     private Tablero tablero;
     private CeldaVisual[][] celdas;  // Matriz de celdas visuales
 
+    private Color[] COLORES = { Color.BLUE, Color.RED, Color.ORANGE, Color.PURPLE, Color.BROWN };
+
+    private HashMap<Jugador,Color> COLORES_ASIGNADOS= new HashMap<>();
     public TableroVisual(Tablero tablero, AlgoRoma algoRoma) {
         this.tablero = tablero;
         this.celdas = new CeldaVisual[tablero.obtenerAncho()][tablero.obtenerLargo()];  // Inicializar la matriz
+        int i = 0 ;
+        for (Jugador jugador : algoRoma.obtenerJugadores()){
+            COLORES_ASIGNADOS.put(jugador,COLORES[i]);
+            i++;
+        }
         cargarTableroVisual();
         cargarGladiadores(algoRoma);
     }
@@ -74,7 +85,7 @@ public class TableroVisual extends GridPane {
     private void cargarGladiadores(AlgoRoma algoRoma) {
         int tableroAncho = tablero.obtenerAncho();
         int tableroLargo = tablero.obtenerLargo();
-        Color[] colores = { Color.BLUE, Color.YELLOW, Color.ORANGE, Color.PURPLE, Color.CYAN };
+        //Color[] colores = { Color.BLUE, Color.RED, Color.ORANGE, Color.VIOLET, Color.BROWN };
 
         
         for (int i = 0; i < algoRoma.obtenerJugadores().size(); i++) {
@@ -84,7 +95,9 @@ public class TableroVisual extends GridPane {
             
             Rectangle rectangle = new Rectangle(35, 35);
             // Asignar un color diferente a cada jugador
-            rectangle.setFill(colores[i % colores.length]);
+
+            //rectangle.setFill(colores[i % colores.length]);
+            rectangle.setFill(COLORES_ASIGNADOS.get(algoRoma.obtenerJugadores().get(i)));
             rectangle.setStroke(Color.BLACK);
             rectangle.setStrokeWidth(2);
 
@@ -106,7 +119,9 @@ public class TableroVisual extends GridPane {
             this.add(stackPane, posicionGladiadorY, posicionGladiadorX);
         }
     }
-
+    public HashMap<Jugador,Color> coloresAsignados(){
+        return this.COLORES_ASIGNADOS;
+    }
     public Tablero obtenerTablero(){
         return tablero;
     }
