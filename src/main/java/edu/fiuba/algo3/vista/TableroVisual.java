@@ -1,39 +1,29 @@
-package edu.fiuba.algo3.javafx;
+package edu.fiuba.algo3.vista;
 
-import edu.fiuba.algo3.juego.Jugador;
-import edu.fiuba.algo3.tablero.Tablero;
+import edu.fiuba.algo3.modelo.juego.AlgoRoma;
+import edu.fiuba.algo3.modelo.juego.Jugador;
+import edu.fiuba.algo3.modelo.tablero.Tablero;
+import edu.fiuba.algo3.modelo.tablero.celda.Celda;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-import edu.fiuba.algo3.juego.AlgoRoma;
-import javafx.beans.binding.Bindings;
-import javafx.beans.property.DoubleProperty;
 import javafx.geometry.Pos;
+import javafx.geometry.Insets;
 import javafx.scene.control.Button;
-import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.text.FontWeight;
-import javafx.geometry.Insets;
-import edu.fiuba.algo3.tablero.celda.Celda;
+
 import javafx.scene.Node;
 
-
-
 public class TableroVisual extends GridPane {
-
     private Tablero tablero;
     private CeldaVisual[][] celdas;  // Matriz de celdas visuales
-
     private Color[] COLORES = { Color.BLUE, Color.RED, Color.ORANGE, Color.PURPLE, Color.BROWN };
-
     private HashMap<Jugador,Color> COLORES_ASIGNADOS= new HashMap<>();
     public TableroVisual(Tablero tablero, AlgoRoma algoRoma) {
         this.tablero = tablero;
@@ -46,7 +36,6 @@ public class TableroVisual extends GridPane {
         cargarTableroVisual();
         cargarGladiadores(algoRoma);
     }
-
     private void cargarTableroVisual() {
         int tableroAncho = tablero.obtenerAncho();
         int tableroLargo = tablero.obtenerLargo();

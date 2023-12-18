@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.log;
+package edu.fiuba.algo3.modelo.log;
 
 import java.io.IOException;
 

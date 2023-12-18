@@ -1,18 +1,14 @@
-package edu.fiuba.algo3.javafx;
+package edu.fiuba.algo3.vista;
 
 import java.io.IOException;
-import java.util.Dictionary;
 import java.util.HashMap;
 import java.util.List;
 
-import edu.fiuba.algo3.exceptions.PartidaFinalizada;
-import edu.fiuba.algo3.log.Log;
-import javafx.collections.FXCollections;
-import edu.fiuba.algo3.exceptions.CantidadJugadoresException;
-import edu.fiuba.algo3.javafx.TableroVisual;
-import edu.fiuba.algo3.json.TableroConstructor;
-import edu.fiuba.algo3.juego.Jugador;
-import edu.fiuba.algo3.tablero.Tablero;
+import edu.fiuba.algo3.modelo.exceptions.PartidaFinalizada;
+import edu.fiuba.algo3.modelo.log.Log;
+import edu.fiuba.algo3.modelo.exceptions.CantidadJugadoresException;
+import edu.fiuba.algo3.modelo.juego.Jugador;
+import edu.fiuba.algo3.modelo.tablero.Tablero;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -28,9 +24,9 @@ import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
-import edu.fiuba.algo3.juego.AlgoRoma;
+import edu.fiuba.algo3.modelo.juego.AlgoRoma;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
+
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 public class Interfaz extends Application {

@@ -1,6 +1,6 @@
-package edu.fiuba.algo3.gladiador.mejorador;
+package edu.fiuba.algo3.modelo.gladiador.mejorador;
 
-import edu.fiuba.algo3.gladiador.equipamiento.*;
+import edu.fiuba.algo3.modelo.gladiador.equipamiento.*;
 
 public class Mejorador {
     public Equipable obtenerSeguienteMejora(SinEquipamiento sinEquipamiento) {

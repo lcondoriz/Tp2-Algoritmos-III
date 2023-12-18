@@ -1,23 +1,22 @@
 package edu.fiuba.algo3.entrega_1;
 
 
-import edu.fiuba.algo3.gladiador.equipamiento.Llave;
+import edu.fiuba.algo3.modelo.gladiador.equipamiento.Llave;
 
-import edu.fiuba.algo3.exceptions.CantidadTurnosException;
-import edu.fiuba.algo3.gladiador.Energia;
-import edu.fiuba.algo3.gladiador.Gladiador;
-import edu.fiuba.algo3.gladiador.equipamiento.SinEquipamiento;
-import edu.fiuba.algo3.juego.AlgoRoma;
-import edu.fiuba.algo3.juego.Dado;
-import edu.fiuba.algo3.tablero.celda.Camino;
-import edu.fiuba.algo3.tablero.celda.Celda;
-import edu.fiuba.algo3.tablero.celda.Llegada;
-import edu.fiuba.algo3.tablero.celda.Salida;
-import edu.fiuba.algo3.tablero.Coordenadas;
-import edu.fiuba.algo3.tablero.celda.afectable.Bacanal;
-import edu.fiuba.algo3.tablero.celda.afectable.Comida;
-import edu.fiuba.algo3.tablero.celda.afectable.Equipo;
-import edu.fiuba.algo3.tablero.celda.afectable.FieraSalvaje;
+import edu.fiuba.algo3.modelo.exceptions.CantidadTurnosException;
+import edu.fiuba.algo3.modelo.gladiador.Energia;
+import edu.fiuba.algo3.modelo.gladiador.Gladiador;
+import edu.fiuba.algo3.modelo.gladiador.equipamiento.SinEquipamiento;
+import edu.fiuba.algo3.modelo.juego.AlgoRoma;
+import edu.fiuba.algo3.modelo.juego.Dado;
+import edu.fiuba.algo3.modelo.tablero.celda.Camino;
+import edu.fiuba.algo3.modelo.tablero.celda.Celda;
+import edu.fiuba.algo3.modelo.tablero.celda.Llegada;
+import edu.fiuba.algo3.modelo.tablero.celda.Salida;
+import edu.fiuba.algo3.modelo.tablero.Coordenadas;
+import edu.fiuba.algo3.modelo.tablero.celda.afectable.Comida;
+import edu.fiuba.algo3.modelo.tablero.celda.afectable.Equipo;
+import edu.fiuba.algo3.modelo.tablero.celda.afectable.FieraSalvaje;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

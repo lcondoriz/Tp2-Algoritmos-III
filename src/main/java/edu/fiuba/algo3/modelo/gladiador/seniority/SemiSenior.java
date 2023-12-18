@@ -1,11 +1,10 @@
-package edu.fiuba.algo3.gladiador.seniority;
+package edu.fiuba.algo3.modelo.gladiador.seniority;
 
-import edu.fiuba.algo3.gladiador.Energia;
-import edu.fiuba.algo3.log.Log;
-import edu.fiuba.algo3.log.Logeador;
+import edu.fiuba.algo3.modelo.gladiador.Energia;
+import edu.fiuba.algo3.modelo.log.Log;
+import edu.fiuba.algo3.modelo.log.Logeador;
 
 public class SemiSenior implements Seniority {
-
     public static final int TURNO_PROMOCION_SEMI_SENIOR = 12;
     public static final int PLUS_ENERGIA_SEMI_SENIOR = 5;
     @Override

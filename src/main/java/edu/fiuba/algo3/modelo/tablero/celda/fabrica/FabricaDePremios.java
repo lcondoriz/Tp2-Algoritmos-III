@@ -1,8 +1,8 @@
-package edu.fiuba.algo3.tablero.celda.fabrica;
+package edu.fiuba.algo3.modelo.tablero.celda.fabrica;
 
-import edu.fiuba.algo3.tablero.celda.afectable.Afectable;
-import edu.fiuba.algo3.tablero.celda.afectable.Comida;
-import edu.fiuba.algo3.tablero.celda.afectable.Equipo;
+import edu.fiuba.algo3.modelo.tablero.celda.afectable.Afectable;
+import edu.fiuba.algo3.modelo.tablero.celda.afectable.Comida;
+import edu.fiuba.algo3.modelo.tablero.celda.afectable.Equipo;
 
 public class FabricaDePremios implements FabricaDeAfectables {
     @Override

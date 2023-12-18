@@ -1,7 +1,7 @@
 package edu.fiuba.algo3.entrega_2;
 
 import com.google.gson.JsonObject;
-import edu.fiuba.algo3.json.TableroConstructor;
+import edu.fiuba.algo3.modelo.parser.TableroConstructor;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;

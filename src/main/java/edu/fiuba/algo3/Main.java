@@ -1,12 +1,12 @@
 package edu.fiuba.algo3;
 
-import edu.fiuba.algo3.juego.AlgoRoma;
-import edu.fiuba.algo3.juego.Dado;
-import java.security.AlgorithmConstraints;
+import edu.fiuba.algo3.modelo.juego.AlgoRoma;
+import edu.fiuba.algo3.modelo.juego.Dado;
+import edu.fiuba.algo3.modelo.parser.TableroConstructor;
+import edu.fiuba.algo3.modelo.tablero.Tablero;
 
-import edu.fiuba.algo3.javafx.Interfaz;
-import edu.fiuba.algo3.json.TableroConstructor;
-import edu.fiuba.algo3.tablero.Tablero;
+import edu.fiuba.algo3.vista.Interfaz;
+
 import javafx.application.Application;
 import javafx.stage.Stage;
 

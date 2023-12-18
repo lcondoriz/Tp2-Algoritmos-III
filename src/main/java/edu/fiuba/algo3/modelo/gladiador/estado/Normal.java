@@ -1,7 +1,7 @@
-package edu.fiuba.algo3.gladiador.estado;
+package edu.fiuba.algo3.modelo.gladiador.estado;
 
-import edu.fiuba.algo3.gladiador.Gladiador;
-import edu.fiuba.algo3.log.Logeador;
+import edu.fiuba.algo3.modelo.gladiador.Gladiador;
+import edu.fiuba.algo3.modelo.log.Logeador;
 
 public class Normal implements Estado {
     @Override

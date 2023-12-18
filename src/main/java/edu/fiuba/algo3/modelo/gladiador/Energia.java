@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.gladiador;
+package edu.fiuba.algo3.modelo.gladiador;
 
 public class Energia {
     public static final int ENERGIA_SUFICIENTE = 0;

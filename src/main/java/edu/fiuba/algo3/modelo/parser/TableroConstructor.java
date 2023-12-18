@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.modelo.json;
+package edu.fiuba.algo3.modelo.parser;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;

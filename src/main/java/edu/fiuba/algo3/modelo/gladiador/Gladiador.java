@@ -1,18 +1,18 @@
-package edu.fiuba.algo3.gladiador;
+package edu.fiuba.algo3.modelo.gladiador;
 
-import edu.fiuba.algo3.exceptions.PartidaFinalizada;
-import edu.fiuba.algo3.gladiador.equipamiento.Equipable;
-import edu.fiuba.algo3.gladiador.equipamiento.Llave;
-import edu.fiuba.algo3.gladiador.estado.Estado;
-import edu.fiuba.algo3.gladiador.estado.Normal;
-import edu.fiuba.algo3.gladiador.estado.SinEnergia;
-import edu.fiuba.algo3.gladiador.mejorador.Mejorador;
-import edu.fiuba.algo3.gladiador.equipamiento.SinEquipamiento;
-import edu.fiuba.algo3.gladiador.seniority.Novato;
-import edu.fiuba.algo3.gladiador.seniority.Seniority;
-import edu.fiuba.algo3.log.Log;
-import edu.fiuba.algo3.log.Logeador;
-import edu.fiuba.algo3.tablero.celda.Celda;
+import edu.fiuba.algo3.modelo.exceptions.PartidaFinalizada;
+import edu.fiuba.algo3.modelo.gladiador.equipamiento.Equipable;
+import edu.fiuba.algo3.modelo.gladiador.equipamiento.Llave;
+import edu.fiuba.algo3.modelo.gladiador.estado.Estado;
+import edu.fiuba.algo3.modelo.gladiador.estado.Normal;
+import edu.fiuba.algo3.modelo.gladiador.estado.SinEnergia;
+import edu.fiuba.algo3.modelo.gladiador.mejorador.Mejorador;
+import edu.fiuba.algo3.modelo.gladiador.equipamiento.SinEquipamiento;
+import edu.fiuba.algo3.modelo.gladiador.seniority.Novato;
+import edu.fiuba.algo3.modelo.gladiador.seniority.Seniority;
+import edu.fiuba.algo3.modelo.log.Log;
+import edu.fiuba.algo3.modelo.log.Logeador;
+import edu.fiuba.algo3.modelo.tablero.celda.Celda;
 
 public class Gladiador {
     private Log log;
@@ -68,7 +68,6 @@ public class Gladiador {
         return this.equipamiento instanceof Llave;
     }
     public void mover(int cantidadCeldas, int turno) {
-
         this.celda = this.celda.avanzar(cantidadCeldas);
 
         // Cada celda sabe como aplicar su efecto
@@ -79,7 +78,6 @@ public class Gladiador {
 
         // Cada vez que se avanza, es un turno nuevo. Y por cada turno nuevo y por el tipo de seniority se da un plus de energía.
         this.estrategiaSeniority.obtenerPlusEnergia(this.energia);
-
     }
     public Celda obtenerCelda() {
         return this.celda;
@@ -97,7 +95,6 @@ public class Gladiador {
     public void danioPorFieraSalvaje() {
         this.equipamiento.danioPorFieraSalvaje(this);
     }
-
     public void verificarSiEsGanador() {
         if (!this.tieneEquipamientoCompleto()) {
             this.retrocederMitadCamino();
@@ -106,7 +103,6 @@ public class Gladiador {
         Logeador.agregarALog(this.log, "GANADOR DE LA PARTIDA");
         throw new PartidaFinalizada("Partida Finalizada");
     }
-
     public boolean EstasEnLaCelda(Celda otraCelda) {
         return this.celda.getPosicion() == otraCelda.getPosicion();
     }

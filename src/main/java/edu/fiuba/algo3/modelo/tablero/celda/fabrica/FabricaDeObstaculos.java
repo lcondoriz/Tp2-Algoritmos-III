@@ -1,13 +1,12 @@
-package edu.fiuba.algo3.tablero.celda.fabrica;
+package edu.fiuba.algo3.modelo.tablero.celda.fabrica;
 
-import edu.fiuba.algo3.juego.Dado;
-import edu.fiuba.algo3.tablero.celda.afectable.Afectable;
-import edu.fiuba.algo3.tablero.celda.afectable.Bacanal;
-import edu.fiuba.algo3.tablero.celda.afectable.FieraSalvaje;
-import edu.fiuba.algo3.tablero.celda.afectable.Lesion;
+import edu.fiuba.algo3.modelo.juego.Dado;
+import edu.fiuba.algo3.modelo.tablero.celda.afectable.Afectable;
+import edu.fiuba.algo3.modelo.tablero.celda.afectable.Bacanal;
+import edu.fiuba.algo3.modelo.tablero.celda.afectable.FieraSalvaje;
+import edu.fiuba.algo3.modelo.tablero.celda.afectable.Lesion;
 
 public class FabricaDeObstaculos implements FabricaDeAfectables {
-    
     @Override
     public Afectable crearAfectable(String tipo) {
         switch (tipo) {

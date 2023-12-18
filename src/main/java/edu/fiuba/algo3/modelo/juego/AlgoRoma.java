@@ -1,28 +1,23 @@
-package edu.fiuba.algo3.juego;
+package edu.fiuba.algo3.modelo.juego;
 
-import edu.fiuba.algo3.exceptions.CantidadJugadoresException;
-import edu.fiuba.algo3.exceptions.CantidadTurnosException;
-import edu.fiuba.algo3.exceptions.NoHayJugadoresException;
-import edu.fiuba.algo3.exceptions.PartidaFinalizada;
-import edu.fiuba.algo3.javafx.Interfaz;
-import edu.fiuba.algo3.json.TableroConstructor;
-import edu.fiuba.algo3.log.Log;
-import edu.fiuba.algo3.log.Logeador;
-import edu.fiuba.algo3.tablero.Tablero;
+import edu.fiuba.algo3.modelo.exceptions.CantidadJugadoresException;
+import edu.fiuba.algo3.modelo.exceptions.CantidadTurnosException;
+import edu.fiuba.algo3.modelo.exceptions.NoHayJugadoresException;
+import edu.fiuba.algo3.modelo.exceptions.PartidaFinalizada;
+import edu.fiuba.algo3.modelo.parser.TableroConstructor;
+import edu.fiuba.algo3.modelo.log.Log;
+import edu.fiuba.algo3.modelo.log.Logeador;
+import edu.fiuba.algo3.modelo.tablero.Tablero;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
 public class AlgoRoma {
     private static final int MIN_JUGADORES = 2;
     private static final int MAX_JUGADORES = 6;
-    private static final int JUGADORES_ESPECIALES = 4;
-    private static final int[] ORDEN_TURNOS = {3, 4, 1, 2};
     private static final int TURNO_INICIAL = 0;
-    private static final int MAX_TURNOS = 30;
     private static final int MAX_CANTIDAD_RONDAS = 30;
     private List<Jugador> jugadores;
     private Dado dado;
@@ -31,33 +26,27 @@ public class AlgoRoma {
     private boolean hayGanador;
     private Jugador primerJugador;
     private Log log;
-
-
     {
         try {
-            log = new Log("./src/main/java/edu/fiuba/algo3/log/log.txt");
+            log = new Log("./src/main/java/edu/fiuba/algo3/modelo/log/log.txt");
             log.resetLog(); // sirve para resetear el txt despues vemos si combiene o no hacerlo
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
-
     public AlgoRoma(Dado dado) {
         this.turno = TURNO_INICIAL;
         this.jugadores = new ArrayList<>();
         this.dado = dado;
     }
-
     public void cargarTablero(String path) {
         this.tablero = new TableroConstructor().construirTableroDesdeJSON(path);
     }
-
     public void agregarJugador(String nombre) {
         Jugador jugador = new Jugador(nombre, this.tablero.obtenerCeldaDeSalida(), log);
         this.jugadores.add(jugador);
         Logeador.agregarALog(this.log, "Se agregó al jugador: '" + nombre + "'.");
     }
-
     public void inicializarJuego() {
         if (jugadores.isEmpty()) {
             throw new NoHayJugadoresException("No hay jugadores para iniciar el juego.");
@@ -68,7 +57,6 @@ public class AlgoRoma {
         Logeador.agregarALog(this.log, "Se inicio el Juego.");
         this.moverOrdenDeJugadoresAJugar();
     }
-
     private void moverOrdenDeJugadoresAJugar() {
         Random random = new Random();
         int indiceJugadorAleatorio = random.nextInt(this.jugadores.size());
@@ -77,7 +65,6 @@ public class AlgoRoma {
         }
         this.primerJugador = this.jugadores.get(0);
     }
-
     public void jugar() {
         for (int i = 0; i < MAX_CANTIDAD_RONDAS; i++) {
             if (hayGanador){return;};
@@ -96,7 +83,6 @@ public class AlgoRoma {
         Logeador.agregarALog(this.log,"No hay ganador ya que superaron la maxima cantidad de rondas.");
         throw new CantidadTurnosException("No hay ganador ya que superaron la maxima cantidad de rondas.");
     }
-
     public Log getLog() {
         return this.log;
     }
@@ -140,8 +126,5 @@ public class AlgoRoma {
     }
     public List<Jugador> obtenerJugadores(){
         return jugadores;
-    }
-    public int obtenerTurno(){
-        return turno;
     }
 }

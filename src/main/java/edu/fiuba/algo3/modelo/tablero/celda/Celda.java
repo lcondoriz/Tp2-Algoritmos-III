@@ -1,8 +1,8 @@
-package edu.fiuba.algo3.tablero.celda;
+package edu.fiuba.algo3.modelo.tablero.celda;
 
-import edu.fiuba.algo3.gladiador.Gladiador;
-import edu.fiuba.algo3.tablero.celda.afectable.Afectable;
-import edu.fiuba.algo3.tablero.Coordenadas;
+import edu.fiuba.algo3.modelo.gladiador.Gladiador;
+import edu.fiuba.algo3.modelo.tablero.celda.afectable.Afectable;
+import edu.fiuba.algo3.modelo.tablero.Coordenadas;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -22,7 +22,6 @@ public abstract class Celda {
         this.celdaAnterior = null;
         this.siguienteCelda = null;
     }
-
     public abstract void aplicarEfecto(Gladiador gladiador);
     public void aplicarAfectables(Gladiador gladiador) {
         for (Afectable afectable : this.afectable) {

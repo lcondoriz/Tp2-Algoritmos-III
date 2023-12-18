@@ -1,6 +1,6 @@
-package edu.fiuba.algo3.gladiador.estado;
+package edu.fiuba.algo3.modelo.gladiador.estado;
 
-import edu.fiuba.algo3.gladiador.Gladiador;
+import edu.fiuba.algo3.modelo.gladiador.Gladiador;
 
 public class SinEnergia implements Estado {
     private static final int ENERGIA_MINIMA = 0;

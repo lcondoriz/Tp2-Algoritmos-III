@@ -1,15 +1,8 @@
 package edu.fiuba.algo3.modeloTest.json;
 
-import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import edu.fiuba.algo3.gladiador.Gladiador;
-import edu.fiuba.algo3.json.TableroConstructor;
-import edu.fiuba.algo3.tablero.Tablero;
-import edu.fiuba.algo3.tablero.celda.Celda;
+import edu.fiuba.algo3.modelo.parser.TableroConstructor;
 import org.junit.jupiter.api.Test;
-
-import java.util.LinkedList;
-import java.util.ListIterator;
 
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;

@@ -1,7 +1,6 @@
-package edu.fiuba.algo3.javafx;
+package edu.fiuba.algo3.vista;
 
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 public class CeldaVisual {
 

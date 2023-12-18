@@ -1,6 +1,6 @@
-package edu.fiuba.algo3.tablero.celda.afectable;
+package edu.fiuba.algo3.modelo.tablero.celda.afectable;
 
-import edu.fiuba.algo3.gladiador.Gladiador;
+import edu.fiuba.algo3.modelo.gladiador.Gladiador;
 
 public interface Afectable {
     void aplicarEfecto(Gladiador gladiador);
