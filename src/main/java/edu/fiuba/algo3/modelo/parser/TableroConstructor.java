@@ -1,26 +1,26 @@
-package edu.fiuba.algo3.json;
+package edu.fiuba.algo3.modelo.json;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
-import edu.fiuba.algo3.tablero.Coordenadas;
-import edu.fiuba.algo3.tablero.Tablero;
-import edu.fiuba.algo3.tablero.celda.Camino;
-import edu.fiuba.algo3.tablero.celda.Celda;
-import edu.fiuba.algo3.tablero.celda.Llegada;
-import edu.fiuba.algo3.tablero.celda.Salida;
-import edu.fiuba.algo3.tablero.celda.afectable.Afectable;
-import edu.fiuba.algo3.tablero.celda.fabrica.FabricaDeAfectables;
-import edu.fiuba.algo3.tablero.celda.fabrica.FabricaDeObstaculos;
-import edu.fiuba.algo3.tablero.celda.fabrica.FabricaDePremios;
+import edu.fiuba.algo3.modelo.tablero.Tablero;
+import edu.fiuba.algo3.modelo.tablero.celda.Camino;
+import edu.fiuba.algo3.modelo.tablero.celda.Celda;
+import edu.fiuba.algo3.modelo.tablero.celda.Llegada;
+import edu.fiuba.algo3.modelo.tablero.celda.Salida;
+import edu.fiuba.algo3.modelo.tablero.celda.afectable.Afectable;
+import edu.fiuba.algo3.modelo.tablero.celda.fabrica.FabricaDeAfectables;
+import edu.fiuba.algo3.modelo.tablero.celda.fabrica.FabricaDeObstaculos;
+import edu.fiuba.algo3.modelo.tablero.celda.fabrica.FabricaDePremios;
+import edu.fiuba.algo3.modelo.tablero.Coordenadas;
+
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.LinkedList;
 import com.google.gson.JsonElement;
 
 public class TableroConstructor {
-    // Constantes para valores permitidos
     public static final String[] TIPOS_CELDA = {"Salida", "Camino", "Llegada"};
     public static final String[] OBSTACULOS_PERMITIDOS = {"", "Bacanal", "Lesion", "Fiera"};
     public static final String[] PREMIOS_PERMITIDOS = {"", "Comida", "Equipamiento"};
