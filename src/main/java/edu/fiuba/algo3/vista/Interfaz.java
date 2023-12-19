@@ -37,12 +37,12 @@ public class Interfaz extends Application {
     private Scene escenaTablero;
 
     private HashMap<Color,String> ICONOS = new HashMap<>();{
-        ICONOS.put(Color.RED,"src/main/java/edu/fiuba/algo3/javafx/Jugador/gladiadorRojo.png");
-        ICONOS.put(Color.BLUE,"src/main/java/edu/fiuba/algo3/javafx/Jugador/gladiadorAzul.png");
-        ICONOS.put(Color.GREEN,"src/main/java/edu/fiuba/algo3/javafx/Jugador/gladiadorVerde.png");
-        ICONOS.put(Color.PURPLE,"src/main/java/edu/fiuba/algo3/javafx/Jugador/gladiadorVioleta.png");
-        ICONOS.put(Color.BROWN,"src/main/java/edu/fiuba/algo3/javafx/Jugador/gladiadorMarron.png");
-        ICONOS.put(Color.ORANGE,"src/main/java/edu/fiuba/algo3/javafx/Jugador/gladiadorNaranja.png");
+        ICONOS.put(Color.RED,"src/main/java/edu/fiuba/algo3/vista/Jugador/gladiadorRojo.png");
+        ICONOS.put(Color.BLUE,"src/main/java/edu/fiuba/algo3/vista/Jugador/gladiadorAzul.png");
+        ICONOS.put(Color.GREEN,"src/main/java/edu/fiuba/algo3/vista/Jugador/gladiadorVerde.png");
+        ICONOS.put(Color.PURPLE,"src/main/java/edu/fiuba/algo3/vista/Jugador/gladiadorVioleta.png");
+        ICONOS.put(Color.BROWN,"src/main/java/edu/fiuba/algo3/vista/Jugador/gladiadorMarron.png");
+        ICONOS.put(Color.ORANGE,"src/main/java/edu/fiuba/algo3/vista/Jugador/gladiadorNaranja.png");
     }
 
     public static void main(String[] args) {
@@ -69,7 +69,7 @@ public class Interfaz extends Application {
         double tamanio_X = 400;
         double tamanio_Y = 175;
         try {
-            Image image = new Image(new FileInputStream("src/main/java/edu/fiuba/algo3/javafx/pantallaPrincipal.jpg"));
+            Image image = new Image(new FileInputStream("src/main/java/edu/fiuba/algo3/vista/pantallaPrincipal.jpg"));
 
             HBox hbBackground = new HBox();
             BackgroundImage imageBG = new BackgroundImage(
@@ -348,7 +348,7 @@ public class Interfaz extends Application {
             double tamanio_X = 400;
             double tamanio_Y = 175;
             try {
-                Image image = new Image(new FileInputStream("src/main/java/edu/fiuba/algo3/javafx/fondoDelJuego.jpg"));
+                Image image = new Image(new FileInputStream("src/main/java/edu/fiuba/algo3/vista/fondoDelJuego.jpg"));
 
                 HBox hbBackground = new HBox();
                 BackgroundImage imageBG = new BackgroundImage(

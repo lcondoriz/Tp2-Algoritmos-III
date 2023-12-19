@@ -10,6 +10,5 @@ public class Llegada extends Celda  {
     @Override
     public void aplicarEfecto(Gladiador gladiador) {
         gladiador.verificarSiEsGanador();
-
     }
 }

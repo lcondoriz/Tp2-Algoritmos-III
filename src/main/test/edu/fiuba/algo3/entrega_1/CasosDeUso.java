@@ -234,25 +234,8 @@ public class CasosDeUso {
         nuevaCelda.agregarAfectable(new Equipo());
         Gladiador gladiador = new Gladiador(energia, salida);
         //Act
-       gladiador.avanzar(2, 1);
+        gladiador.avanzar(2, 1);
         assertTrue(gladiador.EstasEnLaCelda(nuevaCelda));
-//        Casillero casilleroInicial = new Casillero(0, new Vacio());
-//        Casillero casilleroMitad = new Casillero(1, new Vacio());
-//        Casillero casilleroFinal = new Casillero(2, new Final(3));
-//
-//        Gladiador gladiador = new Gladiador(new Energia(20), casilleroInicial);
-//
-//       /* Tablero tablero = new Tablero({"Bacabal","Vacio","Equipamiento"
-//                casilleroInicial,casilleroMitad,casilleroFinal
-//        });
-//        */
-//        gladiador.avanzar(2,1);
-//
-//        gladiador.setearCasillero(casilleroFinal);
-//        casilleroFinal.aplicarEfecto(gladiador);
-//
-//        assertEquals(gladiador.obtenerPosicionCasillero(), casilleroMitad.obtenerPosicion());
-
     }
     @Test // Caso de uso 10
     public void verificarQueSiLoAtacaUnaFieraSalvajeYPoseeTodoElEquipamientoElDanioEnEnergiaEs0() {
@@ -304,7 +287,6 @@ public class CasosDeUso {
             celdaActual = nuevaCelda;
 
             celdaActual.agregarAfectable(new Equipo());
-
         }
 
         Gladiador gladiador = new Gladiador(energia, salida);
