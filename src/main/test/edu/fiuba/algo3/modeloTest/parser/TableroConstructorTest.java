@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.modeloTest.juegoTest;
+package edu.fiuba.algo3.modeloTest.parser;
 
 import com.google.gson.JsonObject;
 import edu.fiuba.algo3.modelo.parser.TableroConstructor;
