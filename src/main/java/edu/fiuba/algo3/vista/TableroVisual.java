@@ -1,40 +1,76 @@
 package edu.fiuba.algo3.vista;
 
+import edu.fiuba.algo3.modelo.gladiador.equipamiento.SinEquipamiento;
 import edu.fiuba.algo3.modelo.juego.AlgoRoma;
 import edu.fiuba.algo3.modelo.juego.Jugador;
 import edu.fiuba.algo3.modelo.tablero.Tablero;
 import edu.fiuba.algo3.modelo.tablero.celda.Celda;
+import edu.fiuba.algo3.modelo.tablero.celda.afectable.*;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 
 import javafx.geometry.Pos;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.text.FontWeight;
-
+import java.util.Random;
 import javafx.scene.Node;
 
 public class TableroVisual extends GridPane {
     private Tablero tablero;
     private CeldaVisual[][] celdas;  // Matriz de celdas visuales
-    private Color[] COLORES = { Color.BLUE, Color.RED, Color.ORANGE, Color.PURPLE, Color.BROWN };
-    private HashMap<Jugador,Color> COLORES_ASIGNADOS= new HashMap<>();
+    private String[] IMAGENES = { "src/main/java/edu/fiuba/algo3/vista/Jugador/gladiadorRojo.png",
+            "src/main/java/edu/fiuba/algo3/vista/Jugador/gladiadorAzul.png",
+            "src/main/java/edu/fiuba/algo3/vista/Jugador/gladiadorVerde.png",
+            "src/main/java/edu/fiuba/algo3/vista/Jugador/gladiadorVioleta.png",
+            "src/main/java/edu/fiuba/algo3/vista/Jugador/gladiadorMarron.png",
+            "src/main/java/edu/fiuba/algo3/vista/Jugador/gladiadorNaranja.png",
+            "src/main/java/edu/fiuba/algo3/vista/Jugador/gladiadorMarron.png",
+            "src/main/java/edu/fiuba/algo3/vista/Jugador/gladiadorNaranja.png",
+    };
+    private HashMap<Jugador,String> IMAGENES_ASIGNADOS = new HashMap<>();
+
+
     public TableroVisual(Tablero tablero, AlgoRoma algoRoma) {
         this.tablero = tablero;
         this.celdas = new CeldaVisual[tablero.obtenerAncho()][tablero.obtenerLargo()];  // Inicializar la matriz
         int i = 0 ;
         for (Jugador jugador : algoRoma.obtenerJugadores()){
-            COLORES_ASIGNADOS.put(jugador,COLORES[i]);
+            IMAGENES_ASIGNADOS.put(jugador, IMAGENES[i]);
             i++;
         }
         cargarTableroVisual();
         cargarGladiadores(algoRoma);
+    }
+
+
+
+    public void mostrarObstaculosYPremios(Celda celda, Rectangle rectangle) {
+        List<Afectable> afectables = celda.getAfectables();
+        if (!afectables.isEmpty()) {
+            Random random = new Random();
+            int randomIndex = random.nextInt(afectables.size());
+            Afectable afectable = afectables.get(randomIndex);
+            if (afectable.getClass() == Comida.class || afectable.getClass() == Equipo.class) {
+                rectangle.setFill(Color.ORANGE);
+            } else if (afectable.getClass() == Bacanal.class || afectable.getClass() == FieraSalvaje.class || afectable.getClass() == Lesion.class) {
+                rectangle.setFill(Color.BLUE);;
+            } else {
+                rectangle.setFill(Color.BLACK);
+            }
+        }
     }
     private void cargarTableroVisual() {
         int tableroAncho = tablero.obtenerAncho();
@@ -46,28 +82,26 @@ public class TableroVisual extends GridPane {
         // Inicializar cada celda en la matriz
         for (int i = 0; i < tableroAncho; i++) {
             for (int j = 0; j < tableroLargo; j++) {
-                celdas[i][j] = new CeldaVisual();  
+                celdas[i][j] = new CeldaVisual();
                 Rectangle rectangle = celdas[i][j].crearCelda();
-
-                //rectangle.widthProperty().bind(this.widthProperty().divide(tableroAncho*1.5));
-                //rectangle.heightProperty().bind(this.heightProperty().divide(tableroLargo*1.5 ));
-
                 this.add(rectangle, i, j);
             }
         }
 
         Celda celdaActual = tablero.obtenerCeldaDeSalida();
-        for (int i = 0; i < tablero.obtenerCeldas().size(); i++) {
+        LinkedList<Celda> celdasTablero = tablero.obtenerCeldas();
+        for (int i = 0; i < celdasTablero.size(); i++) {
             int posicionXCelda = celdaActual.obtenerCoordenadas().obtenerCoordenadaX() - 1;
             int posicionYCelda = celdaActual.obtenerCoordenadas().obtenerCoordenadaY() - 1;
-            celdas[posicionYCelda][posicionXCelda] = new CeldaVisual();  
+            celdas[posicionYCelda][posicionXCelda] = new CeldaVisual();
             Rectangle rectangle = celdas[posicionYCelda][posicionXCelda].crearCelda(celdaActual.obtenerTipo());
-
-            //rectangle.widthProperty().bind(this.widthProperty().divide(tableroAncho*1.5));
-            //rectangle.heightProperty().bind(this.heightProperty().divide(tableroLargo*1.5));
-
-            this.add(rectangle, posicionYCelda, posicionXCelda);
-            celdaActual = celdaActual.obtenerSiguienteCelda();        
+            mostrarObstaculosYPremios(celdaActual, rectangle);
+            Text text = new Text(""+ i);
+            text.setStyle("-fx-font-weight: bold; -fx-font-size: 10px;");
+            StackPane stackPane = new StackPane();
+            stackPane.getChildren().addAll(rectangle, text);
+            this.add(stackPane, posicionYCelda, posicionXCelda);
+            celdaActual = celdaActual.obtenerSiguienteCelda();
         }
     }
 
@@ -76,47 +110,37 @@ public class TableroVisual extends GridPane {
         int tableroLargo = tablero.obtenerLargo();
         //Color[] colores = { Color.BLUE, Color.RED, Color.ORANGE, Color.VIOLET, Color.BROWN };
 
-        
+
         for (int i = 0; i < algoRoma.obtenerJugadores().size(); i++) {
             Celda celdaJugador = algoRoma.obtenerJugadores().get(i).obtenerGladiador().obtenerCelda();
             int posicionGladiadorX = celdaJugador.obtenerCoordenadas().obtenerCoordenadaX() - 1;
             int posicionGladiadorY = celdaJugador.obtenerCoordenadas().obtenerCoordenadaY() - 1;
-            
-            Rectangle rectangle = new Rectangle(35, 35);
-            // Asignar un color diferente a cada jugador
 
-            //rectangle.setFill(colores[i % colores.length]);
-            rectangle.setFill(COLORES_ASIGNADOS.get(algoRoma.obtenerJugadores().get(i)));
-            rectangle.setStroke(Color.BLACK);
-            rectangle.setStrokeWidth(2);
-
-            //rectangle.widthProperty().bind(this.widthProperty().divide(tableroAncho*1.5));
-            //rectangle.heightProperty().bind(this.heightProperty().divide(tableroLargo*1.5));
-
-            // Obtener la inicial del jugador
-            char inicial = algoRoma.obtenerJugadores().get(i).obtenerNombre().charAt(0);
-        
-            // Crear un Text con la inicial y establecer su estilo
-            Text inicialText = new Text(String.valueOf(inicial));
-            inicialText.setFont(Font.font("Arial", FontWeight.BOLD, 12));
-            inicialText.setFill(Color.WHITE);
-        
-            // Crear un StackPane para posicionar el Text sobre el círculo
+            Rectangle rectangle = new Rectangle(25, 25);
+            //rectangle.setFill(COLORES_ASIGNADOS.get(algoRoma.obtenerJugadores().get(i)));
+            try{
+                Image img = new Image(new FileInputStream(IMAGENES_ASIGNADOS.get(algoRoma.obtenerJugadores().get(i))));
+                rectangle.setFill(new ImagePattern(img));
+            } catch (IllegalArgumentException ex) {
+                System.out.println("No se encontro la imagen");
+            } catch (FileNotFoundException e) {
+                throw new RuntimeException(e);
+            }
             StackPane stackPane = new StackPane();
-            stackPane.getChildren().addAll(rectangle, inicialText);
-        
+            stackPane.getChildren().add(rectangle);
+
             this.add(stackPane, posicionGladiadorY, posicionGladiadorX);
         }
     }
-    public HashMap<Jugador,Color> coloresAsignados(){
-        return this.COLORES_ASIGNADOS;
-    }
+    //public HashMap<Jugador,Color> coloresAsignados(){
+    //    return this.COLORES_ASIGNADOS;
+    //}
     public Tablero obtenerTablero(){
         return tablero;
     }
 
     private void limpiarContenido() {
-         // Filtrar los nodos que no se deben eliminar (por ejemplo, botones)
+        // Filtrar los nodos que no se deben eliminar (por ejemplo, botones)
         List<Node> nodosNoEliminados = getChildren().filtered(node -> node instanceof Button);
 
         // Limpiar solo los nodos que no son botones

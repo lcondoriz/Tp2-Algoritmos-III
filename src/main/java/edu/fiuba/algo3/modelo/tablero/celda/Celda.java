@@ -22,6 +22,11 @@ public abstract class Celda {
         this.celdaAnterior = null;
         this.siguienteCelda = null;
     }
+
+    public List<Afectable> getAfectables() {
+        return this.afectable;
+    }
+
     public abstract void aplicarEfecto(Gladiador gladiador);
     public void aplicarAfectables(Gladiador gladiador) {
         for (Afectable afectable : this.afectable) {

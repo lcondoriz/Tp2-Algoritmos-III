@@ -11,8 +11,8 @@ public class CeldaVisual {
     }
 
     public Rectangle crearCelda() {
-        Rectangle celda = new Rectangle(35, 35);
-        celda.setFill(Color.BEIGE);
+        Rectangle celda = new Rectangle(25, 25);
+        celda.setFill(Color.GRAY);
         celda.setStroke(Color.BLACK);
         celda.setStrokeWidth(2);
         celda.setEffect(new javafx.scene.effect.DropShadow());
@@ -21,7 +21,7 @@ public class CeldaVisual {
     }
 
     public Rectangle crearCelda(String tipoCelda) {
-        Rectangle celda = new Rectangle(35, 35);
+        Rectangle celda = new Rectangle(25, 25);
         switch (tipoCelda) {
             case "Camino":
                 celda.setFill(Color.YELLOW);
@@ -33,7 +33,7 @@ public class CeldaVisual {
                 celda.setFill(Color.GREEN);
                 break;
             default:
-                celda.setFill(Color.BEIGE);
+                celda.setFill(Color.GRAY);
         }
 
         celda.setStroke(Color.BLACK);

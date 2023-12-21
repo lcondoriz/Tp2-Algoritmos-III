@@ -1,34 +1,29 @@
 package edu.fiuba.algo3.vista;
 
-import java.io.IOException;
-import java.util.HashMap;
-import java.util.List;
-
-import edu.fiuba.algo3.modelo.exceptions.PartidaFinalizada;
-import edu.fiuba.algo3.modelo.log.Log;
 import edu.fiuba.algo3.modelo.exceptions.CantidadJugadoresException;
+import edu.fiuba.algo3.modelo.exceptions.PartidaFinalizada;
+import edu.fiuba.algo3.modelo.juego.AlgoRoma;
 import edu.fiuba.algo3.modelo.juego.Jugador;
+import edu.fiuba.algo3.modelo.log.Log;
 import edu.fiuba.algo3.modelo.tablero.Tablero;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
 import javafx.scene.layout.*;
-import javafx.scene.layout.Border;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
-import edu.fiuba.algo3.modelo.juego.AlgoRoma;
-import javafx.scene.image.Image;
-
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
 public class Interfaz extends Application {
 
     private Stage primaryStage;
@@ -55,21 +50,36 @@ public class Interfaz extends Application {
         this.algoRoma = algoRoma;
     }
 
-    @Override
-    public void start(Stage primaryStage) {
-        this.primaryStage = primaryStage;
+    public void pantallaInicial(Stage primaryStage) {
         primaryStage.setTitle("AlgoRoma");
-
-        GridPane grid = new GridPane();
-        grid.setAlignment(javafx.geometry.Pos.CENTER);
-        grid.setHgap(10);
-        grid.setVgap(10);
-        grid.setPadding(new Insets(25, 25, 25, 25));
-
+        primaryStage.setResizable(false);
         double tamanio_X = 400;
-        double tamanio_Y = 175;
+        double tamanio_Y = 400;
+
+        VBox vbRootInitial = new VBox();
+        HBox hbInitialButton = new HBox();
+        HBox hbInitialTitle = new HBox();
+        Label title = new Label("Bienvenidos a ALGOROMA");
+        title.setFont(new Font("Blackletter", 60));
+        title.setTextFill(Color.WHITE);
+        hbInitialTitle.getChildren().add(title);
+        hbInitialTitle.setAlignment(Pos.CENTER);
+
+        Button btnInitial = new Button("Comenzar");
+        btnInitial.setStyle("-fx-opacity: 0.8; -fx-font-weight: bold; -fx-font-size: 15px;");
+        btnInitial.setMinHeight(50);
+        btnInitial.setMinWidth(130);
+        hbInitialButton.getChildren().add(btnInitial);
+        hbInitialButton.setAlignment(Pos.CENTER);
+        btnInitial.setOnAction(event -> {
+            this.pantallaJugadores(primaryStage);
+        });
+
+        vbRootInitial.getChildren().addAll(hbInitialTitle, hbInitialButton);
+        vbRootInitial.setAlignment(Pos.CENTER);
+
         try {
-            Image image = new Image(new FileInputStream("src/main/java/edu/fiuba/algo3/vista/pantallaPrincipal.jpg"));
+            Image image = new Image(new FileInputStream("src/main/java/edu/fiuba/algo3/vista/pantallaPrincipal.png"));
 
             HBox hbBackground = new HBox();
             BackgroundImage imageBG = new BackgroundImage(
@@ -82,67 +92,136 @@ public class Interfaz extends Application {
 
             Background background = new Background(imageBG);
             hbBackground.setBackground(background);
-            grid.setBackground(background);
+            vbRootInitial.setBackground(background);
             tamanio_X = image.getHeight();
             tamanio_Y = image.getWidth();
+            primaryStage.setWidth(tamanio_Y);
+            primaryStage.setHeight(tamanio_X);
 
-        }catch(FileNotFoundException ex){
+        } catch (FileNotFoundException ex) {
             System.out.println("No se encontro la imagen");
         }
-        //Scene scene = new Scene(grid, 400, 175);
-        Scene scene = new Scene(grid,tamanio_X,tamanio_Y);
+
+
+        Scene scene = new Scene(vbRootInitial, tamanio_X, tamanio_Y);
         primaryStage.setScene(scene);
+        primaryStage.show();
 
 
-        /*Label usernameLabel = new Label("Usuario:");
-        usernameLabel.setTextFill(Color.LIGHTCYAN);
-        usernameLabel.setFont(new Font(25));
-        usernameLabel.setBackground(new Background(new BackgroundFill(Color.RED,CornerRadii.EMPTY,new Insets(0,0,0,0))));
-        grid.add(usernameLabel, 0, 1);
-        */
+    }
+
+    public void pantallaJugadores(Stage primaryStage) {
+        double tamanio_X = 400;
+        double tamanio_Y = 400;
+
+        VBox vbRootPlayers = new VBox();
+        VBox vbPlayerTitle =  new VBox();
+        VBox vbPlayers = new VBox();
+        HBox hbPlayersInfo = new HBox();
+        HBox hbPlayButton = new HBox();
+
+        Label title = new Label("Nombre");
+        title.setTextFill(Color.WHITE);
+        vbPlayerTitle.getChildren().add(title);
 
         TextField usernameTextField = new TextField();
-        usernameTextField.setPromptText("Introduce el nombre de un usuario");
-        grid.add(usernameTextField, 1, 1);
+        usernameTextField.setPromptText("Escriba su nombre");
+        usernameTextField.setStyle("-fx-opacity: 0.8;");
+        vbPlayerTitle.getChildren().add(usernameTextField);
 
-        Button agregarButtom = new Button("Agregar Usuario");
+        Button userButtom = new Button("Agregar Jugador");
+        vbPlayerTitle.getChildren().add(userButtom);
+        vbPlayerTitle.setStyle("-fx-spacing: 10px; ");
+        vbPlayerTitle.setAlignment(Pos.CENTER);
 
-        grid.add(agregarButtom, 2, 1);
+        Label titlePlayers = new Label("JUGADORES");
+        titlePlayers.setTextFill(Color.WHITE);
+        titlePlayers.setAlignment(Pos.CENTER);
 
-        agregarButtom.setOnAction(event -> {
+        ScrollPane players = new ScrollPane();
+        players.setVmax(1.0);
+        players.setStyle("-fx-pref-width: 200px; -fx-pref-height: 180px; -fx-padding: 10px; -fx-border: 2px solid black; -fx-vbar-policy: always;  -fx-opacity: 0.8; ");
+
+        userButtom.setOnAction(event -> {
             String username;
             username = usernameTextField.getText();
             if (!username.trim().isEmpty()) {
                 algoRoma.agregarJugador(username);
+                StringBuilder contenido = new StringBuilder();
+                for (Jugador jugador: algoRoma.obtenerJugadores()) {
+                    //Text textLinea = new Text(linea);
+                    contenido.append("--").append(jugador.obtenerNombre()).append("\n");
+                }
+                Text text = new Text(contenido.toString());
+                players.setContent(text);
+                players.setVvalue(players.getHeight());
                 System.out.println("El usuario " + username + " se agregó correctamente");
                 usernameTextField.clear();
             } else {
                 System.out.println("El nombre de usuario debe tener al menos un carácter");
             }
         });
-
-        Button submitButton = new Button("Comenzar");
-        grid.add(submitButton, 1, 3);
-
-        submitButton.setOnAction(event -> {
-            /*if (algoRoma.obtenerJugadores().size() >= 2) {
-                // Llamar a un método para cambiar a la escena del tablero del juego
-                algoRoma.inicializarJuego();
-                cargarTablero();
-                mostrarTablero();
-            } else {
-                System.err.println("Faltan jugadores antes de iniciar el juego");
-            }*/
+        vbPlayers.getChildren().add(titlePlayers);
+        vbPlayers.getChildren().add(players);
+        vbPlayers.setStyle("-fx-spacing: 10px; ");
+        vbPlayers.setPadding(new Insets(20));
+        vbPlayers.setAlignment(Pos.TOP_LEFT);
+        Button playButton = new Button("JUGAR");
+        playButton.setMinHeight(50);
+        playButton.setMinWidth(130);
+        playButton.setStyle("-fx-opacity: 0.8;");
+        hbPlayersInfo.getChildren().addAll(vbPlayerTitle, vbPlayers);
+        hbPlayersInfo.setAlignment(Pos.CENTER);
+        hbPlayButton.getChildren().add(playButton);
+        hbPlayButton.setAlignment(Pos.CENTER);
+        vbRootPlayers.getChildren().addAll(hbPlayersInfo, hbPlayButton);
+        vbRootPlayers.setAlignment(Pos.CENTER);
+        vbRootPlayers.setStyle("-fx-padding:10px; -fx-font-weight: bold; -fx-font-size: 15px; ");
+        playButton.setOnAction(event -> {
             try {
                 algoRoma.inicializarJuego();
                 cargarTablero();
-                mostrarTablero();
             }catch (CantidadJugadoresException ex){
                 System.err.println(ex.getMessage());
             }
         });
 
+        try {
+            Image image = new Image(new FileInputStream("src/main/java/edu/fiuba/algo3/vista/pantallaPrincipal.png"));
+
+            HBox hbBackground = new HBox();
+            BackgroundImage imageBG = new BackgroundImage(
+                    image,
+                    BackgroundRepeat.NO_REPEAT,
+                    BackgroundRepeat.NO_REPEAT,
+                    BackgroundPosition.DEFAULT,
+                    BackgroundSize.DEFAULT
+            );
+
+            Background background = new Background(imageBG);
+            hbBackground.setBackground(background);
+            vbRootPlayers.setBackground(background);
+            tamanio_X = image.getHeight();
+            tamanio_Y = image.getWidth();
+            primaryStage.setWidth(tamanio_Y);
+            primaryStage.setHeight(tamanio_X);
+
+        } catch (FileNotFoundException ex) {
+            System.out.println("No se encontro la imagen");
+        }
+
+
+        Scene scene = new Scene(vbRootPlayers, tamanio_X, tamanio_Y);
+        primaryStage.setScene(scene);
         primaryStage.show();
+
+        //primaryStage.show();
+    }
+    @Override
+    public void start(Stage primaryStage) {
+        this.primaryStage = primaryStage;
+        this.pantallaInicial(primaryStage);
+
     }
 
     public void cargarTablero() {
@@ -160,8 +239,7 @@ public class Interfaz extends Application {
                     hbGameTitle = new HBox();
             //================ HEADER ======================
             Label title = new Label("ALGOROMA: COMBAT GAME");
-            title.setFont(new Font(19));
-            title.autosize();
+            title.setFont(new Font(20));
             hbGameTitle.getChildren().add(title);
             hbGameTitle.setAlignment(Pos.CENTER);
 
@@ -192,58 +270,6 @@ public class Interfaz extends Application {
             vbGrid.getChildren().addAll(tableroVisual);
             vbGrid.setPadding(new Insets(20));
             vbGrid.setAlignment(Pos.CENTER);
-
-
-
-            VBox vbJugadoresInfo = new VBox();
-            for (Jugador jugador : jugadores) {
-
-                Text nombreJugador =  new Text();
-                nombreJugador.setText(jugador.obtenerNombre());
-                nombreJugador.setFont(new Font(20));
-                nombreJugador.setTextAlignment(TextAlignment.CENTER);
-                nombreJugador.setUnderline(true);
-
-                HBox hboxNombre = new HBox(nombreJugador);
-                hboxNombre.setAlignment(Pos.CENTER);
-                HBox iconoJugador = new HBox();
-                VBox contenedorJugador = new VBox(hboxNombre,iconoJugador);
-                HBox hBoxJugador = new HBox(contenedorJugador);
-
-
-                try {
-                    String ruta = ICONOS.get(tableroVisual.coloresAsignados().get(jugador));
-                            Image image = new Image(new FileInputStream(ruta));
-                    iconoJugador.setBackground(new Background(new BackgroundImage(
-                            image,
-                            BackgroundRepeat.NO_REPEAT,
-                            BackgroundRepeat.NO_REPEAT,
-                            BackgroundPosition.DEFAULT,
-                            BackgroundSize.DEFAULT
-                    )));
-
-                    iconoJugador.setMinHeight(image.getHeight());
-                    iconoJugador.setMinWidth(image.getWidth());
-
-                    //iconoJugador.setBorder(new Border(new BorderStroke(Color.BLACK,BorderStrokeStyle.SOLID,CornerRadii.EMPTY,new BorderWidths(2))));
-                } catch (FileNotFoundException ex) {
-                    System.out.println("No se encontro la imagen");
-                }
-                hBoxJugador.setBorder(new Border(new BorderStroke(Color.BLUE,BorderStrokeStyle.SOLID,new CornerRadii(20),new BorderWidths(2))));
-                hBoxJugador.setBackground(new Background(new BackgroundFill(Color.BEIGE,CornerRadii.EMPTY,new Insets(0))));
-                hBoxJugador.setMaxHeight(190);
-                hBoxJugador.setMaxWidth(250);
-
-                vbJugadoresInfo.getChildren().add(hBoxJugador);
-            }
-
-            vbGrid.getChildren().add(vbJugadoresInfo);
-            vbJugadoresInfo.setAlignment(Pos.BOTTOM_LEFT);
-            vbJugadoresInfo.setMinHeight(180);
-            vbJugadoresInfo.setMinWidth(120);
-            vbJugadoresInfo.setSpacing(5);
-
-
 
             //==============FOOTER===============================
             ScrollPane historial = new ScrollPane();
@@ -346,9 +372,9 @@ public class Interfaz extends Application {
             vbRoot.getChildren().addAll(vbHeader, vbGrid, vbFooter);
 
             double tamanio_X = 400;
-            double tamanio_Y = 175;
+            double tamanio_Y = 400;
             try {
-                Image image = new Image(new FileInputStream("src/main/java/edu/fiuba/algo3/vista/fondoDelJuego.jpg"));
+                Image image = new Image(new FileInputStream("src/main/java/edu/fiuba/algo3/vista/fondoDelJuego.png"));
 
                 HBox hbBackground = new HBox();
                 BackgroundImage imageBG = new BackgroundImage(
@@ -361,28 +387,26 @@ public class Interfaz extends Application {
 
                 Background background = new Background(imageBG);
                 hbBackground.setBackground(background);
-                hbBackground.setAlignment(Pos.CENTER);
                 vbRoot.setBackground(background);
                 tamanio_X = image.getHeight();
                 tamanio_Y = image.getWidth();
+                primaryStage.setWidth(tamanio_Y);
+                primaryStage.setHeight(tamanio_X);
 
-            }catch(FileNotFoundException ex){
+            } catch (FileNotFoundException ex) {
                 System.out.println("No se encontro la imagen");
             }
 
 
-            //tableroVisual.add(jugar1Button, miTablero.obtenerAncho() , miTablero.obtenerLargo());
-            // Crear una nueva escena con el tablero del juego
-            escenaTablero = new Scene(vbRoot,tamanio_X,tamanio_Y);
-            // Obtener el GridPane de la escena y configurar la alineación
+            Scene scene = new Scene(vbRoot, tamanio_X, tamanio_Y);
+            primaryStage.setScene(scene);
+            primaryStage.show();
 
         } else {
             System.err.println("El tablero no se ha inicializado correctamente.");
         }
     }
-    public void mostrarTablero() {
-        primaryStage.setScene(escenaTablero);
-    }
+
     public void reset() {};
     public void exit() {};
     public void actualizarTablero(TableroVisual tableroVisual, VBox players) {
