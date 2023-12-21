@@ -1,8 +1,6 @@
 package edu.fiuba.algo3.javafx;
 
 import java.io.IOException;
-import java.util.Dictionary;
-import java.util.HashMap;
 import java.util.List;
 
 import edu.fiuba.algo3.exceptions.PartidaFinalizada;
@@ -25,7 +23,6 @@ import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
-import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 import edu.fiuba.algo3.juego.AlgoRoma;
 import javafx.scene.image.Image;
@@ -41,15 +38,6 @@ public class Interfaz extends Application {
     private AlgoRoma algoRoma;
     private Scene escenaTablero;
     private ReproductorSonido reproductorSonido;
-
-    private HashMap<Color,String> ICONOS = new HashMap<>();{
-        ICONOS.put(Color.RED,"src/main/java/edu/fiuba/algo3/javafx/Jugador/gladiadorRojo.png");
-        ICONOS.put(Color.BLUE,"src/main/java/edu/fiuba/algo3/javafx/Jugador/gladiadorAzul.png");
-        ICONOS.put(Color.GREEN,"src/main/java/edu/fiuba/algo3/javafx/Jugador/gladiadorVerde.png");
-        ICONOS.put(Color.PURPLE,"src/main/java/edu/fiuba/algo3/javafx/Jugador/gladiadorVioleta.png");
-        ICONOS.put(Color.BROWN,"src/main/java/edu/fiuba/algo3/javafx/Jugador/gladiadorMarron.png");
-        ICONOS.put(Color.ORANGE,"src/main/java/edu/fiuba/algo3/javafx/Jugador/gladiadorNaranja.png");
-    }
 
     public static void main(String[] args) {
         launch(args);
@@ -194,107 +182,23 @@ public class Interfaz extends Application {
             vbHeader.getChildren().addAll(hbGameTitle, hbGameDetails);
             vbHeader.setAlignment(Pos.CENTER);
 
-
-
             //===============GRID===============================
             // Crear una instancia de TableroVisual
             TableroVisual tableroVisual = new TableroVisual(miTablero, algoRoma);
-            tableroVisual.setAlignment(Pos.CENTER);
             vbGrid.getChildren().addAll(tableroVisual);
             vbGrid.setPadding(new Insets(20));
             vbGrid.setAlignment(Pos.CENTER);
-
-
-
-            VBox vbJugadoresInfo = new VBox();
-            for (Jugador jugador : jugadores) {
-
-                Text nombreJugador =  new Text();
-                nombreJugador.setText(jugador.obtenerNombre());
-                nombreJugador.setFont(new Font(20));
-                nombreJugador.setTextAlignment(TextAlignment.CENTER);
-                nombreJugador.setUnderline(true);
-
-                HBox hboxNombre = new HBox(nombreJugador);
-                hboxNombre.setAlignment(Pos.CENTER);
-                HBox iconoJugador = new HBox();
-                VBox contenedorJugador = new VBox(hboxNombre,iconoJugador);
-                HBox hBoxJugador = new HBox(contenedorJugador);
-
-
-                try {
-                    String ruta = ICONOS.get(tableroVisual.coloresAsignados().get(jugador));
-                            Image image = new Image(new FileInputStream(ruta));
-                    iconoJugador.setBackground(new Background(new BackgroundImage(
-                            image,
-                            BackgroundRepeat.NO_REPEAT,
-                            BackgroundRepeat.NO_REPEAT,
-                            BackgroundPosition.DEFAULT,
-                            BackgroundSize.DEFAULT
-                    )));
-
-                    iconoJugador.setMinHeight(image.getHeight());
-                    iconoJugador.setMinWidth(image.getWidth());
-
-                    //iconoJugador.setBorder(new Border(new BorderStroke(Color.BLACK,BorderStrokeStyle.SOLID,CornerRadii.EMPTY,new BorderWidths(2))));
-                } catch (FileNotFoundException ex) {
-                    System.out.println("No se encontro la imagen");
-                }
-                hBoxJugador.setBorder(new Border(new BorderStroke(Color.BLUE,BorderStrokeStyle.SOLID,new CornerRadii(20),new BorderWidths(2))));
-                hBoxJugador.setBackground(new Background(new BackgroundFill(Color.BEIGE,CornerRadii.EMPTY,new Insets(0))));
-                hBoxJugador.setMaxHeight(190);
-                hBoxJugador.setMaxWidth(250);
-
-                vbJugadoresInfo.getChildren().add(hBoxJugador);
-            }
-
-            vbGrid.getChildren().add(vbJugadoresInfo);
-            vbJugadoresInfo.setAlignment(Pos.BOTTOM_LEFT);
-            vbJugadoresInfo.setMinHeight(180);
-            vbJugadoresInfo.setMinWidth(120);
-            vbJugadoresInfo.setSpacing(5);
-
-
-
             //==============FOOTER===============================
             ScrollPane historial = new ScrollPane();
-            historial.prefHeight(10);
-            historial.prefWidth(10);
-            //vbGrid.getChildren().add(historial);
+            historial.maxHeight(primaryStage.getMaxHeight()/4);
+            historial.maxWidth(primaryStage.getMaxWidth());
+            vbGrid.getChildren().add(historial);
 
-
-            Button btnJugar1Turno = new Button("Jugar un turno");
-            btnJugar1Turno.setMinHeight(50);
-            btnJugar1Turno.setMinWidth(130);
-            hbDone.getChildren().add(btnJugar1Turno);
-            btnJugar1Turno.setAlignment(Pos.CENTER);
-
-            btnJugar1Turno.setOnAction(event -> {
-                try{
-                    algoRoma.jugar1Turno();
-                }catch(PartidaFinalizada ex){
-                    //Mostrar pantalla con ganador del juego,nueva escena o un label
-                    //refactorizar esto a un eventhandlerFinalizarPartida
-                    hbDone.getChildren().remove(btnJugar1Turno);
-                    Label ganador = new Label(ex.getMessage());
-                    ganador.autosize();
-                    ganador.setBorder(new Border(new BorderStroke(Color.RED,BorderStrokeStyle.DASHED,CornerRadii.EMPTY,BorderWidths.DEFAULT)));
-                    vbRoot.getChildren().add(ganador);
-                    vbRoot.setAlignment(Pos.CENTER);
-                }
-                actualizarTablero(tableroVisual, vbPlayers);
-
-
-
-            });
-
-
-            Button btnGame = new Button("Jugar una ronda");
+            Button btnGame = new Button("Jugar un turno");
             btnGame.setMinHeight(50);
             btnGame.setMinWidth(130);
             hbDone.getChildren().add(btnGame);
 
-            btnGame.setAlignment(Pos.CENTER);
 
             btnGame.setOnAction(event -> {
                 try {
@@ -335,7 +239,7 @@ public class Interfaz extends Application {
             hbDone.setAlignment(Pos.CENTER);
 
             Button btnExit = new Button("Exit");
-            Button btnReset = new Button("Reset"); //el boton de reset esta demás. no hacer si qeudan otras cosas por mejorar
+            Button btnReset = new Button("Reset");
 
             btnExit.setMinHeight(25);
             btnExit.setMinWidth(60);
@@ -350,7 +254,7 @@ public class Interfaz extends Application {
             btnReset.setPadding(new Insets(10));
             btnReset.setOnAction(event -> reset());
 
-            hbOptions.getChildren().addAll(btnExit);//, btnReset);//el boton de reset esta demás. no hacer si qeudan otras cosas por mejorar
+            hbOptions.getChildren().addAll(btnExit, btnReset);
             hbOptions.setPadding(new Insets(5));
             hbOptions.setAlignment(Pos.CENTER);
 
@@ -358,35 +262,9 @@ public class Interfaz extends Application {
 
             vbRoot.getChildren().addAll(vbHeader, vbGrid, vbFooter);
 
-            double tamanio_X = 400;
-            double tamanio_Y = 175;
-            try {
-                Image image = new Image(new FileInputStream("src/main/java/edu/fiuba/algo3/javafx/fondoDelJuego.jpg"));
-
-                HBox hbBackground = new HBox();
-                BackgroundImage imageBG = new BackgroundImage(
-                        image,
-                        BackgroundRepeat.NO_REPEAT,
-                        BackgroundRepeat.NO_REPEAT,
-                        BackgroundPosition.DEFAULT,
-                        BackgroundSize.DEFAULT
-                );
-
-                Background background = new Background(imageBG);
-                hbBackground.setBackground(background);
-                hbBackground.setAlignment(Pos.CENTER);
-                vbRoot.setBackground(background);
-                tamanio_X = image.getHeight();
-                tamanio_Y = image.getWidth();
-
-            }catch(FileNotFoundException ex){
-                System.out.println("No se encontro la imagen");
-            }
-
-
             //tableroVisual.add(jugar1Button, miTablero.obtenerAncho() , miTablero.obtenerLargo());
             // Crear una nueva escena con el tablero del juego
-            escenaTablero = new Scene(vbRoot,tamanio_X,tamanio_Y);
+            escenaTablero = new Scene(vbRoot);
             // Obtener el GridPane de la escena y configurar la alineación
 
         } else {
