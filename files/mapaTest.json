@@ -1,0 +1,1 @@
+{"mapa":{"ancho":10,"largo":0},"camino":{"celdas":[{"x":1,"y":7,"tipo":"Salida","obstaculo":"","premio":""},{"x":2,"y":7,"tipo":"Camino","obstaculo":"","premio":"Equipamiento"},{"x":2,"y":8,"tipo":"Llegada","obstaculo":"","premio":""}]}}
