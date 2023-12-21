@@ -1,9 +1,6 @@
 package edu.fiuba.algo3.modelo.juego;
 
-import edu.fiuba.algo3.modelo.exceptions.CantidadJugadoresException;
-import edu.fiuba.algo3.modelo.exceptions.CantidadTurnosException;
-import edu.fiuba.algo3.modelo.exceptions.NoHayJugadoresException;
-import edu.fiuba.algo3.modelo.exceptions.PartidaFinalizada;
+import edu.fiuba.algo3.modelo.exceptions.*;
 import edu.fiuba.algo3.modelo.parser.TableroConstructor;
 import edu.fiuba.algo3.modelo.log.Log;
 import edu.fiuba.algo3.modelo.log.Logeador;
