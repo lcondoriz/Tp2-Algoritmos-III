@@ -33,6 +33,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+
 public class Interfaz extends Application {
 
     private Stage primaryStage;
@@ -41,19 +42,19 @@ public class Interfaz extends Application {
     private Scene escenaTablero;
     private ReproductorSonido reproductorSonido;
 
-    private HashMap<Color,String> ICONOS = new HashMap<>();{
-        ICONOS.put(Color.RED,"src/main/java/edu/fiuba/algo3/javafx/Jugador/gladiadorRojo.png");
-        ICONOS.put(Color.BLUE,"src/main/java/edu/fiuba/algo3/javafx/Jugador/gladiadorAzul.png");
-        ICONOS.put(Color.GREEN,"src/main/java/edu/fiuba/algo3/javafx/Jugador/gladiadorVerde.png");
-        ICONOS.put(Color.PURPLE,"src/main/java/edu/fiuba/algo3/javafx/Jugador/gladiadorVioleta.png");
-        ICONOS.put(Color.BROWN,"src/main/java/edu/fiuba/algo3/javafx/Jugador/gladiadorMarron.png");
-        ICONOS.put(Color.ORANGE,"src/main/java/edu/fiuba/algo3/javafx/Jugador/gladiadorNaranja.png");
+    private HashMap<Color, String> ICONOS = new HashMap<>();
+    {
+        ICONOS.put(Color.RED, "src/main/java/edu/fiuba/algo3/vista/Jugador/gladiadorRojo.png");
+        ICONOS.put(Color.BLUE, "src/main/java/edu/fiuba/algo3/vista/Jugador/gladiadorAzul.png");
+        ICONOS.put(Color.GREEN, "src/main/java/edu/fiuba/algo3/vista/Jugador/gladiadorVerde.png");
+        ICONOS.put(Color.PURPLE, "src/main/java/edu/fiuba/algo3/vista/Jugador/gladiadorVioleta.png");
+        ICONOS.put(Color.BROWN, "src/main/java/edu/fiuba/algo3/vista/Jugador/gladiadorMarron.png");
+        ICONOS.put(Color.ORANGE, "src/main/java/edu/fiuba/algo3/vista/Jugador/gladiadorNaranja.png");
     }
 
     public static void main(String[] args) {
         launch(args);
     }
-
 
     public Interfaz(Tablero tablero, AlgoRoma algoRoma) {
         this.miTablero = tablero;
@@ -82,8 +83,7 @@ public class Interfaz extends Application {
                     BackgroundRepeat.NO_REPEAT,
                     BackgroundRepeat.NO_REPEAT,
                     BackgroundPosition.DEFAULT,
-                    BackgroundSize.DEFAULT
-            );
+                    BackgroundSize.DEFAULT);
 
             Background background = new Background(imageBG);
             hbBackground.setBackground(background);
@@ -91,20 +91,21 @@ public class Interfaz extends Application {
             tamanio_X = image.getHeight();
             tamanio_Y = image.getWidth();
 
-        }catch(FileNotFoundException ex){
+        } catch (FileNotFoundException ex) {
             System.out.println("No se encontro la imagen");
         }
-        //Scene scene = new Scene(grid, 400, 175);
-        Scene scene = new Scene(grid,tamanio_X,tamanio_Y);
+        // Scene scene = new Scene(grid, 400, 175);
+        Scene scene = new Scene(grid, tamanio_X, tamanio_Y);
         primaryStage.setScene(scene);
 
-
-        /*Label usernameLabel = new Label("Usuario:");
-        usernameLabel.setTextFill(Color.LIGHTCYAN);
-        usernameLabel.setFont(new Font(25));
-        usernameLabel.setBackground(new Background(new BackgroundFill(Color.RED,CornerRadii.EMPTY,new Insets(0,0,0,0))));
-        grid.add(usernameLabel, 0, 1);
-        */
+        /*
+         * Label usernameLabel = new Label("Usuario:");
+         * usernameLabel.setTextFill(Color.LIGHTCYAN);
+         * usernameLabel.setFont(new Font(25));
+         * usernameLabel.setBackground(new Background(new
+         * BackgroundFill(Color.RED,CornerRadii.EMPTY,new Insets(0,0,0,0))));
+         * grid.add(usernameLabel, 0, 1);
+         */
 
         TextField usernameTextField = new TextField();
         usernameTextField.setPromptText("Introduce el nombre de un usuario");
@@ -137,7 +138,7 @@ public class Interfaz extends Application {
                 cargarTablero();
                 mostrarTablero();
                 reproductorSonido.reproducirSonido(2);
-            }catch (CantidadJugadoresException ex){
+            } catch (CantidadJugadoresException ex) {
                 System.err.println(ex.getMessage());
             }
         });
@@ -158,7 +159,7 @@ public class Interfaz extends Application {
                     hbDone = new HBox(),
                     hbGameDetails = new HBox(),
                     hbGameTitle = new HBox();
-            //================ HEADER ======================
+            // ================ HEADER ======================
             Label title = new Label("ALGOROMA: COMBAT GAME");
             title.setFont(new Font(19));
             title.autosize();
@@ -167,7 +168,8 @@ public class Interfaz extends Application {
 
             List<Jugador> jugadores = algoRoma.obtenerJugadores();
             for (Jugador jugador : jugadores) {
-                String energiaJugador = jugador.obtenerNombre()+" tiene: "+ jugador.obtenerEnergia()+" puntos de Energia.";
+                String energiaJugador = jugador.obtenerNombre() + " tiene: " + jugador.obtenerEnergia()
+                        + " puntos de Energia.";
                 Label player = new Label(energiaJugador);
                 vbPlayers.getChildren().add(player);
             }
@@ -183,9 +185,7 @@ public class Interfaz extends Application {
             vbHeader.getChildren().addAll(hbGameTitle, hbGameDetails);
             vbHeader.setAlignment(Pos.CENTER);
 
-
-
-            //===============GRID===============================
+            // ===============GRID===============================
             // Crear una instancia de TableroVisual
             TableroVisual tableroVisual = new TableroVisual(miTablero, algoRoma);
             tableroVisual.setAlignment(Pos.CENTER);
@@ -193,12 +193,10 @@ public class Interfaz extends Application {
             vbGrid.setPadding(new Insets(20));
             vbGrid.setAlignment(Pos.CENTER);
 
-
-
             VBox vbJugadoresInfo = new VBox();
             for (Jugador jugador : jugadores) {
 
-                Text nombreJugador =  new Text();
+                Text nombreJugador = new Text();
                 nombreJugador.setText(jugador.obtenerNombre());
                 nombreJugador.setFont(new Font(20));
                 nombreJugador.setTextAlignment(TextAlignment.CENTER);
@@ -207,30 +205,32 @@ public class Interfaz extends Application {
                 HBox hboxNombre = new HBox(nombreJugador);
                 hboxNombre.setAlignment(Pos.CENTER);
                 HBox iconoJugador = new HBox();
-                VBox contenedorJugador = new VBox(hboxNombre,iconoJugador);
+                VBox contenedorJugador = new VBox(hboxNombre, iconoJugador);
                 HBox hBoxJugador = new HBox(contenedorJugador);
-
 
                 try {
                     String ruta = ICONOS.get(tableroVisual.coloresAsignados().get(jugador));
-                            Image image = new Image(new FileInputStream(ruta));
+                    Image image = new Image(new FileInputStream(ruta));
                     iconoJugador.setBackground(new Background(new BackgroundImage(
                             image,
                             BackgroundRepeat.NO_REPEAT,
                             BackgroundRepeat.NO_REPEAT,
                             BackgroundPosition.DEFAULT,
-                            BackgroundSize.DEFAULT
-                    )));
+                            BackgroundSize.DEFAULT)));
 
                     iconoJugador.setMinHeight(image.getHeight());
                     iconoJugador.setMinWidth(image.getWidth());
 
-                    //iconoJugador.setBorder(new Border(new BorderStroke(Color.BLACK,BorderStrokeStyle.SOLID,CornerRadii.EMPTY,new BorderWidths(2))));
+                    // iconoJugador.setBorder(new Border(new
+                    // BorderStroke(Color.BLACK,BorderStrokeStyle.SOLID,CornerRadii.EMPTY,new
+                    // BorderWidths(2))));
                 } catch (FileNotFoundException ex) {
                     System.out.println("No se encontro la imagen");
                 }
-                hBoxJugador.setBorder(new Border(new BorderStroke(Color.BLUE,BorderStrokeStyle.SOLID,new CornerRadii(20),new BorderWidths(2))));
-                hBoxJugador.setBackground(new Background(new BackgroundFill(Color.BEIGE,CornerRadii.EMPTY,new Insets(0))));
+                hBoxJugador.setBorder(new Border(new BorderStroke(Color.BLUE, BorderStrokeStyle.SOLID,
+                        new CornerRadii(20), new BorderWidths(2))));
+                hBoxJugador.setBackground(
+                        new Background(new BackgroundFill(Color.BEIGE, CornerRadii.EMPTY, new Insets(0))));
                 hBoxJugador.setMaxHeight(190);
                 hBoxJugador.setMaxWidth(250);
 
@@ -243,14 +243,11 @@ public class Interfaz extends Application {
             vbJugadoresInfo.setMinWidth(120);
             vbJugadoresInfo.setSpacing(5);
 
-
-
-            //==============FOOTER===============================
+            // ==============FOOTER===============================
             ScrollPane historial = new ScrollPane();
             historial.prefHeight(10);
             historial.prefWidth(10);
-            //vbGrid.getChildren().add(historial);
-
+            // vbGrid.getChildren().add(historial);
 
             Button btnJugar1Turno = new Button("Jugar un turno");
             btnJugar1Turno.setMinHeight(50);
@@ -259,26 +256,24 @@ public class Interfaz extends Application {
             btnJugar1Turno.setAlignment(Pos.CENTER);
 
             btnJugar1Turno.setOnAction(event -> {
-                try{
+                try {
                     algoRoma.jugar1Turno();
                     reproductorSonido.reproducirSonido(0);
-                }catch(PartidaFinalizada ex){
-                    //Mostrar pantalla con ganador del juego,nueva escena o un label
-                    //refactorizar esto a un eventhandlerFinalizarPartida
+                } catch (PartidaFinalizada ex) {
+                    // Mostrar pantalla con ganador del juego,nueva escena o un label
+                    // refactorizar esto a un eventhandlerFinalizarPartida
                     reproductorSonido.reproducirSonido(1);
                     hbDone.getChildren().remove(btnJugar1Turno);
                     Label ganador = new Label(ex.getMessage());
                     ganador.autosize();
-                    ganador.setBorder(new Border(new BorderStroke(Color.RED,BorderStrokeStyle.DASHED,CornerRadii.EMPTY,BorderWidths.DEFAULT)));
+                    ganador.setBorder(new Border(new BorderStroke(Color.RED, BorderStrokeStyle.DASHED,
+                            CornerRadii.EMPTY, BorderWidths.DEFAULT)));
                     vbRoot.getChildren().add(ganador);
                     vbRoot.setAlignment(Pos.CENTER);
                 }
                 actualizarTablero(tableroVisual, vbPlayers);
 
-
-
             });
-
 
             Button btnGame = new Button("Jugar una ronda");
             btnGame.setMinHeight(50);
@@ -295,25 +290,25 @@ public class Interfaz extends Application {
                     String[] lineas = new String[0];
                     try {
                         lineas = log.getLines();
-                    }catch(IOException ex){
-                        //hacer alog}
+                    } catch (IOException ex) {
+                        // hacer alog}
                         System.out.println("algo");
                     }
-                    String contenido ="";
+                    String contenido = "";
                     for (String linea : lineas) {
-                        //Text textLinea = new Text(linea);
-                        contenido = contenido+"\n"+linea;
+                        // Text textLinea = new Text(linea);
+                        contenido = contenido + "\n" + linea;
                     }
                     historial.setContent(new Text(contenido));
 
-
-                }catch (PartidaFinalizada ex){
-                    //Mostrar pantalla con ganador del juego,nueva escena o un label
+                } catch (PartidaFinalizada ex) {
+                    // Mostrar pantalla con ganador del juego,nueva escena o un label
                     reproductorSonido.reproducirSonido(1);
                     hbDone.getChildren().remove(btnGame);
                     Label ganador = new Label(ex.getMessage());
                     ganador.autosize();
-                    ganador.setBorder(new Border(new BorderStroke(Color.RED,BorderStrokeStyle.DASHED,CornerRadii.EMPTY,BorderWidths.DEFAULT)));
+                    ganador.setBorder(new Border(new BorderStroke(Color.RED, BorderStrokeStyle.DASHED,
+                            CornerRadii.EMPTY, BorderWidths.DEFAULT)));
                     vbRoot.getChildren().add(ganador);
                     vbRoot.setAlignment(Pos.CENTER);
                 }
@@ -321,27 +316,27 @@ public class Interfaz extends Application {
             });
             btnGame.setPadding(new Insets(5));
 
-
             hbDone.setPadding(new Insets(5));
             hbDone.setAlignment(Pos.CENTER);
 
             Button btnExit = new Button("Exit");
-            Button btnReset = new Button("Reset"); //el boton de reset esta demás. no hacer si qeudan otras cosas por mejorar
+            Button btnReset = new Button("Reset"); // el boton de reset esta demás. no hacer si qeudan otras cosas por
+                                                   // mejorar
 
             btnExit.setMinHeight(25);
             btnExit.setMinWidth(60);
             btnExit.setPadding(new Insets(10));
-            btnExit.setOnAction(event ->{
+            btnExit.setOnAction(event -> {
                 primaryStage.close();
             });
-
 
             btnReset.setMinHeight(25);
             btnReset.setMinWidth(60);
             btnReset.setPadding(new Insets(10));
             btnReset.setOnAction(event -> reset());
 
-            hbOptions.getChildren().addAll(btnExit);//, btnReset);//el boton de reset esta demás. no hacer si qeudan otras cosas por mejorar
+            hbOptions.getChildren().addAll(btnExit);// , btnReset);//el boton de reset esta demás. no hacer si qeudan
+                                                    // otras cosas por mejorar
             hbOptions.setPadding(new Insets(5));
             hbOptions.setAlignment(Pos.CENTER);
 
@@ -360,8 +355,7 @@ public class Interfaz extends Application {
                         BackgroundRepeat.NO_REPEAT,
                         BackgroundRepeat.NO_REPEAT,
                         BackgroundPosition.DEFAULT,
-                        BackgroundSize.DEFAULT
-                );
+                        BackgroundSize.DEFAULT);
 
                 Background background = new Background(imageBG);
                 hbBackground.setBackground(background);
@@ -370,31 +364,38 @@ public class Interfaz extends Application {
                 tamanio_X = image.getHeight();
                 tamanio_Y = image.getWidth();
 
-            }catch(FileNotFoundException ex){
+            } catch (FileNotFoundException ex) {
                 System.out.println("No se encontro la imagen");
             }
 
-
-            //tableroVisual.add(jugar1Button, miTablero.obtenerAncho() , miTablero.obtenerLargo());
+            // tableroVisual.add(jugar1Button, miTablero.obtenerAncho() ,
+            // miTablero.obtenerLargo());
             // Crear una nueva escena con el tablero del juego
-            escenaTablero = new Scene(vbRoot,tamanio_X,tamanio_Y);
+            escenaTablero = new Scene(vbRoot, tamanio_X, tamanio_Y);
             // Obtener el GridPane de la escena y configurar la alineación
 
         } else {
             System.err.println("El tablero no se ha inicializado correctamente.");
         }
     }
+
     public void mostrarTablero() {
         primaryStage.setScene(escenaTablero);
     }
-    public void reset() {};
-    public void exit() {};
+
+    public void reset() {
+    };
+
+    public void exit() {
+    };
+
     public void actualizarTablero(TableroVisual tableroVisual, VBox players) {
         tableroVisual.actualizarContenido(algoRoma);
         players.getChildren().clear();
         List<Jugador> jugadores = algoRoma.obtenerJugadores();
         for (Jugador jugador : jugadores) {
-            String energiaJugador = jugador.obtenerNombre() +" tiene: "+ jugador.obtenerEnergia()+" puntos de Energia.";
+            String energiaJugador = jugador.obtenerNombre() + " tiene: " + jugador.obtenerEnergia()
+                    + " puntos de Energia.";
             Label player = new Label(energiaJugador);
             players.getChildren().add(player);
         }
