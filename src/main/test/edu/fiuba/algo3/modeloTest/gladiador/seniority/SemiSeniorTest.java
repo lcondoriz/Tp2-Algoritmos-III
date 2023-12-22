@@ -1,7 +1,7 @@
 package edu.fiuba.algo3.modeloTest.gladiador.seniority;
-import edu.fiuba.algo3.gladiador.Energia;
-import edu.fiuba.algo3.gladiador.seniority.SemiSenior;
-import edu.fiuba.algo3.gladiador.seniority.Senior;
+import edu.fiuba.algo3.modelo.gladiador.Energia;
+import edu.fiuba.algo3.modelo.gladiador.seniority.SemiSenior;
+import edu.fiuba.algo3.modelo.gladiador.seniority.Senior;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;

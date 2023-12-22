@@ -1,12 +1,9 @@
 package edu.fiuba.algo3.entrega_3;
 
-import com.google.gson.JsonObject;
-import edu.fiuba.algo3.exceptions.CantidadTurnosException;
-import edu.fiuba.algo3.exceptions.PartidaFinalizada;
-import edu.fiuba.algo3.json.TableroConstructor;
-import edu.fiuba.algo3.juego.AlgoRoma;
-import edu.fiuba.algo3.juego.Dado;
-import org.junit.jupiter.api.Assertions;
+import edu.fiuba.algo3.modelo.exceptions.CantidadTurnosException;
+import edu.fiuba.algo3.modelo.exceptions.PartidaFinalizada;
+import edu.fiuba.algo3.modelo.juego.AlgoRoma;
+import edu.fiuba.algo3.modelo.juego.Dado;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -14,9 +11,7 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Random;
-import java.util.List;
+
 public class CasosDeUso3 {
     @Test   // Caso de uso 19
     public void test19simularYVerificarQueHayUnGanador() {

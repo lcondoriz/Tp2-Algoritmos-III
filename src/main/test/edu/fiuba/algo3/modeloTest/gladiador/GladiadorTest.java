@@ -1,11 +1,5 @@
 package edu.fiuba.algo3.modeloTest.gladiador;
 
-import edu.fiuba.algo3.gladiador.equipamiento.Equipable;
-import edu.fiuba.algo3.gladiador.Energia;
-import edu.fiuba.algo3.gladiador.Gladiador;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 

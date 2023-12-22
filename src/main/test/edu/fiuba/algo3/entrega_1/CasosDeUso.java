@@ -1,23 +1,22 @@
 package edu.fiuba.algo3.entrega_1;
 
 
-import edu.fiuba.algo3.gladiador.equipamiento.Llave;
+import edu.fiuba.algo3.modelo.gladiador.equipamiento.Llave;
 
-import edu.fiuba.algo3.exceptions.CantidadTurnosException;
-import edu.fiuba.algo3.gladiador.Energia;
-import edu.fiuba.algo3.gladiador.Gladiador;
-import edu.fiuba.algo3.gladiador.equipamiento.SinEquipamiento;
-import edu.fiuba.algo3.juego.AlgoRoma;
-import edu.fiuba.algo3.juego.Dado;
-import edu.fiuba.algo3.tablero.celda.Camino;
-import edu.fiuba.algo3.tablero.celda.Celda;
-import edu.fiuba.algo3.tablero.celda.Llegada;
-import edu.fiuba.algo3.tablero.celda.Salida;
-import edu.fiuba.algo3.tablero.Coordenadas;
-import edu.fiuba.algo3.tablero.celda.afectable.Bacanal;
-import edu.fiuba.algo3.tablero.celda.afectable.Comida;
-import edu.fiuba.algo3.tablero.celda.afectable.Equipo;
-import edu.fiuba.algo3.tablero.celda.afectable.FieraSalvaje;
+import edu.fiuba.algo3.modelo.exceptions.CantidadTurnosException;
+import edu.fiuba.algo3.modelo.gladiador.Energia;
+import edu.fiuba.algo3.modelo.gladiador.Gladiador;
+import edu.fiuba.algo3.modelo.gladiador.equipamiento.SinEquipamiento;
+import edu.fiuba.algo3.modelo.juego.AlgoRoma;
+import edu.fiuba.algo3.modelo.juego.Dado;
+import edu.fiuba.algo3.modelo.tablero.celda.Camino;
+import edu.fiuba.algo3.modelo.tablero.celda.Celda;
+import edu.fiuba.algo3.modelo.tablero.celda.Llegada;
+import edu.fiuba.algo3.modelo.tablero.celda.Salida;
+import edu.fiuba.algo3.modelo.tablero.Coordenadas;
+import edu.fiuba.algo3.modelo.tablero.celda.afectable.Comida;
+import edu.fiuba.algo3.modelo.tablero.celda.afectable.Equipo;
+import edu.fiuba.algo3.modelo.tablero.celda.afectable.FieraSalvaje;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -235,25 +234,8 @@ public class CasosDeUso {
         nuevaCelda.agregarAfectable(new Equipo());
         Gladiador gladiador = new Gladiador(energia, salida);
         //Act
-       gladiador.avanzar(2, 1);
+        gladiador.avanzar(2, 1);
         assertTrue(gladiador.EstasEnLaCelda(nuevaCelda));
-//        Casillero casilleroInicial = new Casillero(0, new Vacio());
-//        Casillero casilleroMitad = new Casillero(1, new Vacio());
-//        Casillero casilleroFinal = new Casillero(2, new Final(3));
-//
-//        Gladiador gladiador = new Gladiador(new Energia(20), casilleroInicial);
-//
-//       /* Tablero tablero = new Tablero({"Bacabal","Vacio","Equipamiento"
-//                casilleroInicial,casilleroMitad,casilleroFinal
-//        });
-//        */
-//        gladiador.avanzar(2,1);
-//
-//        gladiador.setearCasillero(casilleroFinal);
-//        casilleroFinal.aplicarEfecto(gladiador);
-//
-//        assertEquals(gladiador.obtenerPosicionCasillero(), casilleroMitad.obtenerPosicion());
-
     }
     @Test // Caso de uso 10
     public void verificarQueSiLoAtacaUnaFieraSalvajeYPoseeTodoElEquipamientoElDanioEnEnergiaEs0() {
@@ -305,7 +287,6 @@ public class CasosDeUso {
             celdaActual = nuevaCelda;
 
             celdaActual.agregarAfectable(new Equipo());
-
         }
 
         Gladiador gladiador = new Gladiador(energia, salida);

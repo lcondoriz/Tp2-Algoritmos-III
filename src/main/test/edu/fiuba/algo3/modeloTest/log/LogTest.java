@@ -1,14 +1,14 @@
 package edu.fiuba.algo3.modeloTest.log;
 
-import edu.fiuba.algo3.juego.AlgoRoma;
-import edu.fiuba.algo3.juego.Dado;
-import edu.fiuba.algo3.juego.Jugador;
-import edu.fiuba.algo3.log.Log;
-import edu.fiuba.algo3.tablero.Coordenadas;
-import edu.fiuba.algo3.tablero.celda.Camino;
-import edu.fiuba.algo3.tablero.celda.Celda;
-import edu.fiuba.algo3.tablero.celda.Salida;
-import edu.fiuba.algo3.tablero.celda.afectable.*;
+import edu.fiuba.algo3.modelo.juego.AlgoRoma;
+import edu.fiuba.algo3.modelo.juego.Dado;
+import edu.fiuba.algo3.modelo.juego.Jugador;
+import edu.fiuba.algo3.modelo.log.Log;
+import edu.fiuba.algo3.modelo.tablero.Coordenadas;
+import edu.fiuba.algo3.modelo.tablero.celda.Camino;
+import edu.fiuba.algo3.modelo.tablero.celda.Celda;
+import edu.fiuba.algo3.modelo.tablero.celda.Salida;
+import edu.fiuba.algo3.modelo.tablero.celda.afectable.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
