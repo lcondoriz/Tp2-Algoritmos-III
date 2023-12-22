@@ -37,6 +37,7 @@ public class Interfaz extends Application {
     private Tablero miTablero;
     private AlgoRoma algoRoma;
     private Scene escenaTablero;
+    private ReproductorSonido reproductorSonido;
 
     private HashMap<Color,String> ICONOS = new HashMap<>();{
         ICONOS.put(Color.RED,"src/main/java/edu/fiuba/algo3/vista/Jugador/gladiadorRojo.png");
@@ -62,6 +63,7 @@ public class Interfaz extends Application {
     public Interfaz(Tablero tablero, AlgoRoma algoRoma) {
         this.miTablero = tablero;
         this.algoRoma = algoRoma;
+        this.reproductorSonido = new ReproductorSonido();
     }
 
     public void pantallaInicial(Stage primaryStage) {
@@ -87,6 +89,7 @@ public class Interfaz extends Application {
         hbInitialButton.setAlignment(Pos.CENTER);
         btnInitial.setOnAction(event -> {
             this.pantallaJugadores(primaryStage);
+            reproductorSonido.reproducirSonido(2);
         });
 
         vbRootInitial.getChildren().addAll(hbInitialTitle, hbInitialButton);
@@ -161,6 +164,7 @@ public class Interfaz extends Application {
             username = usernameTextField.getText();
             if (!username.trim().isEmpty()) {
                 algoRoma.agregarJugador(username);
+                reproductorSonido.reproducirSonido(3);
                 StringBuilder contenido = new StringBuilder();
                 for (Jugador jugador: algoRoma.obtenerJugadores()) {
                     //Text textLinea = new Text(linea);
@@ -172,6 +176,7 @@ public class Interfaz extends Application {
                 System.out.println("El usuario " + username + " se agregó correctamente");
                 usernameTextField.clear();
             } else {
+                reproductorSonido.reproducirSonido(4);
                 System.out.println("El nombre de usuario debe tener al menos un carácter");
             }
         });
@@ -194,6 +199,7 @@ public class Interfaz extends Application {
         playButton.setOnAction(event -> {
             try {
                 algoRoma.inicializarJuego();
+                reproductorSonido.reproducirSonido(2);
                 cargarTablero();
             }catch (CantidadJugadoresException ex){
                 System.err.println(ex.getMessage());
@@ -370,9 +376,11 @@ public class Interfaz extends Application {
             btnJugar1Turno.setOnAction(event -> {
                 try{
                     algoRoma.jugar1Turno();
+                    reproductorSonido.reproducirSonido(0);
                 }catch(PartidaFinalizada ex){
                     //Mostrar pantalla con ganador del juego,nueva escena o un label
                     //refactorizar esto a un eventhandlerFinalizarPartida
+                    reproductorSonido.reproducirSonido(1);
                     hbDone.getChildren().remove(btnJugar1Turno);
                     Label ganador = new Label(ex.getMessage());
                     ganador.autosize();
@@ -398,6 +406,7 @@ public class Interfaz extends Application {
             btnGame.setOnAction(event -> {
                 try {
                     algoRoma.jugar1Ronda();
+                    reproductorSonido.reproducirSonido(0);
                     Log log = algoRoma.getLog();
                     String[] lineas = new String[0];
                     try {
@@ -416,6 +425,7 @@ public class Interfaz extends Application {
 
                 }catch (PartidaFinalizada ex){
                     //Mostrar pantalla con ganador del juego,nueva escena o un label
+                    reproductorSonido.reproducirSonido(1);
                     hbDone.getChildren().remove(btnGame);
                     Label ganador = new Label(ex.getMessage());
                     ganador.autosize();
