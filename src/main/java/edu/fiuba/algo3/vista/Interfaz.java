@@ -2,10 +2,14 @@ package edu.fiuba.algo3.vista;
 
 import edu.fiuba.algo3.modelo.exceptions.CantidadJugadoresException;
 import edu.fiuba.algo3.modelo.exceptions.PartidaFinalizada;
+import edu.fiuba.algo3.modelo.gladiador.Gladiador;
+import edu.fiuba.algo3.modelo.gladiador.equipamiento.Equipable;
+import edu.fiuba.algo3.modelo.gladiador.equipamiento.SinEquipamiento;
 import edu.fiuba.algo3.modelo.juego.AlgoRoma;
 import edu.fiuba.algo3.modelo.juego.Jugador;
 import edu.fiuba.algo3.modelo.log.Log;
 import edu.fiuba.algo3.modelo.tablero.Tablero;
+import edu.fiuba.algo3.modelo.tablero.celda.afectable.Afectable;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -15,6 +19,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
+import javafx.scene.paint.ImagePattern;
+import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
@@ -23,6 +29,7 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 public class Interfaz extends Application {
 
@@ -38,6 +45,13 @@ public class Interfaz extends Application {
         ICONOS.put(Color.PURPLE,"src/main/java/edu/fiuba/algo3/vista/Jugador/gladiadorVioleta.png");
         ICONOS.put(Color.BROWN,"src/main/java/edu/fiuba/algo3/vista/Jugador/gladiadorMarron.png");
         ICONOS.put(Color.ORANGE,"src/main/java/edu/fiuba/algo3/vista/Jugador/gladiadorNaranja.png");
+    }
+
+    private LinkedHashMap<String,String> EQUIPAMIENTO = new LinkedHashMap<>();{
+        EQUIPAMIENTO.put("Casco","src/main/java/edu/fiuba/algo3/vista/Equipamiento/casco.png");
+        EQUIPAMIENTO.put("Armadura","src/main/java/edu/fiuba/algo3/vista/Equipamiento/armadura.png");
+        EQUIPAMIENTO.put("EscudoEspada","src/main/java/edu/fiuba/algo3/vista/Equipamiento/escudoYespada.png");
+        EQUIPAMIENTO.put("Llave","src/main/java/edu/fiuba/algo3/vista/Equipamiento/llave.png");
     }
 
     public static void main(String[] args) {
@@ -223,7 +237,82 @@ public class Interfaz extends Application {
         this.pantallaInicial(primaryStage);
 
     }
+    public void mostrarEnergia(HBox energy, Jugador jugador) {
+        energy.getChildren().clear();
+        Label titleEnergy = new Label("Energia: " + jugador.obtenerEnergia());
+        energy.getChildren().add(titleEnergy);
+        Rectangle celda = new Rectangle(20, 20);
+        try {
+            Image img = new Image(new FileInputStream("src/main/java/edu/fiuba/algo3/vista/energia.png"));
+            celda.setFill(new ImagePattern(img));
+        } catch (IllegalArgumentException ex) {
+            System.out.println("No se encontro la imagen");
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        energy.getChildren().add(celda);
+    }
 
+    public void actualizarInfoJugadores(TableroVisual tableroVisual, HBox hbPlayersTable ) {
+        hbPlayersTable.getChildren().clear();
+        HashMap<Jugador,String> imgs = tableroVisual.getImagenesJugadores();
+
+        VBox vbPlayersInfo = new VBox();
+        List<Jugador> jugadores = algoRoma.obtenerJugadores();
+        for (Jugador jugador : jugadores) {
+            VBox vbPlayer = new VBox();
+            VBox vbPlayerInfo = new VBox();
+            HBox hbPlayer = new HBox();
+            Label titleName = new Label(jugador.obtenerNombre());
+            vbPlayer.getChildren().add(titleName);
+            vbPlayer.setStyle("-fx-font-size: 20px");
+            vbPlayer.setAlignment(Pos.CENTER);
+            Rectangle rectangle = new Rectangle(50, 50);
+            try {
+                Image img = new Image(new FileInputStream(imgs.get(jugador)));
+                rectangle.setFill(new ImagePattern(img));
+            } catch (IllegalArgumentException ex) {
+                System.out.println("No se encontro la imagen");
+            } catch (FileNotFoundException e) {
+                throw new RuntimeException(e);
+            }
+            vbPlayer.getChildren().add(rectangle);
+            //player Info
+            HBox energy= new HBox();
+            this.mostrarEnergia(energy, jugador);
+            HBox equipo = new HBox();
+            Label titleEquipaiento = new Label("Equipamiento: ");
+            equipo.getChildren().add(titleEquipaiento);
+            Gladiador gladiador = jugador.obtenerGladiador();
+            Equipable equipable = gladiador.obtenerEquipamiento();
+            if (!equipable.getClass().getSimpleName().equals("SinEquipamiento")){
+                for (String equipamiento: EQUIPAMIENTO.keySet()) {
+                    System.out.println(EQUIPAMIENTO.keySet());
+                    Rectangle arma= new Rectangle(30, 30);
+                    try {
+                        Image img = new Image(new FileInputStream(EQUIPAMIENTO.get(equipamiento)));
+                        arma.setFill(new ImagePattern(img));
+                    } catch (IllegalArgumentException ex) {
+                        System.out.println("No se encontro la imagen");
+                    } catch (FileNotFoundException e) {
+                        throw new RuntimeException(e);
+                    }
+                    equipo.getChildren().add(arma);
+                    if(equipable.getClass().getSimpleName().equals(equipamiento)){
+                        break;
+                    }
+                }
+            }
+            vbPlayerInfo.getChildren().addAll(energy, equipo);
+            vbPlayerInfo.setStyle("-fx-pandding: 10px");
+            hbPlayer.getChildren().addAll(vbPlayer, vbPlayerInfo);
+            hbPlayer.setSpacing(10);
+            vbPlayersInfo.getChildren().add(hbPlayer);
+        }
+        vbPlayersInfo.setStyle("-fx-background-color: white; -fx-font-size: 15px;");
+        hbPlayersTable.getChildren().addAll(vbPlayersInfo, tableroVisual);
+        hbPlayersTable.setSpacing(100);
+    }
     public void cargarTablero() {
         // Verificar que miTablero no sea null
         if (miTablero != null) {
@@ -232,27 +321,21 @@ public class Interfaz extends Application {
                     vbFooter = new VBox(),
                     vbPlayers = new VBox(),
                     vbGridInfo = new VBox(),
-                    vbHeader = new VBox();
+                    vbHeader = new VBox(),
+                    vbStateGame = new VBox();
             HBox hbOptions = new HBox(),
                     hbDone = new HBox(),
                     hbGameDetails = new HBox(),
-                    hbGameTitle = new HBox();
+                    hbGameTitle = new HBox(),
+                    hbGamePlayers = new HBox();
             //================ HEADER ======================
             Label title = new Label("ALGOROMA: COMBAT GAME");
-            title.setFont(new Font(20));
             hbGameTitle.getChildren().add(title);
+            hbGameTitle.setStyle("-fx-font-size: 15px");
             hbGameTitle.setAlignment(Pos.CENTER);
 
-            List<Jugador> jugadores = algoRoma.obtenerJugadores();
-            for (Jugador jugador : jugadores) {
-                String energiaJugador = jugador.obtenerNombre()+" tiene: "+ jugador.obtenerEnergia()+" puntos de Energia.";
-                Label player = new Label(energiaJugador);
-                vbPlayers.getChildren().add(player);
-            }
             vbPlayers.setAlignment(Pos.CENTER);
 
-            Label players = new Label("Players: ");
-            vbGridInfo.getChildren().add(players);
             vbGridInfo.setAlignment(Pos.CENTER);
 
             hbGameDetails.getChildren().addAll(vbGridInfo, vbPlayers);
@@ -261,15 +344,15 @@ public class Interfaz extends Application {
             vbHeader.getChildren().addAll(hbGameTitle, hbGameDetails);
             vbHeader.setAlignment(Pos.CENTER);
 
-
-
             //===============GRID===============================
             // Crear una instancia de TableroVisual
             TableroVisual tableroVisual = new TableroVisual(miTablero, algoRoma);
             tableroVisual.setAlignment(Pos.CENTER);
-            vbGrid.getChildren().addAll(tableroVisual);
             vbGrid.setPadding(new Insets(20));
             vbGrid.setAlignment(Pos.CENTER);
+            HBox hbPlayersTable = new HBox();
+            this.actualizarInfoJugadores(tableroVisual, hbPlayersTable);
+            vbGrid.getChildren().addAll(hbPlayersTable);
 
             //==============FOOTER===============================
             ScrollPane historial = new ScrollPane();
@@ -297,7 +380,8 @@ public class Interfaz extends Application {
                     vbRoot.getChildren().add(ganador);
                     vbRoot.setAlignment(Pos.CENTER);
                 }
-                actualizarTablero(tableroVisual, vbPlayers);
+                actualizarTablero(tableroVisual);
+                this.actualizarInfoJugadores(tableroVisual, hbPlayersTable);
 
 
 
@@ -339,7 +423,7 @@ public class Interfaz extends Application {
                     vbRoot.getChildren().add(ganador);
                     vbRoot.setAlignment(Pos.CENTER);
                 }
-                actualizarTablero(tableroVisual, vbPlayers);
+                actualizarTablero(tableroVisual);
             });
             btnGame.setPadding(new Insets(5));
 
@@ -370,6 +454,7 @@ public class Interfaz extends Application {
             vbFooter.getChildren().addAll(hbDone, hbOptions);
 
             vbRoot.getChildren().addAll(vbHeader, vbGrid, vbFooter);
+            vbRoot.setStyle("-fx-font-weight: bold; -fx-font-size: 15px;");
 
             double tamanio_X = 400;
             double tamanio_Y = 400;
@@ -409,14 +494,7 @@ public class Interfaz extends Application {
 
     public void reset() {};
     public void exit() {};
-    public void actualizarTablero(TableroVisual tableroVisual, VBox players) {
+    public void actualizarTablero(TableroVisual tableroVisual) {
         tableroVisual.actualizarContenido(algoRoma);
-        players.getChildren().clear();
-        List<Jugador> jugadores = algoRoma.obtenerJugadores();
-        for (Jugador jugador : jugadores) {
-            String energiaJugador = jugador.obtenerNombre() +" tiene: "+ jugador.obtenerEnergia()+" puntos de Energia.";
-            Label player = new Label(energiaJugador);
-            players.getChildren().add(player);
-        }
     }
 }

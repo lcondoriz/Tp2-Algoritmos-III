@@ -1,6 +1,5 @@
 package edu.fiuba.algo3.vista;
 
-import edu.fiuba.algo3.modelo.gladiador.equipamiento.SinEquipamiento;
 import edu.fiuba.algo3.modelo.juego.AlgoRoma;
 import edu.fiuba.algo3.modelo.juego.Jugador;
 import edu.fiuba.algo3.modelo.tablero.Tablero;
@@ -17,14 +16,11 @@ import javafx.geometry.Pos;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
-import javafx.scene.paint.Color;
 import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
-import javafx.scene.text.Font;
 import javafx.scene.text.Text;
-import javafx.scene.text.FontWeight;
+
 import java.util.Random;
 import javafx.scene.Node;
 
@@ -39,6 +35,15 @@ public class TableroVisual extends GridPane {
             "src/main/java/edu/fiuba/algo3/vista/Jugador/gladiadorNaranja.png",
             "src/main/java/edu/fiuba/algo3/vista/Jugador/gladiadorMarron.png",
             "src/main/java/edu/fiuba/algo3/vista/Jugador/gladiadorNaranja.png",
+    };
+    private HashMap<String,String> AFECTABLES = new HashMap<>();
+
+    {
+        AFECTABLES.put("Equipo", "src/main/java/edu/fiuba/algo3/vista/Afectables/equipo.png");
+        AFECTABLES.put("Comida", "src/main/java/edu/fiuba/algo3/vista/Afectables/comida.png");
+        AFECTABLES.put("Bacanal", "src/main/java/edu/fiuba/algo3/vista/Afectables/copa.png");
+        AFECTABLES.put("FieraSalvaje", "src/main/java/edu/fiuba/algo3/vista/Afectables/fiera.png");
+        AFECTABLES.put("Lesion", "src/main/java/edu/fiuba/algo3/vista/Afectables/lesion.png");
     };
     private HashMap<Jugador,String> IMAGENES_ASIGNADOS = new HashMap<>();
 
@@ -63,15 +68,17 @@ public class TableroVisual extends GridPane {
             Random random = new Random();
             int randomIndex = random.nextInt(afectables.size());
             Afectable afectable = afectables.get(randomIndex);
-            if (afectable.getClass() == Comida.class || afectable.getClass() == Equipo.class) {
-                rectangle.setFill(Color.ORANGE);
-            } else if (afectable.getClass() == Bacanal.class || afectable.getClass() == FieraSalvaje.class || afectable.getClass() == Lesion.class) {
-                rectangle.setFill(Color.BLUE);;
-            } else {
-                rectangle.setFill(Color.BLACK);
+            try {
+                Image img = new Image(new FileInputStream(AFECTABLES.get(afectable.getClass().getSimpleName())));
+                rectangle.setFill(new ImagePattern(img));
+            } catch (IllegalArgumentException ex) {
+                System.out.println("No se encontro la imagen");
+            } catch (FileNotFoundException e) {
+                throw new RuntimeException(e);
             }
         }
     }
+
     private void cargarTableroVisual() {
         int tableroAncho = tablero.obtenerAncho();
         int tableroLargo = tablero.obtenerLargo();
@@ -151,5 +158,9 @@ public class TableroVisual extends GridPane {
         limpiarContenido();
         cargarTableroVisual();
         cargarGladiadores(algoRoma);
+    }
+
+    public HashMap<Jugador, String> getImagenesJugadores() {
+        return IMAGENES_ASIGNADOS;
     }
 }
