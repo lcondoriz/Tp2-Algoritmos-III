@@ -1,4 +1,5 @@
 package edu.fiuba.algo3.vista;
+
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 
@@ -15,12 +16,12 @@ public class ReproductorSonido {
 
         // Rutas a los archivos de sonido
         String[] soundFiles = {
-            "src\\main\\java\\edu\\fiuba\\algo3\\javafx\\sonidos\\efectoSonido00_Dados.mp3",
-            "src\\main\\java\\edu\\fiuba\\algo3\\javafx\\sonidos\\efectoSonido01_Victoria.mp3",
-            "src\\main\\java\\edu\\fiuba\\algo3\\javafx\\sonidos\\efectoSonido02_InicioTablero.mp3",
-            "src\\main\\java\\edu\\fiuba\\algo3\\javafx\\sonidos\\efectoSonido03_AgregarUsuarioExitoso.mp3",
-            "src\\main\\java\\edu\\fiuba\\algo3\\javafx\\sonidos\\efectoSonido04_AgregarUsuarioFallido.mp3",
-            
+                "src\\main\\java\\edu\\fiuba\\algo3\\vista\\sonidos\\efectoSonido00_Dados.mp3",
+                "src\\main\\java\\edu\\fiuba\\algo3\\vista\\sonidos\\efectoSonido01_Victoria.mp3",
+                "src\\main\\java\\edu\\fiuba\\algo3\\vista\\sonidos\\efectoSonido02_InicioTablero.mp3",
+                "src\\main\\java\\edu\\fiuba\\algo3\\vista\\sonidos\\efectoSonido03_AgregarUsuarioExitoso.mp3",
+                "src\\main\\java\\edu\\fiuba\\algo3\\vista\\sonidos\\efectoSonido04_AgregarUsuarioFallido.mp3",
+
         };
 
         reproductor = new MediaPlayer[soundFiles.length];
