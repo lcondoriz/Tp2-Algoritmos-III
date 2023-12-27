@@ -24,7 +24,7 @@ public class CeldaVisual {
         ICONOS.put("Salida","src/main/java/edu/fiuba/algo3/vista/COLISEO.png");
     }
     public Rectangle crearCelda() {
-        Rectangle celda = new Rectangle(25, 25);
+        Rectangle celda = new Rectangle(40, 40);
         try {
             Image img = new Image(new FileInputStream("src/main/java/edu/fiuba/algo3/vista/BOSQUE.png"));
             celda.setFill(new ImagePattern(img));
@@ -41,7 +41,7 @@ public class CeldaVisual {
     }
 
     public Rectangle crearCelda(String tipoCelda) {
-        Rectangle celda = new Rectangle(25, 25);
+        Rectangle celda = new Rectangle(40, 40);
         try {
             Image img = new Image(new FileInputStream(ICONOS.get(tipoCelda)));
             celda.setFill(new ImagePattern(img));

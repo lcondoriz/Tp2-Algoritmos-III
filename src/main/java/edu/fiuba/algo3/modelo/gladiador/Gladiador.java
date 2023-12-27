@@ -22,6 +22,7 @@ public class Gladiador {
     private Seniority estrategiaSeniority;
     private Celda celda;
     private Estado estadoGladiador;
+    
     public Gladiador(Energia energia, Celda celda) {
         this.energia = energia;
         this.equipamiento = new SinEquipamiento();

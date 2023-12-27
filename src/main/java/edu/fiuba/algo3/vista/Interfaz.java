@@ -242,16 +242,16 @@ public class Interfaz extends Application {
         energy.getChildren().clear();
         Label titleEnergy = new Label("Energia: " + jugador.obtenerEnergia());
         energy.getChildren().add(titleEnergy);
-        Rectangle celda = new Rectangle(20, 20);
+        Rectangle celdaEnergia = new Rectangle(20, 20);
         try {
             Image img = new Image(new FileInputStream("src/main/java/edu/fiuba/algo3/vista/energia.png"));
-            celda.setFill(new ImagePattern(img));
+            celdaEnergia.setFill(new ImagePattern(img));
         } catch (IllegalArgumentException ex) {
             System.out.println("No se encontro la imagen");
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
-        energy.getChildren().add(celda);
+        energy.getChildren().add(celdaEnergia);
     }
 
     public void actualizarInfoJugadores(TableroVisual tableroVisual, HBox hbPlayersTable ) {
@@ -288,7 +288,6 @@ public class Interfaz extends Application {
             Equipable equipable = gladiador.obtenerEquipamiento();
             if (!equipable.getClass().getSimpleName().equals("SinEquipamiento")){
                 for (String equipamiento: EQUIPAMIENTO.keySet()) {
-                    System.out.println(EQUIPAMIENTO.keySet());
                     Rectangle arma= new Rectangle(30, 30);
                     try {
                         Image img = new Image(new FileInputStream(EQUIPAMIENTO.get(equipamiento)));
@@ -383,53 +382,7 @@ public class Interfaz extends Application {
                 }
                 actualizarTablero(tableroVisual);
                 this.actualizarInfoJugadores(tableroVisual, hbPlayersTable);
-
-
-
             });
-
-
-            Button btnGame = new Button("Jugar una ronda");
-            btnGame.setMinHeight(50);
-            btnGame.setMinWidth(130);
-            hbDone.getChildren().add(btnGame);
-
-            btnGame.setAlignment(Pos.CENTER);
-
-            btnGame.setOnAction(event -> {
-                try {
-                    algoRoma.jugar1Ronda();
-                    reproductorSonido.reproducirSonido(0);
-                    Log log = algoRoma.getLog();
-                    String[] lineas = new String[0];
-                    try {
-                        lineas = log.getLines();
-                    }catch(IOException ex){
-                        //hacer alog}
-                        System.out.println("algo");
-                    }
-                    String contenido ="";
-                    for (String linea : lineas) {
-                        //Text textLinea = new Text(linea);
-                        contenido = contenido+"\n"+linea;
-                    }
-                    historial.setContent(new Text(contenido));
-
-
-                }catch (PartidaFinalizada ex){
-                    //Mostrar pantalla con ganador del juego,nueva escena o un label
-                    reproductorSonido.reproducirSonido(1);
-                    hbDone.getChildren().remove(btnGame);
-                    Label ganador = new Label(ex.getMessage());
-                    ganador.autosize();
-                    ganador.setBorder(new Border(new BorderStroke(Color.RED,BorderStrokeStyle.DASHED,CornerRadii.EMPTY,BorderWidths.DEFAULT)));
-                    vbRoot.getChildren().add(ganador);
-                    vbRoot.setAlignment(Pos.CENTER);
-                }
-                actualizarTablero(tableroVisual);
-            });
-            btnGame.setPadding(new Insets(5));
-
 
             hbDone.setPadding(new Insets(5));
             hbDone.setAlignment(Pos.CENTER);

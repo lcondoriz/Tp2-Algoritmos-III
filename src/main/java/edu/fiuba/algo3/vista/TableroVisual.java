@@ -123,7 +123,7 @@ public class TableroVisual extends GridPane {
             int posicionGladiadorX = celdaJugador.obtenerCoordenadas().obtenerCoordenadaX() - 1;
             int posicionGladiadorY = celdaJugador.obtenerCoordenadas().obtenerCoordenadaY() - 1;
 
-            Rectangle rectangle = new Rectangle(25, 25);
+            Rectangle rectangle = new Rectangle(40, 40);
             //rectangle.setFill(COLORES_ASIGNADOS.get(algoRoma.obtenerJugadores().get(i)));
             try{
                 Image img = new Image(new FileInputStream(IMAGENES_ASIGNADOS.get(algoRoma.obtenerJugadores().get(i))));
