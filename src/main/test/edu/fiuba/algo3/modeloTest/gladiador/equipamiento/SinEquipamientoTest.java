@@ -1,13 +1,11 @@
 package edu.fiuba.algo3.modeloTest.gladiador.equipamiento;
 
 import edu.fiuba.algo3.modelo.gladiador.Gladiador;
-import edu.fiuba.algo3.modelo.gladiador.equipamiento.Casco;
 import edu.fiuba.algo3.modelo.gladiador.equipamiento.SinEquipamiento;
 import edu.fiuba.algo3.modelo.gladiador.mejorador.Mejorador;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 

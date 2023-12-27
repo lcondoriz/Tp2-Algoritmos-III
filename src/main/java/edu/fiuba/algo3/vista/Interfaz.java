@@ -4,18 +4,15 @@ import edu.fiuba.algo3.modelo.exceptions.CantidadJugadoresException;
 import edu.fiuba.algo3.modelo.exceptions.PartidaFinalizada;
 import edu.fiuba.algo3.modelo.gladiador.Gladiador;
 import edu.fiuba.algo3.modelo.gladiador.equipamiento.Equipable;
-import edu.fiuba.algo3.modelo.gladiador.equipamiento.SinEquipamiento;
 import edu.fiuba.algo3.modelo.juego.AlgoRoma;
 import edu.fiuba.algo3.modelo.juego.Jugador;
 import edu.fiuba.algo3.modelo.log.Log;
 import edu.fiuba.algo3.modelo.tablero.Tablero;
-import edu.fiuba.algo3.modelo.tablero.celda.afectable.Afectable;
 import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
@@ -23,7 +20,6 @@ import javafx.scene.paint.ImagePattern;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
-import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -36,7 +32,6 @@ public class Interfaz extends Application {
     private Stage primaryStage;
     private Tablero miTablero;
     private AlgoRoma algoRoma;
-    private Scene escenaTablero;
     private ReproductorSonido reproductorSonido;
 
     private HashMap<Color,String> ICONOS = new HashMap<>();{
@@ -327,13 +322,11 @@ public class Interfaz extends Application {
                     vbFooter = new VBox(),
                     vbPlayers = new VBox(),
                     vbGridInfo = new VBox(),
-                    vbHeader = new VBox(),
-                    vbStateGame = new VBox();
+                    vbHeader = new VBox();
             HBox hbOptions = new HBox(),
                     hbDone = new HBox(),
                     hbGameDetails = new HBox(),
-                    hbGameTitle = new HBox(),
-                    hbGamePlayers = new HBox();
+                    hbGameTitle = new HBox();
             //================ HEADER ======================
             Label title = new Label("ALGOROMA: COMBAT GAME");
             hbGameTitle.getChildren().add(title);

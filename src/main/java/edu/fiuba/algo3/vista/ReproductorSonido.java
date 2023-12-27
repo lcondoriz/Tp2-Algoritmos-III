@@ -17,10 +17,10 @@ public class ReproductorSonido {
        // Rutas a los archivos de sonido
         String[] soundFiles = {
             "src/main/java/edu/fiuba/algo3/vista/Sonidos/efectoSonido00_Dados.mp3",
-            "src/main/java/edu/fiuba/algo3/vista/sonidos/efectoSonido01_Victoria.mp3",
-            "src/main/java/edu/fiuba/algo3/vista/sonidos/efectoSonido02_InicioTablero.mp3",
-            "src/main/java/edu/fiuba/algo3/vista/sonidos/efectoSonido03_AgregarUsuarioExitoso.mp3",
-            "src/main/java/edu/fiuba/algo3/vista/sonidos/efectoSonido04_AgregarUsuarioFallido.mp3"
+            "src/main/java/edu/fiuba/algo3/vista/Sonidos/efectoSonido01_Victoria.mp3",
+            "src/main/java/edu/fiuba/algo3/vista/Sonidos/efectoSonido02_InicioTablero.mp3",
+            "src/main/java/edu/fiuba/algo3/vista/Sonidos/efectoSonido03_AgregarUsuarioExitoso.mp3",
+            "src/main/java/edu/fiuba/algo3/vista/Sonidos/efectoSonido04_AgregarUsuarioFallido.mp3"
         };
 
 

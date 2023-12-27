@@ -14,6 +14,7 @@ public abstract class Celda {
     private List<Afectable> afectable;
     private Celda celdaAnterior;
     private Celda siguienteCelda;
+
     public Celda(Coordenadas coordenadas, String tipo, int numeracion) {
         this.coordenadas = coordenadas;
         this.tipo = tipo;
@@ -28,6 +29,7 @@ public abstract class Celda {
     }
 
     public abstract void aplicarEfecto(Gladiador gladiador);
+    
     public void aplicarAfectables(Gladiador gladiador) {
         for (Afectable afectable : this.afectable) {
             afectable.aplicarEfecto(gladiador);

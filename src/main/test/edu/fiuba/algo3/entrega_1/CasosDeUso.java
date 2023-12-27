@@ -59,7 +59,6 @@ public class CasosDeUso {
     public void verificarQueUnJugadorSinEnergiaNoPuedaJugarElTurno() {
         // Arrange
         Energia energia = new Energia(20);
-        FieraSalvaje fiera = new FieraSalvaje();
         Celda salida = new Salida(new Coordenadas(0, 0),"Salida",0);
         Celda camino = new Camino(new Coordenadas(1, 0),"Camino",1);
 

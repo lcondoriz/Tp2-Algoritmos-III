@@ -5,8 +5,6 @@ import edu.fiuba.algo3.modelo.exceptions.PartidaFinalizada;
 import edu.fiuba.algo3.modelo.juego.AlgoRoma;
 import edu.fiuba.algo3.modelo.juego.Dado;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
